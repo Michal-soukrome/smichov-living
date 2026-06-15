@@ -1,0 +1,103 @@
+---
+const nav = [
+  { name: "Domů", href: "/" },
+  { name: "Co děláme", href: "/co-delame" },
+  { name: "Novinky", href: "/novinky" },
+  { name: "Showroom", href: "/showroom" },
+  { name: "Reference", href: "/reference" },
+  { name: "Kontakt", href: "/kontakt" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200"
+>
+  <div class="px-6 md:px-20 h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex flex-col leading-none select-none">
+      <span
+        class="text-base font-semibold tracking-[0.18em] uppercase text-black"
+        >Smíchov</span
+      >
+      <span
+        class="text-base font-light tracking-[0.22em] uppercase text-gray-700"
+        >Living</span
+      >
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class="text-gray-700 hover:text-black transition-colors tracking-wide"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- CTA -->
+    <a
+      href="/kontakt"
+      class="hidden md:inline-block bg-black text-white px-5 py-2 rounded-md text-sm tracking-wide hover:bg-gray-800 transition-colors"
+    >
+      Poptat projekt
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-btn"
+      class="md:hidden relative w-10 h-10 flex items-center justify-center"
+    >
+      <span class="sr-only">Menu</span>
+      <div class="space-y-2">
+        <span
+          id="line1"
+          class="block w-6 h-[2px] bg-black transition-all duration-300"></span>
+        <span
+          id="line2"
+          class="block w-6 h-[2px] bg-black transition-all duration-300"></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10 text-xl font-medium tracking-wide hidden"
+  >
+    {
+      nav.map((item) => (
+        <a
+          href={item.href}
+          class="text-black hover:text-gray-700 transition-colors"
+        >
+          {item.name}
+        </a>
+      ))
+    }
+    <a href="/kontakt" class="bg-black text-white px-6 py-3 rounded-md text-lg"
+      >Poptat projekt</a
+    >
+  </div>
+  <script>
+    const btn = document.getElementById("mobile-btn");
+    const menu = document.getElementById("mobile-menu");
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
+
+    if (btn && menu && line1 && line2) {
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+
+        const open = !menu.classList.contains("hidden");
+
+        line1.style.transform = open ? "translateY(6px) rotate(45deg)" : "";
+        line2.style.transform = open ? "translateY(-6px) rotate(-45deg)" : "";
+      });
+    }
+  </script>
+</header>

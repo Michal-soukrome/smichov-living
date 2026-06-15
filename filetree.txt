@@ -1,0 +1,33 @@
+/Users/michaljirak/GitHub repos/smichov-living
+├── .astro/
+│   ├── collections/
+│   ├── settings.json
+│   └── types.d.ts
+├── .prettierrc
+├── .vscode/
+│   ├── extensions.json
+│   └── launch.json
+├── README.md
+├── astro.config.mjs
+├── filetree.txt
+├── package-lock.json
+├── package.json
+├── public/
+│   ├── favicon.ico
+│   └── favicon.svg
+├── scripts/
+│   └── generate-tree.js
+├── src/
+│   ├── assets/
+│   │   ├── astro.svg
+│   │   └── background.svg
+│   ├── components/
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── Hero.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── kontakt.astro
+│   └── styles/
+│       └── global.css
+└── tsconfig.json

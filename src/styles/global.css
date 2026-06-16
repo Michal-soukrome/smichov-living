@@ -1,5 +1,87 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Jost", sans-serif;
+  --font-title: "Playfair Display", serif;
+}
+
+/* ---------------------- */
+/* BUTTONY */
+/* ---------------------- */
+
+.btn-primary {
+  @apply uppercase font-semibold text-[0.9rem] tracking-[0.12em];
+  background: #ac8b55;
+  cursor: pointer;
+  color: #f4f0e8;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid #ac8b55;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.btn-primary:hover {
+  background: #8c6b35;
+}
+
+.btn-secondary {
+  @apply uppercase font-semibold text-[0.9rem] tracking-[0.12em];
+  background: #1a1612;
+  cursor: pointer;
+  color: #f4f0e8;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid #ac8b55;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.btn-secondary:hover {
+  background: #3a332d;
+}
+
+/* ---------------------- */
+/* HERO */
+/* ---------------------- */
+
+.hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(26, 22, 18, 1) 40%,
+    rgba(26, 22, 18, 0.1) 60%
+  );
+}
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(26, 22, 18, 0.8) 40%,
+      rgba(26, 22, 18, 0.4) 60%
+    );
+  }
+}
+
+/* ---------------------- */
+/* NAVIGACE */
+/* ---------------------- */
+
+.nav-link {
+  letter-spacing: 0.12em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- */
+/* ANIMACE */
+/* ---------------------- */
+
 ::view-transition-old(root) {
   animation: slide-out 0.35s ease forwards;
 }

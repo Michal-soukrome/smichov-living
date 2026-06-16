@@ -1,0 +1,17 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}",
+    "./public/**/*.html",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ["Cormorant Garamond", "serif"],
+        body: ["Jost", "sans-serif"],
+        title: ["Playfair Display", "serif"],
+      },
+    },
+  },
+  plugins: [],
+};

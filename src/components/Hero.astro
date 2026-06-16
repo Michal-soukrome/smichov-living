@@ -1,52 +1,87 @@
 ---
 interface HeroProps {
+  label?: string;
   title?: string;
   subtitle?: string;
   image?: string;
+  ctaText?: string;
+  cta2Text?: string;
+  ctaHref?: string;
+  cta2Href?: string;
   height?: string;
-  align?: "left" | "center" | "right";
 }
 
 const {
+  label = "",
   title = "",
   subtitle = "",
   image = "",
-  height = "h-[70vh]",
-  align = "left",
+  ctaText = "",
+  ctaHref = "",
+  cta2Text = "",
+  cta2Href = "",
+  height = "h-[70dvh] md:h-[100dvh]",
 } = Astro.props as HeroProps;
-
-const alignmentMap = {
-  left: "items-start text-left",
-  center: "items-center text-center",
-  right: "items-end text-right",
-} as const;
-
-const alignment = alignmentMap[align];
 ---
 
-<section
-  class={`relative w-full ${height} flex justify-center ${alignment} px-6 md:px-20 py-20`}
-  style={`background-image: url('${image}'); background-size: cover; background-position: center;`}
->
+<section class={`relative ${height}`}>
+  <!-- Background -->
+  <div
+    class="absolute inset-0"
+    style={`background: url(${image}); background-size: cover; background-position: center; background-repeat: no-repeat;`}
+  >
+  </div>
+
   <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/40"></div>
+  <div class="hero-overlay absolute inset-0"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-3xl flex flex-col gap-4">
-    {
-      title && (
-        <h1 class="text-white text-4xl md:text-6xl font-semibold leading-tight">
-          {title}
-        </h1>
-      )
-    }
+  <div
+    class="relative z-10 h-full flex flex-col justify-end py-32 md:py-20 px-6 max-w-7xl mx-auto"
+  >
+    <div class="max-w-2xl">
+      {
+        label && (
+          <p class="section-label text-amber-50 mb-6 tracking-[0.15em] text-[0.8rem] font-normal uppercase">
+            {label}
+          </p>
+        )
+      }
 
-    {
-      subtitle && (
-        <p class="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl">
-          {subtitle}
-        </p>
-      )
-    }
+      {
+        title && (
+          <h3
+            class="font-title text-3xl md:text-7xl font-thin text-white mb-6"
+            set:html={title}
+          />
+        )
+      }
+
+      {
+        subtitle && (
+          <p class="text-amber-50 font-light text-base leading-relaxed md:mb-10 max-w-xs">
+            {subtitle}
+          </p>
+        )
+      }
+
+      {
+        (ctaText || cta2Text) && (
+          <div class="flex gap-2 flex-wrap items-center mt-4">
+            {ctaText && (
+              <a href={ctaHref} class="btn-primary">
+                {ctaText}
+              </a>
+            )}
+
+            {cta2Text && (
+              <a href={cta2Href} class="btn-secondary">
+                {cta2Text}
+              </a>
+            )}
+          </div>
+        )
+      }
+    </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-/Users/michaljirak/GitHub repos/smichov-living
+C:\Users\michal.jirak\Documents\GitHub\smichov-living
 ├── .astro/
 │   ├── collections/
 │   ├── settings.json
@@ -7,14 +7,11 @@
 ├── .vscode/
 │   ├── extensions.json
 │   └── launch.json
-├── README.md
 ├── astro.config.mjs
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
-├── public/
-│   ├── favicon.ico
-│   └── favicon.svg
+├── README.md
 ├── scripts/
 │   └── generate-tree.js
 ├── src/
@@ -30,4 +27,5 @@
 │   │   └── kontakt.astro
 │   └── styles/
 │       └── global.css
+├── tailwind.config.js
 └── tsconfig.json

@@ -7,17 +7,19 @@ import "../styles/global.css";
 const { title = "Smíchov Living" } = Astro.props;
 ---
 
-<html lang="cs" transition:animate="fade">
+<html lang="cs" transition:animate="fade" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
     <ClientRouter />
   </head>
 
-  <body class="min-h-screen flex flex-col bg-white text-slate-900">
+  <body
+    class="min-h-screen flex flex-col bg-white text-slate-900 scroll-smooth font-body"
+  >
     <Header />
 
-    <main class="flex-1">
+    <main class="flex-1 font-body">
       <slot />
     </main>
 

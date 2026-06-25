@@ -25,24 +25,27 @@ const {
 ---
 
 <section class={`relative ${height}`}>
-  <!-- Background -->
   <div
     class="absolute inset-0"
     style={`background: url(${image}); background-size: cover; background-position: center; background-repeat: no-repeat;`}
   >
   </div>
 
-  <!-- Overlay -->
   <div class="hero-overlay absolute inset-0"></div>
 
-  <!-- Content -->
   <div
-    class="relative z-10 h-full flex flex-col justify-end py-32 md:py-20 px-6 max-w-7xl mx-auto"
+    class="relative z-10 h-full flex flex-col justify-end
+           py-16
+           px-6 max-w-7xl mx-auto"
   >
-    <div class="max-w-2xl">
+    <div class="max-w-full sm:max-w-2xl">
       {
         label && (
-          <p class="section-label text-amber-50 mb-6 tracking-[0.15em] text-[0.8rem] font-normal uppercase">
+          <p
+            class="section-label text-amber-50 mb-4 sm:mb-5 md:mb-6
+                  tracking-[0.15em] text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]
+                  uppercase"
+          >
             {label}
           </p>
         )
@@ -51,7 +54,9 @@ const {
       {
         title && (
           <h3
-            class="font-title text-3xl md:text-7xl font-thin text-white mb-6"
+            class="font-title font-thin text-white mb-6
+                 text-[2.2rem] sm:text-4xl md:text-6xl lg:text-7xl
+                 leading-[1.05]"
             set:html={title}
           />
         )
@@ -59,7 +64,10 @@ const {
 
       {
         subtitle && (
-          <p class="text-amber-50 font-light text-base leading-relaxed md:mb-10 max-w-xs">
+          <p
+            class="text-amber-50 font-light text-base md:text-lg leading-relaxed
+                  max-w-prose md:max-w-xl"
+          >
             {subtitle}
           </p>
         )
@@ -67,7 +75,7 @@ const {
 
       {
         (ctaText || cta2Text) && (
-          <div class="flex gap-2 flex-wrap items-center mt-4">
+          <div class="flex gap-3 sm:gap-4 flex-wrap items-center mt-6 md:mt-8">
             {ctaText && (
               <a href={ctaHref} class="btn-primary">
                 {ctaText}

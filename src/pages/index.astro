@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import { services } from "../data/services";
+import Services from "../components/Services.astro";
 ---
 
 <BaseLayout title="Smíchov Living - Kompletní rekonstrukce a design interiérů">
@@ -16,37 +17,5 @@ import { services } from "../data/services";
     cta2Href="#sluzby"
   />
 
-  <section class="py-24 px-6 max-w-7xl mx-auto" id="sluzby">
-    <p
-      class="text-center text-sm tracking-widest text-stone-500 uppercase mb-4"
-    >
-      Co pro vás zajistíme
-    </p>
-
-    <h2
-      class="font-display text-4xl md:text-5xl font-medium text-center mb-4 text-stone-900"
-    >
-      Vše pod jednou střechou
-    </h2>
-
-    <hr class="h-1 w-16 bg-stone-300 border-0 mx-auto mb-12 rounded-full" />
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      {
-        services.map((s) => (
-          <div class="space-y-3 text-center border p-5">
-            <div class="w-12 h-12 mx-auto text-center bg-stone-200 text-stone-700 flex items-center justify-center rounded-md">
-              {s.icon}
-            </div>
-
-            <h3 class="font-body font-semibold text-sm tracking-wide mb-2">
-              {s.title}
-            </h3>
-
-            <p class="font-body text-sm leading-relaxed">{s.desc}</p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
+  <Services />
 </BaseLayout>

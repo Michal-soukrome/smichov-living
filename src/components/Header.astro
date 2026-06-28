@@ -1,6 +1,4 @@
 ---
-const { pathname } = Astro.url;
-
 const nav = [
   { name: "Domů", href: "/" },
   { name: "Co děláme", href: "/co-delame" },
@@ -12,24 +10,19 @@ const nav = [
 
 <header class="fixed top-0 left-0 right-0 z-50 shadow bg-white">
   <div
-    class="w-full px-4 sm:px-6 md:px-12 lg:px-20
-           h-16 md:h-20 flex items-center justify-between"
+    class="w-full px-4 sm:px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between"
   >
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 group shrink-0">
+    <a href="/" class="shrink-0">
       <div class="text-center leading-none">
         <span
-          class="block font-display text-[0.85rem] sm:text-sm md:text-base font-medium tracking-widest uppercase text-dark"
-          style="letter-spacing: 0.18em"
+          class="block font-display text-[0.85rem] sm:text-sm md:text-base font-medium uppercase"
+          style="letter-spacing: 0.18em">Smíchov</span
         >
-          Smíchov
-        </span>
         <span
-          class="block font-display text-[0.85rem] sm:text-sm md:text-base font-light tracking-widest uppercase text-amber-dark"
-          style="letter-spacing: 0.22em"
+          class="block font-display text-[0.85rem] sm:text-sm md:text-base font-light uppercase text-amber-700"
+          style="letter-spacing: 0.22em">Living</span
         >
-          Living
-        </span>
       </div>
     </a>
 
@@ -39,11 +32,8 @@ const nav = [
         nav.map((item) => (
           <a
             href={item.href}
-            class={`font-body text-sm lg:text-base text-dark hover:text-amber-800 transition-colors uppercase whitespace-nowrap ${
-              pathname === item.href
-                ? "text-amber-800 underline underline-offset-4 decoration-amber-800"
-                : "text-gray-700"
-            }`}
+            data-navlink
+            class="font-body text-sm lg:text-base text-gray-700 hover:text-amber-800 transition-colors uppercase whitespace-nowrap"
           >
             {item.name}
           </a>
@@ -53,22 +43,41 @@ const nav = [
 
     <!-- CTA -->
     <a href="/poptat-projekt" class="hidden md:block shrink-0">
-      <button class="btn-primary"> Poptat projekt </button>
+      <button class="btn-primary">Poptat projekt</button>
     </a>
 
-    <!-- Mobile hamburger -->
+    <!-- Hamburger -->
     <button
       id="mobile-btn"
-      class="md:hidden p-2 -mr-2 flex items-center justify-center"
+      class="md:hidden p-2 -mr-2"
       aria-label="Menu"
       type="button"
     >
-      <svg width="22" height="18" viewBox="0 0 20 16" fill="none">
+      <svg
+        id="icon-open"
+        width="22"
+        height="18"
+        viewBox="0 0 20 16"
+        fill="none"
+      >
         <line x1="0" y1="1" x2="20" y2="1" stroke="#1a1612" stroke-width="1.5"
         ></line>
         <line x1="0" y1="8" x2="20" y2="8" stroke="#1a1612" stroke-width="1.5"
         ></line>
         <line x1="0" y1="15" x2="20" y2="15" stroke="#1a1612" stroke-width="1.5"
+        ></line>
+      </svg>
+      <svg
+        id="icon-close"
+        width="18"
+        height="18"
+        viewBox="0 0 16 16"
+        fill="none"
+        style="display:none"
+      >
+        <line x1="1" y1="1" x2="15" y2="15" stroke="#1a1612" stroke-width="1.5"
+        ></line>
+        <line x1="15" y1="1" x2="1" y2="15" stroke="#1a1612" stroke-width="1.5"
         ></line>
       </svg>
     </button>
@@ -77,18 +86,16 @@ const nav = [
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    data-open="false"
-    class="md:hidden bg-amber-50 border-t border-amber-200
-           px-6 py-6 flex flex-col gap-3 hidden"
+    style="display:none"
+    class="md:hidden bg-amber-50 border-t border-amber-200 px-6 py-6 flex-col gap-3"
   >
     {
       nav.map((item) => (
-        <a href={item.href} class="text-dark text-base py-2 block">
+        <a href={item.href} data-navlink class="text-dark text-base py-2 block">
           {item.name}
         </a>
       ))
     }
-
     <a
       href="/poptat-projekt"
       class="btn-primary w-full mt-4 text-center text-base"
@@ -96,22 +103,73 @@ const nav = [
       Poptat projekt
     </a>
   </div>
-
-  <script>
-    const btn = document.getElementById("mobile-btn");
-    const menu = document.getElementById("mobile-menu");
-
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        const isOpen = menu.dataset.open === "true";
-        menu.dataset.open = (!isOpen).toString();
-
-        if (isOpen) {
-          menu.classList.add("hidden");
-        } else {
-          menu.classList.remove("hidden");
-        }
-      });
-    }
-  </script>
 </header>
+
+<script>
+  function closeMenu() {
+    const menu = document.getElementById("mobile-menu") as HTMLElement;
+    const iconOpen = document.getElementById("icon-open") as HTMLElement;
+    const iconClose = document.getElementById("icon-close") as HTMLElement;
+    if (!menu) return;
+    menu.style.display = "none";
+    iconOpen.style.display = "block";
+    iconClose.style.display = "none";
+  }
+
+  function openMenu() {
+    const menu = document.getElementById("mobile-menu") as HTMLElement;
+    const iconOpen = document.getElementById("icon-open") as HTMLElement;
+    const iconClose = document.getElementById("icon-close") as HTMLElement;
+    if (!menu) return;
+    menu.style.display = "flex";
+    iconOpen.style.display = "none";
+    iconClose.style.display = "block";
+  }
+
+  function updateActiveLinks() {
+    const path = window.location.pathname;
+    document.querySelectorAll("[data-navlink]").forEach((link) => {
+      const a = link as HTMLAnchorElement;
+      if (a.getAttribute("href") === path) {
+        a.classList.add(
+          "text-amber-800",
+          "underline",
+          "underline-offset-4",
+          "decoration-amber-800",
+        );
+        a.classList.remove("text-gray-700");
+      } else {
+        a.classList.remove(
+          "text-amber-800",
+          "underline",
+          "underline-offset-4",
+          "decoration-amber-800",
+        );
+        a.classList.add("text-gray-700");
+      }
+    });
+  }
+
+  // Single persistent click listener — re-queries DOM every time
+  document.addEventListener("click", (e) => {
+    const target = e.target as Element;
+    if (target.closest("#mobile-btn")) {
+      const menu = document.getElementById("mobile-menu") as HTMLElement;
+      const isOpen = menu?.style.display === "flex";
+      isOpen ? closeMenu() : openMenu();
+      return;
+    }
+    if (target.closest("#mobile-menu")) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("astro:page-load", () => {
+    closeMenu();
+    updateActiveLinks();
+  });
+
+  // Init on first load
+  closeMenu();
+  updateActiveLinks();
+</script>

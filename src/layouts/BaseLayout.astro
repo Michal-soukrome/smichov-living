@@ -10,14 +10,14 @@ const { title = "Smíchov Living" } = Astro.props;
 <html lang="cs" transition:animate="fade" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <ClientRouter />
   </head>
-
   <body
     class="min-h-screen flex flex-col bg-white text-slate-900 scroll-smooth font-body"
   >
-    <Header />
+    <Header transition:persist />
 
     <main class="flex-1 font-body">
       <slot />

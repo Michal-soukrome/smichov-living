@@ -7,6 +7,9 @@ import realizace1 from "../assets/images/backgrounds/homepage.webp";
 import realizace2 from "../assets/images/backgrounds/sluzby.webp";
 import realizace3 from "../assets/images/backgrounds/kontakt.webp";
 import realizace4 from "../assets/images/backgrounds/showroom.webp";
+import SectionLabel from "../components/SectionLabel.astro";
+import ArrowedUnderline from "../components/ArrowedUnderline.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <BaseLayout
@@ -17,12 +20,13 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
     title="Pojďme společně vytvořit Váš nový domov"
     subtitle="Každý projekt začíná osobní konzultací. Poznáme Vaše představy, možnosti prostoru i rozpočet a navrhneme nejlepší cestu k realizaci."
     image={heroBg}
+    ctaText="Pojďme na to"
+    ctaHref="#poptavkovy-formular-sekce"
   />
   <section class="scroll-mt-10 px-6 md:px-20 py-10 md:py-20">
     <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
       <!-- LEVÝ SLOUPEC -->
       <div>
-        <!-- Jak probíhá spolupráce -->
         <div>
           <div>
             <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
@@ -51,39 +55,35 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
               }
             </div>
 
-            <div>
-              <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-                Jak probíhá spolupráce
-              </p>
-              <span class="block h-px w-10 bg-accent mb-10"></span>
+            <div class="hidden lg:block">
+              <div>
+                <SectionLabel label="Jak probíhá spolupráce" />
 
-              <div class="grid sm:grid-cols-3 gap-8 mb-16">
-                {
-                  contactData.steps.map((step) => (
-                    <div class="flex flex-col gap-3">
-                      <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
-                          {step.number}
+                <div class="grid sm:grid-cols-3 gap-8 mb-16">
+                  {
+                    contactData.steps.map((step) => (
+                      <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                            {step.number}
+                          </div>
+                          <h3 class="font-body font-bold text-stone-900 text-sm">
+                            {step.title}
+                          </h3>
                         </div>
-                        <h3 class="font-body font-bold text-stone-900 text-sm">
-                          {step.title}
-                        </h3>
-                      </div>
 
-                      <p class="font-body text-stone-500 text-sm leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
-                  ))
-                }
+                        <p class="font-body text-stone-500 text-sm leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
             </div>
 
             <div class="hidden lg:block">
-              <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-                Proč klienti volí Smíchov Living
-              </p>
-              <span class="block h-px w-10 bg-accent mb-8"></span>
+              <SectionLabel label="Proč klienti volí Smíchov Living" />
               <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                 {
                   contactData.reasons.map((r) => (
@@ -113,7 +113,10 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
       </div>
 
       <!-- PRAVÝ SLOUPEC -->
-      <div>
+      <div
+        class="scroll-mt-32 lg:sticky lg:top-24"
+        id="poptavkovy-formular-sekce"
+      >
         <div>
           <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
             Popište svůj projekt
@@ -123,223 +126,50 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
         </div>
 
         <div
-          class="bg-stone-50 border border-stone-200 p-3 md:p-8 lg:sticky lg:top-24"
+          class="bg-stone-50 border border-stone-200 p-3 md:p-8 lg:sticky lg:top-24 scroll-mt-24"
         >
           <h3 class="text-xl font-medium text-stone-900 mb-8">
             Poptávkový <strong class="font-bold">formulář</strong>
           </h3>
 
-          <form id="poptavka-form" class="flex flex-col gap-5" novalidate>
-            <!-- Hidden: typ projektu přenášíme ze selectoru vlevo -->
-            <input type="hidden" name="typ_projektu" id="typ-projektu-input" />
+          <ContactForm
+            id="poptavka-form"
+            showProjectType={true}
+            showBudget={true}
+            showCity={true}
+            showUpload={true}
+            projectTypes={contactData.projectTypes}
+            budgets={contactData.budgets}
+            submitText="Odeslat poptávku"
+          />
 
-            <!-- Jméno -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> Jméno a příjmení
-              </label>
-              <input
-                type="text"
-                name="jmeno"
-                required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-              />
+          <div class="block lg:hidden mt-16">
+            <SectionLabel label="Jak probíhá spolupráce" />
+            <div class="grid sm:grid-cols-3 gap-8 mb-16">
+              {
+                contactData.steps.map((step) => (
+                  <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                        {step.number}
+                      </div>
+                      <h3 class="font-body font-bold text-stone-900 text-sm">
+                        {step.title}
+                      </h3>
+                    </div>
+
+                    <p class="font-body text-stone-500 text-sm leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                ))
+              }
             </div>
-
-            <!-- Telefon -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> Telefon
-              </label>
-              <input
-                type="tel"
-                name="telefon"
-                required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-              />
-            </div>
-
-            <!-- E-mail -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> E-mail
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-              />
-            </div>
-
-            <!-- Město realizace -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> Město realizace
-              </label>
-              <input
-                type="text"
-                name="mesto"
-                required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-              />
-            </div>
-
-            <!-- Rozpočet -->
-            <div class="flex flex-col gap-2">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> Předpokládaný rozpočet
-              </label>
-              <div class="flex flex-wrap gap-2" id="budget-group">
-                {
-                  contactData.budgets.map((b) => (
-                    <button
-                      type="button"
-                      data-budget={b}
-                      class="budget-btn border cursor-pointer border-stone-300 px-3 py-1.5 text-xs font-body text-stone-700 hover:border-accent hover:bg-accent hover:text-white transition-colors"
-                    >
-                      {b}
-                    </button>
-                  ))
-                }
-              </div>
-              <input type="hidden" name="rozpocet" id="rozpocet-input" />
-            </div>
-
-            <!-- Popis projektu -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                <span class="text-red-500">*</span> Krátce nám popište svůj projekt
-              </label>
-              <textarea
-                name="popis"
-                required
-                rows="4"
-                placeholder="Napište nám pár informací o Vašem projektu, představách a požadavcích…"
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors resize-none placeholder:text-stone-400"
-              ></textarea>
-            </div>
-
-            <!-- Upload -->
-            <div class="flex flex-col gap-1.5">
-              <label class="font-body text-xs font-medium text-stone-700">
-                Nahrát půdorys nebo fotografie <span class="text-stone-400"
-                  >(volitelné)</span
-                >
-              </label>
-              <label
-                class="border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center gap-2 py-6 cursor-pointer hover:border-accent transition-colors"
-                id="upload-label"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6 text-stone-400"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                  ></path>
-                </svg>
-                <span class="font-body text-sm text-stone-600"
-                  >Přetáhněte soubor sem</span
-                >
-                <span class="font-body text-xs text-stone-400"
-                  >nebo klikněte pro nahrání</span
-                >
-                <span class="font-body text-xs text-stone-400"
-                  >PDF, JPG, PNG do 20 MB</span
-                >
-                <input
-                  type="file"
-                  name="soubory"
-                  multiple
-                  accept=".pdf,.jpg,.jpeg,.png"
-                  class="hidden"
-                  id="file-input"
-                />
-              </label>
-              <p id="file-names" class="text-xs text-stone-500 hidden"></p>
-            </div>
-
-            <!-- GDPR -->
-            <div class="flex items-start gap-2">
-              <input
-                type="checkbox"
-                name="gdpr"
-                id="gdpr"
-                required
-                class="mt-0.5 shrink-0 accent-accent"
-              />
-              <label
-                for="gdpr"
-                class="font-body text-xs text-stone-500 leading-relaxed"
-              >
-                <span class="text-xs text-red-500">*</span>
-
-                Souhlasím se <a
-                  href="/zpracovani-osobnich-udaju"
-                  class="underline hover:text-stone-800 transition-colors"
-                  >zpracováním osobních údajů</a
-                > za účelem zpracování poptávky.
-              </label>
-            </div>
-
-            <!-- Submit -->
-            <button type="submit" class="btn-primary mt-2">
-              Odeslat poptávku
-            </button>
-
-            <!-- Zpráva po odeslání -->
-            <p
-              id="form-success"
-              class="hidden text-sm font-body text-green-700 text-center"
-            >
-              Děkujeme! Ozveme se Vám co nejdříve.
-            </p>
-            <p
-              id="form-error"
-              class="hidden text-sm font-body text-red-600 text-center"
-            >
-              Něco se pokazilo. Zkuste to prosím znovu.
-            </p>
-          </form>
-        </div>
-        <div class="hidden md:block mt-16">
-          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
-            {
-              contactData.reasons.map((r) => (
-                <div class="flex items-start gap-3">
-                  <svg
-                    class="text-accent mt-0.5 shrink-0 w-4 h-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    />
-                  </svg>
-                  <span class="font-body text-sm text-stone-700">{r}</span>
-                </div>
-              ))
-            }
           </div>
         </div>
-        <div class="block md:hidden mt-16">
-          <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-            Proč klienti volí Smíchov Living
-          </p>
-          <span class="block h-px w-10 bg-accent mb-8"></span>
 
+        <div class="block lg:hidden mt-16">
+          <SectionLabel label="Proč klienti volí Smíchov Living" />
           <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {
               contactData.reasons.map((r) => (
@@ -366,67 +196,49 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
         </div>
       </div>
     </div>
-  </section>
-  <section class="scroll-mt-10 px-6 md:px-20 py-10 md:py-20">
-    <div>
-      <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-        Za námi stojí skutečné realizace
-      </p>
-      <span class="block h-px w-10 bg-accent mb-8"></span>
-    </div>
-    <div>
-      <div class="grid md:grid-cols-4 gap-5">
-        <div>
-          <img
-            src={realizace1.src}
-            alt="Realizace 1"
-            class="w-full h-48 object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src={realizace2.src}
-            alt="Realizace 1"
-            class="w-full h-48 object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src={realizace3.src}
-            alt="Realizace 1"
-            class="w-full h-48 object-cover"
-          />
-        </div>
-        <div>
-          <img
-            src={realizace4.src}
-            alt="Realizace 1"
-            class="w-full h-48 object-cover"
-          />
-        </div>
+
+    <section class="scroll-mt-10 px-6 md:px-20 py-10 md:py-20">
+      <div>
+        <SectionLabel label="Za námi stojí skutečné realizace" />
       </div>
-      <div class="w-full mt-8 text-center">
-        <a
+      <div>
+        <div class="grid md:grid-cols-4 gap-5">
+          <div>
+            <img
+              src={realizace1.src}
+              alt="Realizace 1"
+              class="w-full h-48 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src={realizace2.src}
+              alt="Realizace 1"
+              class="w-full h-48 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src={realizace3.src}
+              alt="Realizace 1"
+              class="w-full h-48 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src={realizace4.src}
+              alt="Realizace 1"
+              class="w-full h-48 object-cover"
+            />
+          </div>
+        </div>
+        <ArrowedUnderline
           href="/reference"
-          class="group inline-flex items-center gap-1.5 text-xs font-body text-stone-900 transition-colors uppercase tracking-widest underline mt-1"
-        >
-          zobrazit další realizace
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            class="w-3.5 h-3.5 group-hover:ml-2 transition-all duration-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-          </svg>
-        </a>
+          text="Zobrazit všechny realizace"
+          class="mx-auto text-center mt-8 w-full justify-center"
+        />
       </div>
-    </div>
+    </section>
   </section>
 
   <script>
@@ -481,7 +293,9 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
     });
 
     // Odeslání formuláře (přizpůsobte endpointu)
-    const form = document.getElementById("poptavka-form") as HTMLFormElement;
+    const form = document.getElementById(
+      "poptavkovy-formular",
+    ) as HTMLFormElement;
     const successMsg = document.getElementById(
       "form-success",
     ) as HTMLParagraphElement;

@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import heroBg from "../assets/images/backgrounds/kontakt.webp";
+import ArrowedUnderline from "../components/ArrowedUnderline.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 const team = [
   {
@@ -42,27 +44,11 @@ const team = [
           <p>Kováků 456/28</p>
           <p>Praha 5, 150 00</p>
         </div>
-        <a
+        <ArrowedUnderline
+          text="Zobrazit na mapě"
           href="https://maps.google.com/?q=Kováků+456/28,+Praha+5"
           target="_blank"
-          rel="noopener"
-          class="group inline-flex items-center gap-1.5 text-xs font-body text-accent hover:text-stone-900 transition-colors uppercase tracking-widest underline mt-1"
-        >
-          Zobrazit na mapě
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            class="w-3.5 h-3.5 group-hover:ml-2 transition-all transition-duration-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-          </svg>
-        </a>
+        />
       </div>
 
       <!-- Telefon + E-mail -->
@@ -102,25 +88,7 @@ const team = [
             <li>&nbsp;</li>
           </ul>
         </div>
-        <a
-          href="#kontakt-form"
-          class="group inline-flex items-center gap-1.5 text-xs font-body text-accent hover:text-stone-900 transition-colors uppercase tracking-widest underline mt-1"
-        >
-          Domluvit návštěvu
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            class="w-3.5 h-3.5 group-hover:ml-2 transition-all duration-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-          </svg>
-        </a>
+        <ArrowedUnderline text="Domluvit návštěvu" href="#kontaktni-formular" />
       </div>
 
       <!-- Sociální sítě -->
@@ -264,130 +232,13 @@ const team = [
   <!-- Kontaktní formulář -->
   <section
     class="scroll-mt-10 py-20 px-6 bg-stone-50 border-t border-stone-200"
-    id="kontakt-form"
+    id="kontaktni-formular"
   >
     <div class="max-w-2xl mx-auto">
       <h3 class="font-display text-2xl font-medium text-stone-900 mb-8">
         Kontaktní <strong class="font-bold">formulář</strong>
       </h3>
-      <form id="kontakt-form-el" class="flex flex-col gap-5" novalidate>
-        <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700">
-            <span class="text-red-500">*</span> Jméno a příjmení
-          </label>
-          <input
-            type="text"
-            name="jmeno"
-            required
-            class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-          />
-        </div>
-
-        <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700">
-            <span class="text-red-500">*</span> Telefon
-          </label>
-          <input
-            type="tel"
-            name="telefon"
-            required
-            class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-          />
-        </div>
-
-        <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700">
-            <span class="text-red-500">*</span> E-mail
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
-          />
-        </div>
-
-        <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700">
-            <span class="text-red-500">*</span> Váš dotaz
-          </label>
-          <textarea
-            name="popis"
-            required
-            rows="4"
-            placeholder="Napište nám svůj dotaz nebo popište svůj projekt..."
-            class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors resize-none placeholder:text-stone-400"
-          >
-          </textarea>
-        </div>
-
-        <div class="flex items-start gap-2">
-          <input
-            type="checkbox"
-            name="gdpr"
-            id="gdpr"
-            required
-            class="mt-0.5 shrink-0 accent-accent"
-          />
-          <label
-            for="gdpr"
-            class="font-body text-xs text-stone-500 leading-relaxed"
-          >
-            <span class="text-red-500">*</span>
-            Souhlasím se <a
-              href="/zpracovani-osobnich-udaju"
-              class="underline hover:text-stone-800 transition-colors"
-              >zpracováním osobních údajů</a
-            > za účelem zpracování poptávky.
-          </label>
-        </div>
-
-        <button type="submit" class="btn-primary mt-2"> Odeslat zprávu </button>
-
-        <p
-          id="form-success"
-          class="hidden text-sm font-body text-green-700 text-center"
-        >
-          Děkujeme! Ozveme se Vám co nejdříve.
-        </p>
-        <p
-          id="form-error"
-          class="hidden text-sm font-body text-red-600 text-center"
-        >
-          Něco se pokazilo. Zkuste to prosím znovu.
-        </p>
-      </form>
+      <ContactForm />
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  const form = document.getElementById("kontakt-form-el") as HTMLFormElement;
-  const successMsg = document.getElementById(
-    "form-success",
-  ) as HTMLParagraphElement;
-  const errorMsg = document.getElementById(
-    "form-error",
-  ) as HTMLParagraphElement;
-
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    successMsg.classList.add("hidden");
-    errorMsg.classList.add("hidden");
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // Odkomentujte a upravte dle Vašeho backendu:
-    // try {
-    //   const res = await fetch("/api/kontakt", { method: "POST", body: new FormData(form) });
-    //   if (res.ok) { successMsg.classList.remove("hidden"); form.reset(); }
-    //   else { errorMsg.classList.remove("hidden"); }
-    // } catch { errorMsg.classList.remove("hidden"); }
-
-    successMsg.classList.remove("hidden");
-    form.reset();
-  });
-</script>

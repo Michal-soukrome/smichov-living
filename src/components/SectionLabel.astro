@@ -1,0 +1,16 @@
+---
+// SectionLabel.astro
+interface Props {
+  label: string;
+  class?: string;
+}
+const { label, class: className } = Astro.props;
+---
+
+<div
+  class={`mb-8 ${className}`}
+  id={`sectionlabel-${label.toLowerCase().replace(/\s+/g, "-")}`}
+>
+  <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">{label}</p>
+  <span class="block h-px w-10 bg-accent"></span>
+</div>

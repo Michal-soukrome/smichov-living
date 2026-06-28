@@ -27,7 +27,7 @@ const { projects } = Astro.props;
         </div>
 
         <div class="flex flex-col justify-center px-0 md:px-14 py-10 md:py-0">
-          <p class="text-xs tracking-widest text-[#c9a96e] uppercase mb-3">
+          <p class="text-xs tracking-widest text-accent uppercase mb-3">
             {p.tag}
           </p>
           <h2 class="font-display text-3xl md:text-4xl font-medium text-stone-900 mb-4 leading-tight">
@@ -39,7 +39,7 @@ const { projects } = Astro.props;
           </p>
           <a
             href={p.href}
-            class="!hidden inline-flex items-center gap-2 text-xs tracking-widest uppercase font-body text-stone-900 border-b border-stone-900 pb-0.5 hover:text-[#c9a96e] hover:border-[#c9a96e] transition-colors w-fit"
+            class="!hidden inline-flex items-center gap-2 text-xs tracking-widest uppercase font-body text-stone-900 border-b border-stone-900 pb-0.5 hover:text-accent hover:border-accent transition-colors w-fit"
           >
             Zobrazit projekt
             <svg

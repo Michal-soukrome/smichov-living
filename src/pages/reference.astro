@@ -6,6 +6,7 @@ import ProjectList from "../components/ProjectList.astro";
 import heroBg from "../assets/images/backgrounds/reference.webp";
 import { projects } from "../data/projects.js";
 import Banner from "../components/Banner.astro";
+import SectionLabel from "../components/SectionLabel.astro";
 ---
 
 <BaseLayout
@@ -20,10 +21,7 @@ import Banner from "../components/Banner.astro";
 
   <section class="max-w-7xl mx-auto px-6 py-20">
     <div>
-      <p class="text-xs tracking-widest text-stone-500 uppercase shrink-0 mb-3">
-        Naše realizace
-      </p>
-      <span class="block h-px w-10 bg-accent mb-8"></span>
+      <SectionLabel label="Naše realizace" />
     </div>
 
     <ProjectList projects={projects} />

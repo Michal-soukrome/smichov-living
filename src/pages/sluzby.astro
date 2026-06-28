@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import heroBg from "../assets/images/backgrounds/sluzby.webp";
+import Steps from "../components/Steps.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Návrh interiéru",
+    desc: "Dispozice, vizualizace, výběr materiálů a technické řešení na míru.",
+  },
+  {
+    number: "02",
+    title: "Rekonstrukce na klíč",
+    desc: "Kompletní realizace a koordinace všech stavebních prací a profesí.",
+  },
+  {
+    number: "03",
+    title: "Nábytek na míru",
+    desc: "Kuchyně, šatny, vestavné skříně i kompletní vybavení interiéru.",
+  },
+  {
+    number: "04",
+    title: "Showroom",
+    desc: "Materiály, vzorky a řešení interiérů na jednom místě.",
+  },
+];
+---
+
+<BaseLayout
+  title="Služby | Smíchov Living - Kompletní rekonstrukce a design interiérů"
+>
+  <Hero
+    label="Naše služby"
+    title="Kompletní rekonstrukce a design interiérů"
+    subtitle="Nabízíme komplexní služby v oblasti rekonstrukcí a designu interiérů."
+    image={heroBg}
+    ctaText="Poptat projekt"
+    ctaHref="/poptat-projekt"
+    cta2Text="Více informací"
+    cta2Href="#sluzby"
+  />
+
+  <!-- 4 služby + foto -->
+  <section id="sluzby" class="scroll-mt-10">
+    <!-- Horní část: 4 sloupce -->
+    <div class="px-6 md:px-16 pt-16 pb-14 max-w-7xl mx-auto">
+      <p
+        class="text-center text-xs tracking-widest text-[#c9a96e] uppercase mb-12"
+      >
+        Co pro vás zajistíme
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-200">
+        {
+          services.map((s) => (
+            <div class="flex flex-col gap-4 px-6 first:pl-0 last:pr-0">
+              <h2 class="font-display text-2xl font-medium text-stone-900 leading-snug">
+                {s.title}
+              </h2>
+              <span class="block h-px w-8 bg-[#c9a96e]" />
+              <p class="font-body text-sm text-stone-500 leading-relaxed">
+                {s.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Spodní část: full-width foto -->
+    <div class="w-full h-72 md:h-[480px] overflow-hidden">
+      <img
+        src="/images/projects/sluzby.webp"
+        alt="Interiér Smíchov Living"
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </section>
+  <section>
+    <Steps />
+  </section>
+</BaseLayout>

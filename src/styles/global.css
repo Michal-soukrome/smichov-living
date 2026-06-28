@@ -18,7 +18,7 @@
 /* ---------------------- */
 
 .btn-primary {
-  @apply uppercase font-semibold text-sm;
+  @apply uppercase font-semibold text-sm flex items-center gap-2;
   background: var(--color-primary);
   cursor: pointer;
   color: var(--color-light);
@@ -34,7 +34,7 @@
 }
 
 .btn-secondary {
-  @apply uppercase font-semibold text-sm;
+  @apply uppercase font-semibold text-sm flex items-center gap-2;
   background: var(--color-secondary);
   cursor: pointer;
   color: var(--color-light);
@@ -46,11 +46,11 @@
 }
 
 .btn-secondary:hover {
-  background: #3a332d;
+  background: var(--color-accent-hover);
 }
 
 .btn-outline {
-  @apply uppercase font-semibold text-sm;
+  @apply uppercase font-semibold text-sm flex items-center gap-2;
   background: transparent;
   cursor: pointer;
   color: var(--color-secondary);

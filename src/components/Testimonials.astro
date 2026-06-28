@@ -1,0 +1,49 @@
+---
+const testimonials = [
+  {
+    quote: "Smíchov Living proměnil náš byt k nepoznání. Od prvního setkání až po předání jsme měli vše pod kontrolou a výsledek předčil naše očekávání.",
+    name: "Petra Nováková",
+    project: "Rekonstrukce bytu, Praha 5",
+  },
+  {
+    quote: "Oceňujeme hlavně profesionální přístup a transparentnost. Rozpočet se dodržel, termín taky. To jsme od předchozí zkušenosti s rekonstrukcí nečekali.",
+    name: "Martin a Jana Horáčkovi",
+    project: "Rodinný dům, Praha západ",
+  },
+  {
+    quote: "Kuchyň na míru je přesně to, co jsme si představovali. Romana pochopila naše potřeby hned na první konzultaci a výsledek je dokonalý.",
+    name: "Lucie Marková",
+    project: "Kuchyně na míru, Praha 2",
+  },
+];
+---
+
+<!-- Testimonials -->
+<section class="p-10 bg-stone-50 shadow">
+  <div class="max-w-7xl mx-auto">
+
+    <div>
+      <p class="text-xs tracking-widest text-stone-500 uppercase shrink-0 mb-3">Co říkají klienti</p>
+          <span class="block h-px w-10 bg-accent mb-8"></span>
+    </div>
+
+    <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200">
+      {testimonials.map((t) => (
+        <div class="flex flex-col gap-6 px-0 md:px-10 py-10 md:py-0 first:pl-0 last:pr-0">
+          <!-- Uvozovky -->
+          <span class="text-[#c9a96e] font-display text-5xl leading-none select-none">&ldquo;</span>
+
+          <p class="font-body text-sm text-stone-700 leading-relaxed -mt-4">
+            {t.quote}
+          </p>
+
+          <div class="mt-auto pt-6 border-t border-stone-200">
+            <p class="font-body text-sm font-semibold text-stone-900">{t.name}</p>
+            <p class="font-body text-xs text-stone-400 mt-0.5">{t.project}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

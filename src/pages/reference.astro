@@ -2,13 +2,114 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import heroBg from "../assets/images/backgrounds/reference.webp";
+import Testimonials from "../components/Testimonials.astro";
+
+const projects = [
+  {
+    tag: "Byt 3+KK",
+    title: "Byt na Smíchově",
+    desc: "Kompletní rekonstrukce bytu včetně návrhu interiéru a výroby nábytku na míru.",
+    href: "/reference/byt-na-smichove",
+    image: "/images/projects/homepage.webp",
+  },
+  {
+    tag: "Rodinný dům",
+    title: "Rodinný dům – Praha západ",
+    desc: "Kompletní realizace interiéru rodinného domu v nadčasovém přírodním stylu.",
+    href: "/reference/rodinny-dum-praha-zapad",
+    image: "/images/projects/sluzby.webp",
+  },
+  {
+    tag: "Byt 4+KK",
+    title: "Moderní byt v centru Prahy",
+    desc: "Návrh dispozice, realizace na klíč a kompletní vybavení interiéru prémiovými materiály.",
+    href: "/reference/moderni-byt-centrum-prahy",
+    image: "/images/projects/showroom.webp",
+  },
+];
 ---
 
-<BaseLayout title="Smíchov Living - Kompletní rekonstrukce a design interiérů">
+<BaseLayout
+  title="Reference | Smíchov Living - Kompletní rekonstrukce a design interiérů"
+>
   <Hero
     label="Reference"
     title="Co na našich projektech oceňují naši klienti"
     subtitle="Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou."
     image={heroBg}
   />
+
+  <!-- Realizace -->
+  <section class="max-w-7xl mx-auto px-6 py-20">
+    <div>
+      <p class="text-xs tracking-widest text-stone-500 uppercase shrink-0 mb-3">
+        Naše realizace
+      </p>
+      <span class="block h-px w-10 bg-accent mb-8"></span>
+    </div>
+
+    <div class="flex flex-col divide-y divide-stone-200">
+      {
+        projects.map((p) => (
+          <div class="grid md:grid-cols-[3fr_2fr] gap-0 group">
+            <div class="overflow-hidden">
+              <img
+                src={p.image}
+                alt={p.title}
+                class="w-full h-72 md:h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </div>
+
+            <div class="flex flex-col justify-center px-0 md:px-14 py-10 md:py-0">
+              <p class="text-xs tracking-widest text-[#c9a96e] uppercase mb-3">
+                {p.tag}
+              </p>
+              <h2 class="font-display text-3xl md:text-4xl font-medium text-stone-900 mb-4 leading-tight">
+                {p.title}
+              </h2>
+              <span class="block h-px w-10 bg-stone-300 mb-5" />
+              <p class="font-body text-sm text-stone-500 leading-relaxed mb-8">
+                {p.desc}
+              </p>
+              <a href={p.href} class="!hidden btn-primary">
+                Zobrazit projekt
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="w-3.5 h-3.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+    <Testimonials />
+    <div class="mt-10">
+      <div
+        class="border border-stone-200 px-10 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+      >
+        <div>
+          <p class="font-display text-xl font-medium text-stone-900">
+            Máte představu o svém novém interiéru?
+          </p>
+          <p class="font-body text-sm text-stone-500 mt-1">
+            Rádi s vámi probereme možnosti spolupráce.
+          </p>
+        </div>
+        <a href="/poptat-projekt" class="btn-primary"> Poptat projekt </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

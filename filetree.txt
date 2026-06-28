@@ -21,7 +21,7 @@
 │   ├── assets/
 │   │   └── images/
 │   │       └── backgrounds/
-│   │           ├── co-delame.webp
+│   │           ├── sluzby.webp
 │   │           ├── homepage.webp
 │   │           ├── kontakt.webp
 │   │           ├── poptat-projekt.webp
@@ -36,7 +36,7 @@
 │   │   ├── contactData.js
 │   │   └── services.js
 │   ├── pages/
-│   │   ├── co-delame.astro
+│   │   ├── sluzby.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
 │   │   ├── poptat-projekt.astro

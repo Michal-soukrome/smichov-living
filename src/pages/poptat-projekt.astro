@@ -3,6 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import heroBg from "../assets/images/backgrounds/poptat-projekt.webp";
 import contactData from "../data/contactData.js";
+import realizace1 from "../assets/images/backgrounds/homepage.webp";
+import realizace2 from "../assets/images/backgrounds/co-delame.webp";
+import realizace3 from "../assets/images/backgrounds/kontakt.webp";
+import realizace4 from "../assets/images/backgrounds/showroom.webp";
 ---
 
 <BaseLayout
@@ -25,7 +29,7 @@ import contactData from "../data/contactData.js";
           </p>
           <span class="block h-px w-10 bg-[#c9a96e] mb-10"></span>
 
-          <div class="grid sm:grid-cols-2 gap-8 mb-16">
+          <div class="grid sm:grid-cols-3 gap-8 mb-16">
             {
               contactData.steps.map((step) => (
                 <div class="flex flex-col gap-3">
@@ -76,7 +80,7 @@ import contactData from "../data/contactData.js";
               <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
                 Proč klienti volí Smíchov Living
               </p>
-              <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
+              <span class="block h-px w-10 bg-accent mb-8"></span>
               <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                 {
                   contactData.reasons.map((r) => (
@@ -116,11 +120,11 @@ import contactData from "../data/contactData.js";
         </div>
 
         <div
-          class="bg-stone-50 border border-stone-200 p-3 md:p-8 lg:sticky lg:top-8"
+          class="bg-stone-50 border border-stone-200 p-3 md:p-8 lg:sticky lg:top-24"
         >
-          <h2 class="text-xl font-medium text-stone-900 mb-8">
-            Poptat <strong class="font-bold">projekt</strong>
-          </h2>
+          <h3 class="text-xl font-medium text-stone-900 mb-8">
+            Poptávkový <strong class="font-bold">formulář</strong>
+          </h3>
 
           <form id="poptavka-form" class="flex flex-col gap-5" novalidate>
             <!-- Hidden: typ projektu přenášíme ze selectoru vlevo -->
@@ -360,94 +364,136 @@ import contactData from "../data/contactData.js";
       </div>
     </div>
   </section>
+  <section class="scroll-mt-10 px-6 md:px-20 py-10 md:py-20">
+    <div>
+      <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+        Za námi stojí skutečné realizace
+      </p>
+    </div>
+    <div>
+      <div class="grid md:grid-cols-4 gap-5">
+        <div>
+          <img
+            src={realizace1.src}
+            alt="Realizace 1"
+            class="w-full h-48 object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src={realizace2.src}
+            alt="Realizace 1"
+            class="w-full h-48 object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src={realizace3.src}
+            alt="Realizace 1"
+            class="w-full h-48 object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src={realizace4.src}
+            alt="Realizace 1"
+            class="w-full h-48 object-cover"
+          />
+        </div>
+      </div>
+      <div class="w-full mt-8 text-center">
+        <a href="/reference" class="btn-outline"> zobrazit další realizace </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Výběr typu projektu (synchronizace s mřížkou vlevo)
+    const projectBtns =
+      document.querySelectorAll<HTMLButtonElement>(".project-type-btn");
+    const typInput = document.getElementById(
+      "typ-projektu-input",
+    ) as HTMLInputElement;
+
+    projectBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        projectBtns.forEach((b) =>
+          // ODEBRAT AKTIVNÍ CLASSY
+          b.classList.remove("bg-[#c9a96e]", "border-[#c9a96e]", "text-white"),
+        );
+        // AKTIVNÍ CLASSY
+        btn.classList.add("bg-[#c9a96e]", "border-[#c9a96e]", "text-white");
+        typInput.value = btn.dataset.value ?? "";
+      });
+    });
+
+    // Výběr rozpočtu
+    const budgetBtns =
+      document.querySelectorAll<HTMLButtonElement>(".budget-btn");
+    const budgetInput = document.getElementById(
+      "rozpocet-input",
+    ) as HTMLInputElement;
+
+    budgetBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        budgetBtns.forEach((b) =>
+          b.classList.remove("border-[#c9a96e]", "text-white", "bg-[#c9a96e]"),
+        );
+        btn.classList.add("border-[#c9a96e]", "text-white", "bg-[#c9a96e]");
+        budgetInput.value = btn.dataset.budget ?? "";
+      });
+    });
+
+    // Zobrazení názvů souborů
+    const fileInput = document.getElementById("file-input") as HTMLInputElement;
+    const fileNames = document.getElementById(
+      "file-names",
+    ) as HTMLParagraphElement;
+
+    fileInput?.addEventListener("change", () => {
+      const files = Array.from(fileInput.files ?? []);
+      if (files.length > 0) {
+        fileNames.textContent = files.map((f) => f.name).join(", ");
+        fileNames.classList.remove("hidden");
+      }
+    });
+
+    // Odeslání formuláře (přizpůsobte endpointu)
+    const form = document.getElementById("poptavka-form") as HTMLFormElement;
+    const successMsg = document.getElementById(
+      "form-success",
+    ) as HTMLParagraphElement;
+    const errorMsg = document.getElementById(
+      "form-error",
+    ) as HTMLParagraphElement;
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      successMsg.classList.add("hidden");
+      errorMsg.classList.add("hidden");
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Odkomentujte a upravte dle Vašeho backendu:
+      // try {
+      //   const data = new FormData(form);
+      //   const res = await fetch("/api/poptavka", { method: "POST", body: data });
+      //   if (res.ok) {
+      //     successMsg.classList.remove("hidden");
+      //     form.reset();
+      //   } else {
+      //     errorMsg.classList.remove("hidden");
+      //   }
+      // } catch {
+      //   errorMsg.classList.remove("hidden");
+      // }
+
+      // Dočasné potvrzení bez backendu:
+      successMsg.classList.remove("hidden");
+      form.reset();
+    });
+  </script>
 </BaseLayout>
-
-<script>
-  // Výběr typu projektu (synchronizace s mřížkou vlevo)
-  const projectBtns =
-    document.querySelectorAll<HTMLButtonElement>(".project-type-btn");
-  const typInput = document.getElementById(
-    "typ-projektu-input",
-  ) as HTMLInputElement;
-
-  projectBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      projectBtns.forEach((b) =>
-        // ODEBRAT AKTIVNÍ CLASSY
-        b.classList.remove("bg-[#c9a96e]", "border-[#c9a96e]", "text-white"),
-      );
-      // AKTIVNÍ CLASSY
-      btn.classList.add("bg-[#c9a96e]", "border-[#c9a96e]", "text-white");
-      typInput.value = btn.dataset.value ?? "";
-    });
-  });
-
-  // Výběr rozpočtu
-  const budgetBtns =
-    document.querySelectorAll<HTMLButtonElement>(".budget-btn");
-  const budgetInput = document.getElementById(
-    "rozpocet-input",
-  ) as HTMLInputElement;
-
-  budgetBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      budgetBtns.forEach((b) =>
-        b.classList.remove("border-[#c9a96e]", "text-white", "bg-[#c9a96e]"),
-      );
-      btn.classList.add("border-[#c9a96e]", "text-white", "bg-[#c9a96e]");
-      budgetInput.value = btn.dataset.budget ?? "";
-    });
-  });
-
-  // Zobrazení názvů souborů
-  const fileInput = document.getElementById("file-input") as HTMLInputElement;
-  const fileNames = document.getElementById(
-    "file-names",
-  ) as HTMLParagraphElement;
-
-  fileInput?.addEventListener("change", () => {
-    const files = Array.from(fileInput.files ?? []);
-    if (files.length > 0) {
-      fileNames.textContent = files.map((f) => f.name).join(", ");
-      fileNames.classList.remove("hidden");
-    }
-  });
-
-  // Odeslání formuláře (přizpůsobte endpointu)
-  const form = document.getElementById("poptavka-form") as HTMLFormElement;
-  const successMsg = document.getElementById(
-    "form-success",
-  ) as HTMLParagraphElement;
-  const errorMsg = document.getElementById(
-    "form-error",
-  ) as HTMLParagraphElement;
-
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    successMsg.classList.add("hidden");
-    errorMsg.classList.add("hidden");
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // Odkomentujte a upravte dle Vašeho backendu:
-    // try {
-    //   const data = new FormData(form);
-    //   const res = await fetch("/api/poptavka", { method: "POST", body: data });
-    //   if (res.ok) {
-    //     successMsg.classList.remove("hidden");
-    //     form.reset();
-    //   } else {
-    //     errorMsg.classList.remove("hidden");
-    //   }
-    // } catch {
-    //   errorMsg.classList.remove("hidden");
-    // }
-
-    // Dočasné potvrzení bez backendu:
-    successMsg.classList.remove("hidden");
-    form.reset();
-  });
-</script>

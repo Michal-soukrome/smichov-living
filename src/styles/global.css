@@ -5,6 +5,11 @@
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Jost", sans-serif;
   --font-title: "Playfair Display", serif;
+  --color-primary: #ac8b55;
+  --color-secondary: #1a1612;
+  --color-accent: #c9a96e;
+  --color-dark: #1a1612;
+  --color-light: #f4f0e8;
 }
 
 /* ---------------------- */
@@ -13,11 +18,11 @@
 
 .btn-primary {
   @apply uppercase font-semibold text-sm;
-  background: #ac8b55;
+  background: var(--color-primary);
   cursor: pointer;
-  color: #f4f0e8;
+  color: var(--color-light);
   padding: 0.6rem 1.4rem;
-  border: 1px solid #ac8b55;
+  border: 1px solid var(--color-primary);
   transition:
     background 0.25s,
     color 0.25s;
@@ -29,11 +34,11 @@
 
 .btn-secondary {
   @apply uppercase font-semibold text-sm;
-  background: #1a1612;
+  background: var(--color-secondary);
   cursor: pointer;
-  color: #f4f0e8;
+  color: var(--color-light);
   padding: 0.6rem 1.4rem;
-  border: 1px solid #ac8b55;
+  border: 1px solid var(--color-accent);
   transition:
     background 0.25s,
     color 0.25s;
@@ -41,6 +46,23 @@
 
 .btn-secondary:hover {
   background: #3a332d;
+}
+
+.btn-outline {
+  @apply uppercase font-semibold text-sm;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-secondary);
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--color-accent);
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-light);
 }
 
 /* ---------------------- */

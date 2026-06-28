@@ -22,18 +22,17 @@ const { projects } = Astro.props;
           <img
             src={p.image}
             alt={p.title}
-            class="w-full h-72 md:h-80 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            class="w-full h-72 md:min-h-80 md:h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
           />
         </div>
 
-        <div class="flex flex-col justify-center px-0 md:px-14 py-10 md:py-0">
+        <div class="flex flex-col justify-center px-0 md:px-14 py-10 md:py-10">
           <p class="text-xs tracking-widest text-accent uppercase mb-3">
             {p.tag}
           </p>
           <h2 class="font-display text-3xl md:text-4xl font-medium text-stone-900 mb-4 leading-tight">
             {p.title}
           </h2>
-          <span class="block h-px w-10 bg-stone-300 mb-5" />
           <p class="font-body text-sm text-stone-500 leading-relaxed mb-8">
             {p.desc}
           </p>

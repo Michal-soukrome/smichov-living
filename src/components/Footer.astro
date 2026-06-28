@@ -8,31 +8,32 @@ const nav = [
 ];
 ---
 
-<footer class="bg-white border-t border-gray-200 pt-12 pb-6 mt-10">
-  <div
-    class="w-full px-10 md:px-20 grid md:grid-cols-2 md:grid-cols-5 gap-8 mb-10"
-  >
-    <!-- Logo + text -->
+<footer class="bg-white border-t border-gray-200 pt-12 pb-6">
+  <div class="w-full px-10 md:px-20 grid md:grid-cols-4 gap-10 mb-10">
+    <!-- Logo + claim -->
     <div class="md:col-span-2">
-      <!-- Logo -->
       <a href="/" class="flex items-center gap-2 group shrink-0">
-        <div class="flex gap-1 leading-none">
-          <span
-            class="block font-display text-[0.85rem] sm:text-sm md:text-base font-medium tracking-widest uppercase text-dark"
-            style="letter-spacing: 0.18em"
-          >
-            Smíchov
-          </span>
-          <span
-            class="block font-display text-[0.85rem] sm:text-sm md:text-base font-light tracking-widest uppercase text-amber-dark"
-            style="letter-spacing: 0.22em"
-          >
-            Living
-          </span>
+        <div class="flex items-center gap-1">
+          <img src="/assets/logo/sl-logo.webp" class="w-7 h-7" />
+
+          <div class="flex gap-1 leading-none">
+            <span
+              class="block font-display text-sm md:text-base font-medium tracking-widest uppercase text-dark"
+              style="letter-spacing: 0.18em"
+            >
+              Smíchov
+            </span>
+            <span
+              class="block font-display text-sm md:text-base font-light tracking-widest uppercase text-amber-dark"
+              style="letter-spacing: 0.22em"
+            >
+              Living
+            </span>
+          </div>
         </div>
       </a>
 
-      <p class="text-xs text-gray-600 leading-relaxed mt-1">
+      <p class="text-xs text-gray-600 leading-relaxed mt-3">
         Rekonstrukce a realizace interiérů na klíč. Od návrhu po předání
         hotového domova.
       </p>
@@ -75,30 +76,25 @@ const nav = [
       </div>
     </div>
 
-    <!-- Navigace -->
-    <div>
-      <p class="text-sm font-semibold mb-4 text-black">Navigace</p>
-      <ul class="flex flex-col gap-2">
-        {
-          nav.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class="text-xs text-gray-700 hover:text-black transition-colors"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-
     <!-- Kontakt -->
     <div>
-      <p class="text-sm font-semibold mb-4 text-black">Kontakt</p>
-      <p class="text-xs text-gray-700 leading-relaxed">+420 737 737 733</p>
-      <p class="text-xs text-gray-700 leading-relaxed">info@smichovliving.cz</p>
+      <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+        Kontakt
+      </p>
+      <a
+        href="tel:+420737737733"
+        class="text-xs text-gray-700 leading-relaxed hover:underline transition-colors"
+      >
+        +420 737 737 733
+      </a>
+      <br />
+      <a
+        href="mailto:info@smichovliving.cz"
+        class="text-xs text-gray-700 leading-relaxed hover:underline transition-colors"
+      >
+        info@smichovliving.cz
+      </a>
+
       <p class="text-xs text-gray-700 leading-relaxed mt-2">
         Smíchov Living s.r.o.<br />
         Kováků 456/28<br />
@@ -108,21 +104,25 @@ const nav = [
 
     <!-- Právní -->
     <div>
-      <p class="text-sm font-semibold mb-4 text-black">Právní informace</p>
-      <ul class="flex flex-col gap-2">
+      <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+        Důležité
+      </p>
+      <ul class="flex flex-col gap-1">
         <li>
           <a
             href="#"
-            class="text-xs text-gray-700 hover:text-black transition-colors"
-            >Ochrana osobních údajů</a
+            class="text-xs text-gray-700 hover:text-black transition-colors hover:underline"
           >
+            Ochrana osobních údajů
+          </a>
         </li>
         <li>
           <a
             href="#"
-            class="text-xs text-gray-700 hover:text-black transition-colors"
-            >Cookies</a
+            class="text-xs text-gray-700 hover:text-black transition-colors hover:underline"
           >
+            Cookies
+          </a>
         </li>
       </ul>
     </div>

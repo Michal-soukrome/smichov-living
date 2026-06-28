@@ -3,7 +3,7 @@ import { services, steps } from "../data/services";
 import Steps from "./Steps.astro";
 ---
 
-<section class="scroll-mt-10 py-24 px-6 max-w-7xl mx-auto" id="sluzby">
+<section class="scroll-mt-30 py-24 px-6 max-w-7xl mx-auto" id="sluzby">
   <p class="text-center text-xs tracking-widest text-stone-500 uppercase mb-4">
     Co pro vás zajistíme
   </p>
@@ -14,15 +14,19 @@ import Steps from "./Steps.astro";
     Vše pod jednou střechou
   </h2>
 
-  <div class="grid md:grid-cols-4 border-l border-t border-stone-200">
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 border-l border-t border-stone-200"
+  >
     {
       services.map((s) => (
-        <div class="border-r border-b border-stone-200 p-8 flex flex-col items-center text-center gap-4 group hover:bg-stone-50 transition-colors">
-          <div class="text-accent" set:html={s.icon} />
+        <div class="border-r border-b border-stone-200 p-8 flex flex-col gap-4">
           <h3 class="font-body font-semibold text-stone-900 text-sm tracking-wide">
             {s.title}
           </h3>
-          <p class="font-body text-stone-500 text-sm leading-relaxed">
+
+          <span class="block h-px w-8 bg-[#c9a96e]" />
+
+          <p class="font-body text-sm text-stone-500 leading-relaxed">
             {s.desc}
           </p>
         </div>

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import contactData from "../data/contactData.js";
 import heroBg from "../assets/images/backgrounds/kontakt.webp";
 ---
 
@@ -15,377 +14,50 @@ import heroBg from "../assets/images/backgrounds/kontakt.webp";
     image={heroBg}
   />
 
-  <section class="px-6 md:px-20 py-20">
-    <div class="grid lg:grid-cols-[1fr_480px] gap-16 items-start">
-      <!-- LEVÝ SLOUPEC -->
-      <div>
-        <!-- Jak probíhá spolupráce -->
-        <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-          Jak probíhá spolupráce
-        </p>
-        <span class="block h-px w-10 bg-[#c9a96e] mb-10"></span>
+  <section class="scroll-mt-10 px-6 md:px-20 py-20 grid md:grid-cols-2 gap-16">
+    <div class="space-y-6">
+      <h2 class="text-3xl font-semibold">Kontaktní údaje</h2>
+      <p class="text-gray-700 leading-relaxed">
+        Máte dotaz k projektu nebo chcete nezávaznou konzultaci?
+      </p>
 
-        <div class="grid sm:grid-cols-3 gap-8 mb-16">
-          {
-            contactData.steps.map((step) => (
-              <div class="flex flex-col gap-3">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-full bg-[#c9a96e] flex items-center justify-center text-white text-xs font-semibold shrink-0">
-                    {step.number}
-                  </div>
-                  <div class="text-stone-400" set:html={step.icon} />
-                </div>
-                <h3 class="font-body font-bold text-stone-900 text-sm">
-                  {step.title}
-                </h3>
-                <p class="font-body text-stone-500 text-sm leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-
-        <!-- Vyberte typ projektu -->
-        <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-          Vyberte typ projektu
-        </p>
-        <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
-
-        <div
-          class="grid grid-cols-3 border-l border-t border-stone-200 mb-16"
-          id="project-type-grid"
-        >
-          {
-            contactData.projectTypes.map((pt) => (
-              <button
-                type="button"
-                data-value={pt.value}
-                class="project-type-btn border-r border-b border-stone-200 p-6 flex flex-col items-center gap-3 text-center hover:bg-stone-50 transition-colors cursor-pointer"
-              >
-                <div class="text-stone-400" set:html={pt.icon} />
-                <span class="font-body text-sm font-medium text-stone-800 leading-snug">
-                  {pt.label}
-                </span>
-              </button>
-            ))
-          }
-        </div>
-
-        <!-- Proč klienti volí Smíchov Living -->
-        <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-          Proč klienti volí Smíchov Living
-        </p>
-        <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
-
-        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
-          {
-            contactData.reasons.map((r) => (
-              <div class="flex items-start gap-3">
-                <svg
-                  class="text-[#c9a96e] mt-0.5 shrink-0 w-4 h-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4.5 12.75l6 6 9-13.5"
-                  />
-                </svg>
-                <span class="font-body text-sm text-stone-700">{r}</span>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <!-- PRAVÝ SLOUPEC – formulář -->
-      <div class="bg-stone-50 border border-stone-200 p-8 lg:sticky lg:top-8">
-        <h2 class="font-display text-xl font-medium text-stone-900 mb-8">
-          Poptat <strong class="font-bold">projekt</strong>
-        </h2>
-
-        <form id="poptavka-form" class="flex flex-col gap-5" novalidate>
-          <!-- Hidden: typ projektu přenášíme ze selectoru vlevo -->
-          <input type="hidden" name="typ_projektu" id="typ-projektu-input" />
-
-          <!-- Jméno -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> Jméno a příjmení
-            </label>
-            <input
-              type="text"
-              name="jmeno"
-              required
-              class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
-            />
-          </div>
-
-          <!-- Telefon -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> Telefon
-            </label>
-            <input
-              type="tel"
-              name="telefon"
-              required
-              class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
-            />
-          </div>
-
-          <!-- E-mail -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> E-mail
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
-            />
-          </div>
-
-          <!-- Město realizace -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> Město realizace
-            </label>
-            <input
-              type="text"
-              name="mesto"
-              required
-              class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
-            />
-          </div>
-
-          <!-- Rozpočet -->
-          <div class="flex flex-col gap-2">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> Předpokládaný rozpočet
-            </label>
-            <div class="flex flex-wrap gap-2" id="budget-group">
-              {
-                contactData.budgets.map((b) => (
-                  <button
-                    type="button"
-                    data-budget={b}
-                    class="budget-btn border border-stone-300 px-3 py-1.5 text-xs font-body text-stone-700 hover:border-[#c9a96e] hover:text-[#c9a96e] transition-colors"
-                  >
-                    {b}
-                  </button>
-                ))
-              }
-            </div>
-            <input type="hidden" name="rozpocet" id="rozpocet-input" />
-          </div>
-
-          <!-- Popis projektu -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              <span class="text-[#c9a96e]">*</span> Krátce nám popište svůj projekt
-            </label>
-            <textarea
-              name="popis"
-              required
-              rows="4"
-              placeholder="Napište nám pár informací o Vašem projektu, představách a požadavcích…"
-              class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors resize-none placeholder:text-stone-400"
-            ></textarea>
-          </div>
-
-          <!-- Upload -->
-          <div class="flex flex-col gap-1.5">
-            <label class="font-body text-xs font-medium text-stone-700">
-              Nahrát půdorys nebo fotografie <span class="text-stone-400"
-                >(volitelné)</span
-              >
-            </label>
-            <label
-              class="border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center gap-2 py-6 cursor-pointer hover:border-[#c9a96e] transition-colors"
-              id="upload-label"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 text-stone-400"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-                ></path>
-              </svg>
-              <span class="font-body text-sm text-stone-600"
-                >Přetáhněte soubor sem</span
-              >
-              <span class="font-body text-xs text-stone-400"
-                >nebo klikněte pro nahrání</span
-              >
-              <span class="font-body text-xs text-stone-400"
-                >PDF, JPG, PNG do 20 MB</span
-              >
-              <input
-                type="file"
-                name="soubory"
-                multiple
-                accept=".pdf,.jpg,.jpeg,.png"
-                class="hidden"
-                id="file-input"
-              />
-            </label>
-            <p id="file-names" class="text-xs text-stone-500 hidden"></p>
-          </div>
-
-          <!-- GDPR -->
-          <div class="flex items-start gap-3">
-            <input
-              type="checkbox"
-              name="gdpr"
-              id="gdpr"
-              required
-              class="mt-0.5 shrink-0 accent-[#c9a96e]"
-            />
-            <label
-              for="gdpr"
-              class="font-body text-xs text-stone-500 leading-relaxed"
-            >
-              Souhlasím se <a
-                href="/zpracovani-osobnich-udaju"
-                class="underline hover:text-stone-800 transition-colors"
-                >zpracováním osobních údajů</a
-              > za účelem zpracování poptávky.
-            </label>
-          </div>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            class="bg-stone-900 text-white font-body text-xs tracking-widest uppercase py-4 hover:bg-stone-700 transition-colors mt-2"
-          >
-            Odeslat poptávku
-          </button>
-
-          <!-- Zpráva po odeslání -->
-          <p
-            id="form-success"
-            class="hidden text-sm font-body text-green-700 text-center"
-          >
-            Děkujeme! Ozveme se Vám co nejdříve.
-          </p>
-          <p
-            id="form-error"
-            class="hidden text-sm font-body text-red-600 text-center"
-          >
-            Něco se pokazilo. Zkuste to prosím znovu.
-          </p>
-        </form>
+      <div class="space-y-3 text-gray-800">
+        <p><strong>Telefon:</strong> +420 123 456 789</p>
+        <p><strong>Email:</strong> info@smichovliving.cz</p>
+        <p><strong>Adresa:</strong> U Smíchovského nádraží 12, Praha 5</p>
       </div>
     </div>
+
+    <form class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-1">Jméno</label>
+        <input
+          type="text"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">E‑mail</label>
+        <input
+          type="email"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Zpráva</label>
+        <textarea
+          rows="4"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2"></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+      >
+        Odeslat
+      </button>
+    </form>
   </section>
 </BaseLayout>
-
-<script>
-  // Výběr typu projektu (synchronizace s mřížkou vlevo)
-  const projectBtns =
-    document.querySelectorAll<HTMLButtonElement>(".project-type-btn");
-  const typInput = document.getElementById(
-    "typ-projektu-input",
-  ) as HTMLInputElement;
-
-  projectBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      projectBtns.forEach((b) =>
-        b.classList.remove(
-          "bg-stone-100",
-          "border-[#c9a96e]",
-          "text-[#c9a96e]",
-        ),
-      );
-      btn.classList.add("bg-stone-100", "border-[#c9a96e]", "text-[#c9a96e]");
-      typInput.value = btn.dataset.value ?? "";
-    });
-  });
-
-  // Výběr rozpočtu
-  const budgetBtns =
-    document.querySelectorAll<HTMLButtonElement>(".budget-btn");
-  const budgetInput = document.getElementById(
-    "rozpocet-input",
-  ) as HTMLInputElement;
-
-  budgetBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      budgetBtns.forEach((b) =>
-        b.classList.remove(
-          "border-[#c9a96e]",
-          "text-[#c9a96e]",
-          "bg-[#c9a96e]/5",
-        ),
-      );
-      btn.classList.add("border-[#c9a96e]", "text-[#c9a96e]", "bg-[#c9a96e]/5");
-      budgetInput.value = btn.dataset.budget ?? "";
-    });
-  });
-
-  // Zobrazení názvů souborů
-  const fileInput = document.getElementById("file-input") as HTMLInputElement;
-  const fileNames = document.getElementById(
-    "file-names",
-  ) as HTMLParagraphElement;
-
-  fileInput?.addEventListener("change", () => {
-    const files = Array.from(fileInput.files ?? []);
-    if (files.length > 0) {
-      fileNames.textContent = files.map((f) => f.name).join(", ");
-      fileNames.classList.remove("hidden");
-    }
-  });
-
-  // Odeslání formuláře (přizpůsobte endpointu)
-  const form = document.getElementById("poptavka-form") as HTMLFormElement;
-  const successMsg = document.getElementById(
-    "form-success",
-  ) as HTMLParagraphElement;
-  const errorMsg = document.getElementById(
-    "form-error",
-  ) as HTMLParagraphElement;
-
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    successMsg.classList.add("hidden");
-    errorMsg.classList.add("hidden");
-
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    // Odkomentujte a upravte dle Vašeho backendu:
-    // try {
-    //   const data = new FormData(form);
-    //   const res = await fetch("/api/poptavka", { method: "POST", body: data });
-    //   if (res.ok) {
-    //     successMsg.classList.remove("hidden");
-    //     form.reset();
-    //   } else {
-    //     errorMsg.classList.remove("hidden");
-    //   }
-    // } catch {
-    //   errorMsg.classList.remove("hidden");
-    // }
-
-    // Dočasné potvrzení bez backendu:
-    successMsg.classList.remove("hidden");
-    form.reset();
-  });
-</script>

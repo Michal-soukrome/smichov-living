@@ -1,15 +1,15 @@
 ---
 import { services, steps } from "../data/services";
-
 ---
 
-
-<section class="py-24 px-6 max-w-7xl mx-auto" id="sluzby">
+<section class="scroll-mt-10 py-24 px-6 max-w-7xl mx-auto" id="sluzby">
   <p class="text-center text-xs tracking-widest text-stone-500 uppercase mb-4">
     Co pro vás zajistíme
   </p>
 
-  <h2 class="font-display text-4xl md:text-5xl font-medium text-center mb-4 text-stone-900">
+  <h2
+    class="font-display text-4xl md:text-5xl font-medium text-center mb-4 text-stone-900"
+  >
     Vše pod jednou střechou
   </h2>
 
@@ -17,7 +17,7 @@ import { services, steps } from "../data/services";
     <span class="block h-px w-16 bg-[#c9a96e]"></span>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 border-l border-t border-stone-200">
+  <div class="grid md:grid-cols-4 border-l border-t border-stone-200">
     {
       services.map((s) => (
         <div class="border-r border-b border-stone-200 p-8 flex flex-col items-center text-center gap-4 group hover:bg-stone-50 transition-colors">
@@ -25,20 +25,26 @@ import { services, steps } from "../data/services";
           <h3 class="font-body font-semibold text-stone-900 text-sm tracking-wide">
             {s.title}
           </h3>
-          <p class="font-body text-stone-500 text-sm leading-relaxed">{s.desc}</p>
+          <p class="font-body text-stone-500 text-sm leading-relaxed">
+            {s.desc}
+          </p>
         </div>
       ))
     }
   </div>
 </section>
 
-<section class="bg-[#1a1814] py-24 px-6">
+<section class="scroll-mt-10 bg-[#1a1814] py-24 px-6">
   <div class="max-w-7xl mx-auto">
-    <p class="text-center text-xs tracking-widest text-[#c9a96e] uppercase mb-4">
+    <p
+      class="text-center text-xs tracking-widest text-[#c9a96e] uppercase mb-4"
+    >
       Jak probíhá spolupráce
     </p>
 
-    <h2 class="font-display text-4xl md:text-5xl font-medium text-center mb-4 text-white">
+    <h2
+      class="font-display text-4xl md:text-5xl font-medium text-center mb-4 text-white"
+    >
       6 kroků k vašemu novému domovu
     </h2>
 
@@ -47,18 +53,19 @@ import { services, steps } from "../data/services";
     </div>
 
     <div class="hidden md:block relative">
-      <div class="absolute top-8 left-[calc(100%/12)] right-[calc(100%/12)] h-px bg-stone-700 z-0"></div>
+      <div
+        class="absolute top-8 left-[calc(100%/12)] right-[calc(100%/12)] h-px bg-stone-700 z-0"
+      >
+      </div>
 
       <div class="grid grid-cols-6 gap-4 relative z-10">
         {
           steps.map((step) => (
             <div class="flex flex-col items-center text-center gap-4">
-              <!-- Ikona nahoře -->
               <div class="text-[#c9a96e] mb-2">
                 <div set:html={step.icon} />
               </div>
 
-              <!-- Číslo kroužek -->
               <div class="w-9 h-9 rounded-full border border-[#c9a96e] flex items-center justify-center text-[#c9a96e] text-xs font-medium bg-[#1a1814]">
                 {step.number}
               </div>
@@ -84,7 +91,7 @@ import { services, steps } from "../data/services";
                 {step.number}
               </div>
               {i < steps.length - 1 && (
-                <div class="w-px flex-1 bg-stone-700 mt-2 min-h-[2rem]"></div>
+                <div class="w-px flex-1 bg-stone-700 mt-2 min-h-[2rem]" />
               )}
             </div>
             <div class="pt-1 pb-4">

@@ -1,30 +1,47 @@
-C:\Users\michal.jirak\Documents\GitHub\smichov-living
+/Users/michaljirak/GitHub repos/smichov-living
 ├── .astro/
 │   ├── collections/
+│   ├── content.d.ts
 │   ├── settings.json
 │   └── types.d.ts
 ├── .prettierrc
 ├── .vscode/
 │   ├── extensions.json
 │   └── launch.json
+├── README.md
 ├── astro.config.mjs
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
-├── README.md
+├── public/
+│   └── robots.txt
 ├── scripts/
 │   └── generate-tree.js
 ├── src/
 │   ├── assets/
-│   │   ├── astro.svg
-│   │   └── background.svg
+│   │   └── images/
+│   │       └── backgrounds/
+│   │           ├── co-delame.webp
+│   │           ├── homepage.webp
+│   │           ├── kontakt.webp
+│   │           ├── poptat-projekt.webp
+│   │           ├── reference.webp
+│   │           └── showroom.webp
 │   ├── components/
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   └── Hero.astro
+│   │   ├── Hero.astro
+│   │   └── Services.astro
+│   ├── data/
+│   │   ├── contactData.js
+│   │   └── services.js
 │   ├── pages/
+│   │   ├── co-delame.astro
 │   │   ├── index.astro
-│   │   └── kontakt.astro
+│   │   ├── kontakt.astro
+│   │   ├── poptat-projekt.astro
+│   │   ├── reference.astro
+│   │   └── showroom.astro
 │   └── styles/
 │       └── global.css
 ├── tailwind.config.js

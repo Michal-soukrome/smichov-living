@@ -24,31 +24,6 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
       <div>
         <!-- Jak probíhá spolupráce -->
         <div>
-          <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-            Jak probíhá spolupráce
-          </p>
-          <span class="block h-px w-10 bg-accent mb-10"></span>
-
-          <div class="grid sm:grid-cols-3 gap-8 mb-16">
-            {
-              contactData.steps.map((step) => (
-                <div class="flex flex-col gap-3">
-                  <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
-                      {step.number}
-                    </div>
-                    <h3 class="font-body font-bold text-stone-900 text-sm">
-                      {step.title}
-                    </h3>
-                  </div>
-
-                  <p class="font-body text-stone-500 text-sm leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              ))
-            }
-          </div>
           <div>
             <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
               Vyberte typ projektu
@@ -74,6 +49,34 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                   </button>
                 ))
               }
+            </div>
+
+            <div>
+              <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+                Jak probíhá spolupráce
+              </p>
+              <span class="block h-px w-10 bg-accent mb-10"></span>
+
+              <div class="grid sm:grid-cols-3 gap-8 mb-16">
+                {
+                  contactData.steps.map((step) => (
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                          {step.number}
+                        </div>
+                        <h3 class="font-body font-bold text-stone-900 text-sm">
+                          {step.title}
+                        </h3>
+                      </div>
+
+                      <p class="font-body text-stone-500 text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
 
             <div class="hidden lg:block">

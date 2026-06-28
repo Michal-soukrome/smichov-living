@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import { services } from "../data/services";
+import heroBg from "../assets/images/backgrounds/homepage.webp";
 import Services from "../components/Services.astro";
 ---
 
@@ -10,7 +10,7 @@ import Services from "../components/Services.astro";
     label=""
     title="Rekonstrukce bez starostí. Výsledek, který má hodnotu."
     subtitle="Navštivte nás v našem showroomu na Smíchově nebo nás kontaktujte. Těšíme se na Váš projekt."
-    image="https://www.smichovliving.cz/png/hp-slider-06-3.webp"
+    image={heroBg}
     ctaText="Poptat projekt"
     ctaHref="/poptat-projekt"
     cta2Text="Více informací"

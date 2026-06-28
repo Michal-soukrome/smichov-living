@@ -1,14 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import heroBg from "../assets/images/backgrounds/co-delame.webp";
 ---
 
 <BaseLayout title="Smíchov Living - Kompletní rekonstrukce a design interiérů">
   <Hero
     label="Naše služby"
     title="Kompletní rekonstrukce a design interiérů"
-    subtitle="Nabízíme komplexní služby v oblasti rekonstrukcí a designu interiérů. Od návrhu až po realizaci, jsme tu pro Vás."
-    image="https://www.smichovliving.cz/png/hp-02.webp"
+    subtitle="Nabízíme komplexní služby v oblasti rekonstrukcí a designu interiérů."
+    image={heroBg}
     ctaText="Poptat projekt"
     ctaHref="/poptat-projekt"
     cta2Text="Více informací"

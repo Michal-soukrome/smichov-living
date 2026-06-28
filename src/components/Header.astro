@@ -33,7 +33,7 @@ const nav = [
           <a
             href={item.href}
             data-navlink
-            class="font-body text-sm lg:text-base text-gray-700 hover:text-amber-800 transition-colors uppercase whitespace-nowrap"
+            class="font-body text-sm lg:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
           >
             {item.name}
           </a>
@@ -132,18 +132,18 @@ const nav = [
       const a = link as HTMLAnchorElement;
       if (a.getAttribute("href") === path) {
         a.classList.add(
-          "text-amber-800",
+          "text-accent-hover",
           "underline",
           "underline-offset-4",
-          "decoration-amber-800",
+          "decoration-accent-hover",
         );
         a.classList.remove("text-gray-700");
       } else {
         a.classList.remove(
-          "text-amber-800",
+          "text-accent-hover",
           "underline",
           "underline-offset-4",
-          "decoration-amber-800",
+          "decoration-accent-hover",
         );
         a.classList.add("text-gray-700");
       }

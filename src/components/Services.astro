@@ -14,14 +14,14 @@ import { services, steps } from "../data/services";
   </h2>
 
   <div class="flex justify-center mb-12">
-    <span class="block h-px w-16 bg-[#c9a96e]"></span>
+    <span class="block h-px w-16 bg-accent"></span>
   </div>
 
   <div class="grid md:grid-cols-4 border-l border-t border-stone-200">
     {
       services.map((s) => (
         <div class="border-r border-b border-stone-200 p-8 flex flex-col items-center text-center gap-4 group hover:bg-stone-50 transition-colors">
-          <div class="text-[#c9a96e]" set:html={s.icon} />
+          <div class="text-accent" set:html={s.icon} />
           <h3 class="font-body font-semibold text-stone-900 text-sm tracking-wide">
             {s.title}
           </h3>
@@ -36,9 +36,7 @@ import { services, steps } from "../data/services";
 
 <section class="scroll-mt-10 bg-[#1a1814] py-24 px-6">
   <div class="max-w-7xl mx-auto">
-    <p
-      class="text-center text-xs tracking-widest text-[#c9a96e] uppercase mb-4"
-    >
+    <p class="text-center text-xs tracking-widest text-accent uppercase mb-4">
       Jak probíhá spolupráce
     </p>
 
@@ -49,7 +47,7 @@ import { services, steps } from "../data/services";
     </h2>
 
     <div class="flex justify-center mb-16">
-      <span class="block h-px w-16 bg-[#c9a96e]"></span>
+      <span class="block h-px w-16 bg-accent"></span>
     </div>
 
     <div class="hidden md:block relative">
@@ -62,11 +60,11 @@ import { services, steps } from "../data/services";
         {
           steps.map((step) => (
             <div class="flex flex-col items-center text-center gap-4">
-              <div class="text-[#c9a96e] mb-2">
+              <div class="text-accent mb-2">
                 <div set:html={step.icon} />
               </div>
 
-              <div class="w-9 h-9 rounded-full border border-[#c9a96e] flex items-center justify-center text-[#c9a96e] text-xs font-medium bg-[#1a1814]">
+              <div class="w-9 h-9 rounded-full border border-accent flex items-center justify-center text-accent text-xs font-medium bg-[#1a1814]">
                 {step.number}
               </div>
 
@@ -87,7 +85,7 @@ import { services, steps } from "../data/services";
         steps.map((step, i) => (
           <div class="flex gap-5 items-start">
             <div class="flex flex-col items-center shrink-0">
-              <div class="w-9 h-9 rounded-full border border-[#c9a96e] flex items-center justify-center text-[#c9a96e] text-xs font-medium">
+              <div class="w-9 h-9 rounded-full border border-accent flex items-center justify-center text-accent text-xs font-medium">
                 {step.number}
               </div>
               {i < steps.length - 1 && (

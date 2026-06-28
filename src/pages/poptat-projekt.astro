@@ -27,14 +27,14 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
           <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
             Jak probíhá spolupráce
           </p>
-          <span class="block h-px w-10 bg-[#c9a96e] mb-10"></span>
+          <span class="block h-px w-10 bg-accent mb-10"></span>
 
           <div class="grid sm:grid-cols-3 gap-8 mb-16">
             {
               contactData.steps.map((step) => (
                 <div class="flex flex-col gap-3">
                   <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-[#c9a96e] flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                    <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
                       {step.number}
                     </div>
                     <h3 class="font-body font-bold text-stone-900 text-sm">
@@ -54,7 +54,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
               Vyberte typ projektu
               <span class="text-xs text-red-500">*POVINNÉ</span>
             </p>
-            <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
+            <span class="block h-px w-10 bg-accent mb-8"></span>
 
             <div
               class="grid grid-cols-2 md:grid-cols-3 border-l border-t border-stone-200 mb-16"
@@ -65,7 +65,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                   <button
                     type="button"
                     data-value={pt.value}
-                    class="group project-type-btn border-r border-b border-stone-200 p-6 flex flex-col items-center gap-3 text-center hover:bg-[#c9a96e]  text-stone-800 hover:text-white transition-colors cursor-pointer"
+                    class="group project-type-btn border-r border-b border-stone-200 p-6 flex flex-col items-center gap-3 text-center hover:bg-accent  text-stone-800 hover:text-white transition-colors cursor-pointer"
                   >
                     <div class="group-hover:text-white" set:html={pt.icon} />
                     <span class="font-body text-sm font-medium leading-snug">
@@ -86,7 +86,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                   contactData.reasons.map((r) => (
                     <div class="flex items-start gap-3">
                       <svg
-                        class="text-[#c9a96e] mt-0.5 shrink-0 w-4 h-4"
+                        class="text-accent mt-0.5 shrink-0 w-4 h-4"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -116,7 +116,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
             Popište svůj projekt
             <span class="text-xs text-red-500">*POVINNÉ</span>
           </p>
-          <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
+          <span class="block h-px w-10 bg-accent mb-8"></span>
         </div>
 
         <div
@@ -139,7 +139,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 type="text"
                 name="jmeno"
                 required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
+                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
               />
             </div>
 
@@ -152,7 +152,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 type="tel"
                 name="telefon"
                 required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
+                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
               />
             </div>
 
@@ -165,7 +165,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 type="email"
                 name="email"
                 required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
+                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
               />
             </div>
 
@@ -178,7 +178,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 type="text"
                 name="mesto"
                 required
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors"
+                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
               />
             </div>
 
@@ -193,7 +193,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                     <button
                       type="button"
                       data-budget={b}
-                      class="budget-btn border cursor-pointer border-stone-300 px-3 py-1.5 text-xs font-body text-stone-700 hover:border-[#c9a96e] hover:bg-[#c9a96e] hover:text-white transition-colors"
+                      class="budget-btn border cursor-pointer border-stone-300 px-3 py-1.5 text-xs font-body text-stone-700 hover:border-accent hover:bg-accent hover:text-white transition-colors"
                     >
                       {b}
                     </button>
@@ -213,7 +213,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 required
                 rows="4"
                 placeholder="Napište nám pár informací o Vašem projektu, představách a požadavcích…"
-                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-[#c9a96e] transition-colors resize-none placeholder:text-stone-400"
+                class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors resize-none placeholder:text-stone-400"
               ></textarea>
             </div>
 
@@ -225,7 +225,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 >
               </label>
               <label
-                class="border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center gap-2 py-6 cursor-pointer hover:border-[#c9a96e] transition-colors"
+                class="border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center gap-2 py-6 cursor-pointer hover:border-accent transition-colors"
                 id="upload-label"
               >
                 <svg
@@ -270,7 +270,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
                 name="gdpr"
                 id="gdpr"
                 required
-                class="mt-0.5 shrink-0 accent-[#c9a96e]"
+                class="mt-0.5 shrink-0 accent-accent"
               />
               <label
                 for="gdpr"
@@ -312,7 +312,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
               contactData.reasons.map((r) => (
                 <div class="flex items-start gap-3">
                   <svg
-                    class="text-[#c9a96e] mt-0.5 shrink-0 w-4 h-4"
+                    class="text-accent mt-0.5 shrink-0 w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -335,14 +335,14 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
           <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
             Proč klienti volí Smíchov Living
           </p>
-          <span class="block h-px w-10 bg-[#c9a96e] mb-8"></span>
+          <span class="block h-px w-10 bg-accent mb-8"></span>
 
           <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {
               contactData.reasons.map((r) => (
                 <div class="flex items-start gap-3">
                   <svg
-                    class="text-[#c9a96e] mt-0.5 shrink-0 w-4 h-4"
+                    class="text-accent mt-0.5 shrink-0 w-4 h-4"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -369,6 +369,7 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
       <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
         Za námi stojí skutečné realizace
       </p>
+      <span class="block h-px w-10 bg-accent mb-8"></span>
     </div>
     <div>
       <div class="grid md:grid-cols-4 gap-5">
@@ -419,10 +420,10 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
       btn.addEventListener("click", () => {
         projectBtns.forEach((b) =>
           // ODEBRAT AKTIVNÍ CLASSY
-          b.classList.remove("bg-[#c9a96e]", "border-[#c9a96e]", "text-white"),
+          b.classList.remove("bg-accent", "border-accent", "text-white"),
         );
         // AKTIVNÍ CLASSY
-        btn.classList.add("bg-[#c9a96e]", "border-[#c9a96e]", "text-white");
+        btn.classList.add("bg-accent", "border-accent", "text-white");
         typInput.value = btn.dataset.value ?? "";
       });
     });
@@ -437,9 +438,9 @@ import realizace4 from "../assets/images/backgrounds/showroom.webp";
     budgetBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         budgetBtns.forEach((b) =>
-          b.classList.remove("border-[#c9a96e]", "text-white", "bg-[#c9a96e]"),
+          b.classList.remove("border-accent", "text-white", "bg-accent"),
         );
-        btn.classList.add("border-[#c9a96e]", "text-white", "bg-[#c9a96e]");
+        btn.classList.add("border-accent", "text-white", "bg-accent");
         budgetInput.value = btn.dataset.budget ?? "";
       });
     });

@@ -8,6 +8,7 @@
   --color-primary: #ac8b55;
   --color-secondary: #1a1612;
   --color-accent: #c9a96e;
+  --color-accent-hover: #8c6b35;
   --color-dark: #1a1612;
   --color-light: #f4f0e8;
 }
@@ -29,7 +30,7 @@
 }
 
 .btn-primary:hover {
-  background: #8c6b35;
+  background: var(--color-accent-hover);
 }
 
 .btn-secondary {

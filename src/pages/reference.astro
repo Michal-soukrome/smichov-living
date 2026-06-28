@@ -5,6 +5,7 @@ import Testimonials from "../components/Testimonials.astro";
 import ProjectList from "../components/ProjectList.astro";
 import heroBg from "../assets/images/backgrounds/reference.webp";
 import { projects } from "../data/projects.js";
+import Banner from "../components/Banner.astro";
 ---
 
 <BaseLayout
@@ -30,18 +31,6 @@ import { projects } from "../data/projects.js";
 
   <section class="max-w-7xl mx-auto px-6 pb-20">
     <Testimonials />
-    <div
-      class="mt-10 border border-stone-200 px-10 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
-    >
-      <div>
-        <p class="font-display text-xl font-medium text-stone-900">
-          Máte představu o svém novém interiéru?
-        </p>
-        <p class="font-body text-sm text-stone-500 mt-1">
-          Rádi s vámi probereme možnosti spolupráce.
-        </p>
-      </div>
-      <a href="/poptat-projekt" class="btn-primary">Poptat projekt</a>
-    </div>
+    <Banner class="mt-10" />
   </section>
 </BaseLayout>

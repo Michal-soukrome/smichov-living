@@ -14,34 +14,68 @@
 ├── package-lock.json
 ├── package.json
 ├── public/
-│   └── robots.txt
+│   ├── assets/
+│   │   ├── favicon/
+│   │   │   ├── android-chrome-192x192.png
+│   │   │   ├── android-chrome-512x512.png
+│   │   │   ├── apple-touch-icon.png
+│   │   │   ├── favicon-16x16.png
+│   │   │   ├── favicon-32x32.png
+│   │   │   ├── favicon.ico
+│   │   │   └── site.webmanifest
+│   │   └── logo/
+│   │       └── sl-logo.webp
+│   ├── images/
+│   │   ├── projects/
+│   │   │   ├── homepage.webp
+│   │   │   ├── kontakt.webp
+│   │   │   ├── poptat-projekt.webp
+│   │   │   ├── reference.webp
+│   │   │   ├── showroom.webp
+│   │   │   └── sluzby.webp
+│   │   └── team/
+│   │       ├── romana.webp
+│   │       └── sandra.webp
+│   ├── llms.txt
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── scripts/
 │   └── generate-tree.js
 ├── src/
 │   ├── assets/
 │   │   └── images/
 │   │       └── backgrounds/
-│   │           ├── sluzby.webp
 │   │           ├── homepage.webp
 │   │           ├── kontakt.webp
 │   │           ├── poptat-projekt.webp
 │   │           ├── reference.webp
-│   │           └── showroom.webp
+│   │           ├── showroom.webp
+│   │           └── sluzby.webp
 │   ├── components/
+│   │   ├── ArrowedUnderline.astro
+│   │   ├── Banner.astro
+│   │   ├── ContactForm.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Hero.astro
-│   │   └── Services.astro
+│   │   ├── MapIframe.astro
+│   │   ├── ProjectList.astro
+│   │   ├── SectionLabel.astro
+│   │   ├── Services.astro
+│   │   ├── Steps.astro
+│   │   ├── Team.astro
+│   │   └── Testimonials.astro
 │   ├── data/
 │   │   ├── contactData.js
+│   │   ├── projects.js
 │   │   └── services.js
 │   ├── pages/
-│   │   ├── sluzby.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
 │   │   ├── poptat-projekt.astro
 │   │   ├── reference.astro
-│   │   └── showroom.astro
+│   │   ├── showroom.astro
+│   │   └── sluzby.astro
 │   └── styles/
 │       └── global.css
 ├── tailwind.config.js

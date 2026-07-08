@@ -10,7 +10,7 @@ const nav = [
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white">
   <div
-    class="w-full px-4 sm:px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between shadow"
+    class="w-full px-4 sm:px-6 md:px-12 xl:px-20 h-16 md:h-20 flex items-center justify-between shadow"
   >
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2 group shrink-0">
@@ -35,13 +35,13 @@ const nav = [
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden lg:flex items-center gap-6 lg:gap-8">
+    <nav class="hidden xl:flex items-center gap-6 xl:gap-8">
       {
         nav.map((item) => (
           <a
             href={item.href}
             data-navlink
-            class="font-body text-sm lg:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
+            class="font-body text-sm xl:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
           >
             {item.name}
           </a>
@@ -50,14 +50,14 @@ const nav = [
     </nav>
 
     <!-- CTA -->
-    <a href="/poptat-projekt" class="hidden lg:block shrink-0">
+    <a href="/poptat-projekt" class="hidden xl:block shrink-0">
       <button class="btn-primary">Poptat projekt</button>
     </a>
 
     <!-- Hamburger -->
     <button
       id="mobile-btn"
-      class="lg:hidden p-2 -mr-2"
+      class="xl:hidden p-2 -mr-2"
       aria-label="Menu"
       type="button"
     >
@@ -95,7 +95,7 @@ const nav = [
   <div
     id="mobile-menu"
     style="display:none"
-    class="lg:hidden px-6 py-6 flex-col gap-3 shadow"
+    class="xl:hidden px-6 py-6 flex-col gap-3 shadow"
   >
     {
       nav.map((item) => (

@@ -5,7 +5,7 @@ interface HeroProps {
   label?: string;
   title?: string;
   subtitle?: string;
-  image: ImageMetadata;
+  image: ImageMetadata | string;
   ctaText?: string;
   cta2Text?: string;
   ctaHref?: string;
@@ -24,12 +24,14 @@ const {
   cta2Href = "",
   height = "h-full md:h-[100dvh]",
 } = Astro.props as HeroProps;
+
+const imageUrl = typeof image === "string" ? image : image.src;
 ---
 
 <section class={`mt-16 md:mt-0 relative ${height}`}>
   <div
     class="absolute inset-0"
-    style={`background-image: url("${image.src}"); background-size: cover; background-position: center;`}
+    style={`background-image: url("${imageUrl}"); background-size: cover; background-position: center;`}
   >
   </div>
 

@@ -9,6 +9,7 @@ import realizace4 from "../../assets/images/backgrounds/showroom.webp";
 import SectionLabel from "../../components/SectionLabel.astro";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import ContactForm from "../../components/ContactForm.astro";
+import contactData from "../../data/contactData.js";
 import { supportedLocales, t, tArray } from "../../i18n/utils";
 
 const { lang = "cs" } = Astro.props;
@@ -40,9 +41,149 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
     id="poptavkovy-formular-sekce"
   >
     <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
-      <!-- left column content stays the same -->
-    </div>
+      <!-- LEVÝ SLOUPEC -->
+      <div>
+        <div>
+          <div>
+            <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+              {t(locale, "contact.form.projectType")}
+              <span class="text-xs text-red-500"
+                >{t(locale, "project.request.requiredLabel")}</span
+              >
+            </p>
+            <span class="block h-px w-10 bg-accent mb-8"></span>
 
+            <div
+              class="grid grid-cols-2 md:grid-cols-3 border-l border-t border-stone-200 mb-16"
+              id="project-type-grid"
+            >
+              {
+                contactData.projectTypes.map((pt) => (
+                  <button
+                    type="button"
+                    data-value={pt.value}
+                    class="group project-type-btn border-r border-b border-stone-200 p-6 flex flex-col items-center gap-3 text-center hover:bg-accent  text-stone-800 hover:text-white transition-colors cursor-pointer"
+                  >
+                    <div class="group-hover:text-white" set:html={pt.icon} />
+                    <span class="font-body text-sm font-medium leading-snug">
+                      {pt.label}
+                    </span>
+                  </button>
+                ))
+              }
+            </div>
+
+            <div class="hidden lg:block">
+              <div>
+                <SectionLabel label={t(locale, "section.label.howitworks")} />
+
+                <div class="grid sm:grid-cols-3 gap-8 mb-16">
+                  {
+                    contactData.steps.map((step) => (
+                      <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                          <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                            {step.number}
+                          </div>
+                          <h3 class="font-body font-bold text-stone-900 text-sm">
+                            {step.title}
+                          </h3>
+                        </div>
+
+                        <p class="font-body text-stone-500 text-sm leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden lg:block">
+              <SectionLabel label={t(locale, "section.label.whychoose")} />
+              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                {
+                  contactData.reasons.map((r) => (
+                    <div class="flex items-start gap-3">
+                      <svg
+                        class="text-accent mt-0.5 shrink-0 w-4 h-4"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="2.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M4.5 12.75l6 6 9-13.5"
+                        />
+                      </svg>
+                      <span class="font-body text-sm text-stone-700">{r}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRAVÝ SLOUPEC -->
+      <div class="scroll-mt-24">
+        <div>
+          <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+            {t(locale, "project.request.describeProject")}
+            <span class="text-xs text-red-500"
+              >{t(locale, "project.request.requiredLabel")}</span
+            >
+          </p>
+          <span class="block h-px w-10 bg-accent mb-8"></span>
+        </div>
+
+        <div class="bg-stone-50 border border-stone-200 p-3 md:p-8">
+          <h3 class="text-xl font-medium text-stone-900 mb-8">
+            {t(locale, "project.request.formTitle")}
+          </h3>
+
+          <ContactForm
+            id="poptavka-form"
+            showProjectType={true}
+            showBudget={true}
+            showCity={true}
+            showUpload={true}
+            projectTypes={contactData.projectTypes}
+            budgets={contactData.budgets}
+            submitText="Odeslat poptávku"
+          />
+
+          <div class="block lg:hidden mt-16">
+            <SectionLabel label={t(locale, "section.label.howitworks")} />
+            <div class="grid sm:grid-cols-3 gap-8 mb-16">
+              {
+                contactData.steps.map((step) => (
+                  <div class="flex flex-col gap-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                        {step.number}
+                      </div>
+                      <h3 class="font-body font-bold text-stone-900 text-sm">
+                        {step.title}
+                      </h3>
+                    </div>
+
+                    <p class="font-body text-stone-500 text-sm leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="scroll-mt-24 py-10 md:py-20">
       <div>
         <SectionLabel label={realizationsLabel} />
@@ -86,5 +227,5 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
         />
       </div>
     </section>
-  </section>
-</BaseLayout>
+  </section></BaseLayout
+>

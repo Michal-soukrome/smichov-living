@@ -96,6 +96,10 @@
     "Realizace 3",
     "Realizace 4"
   ],
+  "project.request.formTitle": "Poptávkový formulář",
+  "project.request.describeProject": "Popište svůj projekt",
+  "project.request.requiredLabel": "*POVINNÉ",
+  "project.request.requiredAlts": ["Realizace 3", "Realizace 4"],
   "testimonials.label": "Co o nás říkají naši klienti",
   "contact.form.budgetLabel": "Předpokládaný rozpočet",
   "testimonials.entries": [

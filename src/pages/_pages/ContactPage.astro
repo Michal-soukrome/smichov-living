@@ -5,6 +5,7 @@ import ContactForm from "../../components/ContactForm.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import Team from "../../components/Team.astro";
 import MapIframe from "../../components/MapIframe.astro";
+import heroBg from "../../assets/images/backgrounds/kontakt.webp";
 import { supportedLocales, t } from "../../i18n/utils";
 
 const { lang = "cs" } = Astro.props;
@@ -21,7 +22,7 @@ const heroCta = t(locale, "hero.contact.cta");
     label={heroLabel}
     title={heroTitle}
     subtitle={heroSubtitle}
-    image="/assets/images/backgrounds/kontakt.webp"
+    image={heroBg}
     ctaText={heroCta}
     ctaHref="#kontaktni-formular"
   />

@@ -96,6 +96,10 @@
     "Dự án 3",
     "Dự án 4"
   ],
+  "project.request.formTitle": "Biểu mẫu yêu cầu",
+  "project.request.describeProject": "Mô tả dự án của bạn",
+  "project.request.requiredLabel": "*BẮT BUỘC",
+  "project.request.requiredAlts": ["Dự án 3", "Dự án 4"],
   "testimonials.label": "Khách hàng nói gì",
   "testimonials.entries": [
     {

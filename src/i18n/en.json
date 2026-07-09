@@ -96,6 +96,10 @@
     "Realization 3",
     "Realization 4"
   ],
+  "project.request.formTitle": "Request form",
+  "project.request.describeProject": "Describe your project",
+  "project.request.requiredLabel": "*REQUIRED",
+  "project.request.requiredAlts": ["Realization 3", "Realization 4"],
   "testimonials.label": "What our clients say",
   "contact.form.budgetLabel": "Estimated budget",
   "testimonials.entries": [

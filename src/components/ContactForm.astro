@@ -35,8 +35,6 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 ---
 
 <div class={className} data-form-id={id}>
-  <h3 class="section-heading-sm mb-8">{_title}</h3>
-
   <form id={id} class="flex flex-col gap-5" novalidate>
     <input type="hidden" name="typ_projektu" data-role="project-type-input" />
 
@@ -156,57 +154,6 @@ const _submitText = submitText || t(lang, "contact.form.submit");
       >
       </textarea>
     </div>
-
-    {
-      showUpload && (
-        <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700">
-            {t(lang, "contact.form.upload.label")}{" "}
-            <span class="text-stone-400">
-              ({t(lang, "contact.form.upload.optional")})
-            </span>
-          </label>
-          <label
-            class="border border-dashed border-stone-300 bg-white flex flex-col items-center justify-center gap-2 py-6 cursor-pointer hover:border-accent transition-colors"
-            for={`${id}-file-input`}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6 text-stone-400"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
-              />
-            </svg>
-            <span class="font-body text-sm text-stone-600">
-              {t(lang, "contact.form.upload.dragHere")}
-            </span>
-            <span class="font-body text-xs text-stone-400">
-              {t(lang, "contact.form.upload.or")}
-            </span>
-            <span class="font-body text-xs text-stone-400">
-              {t(lang, "contact.form.upload.note")}
-            </span>
-            <input
-              type="file"
-              name="soubory"
-              multiple
-              accept=".pdf,.jpg,.jpeg,.png"
-              id={`${id}-file-input`}
-              data-role="file-input"
-              class="hidden"
-            />
-          </label>
-          <p data-role="file-names" class="text-xs text-stone-500 hidden" />
-        </div>
-      )
-    }
 
     <div class="flex items-start gap-2">
       <input

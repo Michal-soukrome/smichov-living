@@ -97,6 +97,10 @@
     "Реализация 3",
     "Реализация 4"
   ],
+  "project.request.formTitle": "Форма запроса",
+  "project.request.describeProject": "Опишите ваш проект",
+  "project.request.requiredLabel": "*ОБЯЗАТЕЛЬНО",
+  "project.request.requiredAlts": ["Реализация 3", "Реализация 4"],
   "testimonials.label": "Что говорят наши клиенты",
   "testimonials.entries": [
     {

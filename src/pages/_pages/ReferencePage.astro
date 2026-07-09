@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Testimonials from "../../components/Testimonials.astro";
+import ProjectList from "../../components/ProjectList.astro";
+import heroBg from "../../assets/images/backgrounds/reference.webp";
+import Banner from "../../components/Banner.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import { supportedLocales, t, tArray } from "../../i18n/utils";
+
+const { lang = "cs" } = Astro.props;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
+const pageTitle = t(locale, "reference.pageTitle");
+const heroLabel = t(locale, "reference.label");
+const heroTitle = t(locale, "reference.title");
+const heroSubtitle = t(locale, "reference.subtitle");
+const projects = tArray<{
+  tag: string;
+  title: string;
+  desc: string;
+  href: string;
+  image: string;
+}>(locale, "reference.projects");
+---
+
+<BaseLayout title={pageTitle} lang={locale}>
+  <Hero
+    label={heroLabel}
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    image={heroBg}
+  />
+
+  <section class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+    <div>
+      <SectionLabel label={t(locale, "section.label.realizations")} />
+    </div>
+
+    <ProjectList projects={projects} lang={locale} />
+  </section>
+
+  <div class="bg-stone-50 border-y border-stone-100">
+    <div class="max-w-7xl mx-auto">
+      <Testimonials lang={locale} />
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto py-10">
+    <Banner lang={lang} />
+  </div>
+</BaseLayout>

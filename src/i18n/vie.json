@@ -1,0 +1,268 @@
+{
+  "home.title": "Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
+  "home.hero.title": "Cải tạo không lo lắng. Kết quả mang lại giá trị.",
+  "home.hero.subtitle": "Hãy đến showroom của chúng tôi tại Smíchov hoặc liên hệ với chúng tôi. Chúng tôi mong đợi dự án của bạn.",
+  "home.hero.ctaPrimary": "Yêu cầu dự án",
+  "home.hero.ctaSecondary": "Thông tin thêm",
+
+  "nav.home": "Trang chủ",
+  "nav.services": "Dịch vụ",
+  "nav.showroom": "Showroom",
+  "nav.reference": "Tham khảo",
+  "nav.contact": "Liên hệ",
+
+  "header.cta": "Yêu cầu dự án",
+  "footer.copy": "© Smíchov Living s.r.o. 2026",
+  "footer.rights": "Bảo lưu mọi quyền.",
+
+  "banner.title": "Bạn có ý tưởng cho nội thất mới?",
+  "banner.subtitle": "Chúng tôi sẵn sàng thảo luận các phương án hợp tác.",
+  "banner.primary": "yêu cầu dự án",
+  "banner.secondary": "liên hệ với chúng tôi",
+  "link.requestProject": "Yêu cầu dự án",
+
+  "hero.contact.label": "LIÊN HỆ",
+  "hero.contact.title": "Chúng tôi mong được gặp bạn",
+  "hero.contact.subtitle": "Hãy đến showroom của chúng tôi tại Smíchov hoặc liên hệ với chúng tôi. Chúng tôi mong đợi dự án của bạn.",
+  "hero.contact.cta": "Viết cho chúng tôi",
+
+  "contact.form.name": "Họ và tên",
+  "contact.form.phone": "Điện thoại",
+  "contact.form.email": "E-mail",
+  "contact.form.city": "Thành phố dự án",
+  "contact.form.projectType": "Chọn loại dự án",
+  "contact.form.description": "Mô tả ngắn gọn dự án của bạn",
+  "contact.form.upload.label": "Tải lên bản vẽ hoặc ảnh",
+  "contact.form.upload.note": "PDF, JPG, PNG tối đa 20 MB",
+  "contact.form.gdpr": "Tôi đồng ý xử lý dữ liệu cá nhân nhằm mục đích xử lý yêu cầu.",
+  "contact.form.submit": "Gửi",
+  "contact.form.success": "Cảm ơn! Chúng tôi sẽ liên hệ bạn sớm nhất có thể.",
+  "contact.form.error": "Đã có lỗi xảy ra. Vui lòng thử lại.",
+  "contact.form.title": "Liên hệ với chúng tôi",
+  "contact.form.descriptionPlaceholder": "Hãy cho chúng tôi biết một vài thông tin về dự án, ý tưởng và yêu cầu của bạn…",
+  "contact.form.upload.optional": "tùy chọn",
+  "contact.form.upload.dragHere": "Kéo tệp vào đây",
+  "contact.form.upload.or": "hoặc nhấp để tải lên",
+  "contact.form.gdprPrefix": "Tôi đồng ý với ",
+  "contact.form.gdprLink": "việc xử lý dữ liệu cá nhân",
+  "contact.form.gdprSuffix": " với mục đích xử lý yêu cầu.",
+
+  "contact.form.required": "*",
+
+  "footer.description": "Cải tạo và thực hiện nội thất chìa khóa trao tay. Từ ý tưởng đến bàn giao ngôi nhà hoàn thiện.",
+  "footer.contactHeader": "Liên hệ",
+  "footer.legalHeader": "Quan trọng",
+  "footer.privacy": "Chính sách bảo mật",
+  "footer.cookies": "Cookies",
+  "link.showAllRealizations": "Xem tất cả các dự án đã thực hiện",
+  "contact.pageTitle": "Liên hệ | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
+  "reference.pageTitle": "Tham khảo | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
+  "reference.label": "Tham khảo",
+  "reference.title": "Khách hàng đánh giá gì về dự án của chúng tôi",
+  "reference.subtitle": "Đọc những gì khách hàng nói về chúng tôi và trải nghiệm của họ với dịch vụ của chúng tôi. Sự hài lòng của bạn là ưu tiên của chúng tôi.",
+  "reference.projects": [
+    {
+      "tag": "Căn hộ 3+KK",
+      "title": "Căn hộ ở Smíchov",
+      "desc": "Cải tạo toàn bộ căn hộ bao gồm thiết kế nội thất và sản xuất đồ nội thất đặt làm.",
+      "href": "/reference/byt-na-smichove",
+      "image": "/images/projects/homepage.webp"
+    },
+    {
+      "tag": "Nhà gia đình",
+      "title": "Nhà gia đình – Praha Tây",
+      "desc": "Thực hiện toàn bộ nội thất nhà gia đình theo phong cách tự nhiên vượt thời gian.",
+      "href": "/reference/rodinny-dum-praha-zapad",
+      "image": "/images/projects/sluzby.webp"
+    },
+    {
+      "tag": "Căn hộ 4+KK",
+      "title": "Căn hộ hiện đại ở trung tâm Praha",
+      "desc": "Thiết kế mặt bằng, cải tạo chìa khóa trao tay và trang bị nội thất hoàn chỉnh với vật liệu cao cấp.",
+      "href": "/reference/moderni-byt-centrum-prahy",
+      "image": "/images/projects/showroom.webp"
+    }
+  ],
+  "reference.ctaViewProject": "Xem dự án",
+  "project.ask.pageTitle": "Yêu cầu dự án | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
+  "project.ask.label": "YÊU CẦU DỰ ÁN",
+  "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",
+  "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi hiểu ý tưởng, không gian và ngân sách của bạn để thiết kế con đường tốt nhất cho việc thực hiện.",
+  "project.ask.cta": "Bắt đầu nào",
+  "project.request.realizationsLabel": "Dự án của chúng tôi",
+  "project.request.realizationsAlts": [
+    "Dự án 1",
+    "Dự án 2",
+    "Dự án 3",
+    "Dự án 4"
+  ],
+  "testimonials.label": "Khách hàng nói gì",
+  "testimonials.entries": [
+    {
+      "quote": "Smíchov Living đã biến căn hộ của chúng tôi đến mức không thể nhận ra. Từ cuộc gặp đầu tiên đến bàn giao, mọi thứ được kiểm soát và kết quả vượt quá mong đợi.",
+      "name": "Petra Nováková",
+      "project": "Căn hộ ở Smíchov"
+    },
+    {
+      "quote": "Chúng tôi đặc biệt đánh giá cao cách tiếp cận chuyên nghiệp và minh bạch. Ngân sách được giữ đúng, thời hạn cũng vậy. Chúng tôi không mong đợi điều đó sau kinh nghiệm sửa chữa trước đây.",
+      "name": "Martin and Jana Horáčkovi",
+      "project": "Nhà gia đình, Praha Tây"
+    },
+    {
+      "quote": "Bếp làm theo yêu cầu chính xác là những gì chúng tôi tưởng tượng. Romana hiểu nhu cầu của chúng tôi ngay từ buổi tư vấn đầu tiên và kết quả thật hoàn hảo.",
+      "name": "Lucie Marková",
+      "project": "Nhà bếp theo yêu cầu, Praha 2"
+    }
+  ],
+
+  "about.showroom.label": "Về showroom",
+  "about.showroom.title": "Mọi thứ bạn cần để quyết định trong một nơi",
+  "about.showroom.paragraph1": "Showroom của chúng tôi ở Smíchov, Prague được tạo ra như một không gian nơi cảm hứng gặp gỡ thực tế. Chúng tôi không chỉ là phòng trưng bày — đây là nơi bạn có thể ngồi lại, thảo luận dự án và có ý tưởng rõ ràng về cách ngôi nhà mới của bạn sẽ trông như thế nào.",
+  "about.showroom.paragraph2": "Chúng tôi trưng bày vật liệu thực, bề mặt và nội thất mà chúng tôi sử dụng trong các dự án của mình. Không có catalogue, không có bất ngờ — những gì bạn thấy là những gì bạn nhận được.",
+  "showroom.map": "Xem trên bản đồ",
+  "showroom.visit": "Lên lịch ghé thăm",
+  "showroom.location.label": "Nơi bạn có thể tìm thấy chúng tôi",
+  "showroom.opening.label": "Giờ mở cửa",
+  "showroom.section.highlights": "Bạn có thể tìm thấy gì ở đây",
+  "showroom.gallery.label": "Xem bên trong",
+  "showroom.inspiration.title": "Hãy đến để lấy cảm hứng",
+  "showroom.pageTitle": "Showroom | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
+  "showroom.hero.label": "Showroom",
+  "showroom.hero.title": "Hãy ghé showroom của chúng tôi tại Smíchov",
+  "showroom.hero.subtitle": "Hãy đến xem các dự án của chúng tôi và tìm cảm hứng cho dự án của bạn. Chúng tôi rất mong được gặp bạn.",
+  "showroom.gallery.alt.main": "Showroom Smíchov Living",
+  "showroom.gallery.alt.kitchen": "Trưng bày nhà bếp",
+  "showroom.gallery.alt.materials": "Mẫu vật liệu",
+
+  "services.title": "Cải tạo toàn diện và thiết kế nội thất",
+  "services.subtitle": "Chúng tôi cung cấp dịch vụ cải tạo và thiết kế nội thất toàn diện.",
+  "services.hero.label": "Dịch vụ của chúng tôi",
+  "services.hero.ctaPrimary": "Yêu cầu dự án",
+  "services.hero.ctaSecondary": "Thông tin thêm",
+  "services.cards": [
+    {
+      "title": "Công trình xây dựng",
+      "desc": "Phá dỡ, thay đổi bố cục, trát tường mới, sàn, trần và công việc xây dựng toàn diện."
+    },
+    {
+      "title": "Điện nước",
+      "desc": "Hệ thống dây điện mới, ổ cắm, công tắc, chiếu sáng và chuẩn bị cho công nghệ hiện đại."
+    },
+    {
+      "title": "Nước và sưởi",
+      "desc": "Hệ thống cấp nước, thoát nước, sưởi ấm và lắp đặt phòng tắm, bao gồm sàn sưởi."
+    },
+    {
+      "title": "Nhà bếp và phòng tắm",
+      "desc": "Thiết kế, sản xuất và lắp đặt nhà bếp, phòng tắm và nội thất âm tường theo yêu cầu."
+    },
+    {
+      "title": "Cửa và nội thất",
+      "desc": "Cửa nội thất và cửa ra vào, ốp lát, giấy dán tường và các chi tiết thiết kế khác."
+    },
+    {
+      "title": "Bề mặt và thiết kế",
+      "desc": "Gạch, sàn, sơn và hoàn thiện cuối cùng tạo nên không gian sống."
+    }
+  ],
+  "services.details": [
+    {
+      "number": "01",
+      "title": "Thiết kế nội thất",
+      "desc": "Mỗi dự án bắt đầu bằng việc hiểu rõ nhu cầu, phong cách sống và sở thích thẩm mỹ của bạn. Chúng tôi chuẩn bị tài liệu dự án đầy đủ gồm bố cục, mô phỏng 3D và lựa chọn vật liệu — tất cả để kết quả thực sự là của bạn.",
+      "items": [
+        "Bố cục và mặt bằng",
+        "Mô phỏng 3D",
+        "Lựa chọn vật liệu và bề mặt",
+        "Giải pháp kỹ thuật theo yêu cầu",
+        "Lịch trình thi công"
+      ],
+      "image": "/images/projects/homepage.webp"
+    },
+    {
+      "number": "02",
+      "title": "Cải tạo chìa khóa trao tay",
+      "desc": "Chúng tôi điều phối toàn bộ thi công từ phá dỡ đến dọn dẹp cuối cùng. Làm việc với các nhà thầu đáng tin cậy và giám sát chất lượng ở mọi giai đoạn. Bạn không cần lo lắng gì.",
+      "items": [
+        "Công trình và phá dỡ",
+        "Điện nước và hệ thống dây",
+        "Nước, sưởi và điều hòa",
+        "Ốp lát, gạch, sàn",
+        "Sơn và hoàn thiện cuối cùng"
+      ],
+      "image": "/images/projects/kontakt.webp"
+    },
+    {
+      "number": "03",
+      "title": "Nội thất theo yêu cầu",
+      "desc": "Chúng tôi thiết kế và sản xuất nội thất âm tường chính xác theo không gian của bạn. Từ nhà bếp và tủ quần áo đến kệ và vách tivi — mỗi món đồ được tạo để tận dụng tối đa diện tích.",
+      "items": [
+        "Nhà bếp theo yêu cầu",
+        "Tủ quần áo và tủ âm tường",
+        "Nội thất phòng tắm",
+        "Tường phòng khách và kệ sách",
+        "Lắp đặt và bảo trì"
+      ],
+      "image": "/images/projects/reference.webp"
+    },
+    {
+      "number": "04",
+      "title": "Showroom",
+      "desc": "Tham quan showroom của chúng tôi tại Smíchov, nơi bạn có thể trực tiếp xem vật liệu, mẫu và ví dụ dự án. Các nhà thiết kế của chúng tôi sẵn sàng tư vấn miễn phí tại chỗ.",
+      "items": [
+        "Mẫu vật liệu và bề mặt",
+        "Trưng bày nhà bếp và nội thất",
+        "Tư vấn cùng nhà thiết kế",
+        "Nguồn cảm hứng cho dự án của bạn",
+        "Thứ 2–Thứ 6 10:00–18:00"
+      ],
+      "image": "/images/projects/sluzby.webp"
+    }
+  ],
+  "steps.label": "Quy trình hợp tác",
+  "steps.title": "6 bước đến ngôi nhà mới của bạn",
+  "steps": [
+    {
+      "number": "1",
+      "title": "Tư vấn và đo đạc",
+      "desc": "Chúng tôi tìm hiểu nhu cầu, không gian và ngân sách của bạn."
+    },
+    {
+      "number": "2",
+      "title": "Thiết kế nội thất",
+      "desc": "Chúng tôi chuẩn bị bố cục, hình ảnh 3D và giải pháp kỹ thuật."
+    },
+    {
+      "number": "3",
+      "title": "Dự án và chuẩn bị",
+      "desc": "Chúng tôi giải quyết hồ sơ, vật liệu và tiến độ."
+    },
+    {
+      "number": "4",
+      "title": "Thi công",
+      "desc": "Chúng tôi điều phối toàn bộ thi công và giám sát chất lượng."
+    },
+    {
+      "number": "5",
+      "title": "Nội thất theo yêu cầu",
+      "desc": "Chúng tôi sản xuất và lắp đặt nhà bếp, tủ và các hạng mục khác."
+    },
+    {
+      "number": "6",
+      "title": "Bàn giao nhà",
+      "desc": "Dọn dẹp, hoàn thiện và sẵn sàng để nhận nhà."
+    }
+  ],
+
+  "reference.title": "Khách hàng đánh giá gì về dự án của chúng tôi",
+  "reference.subtitle": "Đọc những gì khách hàng nói về chúng tôi và trải nghiệm của họ với dịch vụ của chúng tôi. Sự hài lòng của bạn là ưu tiên của chúng tôi.",
+
+  "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",
+  "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi hiểu ý tưởng, không gian và ngân sách của bạn để thiết kế con đường tốt nhất cho việc thực hiện.",
+  "project.ask.cta": "Bắt đầu nào",
+
+  "section.label.realizations": "Dự án của chúng tôi",
+  "section.label.howitworks": "Quy trình hợp tác",
+  "section.label.whychoose": "Tại sao khách hàng chọn Smíchov Living",
+  "section.label.writeus": "viết cho chúng tôi"
+}

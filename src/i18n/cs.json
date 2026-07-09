@@ -1,0 +1,269 @@
+{
+  "home.title": "Smíchov Living - Kompletní rekonstrukce a design interiérů",
+  "home.hero.title": "Rekonstrukce bez starostí. Výsledek, který má hodnotu.",
+  "home.hero.subtitle": "Navštivte nás v našem showroomu na Smíchově nebo nás kontaktujte. Těšíme se na Váš projekt.",
+  "home.hero.ctaPrimary": "Poptat projekt",
+  "home.hero.ctaSecondary": "Více informací",
+
+  "nav.home": "Domů",
+  "nav.services": "Služby",
+  "nav.showroom": "Showroom",
+  "nav.reference": "Reference",
+  "nav.contact": "Kontakt",
+
+  "header.cta": "Poptat projekt",
+  "footer.copy": "© Smíchov Living s.r.o. 2026",
+  "footer.rights": "Všechna práva vyhrazena.",
+
+  "banner.title": "Máte představu o svém novém interiéru?",
+  "banner.subtitle": "Rádi s vámi probereme možnosti spolupráce.",
+  "banner.primary": "poptejte projekt",
+  "banner.secondary": "ozvěte se nám",
+  "link.requestProject": "Poptat projekt",
+
+  "hero.contact.label": "KONTAKT",
+  "hero.contact.title": "Rádi se s Vámi potkáme",
+  "hero.contact.subtitle": "Navštivte nás v našem showroomu na Smíchově nebo nás kontaktujte. Těšíme se na Váš projekt.",
+  "hero.contact.cta": "Napište nám",
+
+  "contact.form.name": "Jméno a příjmení",
+  "contact.form.phone": "Telefon",
+  "contact.form.email": "E-mail",
+  "contact.form.city": "Město realizace",
+  "contact.form.projectType": "Vyberte typ projektu",
+  "contact.form.description": "Krátce nám popište svůj projekt",
+  "contact.form.upload.label": "Nahrát půdorys nebo fotografie",
+  "contact.form.upload.note": "PDF, JPG, PNG do 20 MB",
+  "contact.form.gdpr": "Souhlasím se zpracováním osobních údajů za účelem zpracování poptávky.",
+  "contact.form.submit": "Odeslat",
+  "contact.form.success": "Děkujeme! Ozveme se Vám co nejdříve.",
+  "contact.form.error": "Něco se pokazilo. Zkuste to prosím znovu.",
+  "contact.form.title": "Kontaktujte nás",
+  "contact.form.descriptionPlaceholder": "Napište nám pár informací o Vašem projektu, představách a požadavcích…",
+  "contact.form.upload.optional": "volitelné",
+  "contact.form.upload.dragHere": "Přetáhněte soubor sem",
+  "contact.form.upload.or": "nebo klikněte pro nahrání",
+  "contact.form.gdprPrefix": "Souhlasím se ",
+  "contact.form.gdprLink": "zpracováním osobních údajů",
+  "contact.form.gdprSuffix": " za účelem zpracování poptávky.",
+
+  "contact.form.required": "*",
+
+  "footer.description": "Rekonstrukce a realizace interiérů na klíč. Od návrhu po předání hotového domova.",
+  "footer.contactHeader": "Kontakt",
+  "footer.legalHeader": "Důležité",
+  "footer.privacy": "Ochrana osobních údajů",
+  "footer.cookies": "Cookies",
+  "link.showAllRealizations": "Zobrazit všechny realizace",
+  "contact.pageTitle": "Kontakt | Smíchov Living - Kompletní rekonstrukce a design interiérů",
+  "reference.pageTitle": "Reference | Smíchov Living - Kompletní rekonstrukce a design interiérů",
+  "reference.label": "Reference",
+  "reference.title": "Co na našich projektech oceňují naši klienti",
+  "reference.subtitle": "Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou.",
+  "reference.projects": [
+    {
+      "tag": "Byt 3+KK",
+      "title": "Byt na Smíchově",
+      "desc": "Kompletní rekonstrukce bytu včetně návrhu interiéru a výroby nábytku na míru.",
+      "href": "/reference/byt-na-smichove",
+      "image": "/images/projects/homepage.webp"
+    },
+    {
+      "tag": "Rodinný dům",
+      "title": "Rodinný dům – Praha západ",
+      "desc": "Kompletní realizace interiéru rodinného domu v nadčasovém přírodním stylu.",
+      "href": "/reference/rodinny-dum-praha-zapad",
+      "image": "/images/projects/sluzby.webp"
+    },
+    {
+      "tag": "Byt 4+KK",
+      "title": "Moderní byt v centru Prahy",
+      "desc": "Návrh dispozice, realizace na klíč a kompletní vybavení interiéru prémiovými materiály.",
+      "href": "/reference/moderni-byt-centrum-prahy",
+      "image": "/images/projects/showroom.webp"
+    }
+  ],
+  "reference.ctaViewProject": "Zobrazit projekt",
+  "project.ask.pageTitle": "Poptat projekt | Smíchov Living - Kompletní rekonstrukce a design interiérů",
+  "project.ask.label": "POPTAT PROJEKT",
+  "project.ask.title": "Pojďme společně vytvořit Váš nový domov",
+  "project.ask.subtitle": "Každý projekt začíná osobní konzultací. Poznáme Vaše představy, možnosti prostoru i rozpočet a navrhneme nejlepší cestu k realizaci.",
+  "project.ask.cta": "Pojďme na to",
+  "project.request.realizationsLabel": "Za námi stojí skutečné realizace",
+  "project.request.realizationsAlts": [
+    "Realizace 1",
+    "Realizace 2",
+    "Realizace 3",
+    "Realizace 4"
+  ],
+  "testimonials.label": "Co o nás říkají naši klienti",
+  "contact.form.budgetLabel": "Předpokládaný rozpočet",
+  "testimonials.entries": [
+    {
+      "quote": "Smíchov Living proměnil náš byt k nepoznání. Od prvního setkání až po předání jsme měli vše pod kontrolou a výsledek předčil naše očekávání.",
+      "name": "Petra Nováková",
+      "project": "Rekonstrukce bytu, Praha 5"
+    },
+    {
+      "quote": "Oceňujeme hlavně profesionální přístup a transparentnost. Rozpočet se dodržel, termín taky. To jsme od předchozí zkušenosti s rekonstrukcí nečekali.",
+      "name": "Martin a Jana Horáčkovi",
+      "project": "Rodinný dům, Praha západ"
+    },
+    {
+      "quote": "Kuchyň na míru je přesně to, co jsme si představovali. Romana pochopila naše potřeby hned na první konzultaci a výsledek je dokonalý.",
+      "name": "Lucie Marková",
+      "project": "Kuchyně na míru, Praha 2"
+    }
+  ],
+
+  "about.showroom.label": "O showroomu",
+  "about.showroom.title": "Vše, co potřebujete pro rozhodnutí, na jednom místě",
+  "about.showroom.paragraph1": "Náš showroom na pražském Smíchově vznikl jako prostor, kde se setkávají inspirace s realitou. Nejsme jen vzorkovny — jsme místo, kde si můžete v klidu sednout, probrat svůj projekt a odnést si konkrétní představu o tom, jak může váš nový domov vypadat.",
+  "about.showroom.paragraph2": "Vystavujeme skutečné materiály, povrchy a nábytek, který používáme v našich realizacích. Žádné katalogy, žádné překvapení — co vidíte, to dostanete.",
+  "showroom.map": "Zobrazit na mapě",
+  "showroom.visit": "Domluvit návštěvu",
+  "showroom.location.label": "Kde nás najdete",
+  "showroom.opening.label": "Otevírací doba",
+  "showroom.section.highlights": "Co u nás najdete",
+  "showroom.gallery.label": "Podívejte se dovnitř",
+  "showroom.inspiration.title": "Přijďte se inspirovat",
+  "showroom.pageTitle": "Showroom | Smíchov Living - Kompletní rekonstrukce a design interiérů",
+  "showroom.hero.label": "Showroom",
+  "showroom.hero.title": "Navštivte náš showroom na Smíchově",
+  "showroom.hero.subtitle": "Přijďte si prohlédnout naše realizace a inspirovat se pro svůj vlastní projekt. Těšíme se na Vaši návštěvu.",
+  "showroom.gallery.alt.main": "Showroom Smíchov Living",
+  "showroom.gallery.alt.kitchen": "Ukázka kuchyně",
+  "showroom.gallery.alt.materials": "Vzorníky materiálů",
+
+  "services.title": "Kompletní rekonstrukce a design interiérů",
+  "services.subtitle": "Nabízíme komplexní služby v oblasti rekonstrukcí a designu interiérů.",
+  "services.hero.label": "Naše služby",
+  "services.hero.ctaPrimary": "Poptat projekt",
+  "services.hero.ctaSecondary": "Více informací",
+  "services.cards": [
+    {
+      "title": "Stavební úpravy",
+      "desc": "Bourání příček, změny dispozic, nové omítky, podlahy, podhledy a kompletní stavební práce."
+    },
+    {
+      "title": "Elektroinstalace",
+      "desc": "Nové rozvody, zásuvky, vypínače, osvětlení a příprava pro moderní technologie."
+    },
+    {
+      "title": "Voda, topení a kanalizace",
+      "desc": "Rozvody vody, odpady, topení a koupelnové instalace včetně podlahového vytápění."
+    },
+    {
+      "title": "Kuchyně a koupelny",
+      "desc": "Návrh, výroba a realizace kuchyní, koupelen a vestavěného nábytku na míru."
+    },
+    {
+      "title": "Dveře a interiér",
+      "desc": "Interiérové a vstupní dveře, obklady, tapety a další designové detaily."
+    },
+    {
+      "title": "Povrchy a design",
+      "desc": "Obklady, dlažby, podlahy, malby a finální úpravy, které vytvářejí atmosféru domova."
+    }
+  ],
+  "services.details": [
+    {
+      "number": "01",
+      "title": "Návrh interiéru",
+      "desc": "Každý projekt začíná důkladným pochopením vašich potřeb, způsobu života a estetických preferencí. Připravíme kompletní projektovou dokumentaci včetně půdorysů, 3D vizualizací a výběru materiálů — vše tak, aby výsledek byl přesně váš.",
+      "items": [
+        "Půdorysy a dispozice",
+        "3D vizualizace",
+        "Výběr materiálů a povrchů",
+        "Technické řešení na míru",
+        "Harmonogram prací"
+      ],
+      "image": "/images/projects/homepage.webp"
+    },
+    {
+      "number": "02",
+      "title": "Rekonstrukce na klíč",
+      "desc": "Koordinujeme veškeré řemeslné práce od bourání až po finální úklid. Spolupracujeme s prověřenými profesemi a dohlížíme na kvalitu každé fáze. Vy se nemusíte o nic starat.",
+      "items": [
+        "Stavební a bourací práce",
+        "Elektroinstalace a rozvody",
+        "Voda, topení, vzduchotechnika",
+        "Obklady, dlažby, podlahy",
+        "Malby a finální úpravy"
+      ],
+      "image": "/images/projects/kontakt.webp"
+    },
+    {
+      "number": "03",
+      "title": "Nábytek na míru",
+      "desc": "Navrhujeme a vyrábíme vestavěný nábytek přesně do vašeho prostoru. Od kuchyní a šaten po knihovny a TV stěny — každý kus je navržen tak, aby maximálně využil dostupný prostor a ladil s celkovým interiérem.",
+      "items": [
+        "Kuchyně na míru",
+        "Šatny a vestavěné skříně",
+        "Koupelnový nábytek",
+        "Obývací stěny a knihovny",
+        "Montáž a servis"
+      ],
+      "image": "/images/projects/reference.webp"
+    },
+    {
+      "number": "04",
+      "title": "Showroom",
+      "desc": "Navštivte náš showroom na Smíchově, kde si můžete na vlastní oči prohlédnout materiály, vzorníky a ukázky realizací. Naši designéři jsou vám k dispozici pro nezávaznou konzultaci přímo na místě.",
+      "items": [
+        "Vzorníky materiálů a povrchů",
+        "Ukázky kuchyní a nábytku",
+        "Konzultace s designérem",
+        "Inspirace pro váš projekt",
+        "Po–Pá 10:00–18:00"
+      ],
+      "image": "/images/projects/sluzby.webp"
+    }
+  ],
+  "steps.label": "Jak probíhá spolupráce",
+  "steps.title": "6 kroků k vašemu novému domovu",
+  "steps": [
+    {
+      "number": "1",
+      "title": "Konzultace a zaměření",
+      "desc": "Poznáme vaše potřeby, prostor i rozpočet."
+    },
+    {
+      "number": "2",
+      "title": "Návrh interiéru",
+      "desc": "Připravíme dispozice, vizualizace a technická řešení."
+    },
+    {
+      "number": "3",
+      "title": "Projekt a příprava",
+      "desc": "Vyřešíme dokumentaci, materiály i harmonogram."
+    },
+    {
+      "number": "4",
+      "title": "Realizace",
+      "desc": "Koordinujeme všechny řemeslné práce a dohlížíme na kvalitu."
+    },
+    {
+      "number": "5",
+      "title": "Nábytek na míru",
+      "desc": "Vyrobíme a namontujeme kuchyně, skříně i další vybavení."
+    },
+    {
+      "number": "6",
+      "title": "Předání domova",
+      "desc": "Uklizeno, doladěno a připraveno k nastěhování."
+    }
+  ],
+
+  "reference.title": "Co na našich projektech oceňují naši klienti",
+  "reference.subtitle": "Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou.",
+
+  "project.ask.title": "Pojďme společně vytvořit Váš nový domov",
+  "project.ask.subtitle": "Každý projekt začíná osobní konzultací. Poznáme Vaše představy, možnosti prostoru i rozpočet a navrhneme nejlepší cestu k realizaci.",
+  "project.ask.cta": "Pojďme na to",
+
+  "section.label.realizations": "Naše realizace",
+  "section.label.howitworks": "Jak probíhá spolupráce",
+  "section.label.whychoose": "Proč klienti volí Smíchov Living",
+  "section.label.writeus": "napište nám"
+}

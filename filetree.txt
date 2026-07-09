@@ -1,4 +1,4 @@
-/Users/michaljirak/GitHub repos/smichov-living
+C:\Users\michal.jirak\Documents\GitHub\smichov-living
 ├── .astro/
 │   ├── collections/
 │   ├── content.d.ts
@@ -8,8 +8,8 @@
 ├── .vscode/
 │   ├── extensions.json
 │   └── launch.json
-├── README.md
 ├── astro.config.mjs
+├── feedback.txt
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
@@ -39,6 +39,7 @@
 │   ├── llms.txt
 │   ├── robots.txt
 │   └── sitemap.xml
+├── README.md
 ├── scripts/
 │   └── generate-tree.js
 ├── src/
@@ -69,13 +70,33 @@
 │   │   ├── contactData.js
 │   │   ├── projects.js
 │   │   └── services.js
+│   ├── i18n/
+│   │   ├── cs.json
+│   │   ├── en.json
+│   │   ├── ru.json
+│   │   ├── utils.ts
+│   │   └── vie.json
 │   ├── pages/
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
 │   │   ├── poptat-projekt.astro
 │   │   ├── reference.astro
 │   │   ├── showroom.astro
-│   │   └── sluzby.astro
+│   │   ├── sluzby.astro
+│   │   ├── [lang]/
+│   │   │   ├── index.astro
+│   │   │   ├── kontakt.astro
+│   │   │   ├── poptat-projekt.astro
+│   │   │   ├── reference.astro
+│   │   │   ├── showroom.astro
+│   │   │   └── sluzby.astro
+│   │   └── _pages/
+│   │       ├── ContactPage.astro
+│   │       ├── Home.astro
+│   │       ├── ProjectRequestPage.astro
+│   │       ├── ReferencePage.astro
+│   │       ├── ServicesPage.astro
+│   │       └── ShowroomPage.astro
 │   └── styles/
 │       └── global.css
 ├── tailwind.config.js

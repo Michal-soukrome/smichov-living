@@ -1,0 +1,167 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import heroBg from "../../assets/images/backgrounds/showroom.webp";
+import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
+import MapIframe from "../../components/MapIframe.astro";
+import { supportedLocales, t, tArray } from "../../i18n/utils";
+
+const { lang = "cs" } = Astro.props;
+const locale = lang;
+const pageTitle = t(lang, "showroom.pageTitle");
+const heroLabel = t(lang, "showroom.hero.label");
+const heroTitle = t(lang, "showroom.hero.title");
+const heroSubtitle = t(lang, "showroom.hero.subtitle");
+const aboutLabel = t(lang, "about.showroom.label");
+const aboutTitle = t(lang, "about.showroom.title");
+const aboutParagraph1 = t(lang, "about.showroom.paragraph1");
+const aboutParagraph2 = t(lang, "about.showroom.paragraph2");
+const locationLabel = t(lang, "showroom.location.label");
+const openingLabel = t(lang, "showroom.opening.label");
+const highlightsLabel = t(lang, "showroom.section.highlights");
+const galleryLabel = t(lang, "showroom.gallery.label");
+const inspirationTitle = t(lang, "showroom.inspiration.title");
+const hours = tArray<{ day: string; time: string }>(lang, "showroom.hours");
+const highlights = tArray<{ title: string; desc: string }>(
+  lang,
+  "showroom.highlights",
+);
+const mapText = t(lang, "showroom.map");
+const visitText = t(lang, "showroom.visit");
+const altMain = t(lang, "showroom.gallery.alt.main");
+const altKitchen = t(lang, "showroom.gallery.alt.kitchen");
+const altMaterials = t(lang, "showroom.gallery.alt.materials");
+---
+
+<BaseLayout title={pageTitle} lang={locale}>
+  <Hero
+    label={heroLabel}
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    image={heroBg}
+  />
+
+  <!-- Intro + info -->
+  <section
+    class="max-w-7xl mx-auto px-6 py-10 md:py-20 grid md:grid-cols-2 gap-16 items-start"
+  >
+    <div>
+      <SectionLabel label={aboutLabel} />
+      <h2
+        class="font-display text-3xl md:text-4xl font-medium text-stone-900 leading-snug mb-6"
+      >
+        {aboutTitle}
+      </h2>
+      <p class="font-body text-sm text-stone-500 leading-relaxed mb-4">
+        {aboutParagraph1}
+      </p>
+      <p class="font-body text-sm text-stone-500 leading-relaxed">
+        {aboutParagraph2}
+      </p>
+    </div>
+
+    <!-- Adresa + hodiny -->
+    <div class="flex flex-col gap-10">
+      <div>
+        <p class="text-xs tracking-widest text-stone-500 uppercase mb-4">
+          {locationLabel}
+        </p>
+        <div class="font-body text-sm text-stone-800 leading-relaxed mb-4">
+          <p class="font-semibold">Smíchov Living s.r.o.</p>
+          <p>Kováků 456/28</p>
+          <p>Praha 5, 150 00</p>
+        </div>
+        <ArrowedUnderline
+          text={mapText}
+          href="https://maps.app.goo.gl/MZssd1sTeguTo3heA"
+          target="_blank"
+        />
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest text-stone-500 uppercase mb-4">
+          {openingLabel}
+        </p>
+        <div class="flex flex-col divide-y divide-stone-100">
+          {
+            hours.map((h) => (
+              <div class="flex justify-between py-2.5 font-body text-sm">
+                <span class="text-stone-700">{h.day}</span>
+                <span class="text-stone-500">{h.time}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <ArrowedUnderline text={visitText} href="/kontakt" lang={lang} />
+    </div>
+  </section>
+
+  <!-- Co u nás najdete -->
+  <section class="border-t border-stone-200 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+      <SectionLabel label={highlightsLabel} />
+
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 border-l border-t border-stone-200"
+      >
+        {
+          highlights.map((h) => (
+            <div class="border-r border-b border-stone-200 p-8 flex flex-col gap-4">
+              <h3 class="font-body font-semibold text-stone-900 text-sm">
+                {h.title}
+              </h3>
+              <span class="block h-px w-8 bg-accent" />
+              <p class="font-body text-sm text-stone-500 leading-relaxed">
+                {h.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotogalerie -->
+  <section class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+    <SectionLabel label={galleryLabel} />
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="col-span-2 md:col-span-2 row-span-2 overflow-hidden">
+        <img
+          src="/images/projects/sluzby.webp"
+          alt={altMain}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+      <div class="overflow-hidden">
+        <img
+          src="/images/projects/homepage.webp"
+          alt={altKitchen}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+      <div class="overflow-hidden">
+        <img
+          src="/images/projects/kontakt.webp"
+          alt={altMaterials}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa -->
+  <section>
+    <div class="max-w-7xl mx-auto">
+      <h2
+        class="font-display text-3xl font-medium text-center mb-12 text-stone-900"
+      >
+        {inspirationTitle}
+      </h2>
+    </div>
+    <MapIframe />
+  </section>
+</BaseLayout>

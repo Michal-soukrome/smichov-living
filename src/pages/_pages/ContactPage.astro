@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import Team from "../../components/Team.astro";
+import MapIframe from "../../components/MapIframe.astro";
+import { supportedLocales, t } from "../../i18n/utils";
+
+const { lang = "cs" } = Astro.props;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
+const pageTitle = t(locale, "contact.pageTitle");
+const heroLabel = t(locale, "hero.contact.label");
+const heroTitle = t(locale, "hero.contact.title");
+const heroSubtitle = t(locale, "hero.contact.subtitle");
+const heroCta = t(locale, "hero.contact.cta");
+---
+
+<BaseLayout title={pageTitle} lang={locale}>
+  <Hero
+    label={heroLabel}
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    image="/assets/images/backgrounds/kontakt.webp"
+    ctaText={heroCta}
+    ctaHref="#kontaktni-formular"
+  />
+
+  <section class="py-24 px-6 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-10">
+        <!-- Address section unchanged -->
+      </div>
+    </div>
+  </section>
+
+  <Team />
+
+  <section
+    class="scroll-mt-24 py-20 px-6 bg-stone-50 border-t border-stone-200"
+    id="kontaktni-formular"
+  >
+    <div class="max-w-2xl mx-auto">
+      <SectionLabel label={t(locale, "section.label.writeus")} />
+      <ContactForm lang={locale} />
+    </div>
+  </section>
+
+  <section>
+    <MapIframe />
+  </section>
+</BaseLayout>

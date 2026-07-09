@@ -1,4 +1,7 @@
 ---
+import type { Locale } from "../i18n/utils";
+import { t, withLocale } from "../i18n/utils";
+
 interface Project {
   tag: string;
   title: string;
@@ -9,9 +12,11 @@ interface Project {
 
 interface Props {
   projects: Project[];
+  lang?: Locale;
 }
 
-const { projects } = Astro.props;
+const { projects, lang = "cs" as Locale } = Astro.props as Props;
+const viewProjectText = t(lang, "reference.ctaViewProject");
 ---
 
 <div class="flex flex-col divide-y divide-stone-200">
@@ -37,10 +42,10 @@ const { projects } = Astro.props;
             {p.desc}
           </p>
           <a
-            href={p.href}
+            href={withLocale(p.href, lang)}
             class="!hidden inline-flex items-center gap-2 text-xs tracking-widest uppercase font-body text-stone-900 border-b border-stone-900 pb-0.5 hover:text-accent hover:border-accent transition-colors w-fit"
           >
-            Zobrazit projekt
+            {viewProjectText}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -1,23 +1,39 @@
 ---
-import ArrowedUnderline from "./ArrowedUnderline.astro";
+import { t, withLocale } from "../i18n/utils";
+
+const {
+  lang = "cs",
+  class: className = "",
+  title,
+  subtitle,
+  primaryText,
+  primaryHref = "/poptat-projekt",
+  secondaryText,
+  secondaryHref = "/kontakt",
+} = Astro.props;
+
+const _title = title ?? t(lang, "banner.title");
+const _subtitle = subtitle ?? t(lang, "banner.subtitle");
+const _primaryText = primaryText ?? t(lang, "banner.primary");
+const _secondaryText = secondaryText ?? t(lang, "banner.secondary");
 ---
 
 <div
-  class={`px-6 py-14 flex flex-col items-center text-center gap-6 ${Astro.props.class ?? ""}`}
+  class={`px-6 py-14 flex flex-col items-center text-center gap-6 ${className}`}
 >
   <div>
     <p class="font-display text-2xl font-medium text-stone-900">
-      Máte představu o svém novém interiéru?
+      {_title}
     </p>
     <p class="font-body text-sm text-stone-500 mt-1">
-      Rádi s vámi probereme možnosti spolupráce.
+      {_subtitle}
     </p>
     <div class="w-full flex items-center justify-center flex-wrap mt-5 gap-5">
-      <a href="/poptat-projekt">
-        <button class="btn-primary">poptejte projekt </button>
+      <a href={withLocale(primaryHref, lang)}>
+        <button class="btn-primary">{_primaryText}</button>
       </a>
-      <a href="/kontakt">
-        <button class="btn-secondary"> ozvěte se nám </button>
+      <a href={withLocale(secondaryHref, lang)}>
+        <button class="btn-secondary">{_secondaryText}</button>
       </a>
     </div>
   </div>

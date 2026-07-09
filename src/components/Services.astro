@@ -1,30 +1,35 @@
 ---
-import { services, steps } from "../data/services";
+import { t, tArray } from "../i18n/utils";
 import Steps from "./Steps.astro";
+
+const { lang = "cs" } = Astro.props;
+const cards = tArray<{ title: string; desc: string }>(lang, "services.cards");
+const label = t(lang, "services.hero.label");
+const headline = t(lang, "services.title");
 ---
 
 <section class="scroll-mt-24 py-24 px-6 max-w-7xl mx-auto" id="sluzby">
   <p class="text-center text-xs tracking-widest text-stone-500 uppercase mb-4">
-    Co pro vás zajistíme
+    {label}
   </p>
 
   <h2
     class="font-display text-3xl font-medium text-center mb-12 text-stone-900"
   >
-    Vše pod jednou střechou
+    {headline}
   </h2>
 
   <div
     class="grid grid-cols-2 md:grid-cols-4 border-l border-t border-stone-200"
   >
     {
-      services.map((s) => (
+      cards.map((s) => (
         <div class="border-r border-b border-stone-200 p-8 flex flex-col gap-4">
           <h3 class="font-body font-semibold text-stone-900 text-sm tracking-wide">
             {s.title}
           </h3>
 
-          <span class="block h-px w-8 bg-[#c9a96e]" />
+          <span class="block h-px w-8 bg-accent" />
 
           <p class="font-body text-sm text-stone-500 leading-relaxed">
             {s.desc}
@@ -34,4 +39,4 @@ import Steps from "./Steps.astro";
     }
   </div>
 </section>
-<Steps />
+<Steps lang={lang} />

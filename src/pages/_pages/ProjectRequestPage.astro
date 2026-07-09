@@ -36,15 +36,18 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
     ctaText={heroCta}
     ctaHref="#poptavkovy-formular-sekce"
   />
-  <section
-    class="scroll-mt-24 px-6 md:px-20 py-10 md:py-20"
-    id="poptavkovy-formular-sekce"
-  >
-    <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
-      <!-- LEVÝ SLOUPEC -->
-      <div>
+  <section>
+    <section
+      class="scroll-mt-24 max-w-7xl mx-auto px-6 py-10 md:py-20"
+      id="poptavkovy-formular-sekce"
+    >
+      <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
+        <!-- LEVÝ SLOUPEC -->
         <div>
           <div>
+            <div>
+              {
+                /* 
             <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
               {t(locale, "contact.form.projectType")}
               <span class="text-xs text-red-500"
@@ -52,7 +55,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
               >
             </p>
             <span class="block h-px w-10 bg-accent mb-8"></span>
-
+        
             <div
               class="grid grid-cols-2 md:grid-cols-3 border-l border-t border-stone-200 mb-16"
               id="project-type-grid"
@@ -72,55 +75,114 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
                 ))
               }
             </div>
+            */
+              }
 
-            <div class="hidden lg:block">
-              <div>
-                <SectionLabel label={t(locale, "section.label.howitworks")} />
+              <div class="hidden lg:block">
+                <div>
+                  <SectionLabel label={t(locale, "section.label.howitworks")} />
 
-                <div class="grid sm:grid-cols-3 gap-8 mb-16">
-                  {
-                    contactData.steps.map((step) => (
-                      <div class="flex flex-col gap-3">
-                        <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
-                            {step.number}
+                  <div class="grid sm:grid-cols-3 gap-8 mb-16">
+                    {
+                      contactData.steps.map((step) => (
+                        <div class="flex flex-col gap-3">
+                          <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                              {step.number}
+                            </div>
+                            <h3 class="font-body font-bold text-stone-900 text-sm">
+                              {step.title}
+                            </h3>
                           </div>
-                          <h3 class="font-body font-bold text-stone-900 text-sm">
-                            {step.title}
-                          </h3>
-                        </div>
 
-                        <p class="font-body text-stone-500 text-sm leading-relaxed">
-                          {step.desc}
-                        </p>
+                          <p class="font-body text-stone-500 text-sm leading-relaxed">
+                            {step.desc}
+                          </p>
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div class="hidden lg:block">
+                <SectionLabel label={t(locale, "section.label.whychoose")} />
+                <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+                  {
+                    contactData.reasons.map((r) => (
+                      <div class="flex items-start gap-3">
+                        <svg
+                          class="text-accent mt-0.5 shrink-0 w-4 h-4"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="2.5"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4.5 12.75l6 6 9-13.5"
+                          />
+                        </svg>
+                        <span class="font-body text-sm text-stone-700">
+                          {r}
+                        </span>
                       </div>
                     ))
                   }
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div class="hidden lg:block">
-              <SectionLabel label={t(locale, "section.label.whychoose")} />
-              <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+        <!-- PRAVÝ SLOUPEC -->
+        <div class="scroll-mt-24">
+          <div>
+            <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
+              {t(locale, "project.request.describeProject")}
+              <span class="text-xs text-red-500"
+                >{t(locale, "project.request.requiredLabel")}</span
+              >
+            </p>
+            <span class="block h-px w-10 bg-accent mb-8"></span>
+          </div>
+
+          <div class="bg-stone-50 border border-stone-200 p-3 md:p-8">
+            <h3 class="text-xl font-medium text-stone-900 mb-8">
+              {t(locale, "project.request.formTitle")}
+            </h3>
+
+            <ContactForm
+              id="poptavka-form"
+              showProjectType={true}
+              showBudget={true}
+              showCity={true}
+              showUpload={true}
+              projectTypes={contactData.projectTypes}
+              budgets={contactData.budgets}
+              submitText="Odeslat poptávku"
+            />
+
+            <div class="block lg:hidden mt-16">
+              <SectionLabel label={t(locale, "section.label.howitworks")} />
+              <div class="grid sm:grid-cols-3 gap-8 mb-16">
                 {
-                  contactData.reasons.map((r) => (
-                    <div class="flex items-start gap-3">
-                      <svg
-                        class="text-accent mt-0.5 shrink-0 w-4 h-4"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="2.5"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M4.5 12.75l6 6 9-13.5"
-                        />
-                      </svg>
-                      <span class="font-body text-sm text-stone-700">{r}</span>
+                  contactData.steps.map((step) => (
+                    <div class="flex flex-col gap-3">
+                      <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                          {step.number}
+                        </div>
+                        <h3 class="font-body font-bold text-stone-900 text-sm">
+                          {step.title}
+                        </h3>
+                      </div>
+
+                      <p class="font-body text-stone-500 text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
                     </div>
                   ))
                 }
@@ -129,103 +191,49 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
           </div>
         </div>
       </div>
-
-      <!-- PRAVÝ SLOUPEC -->
-      <div class="scroll-mt-24">
+      <section class="scroll-mt-24 py-10 md:py-20">
         <div>
-          <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-            {t(locale, "project.request.describeProject")}
-            <span class="text-xs text-red-500"
-              >{t(locale, "project.request.requiredLabel")}</span
-            >
-          </p>
-          <span class="block h-px w-10 bg-accent mb-8"></span>
+          <SectionLabel label={realizationsLabel} />
         </div>
-
-        <div class="bg-stone-50 border border-stone-200 p-3 md:p-8">
-          <h3 class="text-xl font-medium text-stone-900 mb-8">
-            {t(locale, "project.request.formTitle")}
-          </h3>
-
-          <ContactForm
-            id="poptavka-form"
-            showProjectType={true}
-            showBudget={true}
-            showCity={true}
-            showUpload={true}
-            projectTypes={contactData.projectTypes}
-            budgets={contactData.budgets}
-            submitText="Odeslat poptávku"
-          />
-
-          <div class="block lg:hidden mt-16">
-            <SectionLabel label={t(locale, "section.label.howitworks")} />
-            <div class="grid sm:grid-cols-3 gap-8 mb-16">
-              {
-                contactData.steps.map((step) => (
-                  <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
-                        {step.number}
-                      </div>
-                      <h3 class="font-body font-bold text-stone-900 text-sm">
-                        {step.title}
-                      </h3>
-                    </div>
-
-                    <p class="font-body text-stone-500 text-sm leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
-                ))
-              }
+        <div>
+          <div class="grid md:grid-cols-4 gap-5">
+            <div>
+              <img
+                src={realizace1.src}
+                alt={realizationAlts[0] ?? "Realizace 1"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div>
+              <img
+                src={realizace2.src}
+                alt={realizationAlts[1] ?? "Realizace 2"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div>
+              <img
+                src={realizace3.src}
+                alt={realizationAlts[2] ?? "Realizace 3"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div>
+              <img
+                src={realizace4.src}
+                alt={realizationAlts[3] ?? "Realizace 4"}
+                class="w-full h-48 object-cover"
+              />
             </div>
           </div>
+          <ArrowedUnderline
+            href="/reference"
+            lang={lang}
+            text={showAllProjectsText}
+            class="mx-auto text-center mt-8 w-full justify-center"
+          />
         </div>
-      </div>
-    </div>
-    <section class="scroll-mt-24 py-10 md:py-20">
-      <div>
-        <SectionLabel label={realizationsLabel} />
-      </div>
-      <div>
-        <div class="grid md:grid-cols-4 gap-5">
-          <div>
-            <img
-              src={realizace1.src}
-              alt={realizationAlts[0] ?? "Realizace 1"}
-              class="w-full h-48 object-cover"
-            />
-          </div>
-          <div>
-            <img
-              src={realizace2.src}
-              alt={realizationAlts[1] ?? "Realizace 2"}
-              class="w-full h-48 object-cover"
-            />
-          </div>
-          <div>
-            <img
-              src={realizace3.src}
-              alt={realizationAlts[2] ?? "Realizace 3"}
-              class="w-full h-48 object-cover"
-            />
-          </div>
-          <div>
-            <img
-              src={realizace4.src}
-              alt={realizationAlts[3] ?? "Realizace 4"}
-              class="w-full h-48 object-cover"
-            />
-          </div>
-        </div>
-        <ArrowedUnderline
-          href="/reference"
-          lang={lang}
-          text={showAllProjectsText}
-          class="mx-auto text-center mt-8 w-full justify-center"
-        />
-      </div>
+      </section>
     </section>
-  </section></BaseLayout
->
+  </section>
+</BaseLayout>

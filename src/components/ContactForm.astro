@@ -99,7 +99,8 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
       />
     </div>
-
+    {
+      /* 
     {
       showCity && (
         <div class="flex flex-col gap-1.5">
@@ -115,7 +116,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         </div>
       )
     }
-
+      
     {
       showBudget && budgets.length > 0 && (
         <div class="flex flex-col gap-2">
@@ -138,6 +139,8 @@ const _submitText = submitText || t(lang, "contact.form.submit");
           <input type="hidden" name="rozpocet" data-role="budget-input" />
         </div>
       )
+    }
+      */
     }
 
     <div class="flex flex-col gap-1.5">
@@ -281,10 +284,10 @@ const _submitText = submitText || t(lang, "contact.form.submit");
               .querySelectorAll<HTMLElement>('[data-role="budget-btn"]')
               .forEach((b) => {
                 b.classList.remove("border-accent", "bg-accent", "text-white");
-                b.classList.add("text-stone-700");
+                b.classList.add("text-stone-700 bg-white");
               });
             btn.classList.add("border-accent", "bg-accent", "text-white");
-            btn.classList.remove("text-stone-700");
+            btn.classList.remove("text-stone-700 bg-white");
             if (budgetInput) budgetInput.value = btn.dataset.budget ?? "";
           });
         });

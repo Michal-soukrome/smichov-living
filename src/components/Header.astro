@@ -136,7 +136,7 @@ const localizedNav = nav.map((item) => ({
     <!-- Hamburger -->
     <button
       id="mobile-btn"
-      class="xl:hidden p-2 -mr-2"
+      class="xl:hidden p-2 -mr-2 cursor-pointer"
       aria-label="Menu"
       type="button"
     >
@@ -182,7 +182,7 @@ const localizedNav = nav.map((item) => ({
           href={item.href}
           data-navlink
           data-path={item.basePath}
-          class="text-dark text-base py-2 block"
+          class="text-dark text-base py-2 block hover:underline "
         >
           {item.label}
         </a>

@@ -270,5 +270,11 @@
   "section.label.realizations": "Our projects",
   "section.label.howitworks": "How collaboration works",
   "section.label.whychoose": "Why clients choose Smíchov Living",
-  "section.label.writeus": "write to us"
+  "section.label.writeus": "write to us",
+  "contact.address.label": "Address",
+  "contact.opening.label": "Opening hours",
+  "contact.map": "View on map",
+  "contact.visit": "Schedule a visit",
+  "contact.followUs.label": "Follow us",
+  "section.label.noona": "book a meeting via the Noona app"
 }

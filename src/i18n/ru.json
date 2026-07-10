@@ -270,5 +270,11 @@
   "section.label.realizations": "Наши проекты",
   "section.label.howitworks": "Как проходит сотрудничество",
   "section.label.whychoose": "Почему клиенты выбирают Smíchov Living",
-  "section.label.writeus": "напишите нам"
+  "section.label.writeus": "напишите нам",
+  "contact.address.label": "Адрес",
+  "contact.opening.label": "Часы работы",
+  "contact.map": "Посмотреть на карте",
+  "contact.visit": "Запланировать визит",
+  "contact.followUs.label": "Следите за нами",
+  "section.label.noona": "забронируйте встречу через приложение Noona"
 }

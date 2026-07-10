@@ -270,5 +270,11 @@
   "section.label.realizations": "Naše realizace",
   "section.label.howitworks": "Jak probíhá spolupráce",
   "section.label.whychoose": "Proč klienti volí Smíchov Living",
-  "section.label.writeus": "napište nám"
+  "section.label.writeus": "napište nám",
+  "contact.address.label": "Adresa",
+  "contact.opening.label": "Otevírací doba",
+  "contact.map": "Zobrazit na mapě",
+  "contact.visit": "Domluvit návštěvu",
+  "contact.followUs.label": "Sledujte nás",
+  "section.label.noona": "rezervujte si schůzku přes aplikaci Noona"
 }

@@ -1,4 +1,0 @@
-Zjednodušit formulář na „poptat projekt“ a reusnout oba i na /kontakt
-Na stránku kontakt umístit Noona vedle kontaktního formuláře
-Zvýšit iframe mapy asi na nějaký vh údaje
-Jazykové mutace jsem úplně zapomněl – cz,en,vie,ru

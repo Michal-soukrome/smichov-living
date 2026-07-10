@@ -219,10 +219,29 @@ const localizedNav = nav.map((item) => ({
 
   <script>
     const LOCALES = ["cs", "en", "ru", "vie"];
+    const STORAGE_KEY = "site-language";
 
     function getLocaleFromPath(path: string): string {
       const first = path.split("/").filter(Boolean)[0];
       return LOCALES.includes(first) ? first : "cs";
+    }
+
+    function getStoredLocale(): string | null {
+      try {
+        const stored = window.localStorage.getItem(STORAGE_KEY);
+        return LOCALES.includes(stored ?? "") ? stored : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function setStoredLocale(locale: string) {
+      if (!LOCALES.includes(locale)) return;
+      try {
+        window.localStorage.setItem(STORAGE_KEY, locale);
+      } catch {
+        // ignore storage failures
+      }
     }
 
     function withLocale(path: string, locale: string): string {
@@ -235,6 +254,17 @@ const localizedNav = nav.map((item) => ({
       return segments.length === 0
         ? `/${locale}/`
         : `/${locale}/${segments.join("/")}`;
+    }
+
+    function replaceWithStoredLocale(): boolean {
+      const stored = getStoredLocale();
+      const current = getLocaleFromPath(window.location.pathname);
+      if (!stored || stored === current) return false;
+      if (current === "cs") {
+        window.location.replace(withLocale(window.location.pathname, stored));
+        return true;
+      }
+      return false;
     }
 
     function closeMenu() {
@@ -314,6 +344,11 @@ const localizedNav = nav.map((item) => ({
         });
     }
 
+    function handleLangSelection(lang: string) {
+      setStoredLocale(lang);
+      window.location.href = withLocale(window.location.pathname, lang);
+    }
+
     // Single click listener
     document.addEventListener("click", (e) => {
       const target = e.target as Element;
@@ -324,7 +359,7 @@ const localizedNav = nav.map((item) => ({
         menu?.style.display === "flex" ? closeMenu() : openMenu();
         return;
       }
-      if (target.closest("#mobile-menu")) {
+      if (target.closest("#mobile-menu") && !target.closest("[data-lang]")) {
         closeMenu();
         return;
       }
@@ -342,12 +377,23 @@ const localizedNav = nav.map((item) => ({
         return;
       }
 
+      const langItem = target.closest("[data-lang]");
+      if (langItem) {
+        e.preventDefault();
+        const selectedLang = langItem.getAttribute("data-lang");
+        if (selectedLang) {
+          handleLangSelection(selectedLang);
+        }
+        return;
+      }
+
       if (!target.closest("#lang-switcher-menu")) {
         closeLangMenu();
       }
     });
 
     function init() {
+      if (replaceWithStoredLocale()) return;
       closeMenu();
       updateNavHrefs();
       updateActiveLinks();

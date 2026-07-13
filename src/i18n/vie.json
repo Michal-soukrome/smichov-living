@@ -53,7 +53,30 @@
   "footer.contactHeader": "Liên hệ",
   "footer.legalHeader": "Quan trọng",
   "footer.privacy": "Chính sách bảo mật",
+  "footer.gdpr": "GDPR",
   "footer.cookies": "Cookies",
+
+  "privacy.pageTitle": "Chính sách bảo mật | Smíchov Living",
+  "privacy.label": "Chính sách bảo mật",
+  "privacy.title": "Chính sách bảo mật của chúng tôi",
+  "privacy.subtitle": "Tìm hiểu cách chúng tôi thu thập và sử dụng dữ liệu cá nhân của bạn.",
+  "privacy.paragraphs": [
+    "Chúng tôi chỉ thu thập dữ liệu cần thiết để xử lý yêu cầu của bạn và liên hệ với bạn.",
+    "Thông tin của bạn được lưu trữ an toàn và không bao giờ được chia sẻ với bên thứ ba trái phép.",
+    "Bạn có thể yêu cầu xóa hoặc sửa đổi dữ liệu cá nhân của mình bất cứ lúc nào.",
+    "Chúng tôi chỉ sử dụng cookie cho chức năng cơ bản của trang và phân tích lượt truy cập."
+  ],
+
+  "gdpr.pageTitle": "GDPR | Smíchov Living",
+  "gdpr.label": "GDPR",
+  "gdpr.title": "Xử lý dữ liệu cá nhân",
+  "gdpr.subtitle": "Thông tin về cơ sở pháp lý, mục đích và phạm vi xử lý dữ liệu cá nhân.",
+  "gdpr.paragraphs": [
+    "Chúng tôi xử lý dữ liệu cá nhân dựa trên sự đồng ý của bạn và để xử lý yêu cầu của bạn.",
+    "Dữ liệu được giữ lại chỉ trong thời gian cần thiết để hoàn thành yêu cầu và tuân thủ nghĩa vụ pháp lý.",
+    "Bạn có quyền truy cập, sửa và xóa dữ liệu cá nhân của mình.",
+    "Lưu trữ và xử lý dữ liệu tuân thủ Quy định chung về Bảo vệ Dữ liệu (GDPR)."
+  ],
   "link.showAllRealizations": "Xem tất cả các dự án đã thực hiện",
   "contact.pageTitle": "Liên hệ | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
   "reference.pageTitle": "Tham khảo | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
@@ -256,7 +279,8 @@
         "Ốp lát, gạch, sàn",
         "Sơn và hoàn thiện cuối cùng"
       ],
-      "image": "/images/projects/kontakt.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     },
     {
       "number": "03",
@@ -269,7 +293,8 @@
         "Tường phòng khách và kệ sách",
         "Lắp đặt và bảo trì"
       ],
-      "image": "/images/projects/reference.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     },
     {
       "number": "04",
@@ -282,7 +307,8 @@
         "Nguồn cảm hứng cho dự án của bạn",
         "Thứ 2–Thứ 6 10:00–18:00"
       ],
-      "image": "/images/projects/sluzby.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     }
   ],
   "steps.label": "Quy trình hợp tác",
@@ -322,7 +348,8 @@
 
   "reference.title": "Khách hàng đánh giá gì về dự án của chúng tôi",
   "reference.subtitle": "Đọc những gì khách hàng nói về chúng tôi và trải nghiệm của họ với dịch vụ của chúng tôi. Sự hài lòng của bạn là ưu tiên của chúng tôi.",
-
+  "reference.before": "Trước",
+  "reference.after": "Sau",
   "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",
   "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi hiểu ý tưởng, không gian và ngân sách của bạn để thiết kế con đường tốt nhất cho việc thực hiện.",
   "project.ask.cta": "Bắt đầu nào",

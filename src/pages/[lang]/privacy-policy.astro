@@ -1,0 +1,17 @@
+---
+import PrivacyPage from "../_pages/PrivacyPage.astro";
+import { supportedLocales } from "../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "ru" } },
+    { params: { lang: "vie" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
+---
+
+<PrivacyPage lang={locale} />

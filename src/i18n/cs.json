@@ -53,34 +53,62 @@
   "footer.contactHeader": "Kontakt",
   "footer.legalHeader": "Důležité",
   "footer.privacy": "Ochrana osobních údajů",
+  "footer.gdpr": "GDPR",
   "footer.cookies": "Cookies",
+
+  "privacy.pageTitle": "Ochrana osobních údajů | Smíchov Living",
+  "privacy.label": "Ochrana osobních údajů",
+  "privacy.title": "Naše zásady ochrany osobních údajů",
+  "privacy.subtitle": "Zde zjistíte, jak zpracováváme osobní informace, které nám poskytnete.",
+  "privacy.paragraphs": [
+    "Shromažďujeme pouze údaje potřebné k vyřízení vaší poptávky a kontaktování vás.",
+    "Vaše údaje jsou u nás bezpečně uloženy a nikdy je nesdílíme s neoprávněnými třetími stranami.",
+    "Kdykoli nás můžete požádat o výmaz nebo opravu vašich osobních údajů.",
+    "Používáme cookies jen pro základní funkčnost stránek a analytiku návštěvnosti."
+  ],
+
+  "gdpr.pageTitle": "GDPR | Smíchov Living",
+  "gdpr.label": "GDPR",
+  "gdpr.title": "Zpracování osobních údajů",
+  "gdpr.subtitle": "Informace o právním základu, účelu a rozsahu zpracování osobních údajů.",
+  "gdpr.paragraphs": [
+    "Zpracováváme osobní údaje na základě vašeho souhlasu a za účelem vyřízení poptávky.",
+    "Údaje uchováváme po dobu nutnou k vyřízení požadavku a k plnění právních povinností.",
+    "Máte právo na přístup k vašim údajům, jejich opravu a výmaz.",
+    "Ukládání osobních údajů a jejich zpracování probíhá v souladu s obecnými nařízeními o ochraně osobních údajů (GDPR)."
+  ],
   "link.showAllRealizations": "Zobrazit všechny realizace",
   "contact.pageTitle": "Kontakt | Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "reference.pageTitle": "Reference | Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "reference.label": "Reference",
   "reference.title": "Co na našich projektech oceňují naši klienti",
   "reference.subtitle": "Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou.",
+  "reference.before": "Před",
+  "reference.after": "Po",
   "reference.projects": [
     {
       "tag": "Byt 3+KK",
       "title": "Byt na Smíchově",
       "desc": "Kompletní rekonstrukce bytu včetně návrhu interiéru a výroby nábytku na míru.",
       "href": "/reference/byt-na-smichove",
-      "image": "/images/projects/homepage.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     },
     {
       "tag": "Rodinný dům",
       "title": "Rodinný dům – Praha západ",
       "desc": "Kompletní realizace interiéru rodinného domu v nadčasovém přírodním stylu.",
       "href": "/reference/rodinny-dum-praha-zapad",
-      "image": "/images/projects/sluzby.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     },
     {
       "tag": "Byt 4+KK",
       "title": "Moderní byt v centru Prahy",
       "desc": "Návrh dispozice, realizace na klíč a kompletní vybavení interiéru prémiovými materiály.",
       "href": "/reference/moderni-byt-centrum-prahy",
-      "image": "/images/projects/showroom.webp"
+      "beforeImage": "/images/projects/sluzby.webp",
+      "afterImage": "/images/projects/showroom.webp"
     }
   ],
   "reference.ctaViewProject": "Zobrazit projekt",

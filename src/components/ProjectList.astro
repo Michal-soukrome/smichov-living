@@ -7,7 +7,9 @@ interface Project {
   title: string;
   desc: string;
   href: string;
-  image: string;
+  image?: string;
+  beforeImage?: string;
+  afterImage?: string;
 }
 
 interface Props {
@@ -17,6 +19,8 @@ interface Props {
 
 const { projects, lang = "cs" as Locale } = Astro.props as Props;
 const viewProjectText = t(lang, "reference.ctaViewProject");
+const beforeText = t(lang, "reference.before") ?? "Před";
+const afterText = t(lang, "reference.after") ?? "Po";
 ---
 
 <div class="flex flex-col divide-y divide-stone-200">
@@ -24,11 +28,36 @@ const viewProjectText = t(lang, "reference.ctaViewProject");
     projects.map((p) => (
       <div class="grid md:grid-cols-[3fr_2fr] gap-0 group">
         <div class="overflow-hidden">
-          <img
-            src={p.image}
-            alt={p.title}
-            class="w-full h-72 md:min-h-80 md:h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-          />
+          {p.beforeImage && p.afterImage ? (
+            <div class="grid grid-cols-2 h-72 md:min-h-80 md:h-full">
+              <div class="relative overflow-hidden">
+                <img
+                  src={p.beforeImage}
+                  alt={`${p.title} – ${beforeText}`}
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+                <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-stone-900/70 px-2 py-1">
+                  {beforeText}
+                </span>
+              </div>
+              <div class="relative overflow-hidden border-l border-white/20">
+                <img
+                  src={p.afterImage}
+                  alt={`${p.title} – ${afterText}`}
+                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                />
+                <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-accent/80 px-2 py-1">
+                  {afterText}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <img
+              src={p.image}
+              alt={p.title}
+              class="w-full h-72 md:min-h-80 md:h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            />
+          )}
         </div>
 
         <div class="flex flex-col justify-center px-0 md:px-14 py-5 md:py-10">

@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import { t, tArray } from "../../i18n/utils";
+
+interface Subsection {
+  heading: string;
+  paragraphs?: string[];
+  list?: string[];
+}
+
+interface Section {
+  heading: string;
+  description?: string;
+  paragraphs?: string[];
+  list?: string[];
+  subsections?: Subsection[];
+}
+
+const { lang = "cs" } = Astro.props;
+const pageTitle = t(lang, "privacy.pageTitle");
+const label = t(lang, "privacy.label");
+const title = t(lang, "privacy.title");
+const subtitle = t(lang, "privacy.subtitle");
+const sections = tArray<Section>(lang, "privacy.sections");
+---
+
+<BaseLayout title={pageTitle} lang={lang}>
+  <section class="max-w-7xl mx-auto px-6 py-20 sm:py-32">
+    <SectionLabel label={label} />
+    <h3
+      class="font-display text-3xl md:text-4xl font-medium text-stone-900 mb-6"
+    >
+      {title}
+    </h3>
+    <p class="font-body text-base text-stone-600 leading-relaxed mb-10">
+      {subtitle}
+    </p>
+
+    <div class="space-y-12">
+      {
+        sections.map((section) => (
+          <div class="space-y-6">
+            <h2 class="font-display text-2xl font-semibold text-stone-900">
+              {section.heading}
+            </h2>
+
+            {section.description && (
+              <p class="font-body text-sm text-stone-500 leading-relaxed">
+                {section.description}
+              </p>
+            )}
+
+            {section.paragraphs?.map((paragraph) => (
+              <p class="font-body text-sm text-stone-500 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+
+            {section.list && (
+              <ul class="list-disc list-inside space-y-2 text-sm text-stone-500">
+                {section.list.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+
+            {section.subsections?.map((subsection) => (
+              <div class="space-y-4 pl-4 border-l border-stone-200">
+                <h3 class="font-display text-xl font-semibold text-stone-900">
+                  {subsection.heading}
+                </h3>
+
+                {subsection.paragraphs?.map((paragraph) => (
+                  <p class="font-body text-sm text-stone-500 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+
+                {subsection.list && (
+                  <ul class="list-disc list-inside space-y-2 text-sm text-stone-500">
+                    {subsection.list.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

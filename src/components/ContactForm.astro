@@ -173,7 +173,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         <span class="text-xs text-red-500">*</span>
         {t(lang, "contact.form.gdprPrefix")}
         <a
-          href="/zpracovani-osobnich-udaju"
+          href={withLocale("/gdpr", lang)}
           class="underline hover:text-stone-800 transition-colors"
         >
           {t(lang, "contact.form.gdprLink")}

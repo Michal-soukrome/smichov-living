@@ -31,7 +31,7 @@ const localizedProjectTypes = contactData.projectTypes.map((pt) => {
   ).find((item) => item.value === pt.value);
   return {
     ...pt,
-    label: translation?.label ?? pt.label,
+    label: translation?.label ?? pt.value,
   };
 });
 const localizedBudgets = tArray<string>(locale, "project.request.budgets");
@@ -44,10 +44,8 @@ const localizedSteps = tArray<{
   icon: contactData.steps[index]?.icon ?? "",
 }));
 const localizedReasons = tArray<string>(locale, "project.request.reasons");
-const stepsToRender =
-  localizedSteps.length > 0 ? localizedSteps : contactData.steps;
-const reasonsToRender =
-  localizedReasons.length > 0 ? localizedReasons : contactData.reasons;
+const stepsToRender = localizedSteps;
+const reasonsToRender = localizedReasons;
 const showAllProjectsText = t(locale, "link.showAllRealizations");
 ---
 
@@ -71,38 +69,6 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
         <div>
           <div>
             <div>
-              {
-                /* 
-            <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-              {t(locale, "contact.form.projectType")}
-              <span class="text-xs text-red-500"
-                >{t(locale, "project.request.requiredLabel")}</span
-              >
-            </p>
-            <span class="block h-px w-10 bg-accent mb-8"></span>
-        
-            <div
-              class="grid grid-cols-2 md:grid-cols-3 border-l border-t border-stone-200 mb-16"
-              id="project-type-grid"
-            >
-              {
-                contactData.projectTypes.map((pt) => (
-                  <button
-                    type="button"
-                    data-value={pt.value}
-                    class="group project-type-btn border-r border-b border-stone-200 p-6 flex flex-col items-center gap-3 text-center hover:bg-accent  text-stone-800 hover:text-white transition-colors cursor-pointer"
-                  >
-                    <div class="group-hover:text-white" set:html={pt.icon} />
-                    <span class="font-body text-sm font-medium leading-snug">
-                      {pt.label}
-                    </span>
-                  </button>
-                ))
-              }
-            </div>
-            */
-              }
-
               <div class="hidden lg:block">
                 <div>
                   <SectionLabel label={t(locale, "section.label.howitworks")} />
@@ -187,9 +153,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
               showCity={true}
               showUpload={true}
               projectTypes={localizedProjectTypes}
-              budgets={localizedBudgets.length > 0
-                ? localizedBudgets
-                : contactData.budgets}
+              budgets={localizedBudgets}
               submitText={t(locale, "contact.form.submit")}
             />
 

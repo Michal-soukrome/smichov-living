@@ -160,8 +160,8 @@
 
   "about.showroom.label": "Về showroom",
   "about.showroom.title": "Mọi thứ bạn cần để quyết định trong một nơi",
-  "about.showroom.paragraph1": "Showroom của chúng tôi ở Smíchov, Prague được tạo ra như một không gian nơi cảm hứng gặp gỡ thực tế. Chúng tôi không chỉ là phòng trưng bày — đây là nơi bạn có thể ngồi lại, thảo luận dự án và có ý tưởng rõ ràng về cách ngôi nhà mới của bạn sẽ trông như thế nào.",
-  "about.showroom.paragraph2": "Chúng tôi trưng bày vật liệu thực, bề mặt và nội thất mà chúng tôi sử dụng trong các dự án của mình. Không có catalogue, không có bất ngờ — những gì bạn thấy là những gì bạn nhận được.",
+  "about.showroom.paragraph1": "Showroom của chúng tôi ở Smíchov, Prague được tạo ra như một không gian nơi cảm hứng gặp gỡ thực tế. Chúng tôi không chỉ là phòng trưng bày - đây là nơi bạn có thể ngồi lại, thảo luận dự án và có ý tưởng rõ ràng về cách ngôi nhà mới của bạn sẽ trông như thế nào.",
+  "about.showroom.paragraph2": "Chúng tôi trưng bày vật liệu thực, bề mặt và nội thất mà chúng tôi sử dụng trong các dự án của mình. Không có catalogue, không có bất ngờ - những gì bạn thấy là những gì bạn nhận được.",
   "showroom.map": "Xem trên bản đồ",
   "showroom.visit": "Lên lịch ghé thăm",
   "showroom.location.label": "Nơi bạn có thể tìm thấy chúng tôi",
@@ -235,7 +235,7 @@
     {
       "number": "01",
       "title": "Thiết kế nội thất",
-      "desc": "Mỗi dự án bắt đầu bằng việc hiểu rõ nhu cầu, phong cách sống và sở thích thẩm mỹ của bạn. Chúng tôi chuẩn bị tài liệu dự án đầy đủ gồm bố cục, mô phỏng 3D và lựa chọn vật liệu — tất cả để kết quả thực sự là của bạn.",
+      "desc": "Mỗi dự án bắt đầu bằng việc hiểu rõ nhu cầu, phong cách sống và sở thích thẩm mỹ của bạn. Chúng tôi chuẩn bị tài liệu dự án đầy đủ gồm bố cục, mô phỏng 3D và lựa chọn vật liệu - tất cả để kết quả thực sự là của bạn.",
       "items": [
         "Bố cục và mặt bằng",
         "Mô phỏng 3D",
@@ -261,7 +261,7 @@
     {
       "number": "03",
       "title": "Nội thất theo yêu cầu",
-      "desc": "Chúng tôi thiết kế và sản xuất nội thất âm tường chính xác theo không gian của bạn. Từ nhà bếp và tủ quần áo đến kệ và vách tivi — mỗi món đồ được tạo để tận dụng tối đa diện tích.",
+      "desc": "Chúng tôi thiết kế và sản xuất nội thất âm tường chính xác theo không gian của bạn. Từ nhà bếp và tủ quần áo đến kệ và vách tivi - mỗi món đồ được tạo để tận dụng tối đa diện tích.",
       "items": [
         "Nhà bếp theo yêu cầu",
         "Tủ quần áo và tủ âm tường",

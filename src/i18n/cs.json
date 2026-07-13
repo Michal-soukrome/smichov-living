@@ -161,8 +161,8 @@
 
   "about.showroom.label": "O showroomu",
   "about.showroom.title": "Vše, co potřebujete pro rozhodnutí, na jednom místě",
-  "about.showroom.paragraph1": "Náš showroom na pražském Smíchově vznikl jako prostor, kde se setkávají inspirace s realitou. Nejsme jen vzorkovny — jsme místo, kde si můžete v klidu sednout, probrat svůj projekt a odnést si konkrétní představu o tom, jak může váš nový domov vypadat.",
-  "about.showroom.paragraph2": "Vystavujeme skutečné materiály, povrchy a nábytek, který používáme v našich realizacích. Žádné katalogy, žádné překvapení — co vidíte, to dostanete.",
+  "about.showroom.paragraph1": "Náš showroom na pražském Smíchově vznikl jako prostor, kde se setkávají inspirace s realitou. Nejsme jen vzorkovny - jsme místo, kde si můžete v klidu sednout, probrat svůj projekt a odnést si konkrétní představu o tom, jak může váš nový domov vypadat.",
+  "about.showroom.paragraph2": "Vystavujeme skutečné materiály, povrchy a nábytek, který používáme v našich realizacích. Žádné katalogy, žádné překvapení - co vidíte, to dostanete.",
   "showroom.map": "Zobrazit na mapě",
   "showroom.visit": "Domluvit návštěvu",
   "showroom.location.label": "Kde nás najdete",
@@ -236,7 +236,7 @@
     {
       "number": "01",
       "title": "Návrh interiéru",
-      "desc": "Každý projekt začíná důkladným pochopením vašich potřeb, způsobu života a estetických preferencí. Připravíme kompletní projektovou dokumentaci včetně půdorysů, 3D vizualizací a výběru materiálů — vše tak, aby výsledek byl přesně váš.",
+      "desc": "Každý projekt začíná důkladným pochopením vašich potřeb, způsobu života a estetických preferencí. Připravíme kompletní projektovou dokumentaci včetně půdorysů, 3D vizualizací a výběru materiálů - vše tak, aby výsledek byl přesně váš.",
       "items": [
         "Půdorysy a dispozice",
         "3D vizualizace",
@@ -262,7 +262,7 @@
     {
       "number": "03",
       "title": "Nábytek na míru",
-      "desc": "Navrhujeme a vyrábíme vestavěný nábytek přesně do vašeho prostoru. Od kuchyní a šaten po knihovny a TV stěny — každý kus je navržen tak, aby maximálně využil dostupný prostor a ladil s celkovým interiérem.",
+      "desc": "Navrhujeme a vyrábíme vestavěný nábytek přesně do vašeho prostoru. Od kuchyní a šaten po knihovny a TV stěny - každý kus je navržen tak, aby maximálně využil dostupný prostor a ladil s celkovým interiérem.",
       "items": [
         "Kuchyně na míru",
         "Šatny a vestavěné skříně",

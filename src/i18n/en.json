@@ -161,8 +161,8 @@
 
   "about.showroom.label": "About the showroom",
   "about.showroom.title": "Everything you need to decide in one place",
-  "about.showroom.paragraph1": "Our showroom in Prague's Smíchov district was created as a space where inspiration meets reality. We're not just sample rooms — we're a place where you can sit down, discuss your project, and leave with a concrete idea of how your new home can look.",
-  "about.showroom.paragraph2": "We exhibit real materials, surfaces, and furniture that we use in our projects. No catalogs, no surprises — what you see is what you get.",
+  "about.showroom.paragraph1": "Our showroom in Prague's Smíchov district was created as a space where inspiration meets reality. We're not just sample rooms - we're a place where you can sit down, discuss your project, and leave with a concrete idea of how your new home can look.",
+  "about.showroom.paragraph2": "We exhibit real materials, surfaces, and furniture that we use in our projects. No catalogs, no surprises - what you see is what you get.",
   "showroom.map": "View on map",
   "showroom.visit": "Schedule a visit",
   "showroom.location.label": "Where to find us",
@@ -236,7 +236,7 @@
     {
       "number": "01",
       "title": "Interior design",
-      "desc": "Every project begins with a deep understanding of your needs, lifestyle and aesthetic preferences. We prepare complete project documentation including layouts, 3D visualizations and material selection — everything so the result is truly yours.",
+      "desc": "Every project begins with a deep understanding of your needs, lifestyle and aesthetic preferences. We prepare complete project documentation including layouts, 3D visualizations and material selection - everything so the result is truly yours.",
       "items": [
         "Layouts and floor plans",
         "3D visualizations",
@@ -262,7 +262,7 @@
     {
       "number": "03",
       "title": "Custom furniture",
-      "desc": "We design and manufacture built-in furniture precisely for your space. From kitchens and wardrobes to shelves and TV walls — every piece is created to maximize available space and match the overall interior.",
+      "desc": "We design and manufacture built-in furniture precisely for your space. From kitchens and wardrobes to shelves and TV walls - every piece is created to maximize available space and match the overall interior.",
       "items": [
         "Custom kitchens",
         "Wardrobes and built-in closets",

@@ -200,7 +200,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 </div>
 
 <script>
-  // Každý wrapper má data-form-id — inicializujeme každý formulář zvlášť
+  // Každý wrapper má data-form-id - inicializujeme každý formulář zvlášť
   document
     .querySelectorAll<HTMLElement>("[data-form-id]")
     .forEach((wrapper) => {
@@ -225,7 +225,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         '[data-role="error-msg"]',
       );
 
-      // Synchronizace výběru typu projektu — grid na stránce + pills ve formuláři
+      // Synchronizace výběru typu projektu - grid na stránce + pills ve formuláři
       const syncProjectType = (value: string, label: string) => {
         if (projectTypeInput) projectTypeInput.value = value;
 
@@ -327,7 +327,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 
 <!-- ZPROVOZNĚNÍ FORMULÁŘE GO-TO RADA:
  
-Pro tento use case je nejlepší Resend — posíláš jen API klíč (ne login), má great DX a Astro integrace je přímočará.
+Pro tento use case je nejlepší Resend - posíláš jen API klíč (ne login), má great DX a Astro integrace je přímočará.
 Postup:
 
 Zaregistruješ se na resend.com, ověříš doménu smichovliving.cz
@@ -362,6 +362,6 @@ export const POST: APIRoute = async ({ request }) => {
   if (!res.ok) return new Response("Chyba", { status: 500 });
   return new Response("OK", { status: 200 });
 };
-API klíč zůstane jen na serveru, klient ho nikdy neuvidí. Resend má free tier 3 000 emailů/měsíc — pro kontaktní formulář víc než dost.
+API klíč zůstane jen na serveru, klient ho nikdy neuvidí. Resend má free tier 3 000 emailů/měsíc - pro kontaktní formulář víc než dost.
 
 -->

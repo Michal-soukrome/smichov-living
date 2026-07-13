@@ -167,7 +167,29 @@
   "showroom.visit": "Domluvit návštěvu",
   "showroom.location.label": "Kde nás najdete",
   "showroom.opening.label": "Otevírací doba",
+  "showroom.hours": [
+    { "day": "Po–Pá", "time": "10:00–18:00" },
+    { "day": "So, Ne", "time": "Zavřeno" }
+  ],
   "showroom.section.highlights": "Co u nás najdete",
+  "showroom.highlights": [
+    {
+      "title": "Vzorníky materiálů a povrchů",
+      "desc": "Podívejte se na reálné textury, barvy a povrchové úpravy, které používáme v projektech."
+    },
+    {
+      "title": "Ukázky realizací",
+      "desc": "Prohlédněte si reálné realizace a zjistěte, jak pracujeme s prostorem a designem."
+    },
+    {
+      "title": "Konzultace s designérem",
+      "desc": "Domluvte si schůzku s naším designérem a diskutujte svůj projekt osobně."
+    },
+    {
+      "title": "Inspirace pro váš nový domov",
+      "desc": "Najděte nápady a řešení, která můžete použít ve svém projektu."
+    }
+  ],
   "showroom.gallery.label": "Podívejte se dovnitř",
   "showroom.inspiration.title": "Přijďte se inspirovat",
   "showroom.pageTitle": "Showroom | Smíchov Living - Kompletní rekonstrukce a design interiérů",

@@ -11,7 +11,11 @@ const {
 } = Astro.props;
 
 const _text = text ?? t(lang, "link.requestProject");
-const localizedHref = withLocale(href, lang);
+const isExternal =
+  /^(https?:)?\/\//i.test(href) ||
+  href.startsWith("mailto:") ||
+  href.startsWith("tel:");
+const localizedHref = isExternal ? href : withLocale(href, lang);
 ---
 
 <a

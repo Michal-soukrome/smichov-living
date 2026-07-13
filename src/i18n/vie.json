@@ -166,7 +166,29 @@
   "showroom.visit": "Lên lịch ghé thăm",
   "showroom.location.label": "Nơi bạn có thể tìm thấy chúng tôi",
   "showroom.opening.label": "Giờ mở cửa",
+  "showroom.hours": [
+    { "day": "Thứ Hai–Thứ Sáu", "time": "10:00–18:00" },
+    { "day": "Thứ Bảy, Chủ Nhật", "time": "Đóng cửa" }
+  ],
   "showroom.section.highlights": "Bạn có thể tìm thấy gì ở đây",
+  "showroom.highlights": [
+    {
+      "title": "Mẫu vật liệu và bề mặt",
+      "desc": "Xem các kết cấu, màu sắc và hoàn thiện thực tế mà chúng tôi sử dụng trong dự án."
+    },
+    {
+      "title": "Trưng bày dự án hoàn thành",
+      "desc": "Khám phá các dự án đã hoàn thành và tìm hiểu cách chúng tôi làm việc với không gian và thiết kế."
+    },
+    {
+      "title": "Tư vấn với nhà thiết kế",
+      "desc": "Đặt cuộc hẹn với nhà thiết kế của chúng tôi và thảo luận dự án trực tiếp."
+    },
+    {
+      "title": "Cảm hứng cho ngôi nhà mới của bạn",
+      "desc": "Tìm ý tưởng và giải pháp để áp dụng vào dự án của bạn."
+    }
+  ],
   "showroom.gallery.label": "Xem bên trong",
   "showroom.inspiration.title": "Hãy đến để lấy cảm hứng",
   "showroom.pageTitle": "Showroom | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",

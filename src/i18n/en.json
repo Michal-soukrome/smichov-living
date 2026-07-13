@@ -167,7 +167,29 @@
   "showroom.visit": "Schedule a visit",
   "showroom.location.label": "Where to find us",
   "showroom.opening.label": "Opening hours",
+  "showroom.hours": [
+    { "day": "Mon–Fri", "time": "10:00–18:00" },
+    { "day": "Sat, Sun", "time": "Closed" }
+  ],
   "showroom.section.highlights": "What you can find here",
+  "showroom.highlights": [
+    {
+      "title": "Material and surface samples",
+      "desc": "See real textures, colors and finishes that we use in our projects."
+    },
+    {
+      "title": "Project showcases",
+      "desc": "Explore completed projects and learn how we work with space and design."
+    },
+    {
+      "title": "Designer consultation",
+      "desc": "Book a meeting with our designer and discuss your project in person."
+    },
+    {
+      "title": "Inspiration for your new home",
+      "desc": "Discover ideas and solutions you can use in your own project."
+    }
+  ],
   "showroom.gallery.label": "Take a look inside",
   "showroom.inspiration.title": "Come get inspired",
   "showroom.pageTitle": "Showroom | Smíchov Living - Complete renovation and interior design",

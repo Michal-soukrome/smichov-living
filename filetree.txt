@@ -9,7 +9,6 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   ├── extensions.json
 │   └── launch.json
 ├── astro.config.mjs
-├── feedback.txt
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
@@ -44,14 +43,15 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   └── generate-tree.js
 ├── src/
 │   ├── assets/
-│   │   └── images/
-│   │       └── backgrounds/
-│   │           ├── homepage.webp
-│   │           ├── kontakt.webp
-│   │           ├── poptat-projekt.webp
-│   │           ├── reference.webp
-│   │           ├── showroom.webp
-│   │           └── sluzby.webp
+│   │   ├── images/
+│   │   │   └── backgrounds/
+│   │   │       ├── homepage.webp
+│   │   │       ├── kontakt.webp
+│   │   │       ├── poptat-projekt.webp
+│   │   │       ├── reference.webp
+│   │   │       ├── showroom.webp
+│   │   │       └── sluzby.webp
+│   │   └── isoFlags/
 │   ├── components/
 │   │   ├── ArrowedUnderline.astro
 │   │   ├── Banner.astro

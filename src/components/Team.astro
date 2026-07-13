@@ -1,25 +1,29 @@
 ---
+import { t } from "../i18n/utils";
+
 const team = [
   {
     name: "Romana Pešlová",
-    role: "Projektant",
+    roleKey: "contact.team.roles.designer",
     phone: "+420 731 833 112",
     email: "peslova@smichovliving.cz",
     image: "/images/team/romana.webp",
   },
   {
     name: "Sandra Ryvola",
-    role: "Klientská péče",
+    roleKey: "contact.team.roles.customerCare",
     phone: "+420 731 454 150",
     email: "sandra@smichovliving.cz",
     image: "/images/team/sandra.webp",
   },
 ];
+
+const { lang = "cs" } = Astro.props;
 ---
 
 <section class="py-24 px-6 max-w-7xl mx-auto">
   <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-    S kým budete váš projekt řešit
+    {t(lang, "contact.team.label")}
   </p>
   <span class="block h-px w-10 bg-accent mb-8"></span>
 
@@ -38,7 +42,7 @@ const team = [
                 {person.name}
               </h3>
               <p class="text-xs tracking-widest text-accent uppercase mt-1">
-                {person.role}
+                {t(lang, person.roleKey)}
               </p>
             </div>
             <a

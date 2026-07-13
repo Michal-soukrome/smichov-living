@@ -96,6 +96,45 @@
     "Realizace 3",
     "Realizace 4"
   ],
+  "project.request.projectTypes": [
+    { "value": "rekonstrukce-bytu", "label": "Rekonstrukce bytu" },
+    { "value": "rekonstrukce-domu", "label": "Rekonstrukce domu" },
+    { "value": "kuchyne-na-miru", "label": "Kuchyně na míru" },
+    { "value": "kompletni-interier", "label": "Kompletní interiér" },
+    { "value": "navrh-interieru", "label": "Návrh interiéru" },
+    { "value": "developersky-projekt", "label": "Developerský projekt" }
+  ],
+  "project.request.budgets": [
+    "do 1 mil. Kč",
+    "1–3 mil. Kč",
+    "3–5 mil. Kč",
+    "5+ mil. Kč"
+  ],
+  "project.request.steps": [
+    {
+      "number": "1",
+      "title": "Úvodní konzultace",
+      "desc": "V showroomu nebo online si projdeme Vaše představy, podklady a rozsah projektu."
+    },
+    {
+      "number": "2",
+      "title": "Návrh řešení",
+      "desc": "Připravíme koncept interiéru, orientační rozpočet a harmonogram."
+    },
+    {
+      "number": "3",
+      "title": "Realizace na klíč",
+      "desc": "Zajistíme vše od stavebních prací až po finální zařízení interiéru."
+    }
+  ],
+  "project.request.reasons": [
+    "Kompletní realizace pod jedním vedením",
+    "Návrh interiéru i vizualizace",
+    "Kuchyně a nábytek HANÁK",
+    "Prověřené realizační týmy",
+    "Transparentní rozpočty",
+    "Osobní přístup ke každému projektu"
+  ],
   "project.request.formTitle": "Poptávkový formulář",
   "project.request.describeProject": "Popište svůj projekt",
   "project.request.requiredLabel": "*POVINNÉ",
@@ -276,5 +315,8 @@
   "contact.map": "Zobrazit na mapě",
   "contact.visit": "Domluvit návštěvu",
   "contact.followUs.label": "Sledujte nás",
+  "contact.team.label": "S kým budete váš projekt řešit",
+  "contact.team.roles.designer": "Projektant",
+  "contact.team.roles.customerCare": "Klientská péče",
   "section.label.noona": "rezervujte si schůzku přes aplikaci Noona"
 }

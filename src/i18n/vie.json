@@ -96,6 +96,45 @@
     "Dự án 3",
     "Dự án 4"
   ],
+  "project.request.projectTypes": [
+    { "value": "rekonstrukce-bytu", "label": "Cải tạo căn hộ" },
+    { "value": "rekonstrukce-domu", "label": "Cải tạo nhà" },
+    { "value": "kuchyne-na-miru", "label": "Nhà bếp theo yêu cầu" },
+    { "value": "kompletni-interier", "label": "Nội thất hoàn chỉnh" },
+    { "value": "navrh-interieru", "label": "Thiết kế nội thất" },
+    { "value": "developersky-projekt", "label": "Dự án phát triển" }
+  ],
+  "project.request.budgets": [
+    "dưới 1 triệu CZK",
+    "1–3 triệu CZK",
+    "3–5 triệu CZK",
+    "trên 5 triệu CZK"
+  ],
+  "project.request.steps": [
+    {
+      "number": "1",
+      "title": "Tư vấn ban đầu",
+      "desc": "Chúng tôi thảo luận về ý tưởng, tài liệu và phạm vi dự án tại showroom hoặc trực tuyến."
+    },
+    {
+      "number": "2",
+      "title": "Thiết kế giải pháp",
+      "desc": "Chúng tôi chuẩn bị khái niệm nội thất, ngân sách dự kiến và lịch trình."
+    },
+    {
+      "number": "3",
+      "title": "Thực hiện chìa khóa trao tay",
+      "desc": "Chúng tôi đảm bảo mọi thứ từ xây dựng đến hoàn thiện nội thất."
+    }
+  ],
+  "project.request.reasons": [
+    "Thực hiện trọn gói dưới một đầu mối",
+    "Thiết kế nội thất và trực quan hóa",
+    "Nhà bếp và nội thất HANÁK",
+    "Đội thi công đã được kiểm chứng",
+    "Ngân sách minh bạch",
+    "Tiếp cận cá nhân cho mỗi dự án"
+  ],
   "project.request.formTitle": "Biểu mẫu yêu cầu",
   "project.request.describeProject": "Mô tả dự án của bạn",
   "project.request.requiredLabel": "*BẮT BUỘC",
@@ -275,5 +314,8 @@
   "contact.map": "Xem trên bản đồ",
   "contact.visit": "Lên lịch ghé thăm",
   "contact.followUs.label": "Theo dõi chúng tôi",
+  "contact.team.label": "Người sẽ làm việc với bạn trong dự án của bạn",
+  "contact.team.roles.designer": "Nhà thiết kế",
+  "contact.team.roles.customerCare": "Chăm sóc khách hàng",
   "section.label.noona": "đặt cuộc hẹn qua ứng dụng Noona"
 }

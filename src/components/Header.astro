@@ -72,7 +72,7 @@ const localizedNav = nav.map((item) => ({
     </nav>
 
     <!-- Right side: CTA (md+) / lang switcher (always) / hamburger (<xl) -->
-    <div class="flex items-center gap-3 sm:gap-4 w-[100px] sm:w-fit">
+    <div class="flex items-center gap-3 sm:gap-4">
       <!-- CTA - jen od md výš, na malém mobilu zůstává jen v mobile-menu -->
       <a
         href={withLocale("/poptat-projekt", locale)}
@@ -90,16 +90,18 @@ const localizedNav = nav.map((item) => ({
           type="button"
           aria-haspopup="true"
           aria-expanded="false"
-          class="inline-flex items-center justify-center gap-1 cursor-pointer rounded-full border border-stone-200 bg-white h-9 min-w-9 px-2.5 sm:px-3 text-xs uppercase text-stone-500 hover:border-stone-300 hover:text-stone-900 transition"
+          class="inline-flex items-center justify-center gap-1 cursor-pointer rounded-full border border-stone-200 bg-white h-9 w-16 px-2 text-xs uppercase text-stone-500 hover:border-stone-300 hover:text-stone-900 transition"
         >
-          <span id="lang-switcher-current">{locale.toUpperCase()}</span>
+          <span id="lang-switcher-current" class="w-6 text-center"
+            >{locale.toUpperCase()}</span
+          >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            class="h-3 w-3"
+            class="h-3 w-3 shrink-0"
           >
             <path
               d="M5 7.5l5 5 5-5"
@@ -134,16 +136,17 @@ const localizedNav = nav.map((item) => ({
       </div>
 
       <!-- Hamburger -->
+      <!-- Hamburger -->
       <button
         id="mobile-btn"
-        class="xl:hidden p-2 -mr-2 cursor-pointer"
+        class="xl:hidden flex items-center justify-center w-9 h-9 shrink-0 cursor-pointer"
         aria-label="Menu"
         type="button"
       >
         <svg
           id="icon-open"
-          width="22"
-          height="18"
+          width="20"
+          height="16"
           viewBox="0 0 20 16"
           fill="none"
         >
@@ -161,8 +164,8 @@ const localizedNav = nav.map((item) => ({
         </svg>
         <svg
           id="icon-close"
-          width="18"
-          height="18"
+          width="20"
+          height="16"
           viewBox="0 0 16 16"
           fill="none"
           style="display:none"
@@ -183,6 +186,13 @@ const localizedNav = nav.map((item) => ({
             stroke-width="1.5"></line>
         </svg>
       </button>
+    </div>
+
+    <!-- Overlay za mobile menu -->
+    <div
+      id="mobile-menu-overlay"
+      class="xl:hidden fixed inset-x-0 bottom-0 top-16 md:top-20 z-30 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-200"
+    >
     </div>
 
     <!-- Mobile menu -->
@@ -207,7 +217,8 @@ const localizedNav = nav.map((item) => ({
         href={withLocale("/poptat-projekt", locale)}
         data-cta
         data-path="/poptat-projekt"
-        class="btn-primary w-full mt-4 text-center text-base"
+        class="btn-primary w-full mt-4 text-center
+  text-base"
       >
         {t(locale, "header.cta")}
       </a>
@@ -266,6 +277,9 @@ const localizedNav = nav.map((item) => ({
 
         function closeMenu() {
           const menu = document.getElementById("mobile-menu") as HTMLElement;
+          const overlay = document.getElementById(
+            "mobile-menu-overlay",
+          ) as HTMLElement;
           const iconOpen = document.getElementById("icon-open") as HTMLElement;
           const iconClose = document.getElementById(
             "icon-close",
@@ -274,10 +288,16 @@ const localizedNav = nav.map((item) => ({
           menu.style.display = "none";
           iconOpen.style.display = "block";
           iconClose.style.display = "none";
+          overlay?.classList.add("opacity-0", "pointer-events-none");
+          overlay?.classList.remove("opacity-100");
+          document.body.style.overflow = "";
         }
 
         function openMenu() {
           const menu = document.getElementById("mobile-menu") as HTMLElement;
+          const overlay = document.getElementById(
+            "mobile-menu-overlay",
+          ) as HTMLElement;
           const iconOpen = document.getElementById("icon-open") as HTMLElement;
           const iconClose = document.getElementById(
             "icon-close",
@@ -286,6 +306,9 @@ const localizedNav = nav.map((item) => ({
           menu.style.display = "flex";
           iconOpen.style.display = "none";
           iconClose.style.display = "block";
+          overlay?.classList.remove("opacity-0", "pointer-events-none");
+          overlay?.classList.add("opacity-100");
+          document.body.style.overflow = "hidden";
         }
 
         function closeLangMenu() {
@@ -351,6 +374,12 @@ const localizedNav = nav.map((item) => ({
 
         document.addEventListener("click", (e) => {
           const target = e.target as Element;
+
+          // Klik na overlay zavře menu
+          if (target.closest("#mobile-menu-overlay")) {
+            closeMenu();
+            return;
+          }
 
           if (target.closest("#mobile-btn")) {
             const menu = document.getElementById("mobile-menu") as HTMLElement;

@@ -24,6 +24,30 @@ const realizationAlts = tArray<string>(
   locale,
   "project.request.realizationsAlts",
 );
+const localizedProjectTypes = contactData.projectTypes.map((pt) => {
+  const translation = tArray<{ value: string; label: string }>(
+    locale,
+    "project.request.projectTypes",
+  ).find((item) => item.value === pt.value);
+  return {
+    ...pt,
+    label: translation?.label ?? pt.label,
+  };
+});
+const localizedBudgets = tArray<string>(locale, "project.request.budgets");
+const localizedSteps = tArray<{
+  number: number | string;
+  title: string;
+  desc: string;
+}>(locale, "project.request.steps").map((step, index) => ({
+  ...step,
+  icon: contactData.steps[index]?.icon ?? "",
+}));
+const localizedReasons = tArray<string>(locale, "project.request.reasons");
+const stepsToRender =
+  localizedSteps.length > 0 ? localizedSteps : contactData.steps;
+const reasonsToRender =
+  localizedReasons.length > 0 ? localizedReasons : contactData.reasons;
 const showAllProjectsText = t(locale, "link.showAllRealizations");
 ---
 
@@ -85,7 +109,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
 
                   <div class="grid sm:grid-cols-3 gap-8 mb-16">
                     {
-                      contactData.steps.map((step) => (
+                      stepsToRender.map((step) => (
                         <div class="flex flex-col gap-3">
                           <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">
@@ -110,7 +134,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
                 <SectionLabel label={t(locale, "section.label.whychoose")} />
                 <div class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
                   {
-                    contactData.reasons.map((r) => (
+                    reasonsToRender.map((r) => (
                       <div class="flex items-start gap-3">
                         <svg
                           class="text-accent mt-0.5 shrink-0 w-4 h-4"
@@ -157,20 +181,23 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
 
             <ContactForm
               id="poptavka-form"
+              lang={locale}
               showProjectType={true}
               showBudget={true}
               showCity={true}
               showUpload={true}
-              projectTypes={contactData.projectTypes}
-              budgets={contactData.budgets}
-              submitText="Odeslat poptávku"
+              projectTypes={localizedProjectTypes}
+              budgets={localizedBudgets.length > 0
+                ? localizedBudgets
+                : contactData.budgets}
+              submitText={t(locale, "contact.form.submit")}
             />
 
             <div class="block lg:hidden mt-16">
               <SectionLabel label={t(locale, "section.label.howitworks")} />
               <div class="grid sm:grid-cols-3 gap-8 mb-16">
                 {
-                  contactData.steps.map((step) => (
+                  stepsToRender.map((step) => (
                     <div class="flex flex-col gap-3">
                       <div class="flex items-center gap-3">
                         <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs font-semibold shrink-0">

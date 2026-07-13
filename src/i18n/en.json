@@ -96,6 +96,45 @@
     "Realization 3",
     "Realization 4"
   ],
+  "project.request.projectTypes": [
+    { "value": "rekonstrukce-bytu", "label": "Apartment renovation" },
+    { "value": "rekonstrukce-domu", "label": "House renovation" },
+    { "value": "kuchyne-na-miru", "label": "Custom kitchen" },
+    { "value": "kompletni-interier", "label": "Full interior" },
+    { "value": "navrh-interieru", "label": "Interior design" },
+    { "value": "developersky-projekt", "label": "Developer project" }
+  ],
+  "project.request.budgets": [
+    "up to 1M CZK",
+    "1–3M CZK",
+    "3–5M CZK",
+    "5M+ CZK"
+  ],
+  "project.request.steps": [
+    {
+      "number": "1",
+      "title": "Intro consultation",
+      "desc": "We learn about your ideas, documents and scope of the project in the showroom or online."
+    },
+    {
+      "number": "2",
+      "title": "Solution design",
+      "desc": "We prepare a concept for the interior, an indicative budget and a schedule."
+    },
+    {
+      "number": "3",
+      "title": "Turnkey realization",
+      "desc": "We handle everything from construction work to the final interior setup."
+    }
+  ],
+  "project.request.reasons": [
+    "Complete delivery under one roof",
+    "Interior design and visualization",
+    "HANÁK kitchens and furniture",
+    "Proven realization teams",
+    "Transparent budgets",
+    "Personal approach to every project"
+  ],
   "project.request.formTitle": "Request form",
   "project.request.describeProject": "Describe your project",
   "project.request.requiredLabel": "*REQUIRED",
@@ -276,5 +315,8 @@
   "contact.map": "View on map",
   "contact.visit": "Schedule a visit",
   "contact.followUs.label": "Follow us",
+  "contact.team.label": "Who you will be working with on your project",
+  "contact.team.roles.designer": "Designer",
+  "contact.team.roles.customerCare": "Client care",
   "section.label.noona": "book a meeting via the Noona app"
 }

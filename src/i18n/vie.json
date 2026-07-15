@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
   "home.hero.title": "Cải tạo không lo lắng. Kết quả mang lại giá trị.",
-  "home.hero.subtitle": "Hãy đến showroom của chúng tôi tại Smíchov hoặc liên hệ với chúng tôi. Chúng tôi mong đợi dự án của bạn.",
+  "home.hero.subtitle": "Hãy đến showroom của chúng tôi tại quận Smíchov, Praha. Tại đây, các cải tạo có suy nghĩ, thiết kế, vật liệu chất lượng và thực hiện chính xác được kết hợp từ một đối tác duy nhất.",
   "home.hero.ctaPrimary": "Yêu cầu dự án",
   "home.hero.ctaSecondary": "Thông tin thêm",
 
@@ -109,9 +109,6 @@
   "reference.ctaViewProject": "Xem dự án",
   "project.ask.pageTitle": "Yêu cầu dự án | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
   "project.ask.label": "YÊU CẦU DỰ ÁN",
-  "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",
-  "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi hiểu ý tưởng, không gian và ngân sách của bạn để thiết kế con đường tốt nhất cho việc thực hiện.",
-  "project.ask.cta": "Bắt đầu nào",
   "project.request.realizationsLabel": "Dự án của chúng tôi",
   "project.request.realizationsAlts": [
     "Dự án 1",
@@ -172,7 +169,7 @@
     {
       "quote": "Chúng tôi đặc biệt đánh giá cao cách tiếp cận chuyên nghiệp và minh bạch. Ngân sách được giữ đúng, thời hạn cũng vậy. Chúng tôi không mong đợi điều đó sau kinh nghiệm sửa chữa trước đây.",
       "name": "Martin and Jana Horáčkovi",
-      "project": "Nhà gia đình, Praha Tây"
+      "project": "Dự án nhà ở, Praha 12"
     },
     {
       "quote": "Bếp làm theo yêu cầu chính xác là những gì chúng tôi tưởng tượng. Romana hiểu nhu cầu của chúng tôi ngay từ buổi tư vấn đầu tiên và kết quả thật hoàn hảo.",
@@ -322,12 +319,12 @@
     {
       "number": "2",
       "title": "Thiết kế nội thất",
-      "desc": "Chúng tôi chuẩn bị bố cục, hình ảnh 3D và giải pháp kỹ thuật."
+      "desc": "Chúng tôi chuẩn bị bố cục, hình ảnh 3D và lựa chọn vật liệu."
     },
     {
       "number": "3",
       "title": "Dự án và chuẩn bị",
-      "desc": "Chúng tôi giải quyết hồ sơ, vật liệu và tiến độ."
+      "desc": "Chúng tôi chuẩn bị ngân sách chi tiết, tiến độ và hồ sơ kỹ thuật."
     },
     {
       "number": "4",
@@ -337,7 +334,7 @@
     {
       "number": "5",
       "title": "Nội thất theo yêu cầu",
-      "desc": "Chúng tôi sản xuất và lắp đặt nhà bếp, tủ và các hạng mục khác."
+      "desc": "Chúng tôi sản xuất nội thất theo yêu cầu và lắp đặt một cách tỉ mỉ."
     },
     {
       "number": "6",
@@ -346,8 +343,6 @@
     }
   ],
 
-  "reference.title": "Khách hàng đánh giá gì về dự án của chúng tôi",
-  "reference.subtitle": "Đọc những gì khách hàng nói về chúng tôi và trải nghiệm của họ với dịch vụ của chúng tôi. Sự hài lòng của bạn là ưu tiên của chúng tôi.",
   "reference.before": "Trước",
   "reference.after": "Sau",
   "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",

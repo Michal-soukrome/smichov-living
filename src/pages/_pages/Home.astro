@@ -3,7 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Services from "../../components/Services.astro";
 import Testimonials from "../../components/Testimonials.astro";
-import heroBg from "../../assets/images/backgrounds/homepage.webp";
+import { getImage } from "astro:assets";
+import heroBg from "../../assets/images/backgrounds/homepage.png";
 import Banner from "../../components/Banner.astro";
 import { t } from "../../i18n/utils";
 
@@ -11,6 +12,12 @@ const {
   lang = "cs",
   title = "Smíchov Living - Kompletní rekonstrukce a design interiérů",
 } = Astro.props;
+const optimizedHero = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 80,
+  width: 1920,
+});
 
 const locale = lang;
 const heroTitle = t(lang, "home.hero.title");
@@ -19,12 +26,12 @@ const heroCtaPrimary = t(lang, "home.hero.ctaPrimary");
 const heroCtaSecondary = t(lang, "home.hero.ctaSecondary");
 ---
 
-<BaseLayout title={title} lang={locale}>
+<BaseLayout preloadImage={optimizedHero.src} title={title} lang={locale}>
   <Hero
     label=""
     title={heroTitle}
     subtitle={heroSubtitle}
-    image={heroBg}
+    image={optimizedHero.src}
     ctaText={heroCtaPrimary}
     ctaHref="/poptat-projekt"
     cta2Text={heroCtaSecondary}

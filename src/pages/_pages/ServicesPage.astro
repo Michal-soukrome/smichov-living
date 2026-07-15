@@ -1,4 +1,5 @@
 ---
+import { getImage } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Steps from "../../components/Steps.astro";
@@ -8,6 +9,12 @@ import { t, tArray, withLocale } from "../../i18n/utils";
 
 const { lang = "cs" } = Astro.props;
 const locale = lang;
+const optimizedHero = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 80,
+  width: 1920,
+});
 const title = t(lang, "services.title");
 const subtitle = t(lang, "services.subtitle");
 const heroLabel = t(lang, "services.hero.label");
@@ -22,12 +29,12 @@ const services = tArray<{
 }>(lang, "services.details");
 ---
 
-<BaseLayout title={title} lang={locale}>
+<BaseLayout preloadImage={optimizedHero.src} title={title} lang={locale}>
   <Hero
     label={heroLabel}
     title={title}
     subtitle={subtitle}
-    image={heroBg}
+    image={optimizedHero.src}
     ctaText={ctaPrimary}
     ctaHref="/poptat-projekt"
     cta2Text={ctaSecondary}

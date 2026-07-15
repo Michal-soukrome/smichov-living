@@ -1,5 +1,6 @@
 ---
 import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
 import type { Locale } from "../i18n/utils";
 import { withLocale } from "../i18n/utils";
 
@@ -46,8 +47,12 @@ function localizeHref(href: string, locale: Locale) {
   }
   return withLocale(href, locale);
 }
-
-const imageUrl = typeof image === "string" ? image : image.src;
+const optimizedImage =
+  typeof image !== "string"
+    ? await getImage({ src: image, format: "webp", quality: 80, width: 1920 })
+    : null;
+const imageUrl =
+  optimizedImage?.src ?? (typeof image === "string" ? image : image.src);
 const localizedCtaHref = localizeHref(ctaHref, lang);
 const localizedCta2Href = localizeHref(cta2Href, lang);
 ---

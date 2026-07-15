@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Complete Renovation and Interior Design",
   "home.hero.title": "Renovation without worry. A result that adds value.",
-  "home.hero.subtitle": "Visit our showroom in Smíchov or contact us. We look forward to your project.",
+  "home.hero.subtitle": "Visit our showroom in Prague's Smíchov district. Here, thoughtful renovations, design, quality materials, and precise execution come together from a single partner.",
   "home.hero.ctaPrimary": "Request a project",
   "home.hero.ctaSecondary": "More information",
 
@@ -114,9 +114,6 @@
   "reference.ctaViewProject": "View project",
   "project.ask.pageTitle": "Request a project | Smíchov Living - Complete renovation and interior design",
   "project.ask.label": "REQUEST A PROJECT",
-  "project.ask.title": "Let's create your new home together",
-  "project.ask.subtitle": "Every project begins with a personal consultation. We get to know your ideas, space, and budget and design the best path to realization.",
-  "project.ask.cta": "Let's go",
   "project.request.realizationsLabel": "Our projects",
   "project.request.realizationsAlts": [
     "Realization 1",
@@ -178,7 +175,7 @@
     {
       "quote": "We especially appreciate the professional approach and transparency. The budget was kept, the deadline too. We did not expect that from a previous renovation experience.",
       "name": "Martin and Jana Horáčkovi",
-      "project": "Family house, Prague West"
+      "project": "Residential project, Prague 12"
     },
     {
       "quote": "A custom kitchen is exactly what we imagined. Romana understood our needs from the first consultation and the result is perfect.",
@@ -325,32 +322,29 @@
     {
       "number": "2",
       "title": "Interior design",
-      "desc": "We prepare layouts, visualizations and technical solutions."
+      "desc": "We prepare layouts, 3D visualizations and material selection."
     },
     {
       "number": "3",
       "title": "Project preparation",
-      "desc": "We handle documentation, materials and scheduling."
+      "desc": "We prepare a detailed budget, schedule and technical documentation."
     },
     {
       "number": "4",
       "title": "Realization",
-      "desc": "We coordinate all trades and supervise quality."
+      "desc": "We coordinate all trades and supervise quality meticulously."
     },
     {
       "number": "5",
       "title": "Custom furniture",
-      "desc": "We manufacture and install kitchens, wardrobes and other fittings."
+      "desc": "We manufacture custom furniture and install it meticulously."
     },
     {
       "number": "6",
       "title": "Home handover",
-      "desc": "Cleaned, finished and ready to move in."
+      "desc": "We hand over the completed interior ready for moving in."
     }
   ],
-
-  "reference.title": "What our clients appreciate about our projects",
-  "reference.subtitle": "Read what our clients say about us and their experience with our services. Your satisfaction is our priority.",
 
   "project.ask.title": "Let's create your new home together",
   "project.ask.subtitle": "Every project begins with a personal consultation. We get to know your ideas, space, and budget and design the best path to realization.",

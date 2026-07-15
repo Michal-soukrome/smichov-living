@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "home.hero.title": "Rekonstrukce bez starostí. Výsledek, který má hodnotu.",
-  "home.hero.subtitle": "Navštivte nás v našem showroomu na Smíchově nebo nás kontaktujte. Těšíme se na Váš projekt.",
+  "home.hero.subtitle": "Navštivte nás v pražském showroomu na Smíchově. Tady vznikají promyšlené rekonstrukce, návrh, kvalitní materiály a precizní realizace od jednoho partnera.",
   "home.hero.ctaPrimary": "Poptat projekt",
   "home.hero.ctaSecondary": "Více informací",
 
@@ -178,7 +178,7 @@
     {
       "quote": "Oceňujeme hlavně profesionální přístup a transparentnost. Rozpočet se dodržel, termín taky. To jsme od předchozí zkušenosti s rekonstrukcí nečekali.",
       "name": "Martin a Jana Horáčkovi",
-      "project": "Rodinný dům, Praha západ"
+      "project": "Rezidenční projekt, Praha 12"
     },
     {
       "quote": "Kuchyň na míru je přesně to, co jsme si představovali. Romana pochopila naše potřeby hned na první konzultaci a výsledek je dokonalý.",
@@ -325,36 +325,29 @@
     {
       "number": "2",
       "title": "Návrh interiéru",
-      "desc": "Připravíme dispozice, vizualizace a technická řešení."
+      "desc": "Připravíme dispozice, technické řešení včetně 3D vizualizace."
     },
     {
       "number": "3",
       "title": "Projekt a příprava",
-      "desc": "Vyřešíme dokumentaci, materiály i harmonogram."
+      "desc": "Připravíme projektovou dokumentaci, materiálové řešení a časový harmonogram."
     },
     {
       "number": "4",
       "title": "Realizace",
-      "desc": "Koordinujeme všechny řemeslné práce a dohlížíme na kvalitu."
+      "desc": "Koordinujeme všechny realizační práce a pečlivě dohlížíme na každý detail."
     },
     {
       "number": "5",
       "title": "Nábytek na míru",
-      "desc": "Vyrobíme a namontujeme kuchyně, skříně i další vybavení."
+      "desc": "Vyrobíme nábytek na míru a precizně jej namontujeme."
     },
     {
       "number": "6",
       "title": "Předání domova",
-      "desc": "Uklizeno, doladěno a připraveno k nastěhování."
+      "desc": "Předáme Vám dokončený interiér připravený k nastěhování."
     }
   ],
-
-  "reference.title": "Co na našich projektech oceňují naši klienti",
-  "reference.subtitle": "Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou.",
-
-  "project.ask.title": "Pojďme společně vytvořit Váš nový domov",
-  "project.ask.subtitle": "Každý projekt začíná osobní konzultací. Poznáme Vaše představy, možnosti prostoru i rozpočet a navrhneme nejlepší cestu k realizaci.",
-  "project.ask.cta": "Pojďme na to",
 
   "section.label.realizations": "Naše realizace",
   "section.label.howitworks": "Jak probíhá spolupráce",

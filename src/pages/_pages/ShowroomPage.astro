@@ -1,9 +1,12 @@
 ---
-import { getImage } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import heroBg from "../../assets/images/backgrounds/showroom.webp";
+import sluzbyImage from "../../assets/images/projects/sluzby.webp";
+import homepageImage from "../../assets/images/projects/homepage.webp";
+import kontaktImage from "../../assets/images/projects/kontakt.webp";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import MapIframe from "../../components/MapIframe.astro";
 import { t, tArray } from "../../i18n/utils";
@@ -149,22 +152,22 @@ const altMaterials = t(lang, "showroom.gallery.alt.materials");
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
       <div class="col-span-2 md:col-span-2 row-span-2 overflow-hidden">
-        <img
-          src="/images/projects/sluzby.webp"
+        <Image
+          src={sluzbyImage}
           alt={altMain}
           class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
         />
       </div>
       <div class="overflow-hidden">
-        <img
-          src="/images/projects/homepage.webp"
+        <Image
+          src={homepageImage}
           alt={altKitchen}
           class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
         />
       </div>
       <div class="overflow-hidden">
-        <img
-          src="/images/projects/kontakt.webp"
+        <Image
+          src={kontaktImage}
           alt={altMaterials}
           class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
         />

@@ -1,12 +1,12 @@
 ---
-import { getImage } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import heroBg from "../../assets/images/backgrounds/poptat-projekt.webp";
-import realizace1 from "../../assets/images/backgrounds/homepage.webp";
-import realizace2 from "../../assets/images/backgrounds/sluzby.webp";
-import realizace3 from "../../assets/images/backgrounds/kontakt.webp";
-import realizace4 from "../../assets/images/backgrounds/showroom.webp";
+import realizace1 from "../../assets/images/projects/homepage.webp";
+import realizace2 from "../../assets/images/projects/sluzby.webp";
+import realizace3 from "../../assets/images/projects/kontakt.webp";
+import realizace4 from "../../assets/images/projects/showroom.webp";
 import SectionLabel from "../../components/SectionLabel.astro";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import ContactForm from "../../components/ContactForm.astro";
@@ -197,29 +197,29 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
         <div>
           <div class="grid md:grid-cols-4 gap-5">
             <div>
-              <img
-                src={realizace1.src}
+              <Image
+                src={realizace1}
                 alt={realizationAlts[0] ?? "Realizace 1"}
                 class="w-full h-48 object-cover"
               />
             </div>
             <div>
-              <img
-                src={realizace2.src}
+              <Image
+                src={realizace2}
                 alt={realizationAlts[1] ?? "Realizace 2"}
                 class="w-full h-48 object-cover"
               />
             </div>
             <div>
-              <img
-                src={realizace3.src}
+              <Image
+                src={realizace3}
                 alt={realizationAlts[2] ?? "Realizace 3"}
                 class="w-full h-48 object-cover"
               />
             </div>
             <div>
-              <img
-                src={realizace4.src}
+              <Image
+                src={realizace4}
                 alt={realizationAlts[3] ?? "Realizace 4"}
                 class="w-full h-48 object-cover"
               />

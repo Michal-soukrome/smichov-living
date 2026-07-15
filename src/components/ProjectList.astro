@@ -1,15 +1,36 @@
 ---
 import type { Locale } from "../i18n/utils";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 import { t, withLocale } from "../i18n/utils";
+import sluzbyImage from "../assets/images/projects/sluzby.webp";
+import showroomImage from "../assets/images/projects/showroom.webp";
+import homepageImage from "../assets/images/projects/homepage.webp";
+import kontaktImage from "../assets/images/projects/kontakt.webp";
+import referenceImage from "../assets/images/projects/reference.webp";
 
 interface Project {
   tag: string;
   title: string;
   desc: string;
   href: string;
-  image?: string;
-  beforeImage?: string;
-  afterImage?: string;
+  image?: string | ImageMetadata;
+  beforeImage?: string | ImageMetadata;
+  afterImage?: string | ImageMetadata;
+}
+
+const imageMap: Record<string, ImageMetadata> = {
+  "/images/projects/sluzby.webp": sluzbyImage,
+  "/images/projects/showroom.webp": showroomImage,
+  "/images/projects/homepage.webp": homepageImage,
+  "/images/projects/kontakt.webp": kontaktImage,
+  "/images/projects/reference.webp": referenceImage,
+};
+
+function resolveProjectImage(
+  src: string | ImageMetadata,
+): ImageMetadata | undefined {
+  return typeof src === "string" ? imageMap[src] : src;
 }
 
 interface Props {
@@ -31,33 +52,40 @@ const afterText = t(lang, "reference.after") ?? "Po";
           {p.beforeImage && p.afterImage ? (
             <div class="grid grid-cols-2 h-72 md:min-h-80 md:h-full">
               <div class="relative overflow-hidden">
-                <img
-                  src={p.beforeImage}
-                  alt={`${p.title} – ${beforeText}`}
-                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
+                {resolveProjectImage(p.beforeImage) ? (
+                  <Image
+                    src={resolveProjectImage(p.beforeImage)!}
+                    alt={`${p.title} – ${beforeText}`}
+                    inferSize={false}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                ) : null}
                 <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-stone-900/70 px-2 py-1">
                   {beforeText}
                 </span>
               </div>
               <div class="relative overflow-hidden border-l border-white/20">
-                <img
-                  src={p.afterImage}
-                  alt={`${p.title} – ${afterText}`}
-                  class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                />
+                {resolveProjectImage(p.afterImage) ? (
+                  <Image
+                    src={resolveProjectImage(p.afterImage)!}
+                    alt={`${p.title} – ${afterText}`}
+                    inferSize={false}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                ) : null}
                 <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-accent/80 px-2 py-1">
                   {afterText}
                 </span>
               </div>
             </div>
-          ) : (
-            <img
-              src={p.image}
+          ) : p.image && resolveProjectImage(p.image) ? (
+            <Image
+              src={resolveProjectImage(p.image)!}
               alt={p.title}
+              inferSize={false}
               class="w-full h-72 md:min-h-80 md:h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
             />
-          )}
+          ) : null}
         </div>
 
         <div class="flex flex-col justify-center px-0 md:px-14 py-5 md:py-10">
@@ -72,7 +100,7 @@ const afterText = t(lang, "reference.after") ?? "Po";
           </p>
           <a
             href={withLocale(p.href, lang)}
-            class="!hidden inline-flex items-center gap-2 text-xs tracking-widest uppercase font-body text-stone-900 border-b border-stone-900 pb-0.5 hover:text-accent hover:border-accent transition-colors w-fit"
+            class="hidden items-center gap-2 text-xs tracking-widest uppercase font-body text-stone-900 border-b border-stone-900 pb-0.5 hover:text-accent hover:border-accent transition-colors w-fit"
           >
             {viewProjectText}
             <svg

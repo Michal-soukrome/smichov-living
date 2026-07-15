@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { t } from "../i18n/utils";
+import romanaImage from "../assets/images/team/romana.webp";
+import sandraImage from "../assets/images/team/sandra.webp";
 
 const team = [
   {
@@ -7,14 +10,14 @@ const team = [
     roleKey: "contact.team.roles.designer",
     phone: "+420 731 833 112",
     email: "peslova@smichovliving.cz",
-    image: "/images/team/romana.webp",
+    image: romanaImage,
   },
   {
     name: "Sandra Ryvola",
     roleKey: "contact.team.roles.customerCare",
     phone: "+420 731 454 150",
     email: "sandra@smichovliving.cz",
-    image: "/images/team/sandra.webp",
+    image: sandraImage,
   },
 ];
 
@@ -31,7 +34,7 @@ const { lang = "cs" } = Astro.props;
     {
       team.map((person) => (
         <div class="flex flex-col md:flex-row gap-6 grow items-start">
-          <img
+          <Image
             src={person.image}
             alt={person.name}
             class="w-44 h-52 object-cover object-top shrink-0"

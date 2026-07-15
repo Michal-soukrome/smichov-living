@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo/sl-logo.webp";
 import { supportedLocales, t, withLocale } from "../i18n/utils";
 
 const { lang = "cs" } = Astro.props;
@@ -28,7 +30,7 @@ const localizedNav = nav.map((item) => ({
         class="flex items-center gap-2 group shrink-0"
       >
         <div class="flex items-center gap-1">
-          <img src="/assets/logo/sl-logo.webp" class="w-7 h-7" />
+          <Image src={logo} alt="Smíchov Living logo" class="w-7 h-7" />
 
           <div class="flex gap-1 leading-none">
             <span
@@ -131,7 +133,7 @@ const localizedNav = nav.map((item) => ({
       <ul class="flex flex-col gap-1">
         <li>
           <a
-            href={withLocale("/privacy-policy", locale)}
+            href={withLocale("/ochrana-osobnich-udaju", locale)}
             class="text-xs text-gray-700 hover:text-black transition-colors hover:underline"
           >
             {t(locale, "footer.privacy")}

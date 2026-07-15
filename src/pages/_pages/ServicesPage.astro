@@ -1,10 +1,16 @@
 ---
-import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { getImage, Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Steps from "../../components/Steps.astro";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import heroBg from "../../assets/images/backgrounds/sluzby.webp";
+import homepageImage from "../../assets/images/projects/homepage.webp";
+import kontaktImage from "../../assets/images/projects/kontakt.webp";
+import referenceImage from "../../assets/images/projects/reference.webp";
+import showroomImage from "../../assets/images/projects/showroom.webp";
+import sluzbyImage from "../../assets/images/projects/sluzby.webp";
 import { t, tArray, withLocale } from "../../i18n/utils";
 
 const { lang = "cs" } = Astro.props;
@@ -27,6 +33,17 @@ const services = tArray<{
   items: string[];
   image: string;
 }>(lang, "services.details");
+const serviceImageMap: Record<string, ImageMetadata> = {
+  "/images/projects/homepage.webp": homepageImage,
+  "/images/projects/kontakt.webp": kontaktImage,
+  "/images/projects/reference.webp": referenceImage,
+  "/images/projects/showroom.webp": showroomImage,
+  "/images/projects/sluzby.webp": sluzbyImage,
+};
+
+function resolveServiceImage(src: string): ImageMetadata | undefined {
+  return serviceImageMap[src];
+}
 ---
 
 <BaseLayout preloadImage={optimizedHero.src} title={title} lang={locale}>
@@ -49,11 +66,14 @@ const services = tArray<{
           class={`grid md:grid-cols-2 ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
         >
           <div class="overflow-hidden h-72 md:h-auto">
-            <img
-              src={s.image}
-              alt={s.title}
-              class="w-full h-full object-cover"
-            />
+            {resolveServiceImage(s.image) ? (
+              <Image
+                src={resolveServiceImage(s.image)!}
+                alt={s.title}
+                inferSize={false}
+                class="w-full h-full object-cover"
+              />
+            ) : null}
           </div>
 
           <div class="flex flex-col justify-center px-8 md:px-16 py-14 bg-white">

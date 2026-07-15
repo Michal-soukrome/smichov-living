@@ -31,4 +31,14 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://smichov-living.cz/ochrana-osobnich-udaju</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://smichov-living.cz/gdpr</loc>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

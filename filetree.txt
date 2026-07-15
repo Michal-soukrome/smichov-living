@@ -45,7 +45,7 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   ├── assets/
 │   │   ├── images/
 │   │   │   └── backgrounds/
-│   │   │       ├── homepage.webp
+│   │   │       ├── homepage.png
 │   │   │       ├── kontakt.webp
 │   │   │       ├── poptat-projekt.webp
 │   │   │       ├── reference.webp
@@ -67,9 +67,7 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── Team.astro
 │   │   └── Testimonials.astro
 │   ├── data/
-│   │   ├── contactData.js
-│   │   ├── projects.js
-│   │   └── services.js
+│   │   └── contactData.js
 │   ├── i18n/
 │   │   ├── cs.json
 │   │   ├── en.json
@@ -77,22 +75,31 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── utils.ts
 │   │   └── vie.json
 │   ├── pages/
+│   │   ├── gdpr.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
+│   │   ├── op.astro
 │   │   ├── poptat-projekt.astro
+│   │   ├── privacy-policy.astro
 │   │   ├── reference.astro
 │   │   ├── showroom.astro
 │   │   ├── sluzby.astro
 │   │   ├── [lang]/
+│   │   │   ├── gdpr.astro
 │   │   │   ├── index.astro
 │   │   │   ├── kontakt.astro
+│   │   │   ├── op.astro
 │   │   │   ├── poptat-projekt.astro
+│   │   │   ├── privacy-policy.astro
 │   │   │   ├── reference.astro
 │   │   │   ├── showroom.astro
 │   │   │   └── sluzby.astro
 │   │   └── _pages/
 │   │       ├── ContactPage.astro
+│   │       ├── GdprPage.astro
 │   │       ├── Home.astro
+│   │       ├── OpPage.astro
+│   │       ├── PrivacyPage.astro
 │   │       ├── ProjectRequestPage.astro
 │   │       ├── ReferencePage.astro
 │   │       ├── ServicesPage.astro

@@ -3,11 +3,11 @@ import type { Locale } from "../i18n/utils";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import { t, withLocale } from "../i18n/utils";
-import sluzbyImage from "../assets/images/projects/sluzby.webp";
-import showroomImage from "../assets/images/projects/showroom.webp";
-import homepageImage from "../assets/images/projects/homepage.webp";
-import kontaktImage from "../assets/images/projects/kontakt.webp";
-import referenceImage from "../assets/images/projects/reference.webp";
+import sluzbyImage from "../assets/images/projects/sluzby.png";
+import showroomImage from "../assets/images/projects/showroom.png";
+import homepageImage from "../assets/images/projects/homepage.png";
+import kontaktImage from "../assets/images/projects/kontakt.png";
+import referenceImage from "../assets/images/projects/reference.png";
 
 interface Project {
   tag: string;
@@ -20,11 +20,11 @@ interface Project {
 }
 
 const imageMap: Record<string, ImageMetadata> = {
-  "/images/projects/sluzby.webp": sluzbyImage,
-  "/images/projects/showroom.webp": showroomImage,
-  "/images/projects/homepage.webp": homepageImage,
-  "/images/projects/kontakt.webp": kontaktImage,
-  "/images/projects/reference.webp": referenceImage,
+  "/images/projects/sluzby.png": sluzbyImage,
+  "/images/projects/showroom.png": showroomImage,
+  "/images/projects/homepage.png": homepageImage,
+  "/images/projects/kontakt.png": kontaktImage,
+  "/images/projects/reference.png": referenceImage,
 };
 
 function resolveProjectImage(

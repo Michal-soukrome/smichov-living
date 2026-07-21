@@ -6,7 +6,7 @@ import ContactForm from "../../components/ContactForm.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import Team from "../../components/Team.astro";
 import MapIframe from "../../components/MapIframe.astro";
-import heroBg from "../../assets/images/backgrounds/kontakt.webp";
+import heroBg from "../../assets/images/backgrounds/kontakt.png";
 import { supportedLocales, t } from "../../i18n/utils";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 
@@ -45,9 +45,9 @@ const heroCta = t(locale, "hero.contact.cta");
             {t(locale, "contact.address.label")}
           </p>
           <div class="font-body text-base text-stone-800 leading-relaxed">
-            <p>Smíchov Living s.r.o.</p>
-            <p>Kováků 456/28</p>
-            <p>Praha 5, 150 00</p>
+            Kováků 456/28
+            <br />
+            150 00, Praha 5 - Smíchov, Česko
           </div>
           <ArrowedUnderline
             text={t(locale, "contact.map")}

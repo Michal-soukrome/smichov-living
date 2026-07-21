@@ -4,28 +4,23 @@
   "home.hero.subtitle": "Visit our showroom in Prague's Smíchov district. Here, thoughtful renovations, design, quality materials, and precise execution come together from a single partner.",
   "home.hero.ctaPrimary": "Request a project",
   "home.hero.ctaSecondary": "More information",
-
   "nav.home": "Home",
   "nav.services": "Services",
   "nav.showroom": "Showroom",
   "nav.reference": "Reference",
   "nav.contact": "Contact",
-
   "header.cta": "Request a project",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "All rights reserved.",
-
   "banner.title": "Do you have an idea for your new interior?",
   "banner.subtitle": "We would be happy to discuss your collaboration options.",
   "banner.primary": "request project",
   "banner.secondary": "contact us",
   "link.requestProject": "Request a project",
-
   "hero.contact.label": "CONTACT",
   "hero.contact.title": "We look forward to meeting you",
   "hero.contact.subtitle": "Visit our showroom in Smíchov or contact us. We look forward to your project.",
   "hero.contact.cta": "Write to us",
-
   "contact.form.name": "Full name",
   "contact.form.phone": "Phone",
   "contact.form.email": "E-mail",
@@ -46,16 +41,13 @@
   "contact.form.gdprPrefix": "I agree to the ",
   "contact.form.gdprLink": "processing of personal data",
   "contact.form.gdprSuffix": " for the purpose of handling the inquiry.",
-
   "contact.form.required": "*",
-
-  "footer.description": "Renovation and interior realization turnkey. From concept to handover of your finished home.",
+  "footer.description": "Turnkey renovation and interior realization. From concept to handover of your finished home.",
   "footer.contactHeader": "Contact",
   "footer.legalHeader": "Important",
   "footer.privacy": "Privacy policy",
   "footer.gdpr": "GDPR",
   "footer.cookies": "Cookies",
-
   "privacy.pageTitle": "Privacy policy | Smíchov Living",
   "privacy.label": "Privacy policy",
   "privacy.title": "Our privacy policy",
@@ -66,7 +58,6 @@
     "You can request deletion or correction of your personal data at any time.",
     "We use cookies only for basic site functionality and visit analytics."
   ],
-
   "gdpr.pageTitle": "GDPR | Smíchov Living",
   "gdpr.label": "GDPR",
   "gdpr.title": "Processing of personal data",
@@ -90,25 +81,19 @@
       "tag": "Apartment 3+KK",
       "title": "Apartment in Smíchov",
       "desc": "Complete apartment renovation including interior design and custom furniture production.",
-      "href": "/reference/byt-na-smichove",
-      "beforeImage": "/images/projects/sluzby.webp",
-      "afterImage": "/images/projects/showroom.webp"
+      "href": "/reference/byt-na-smichove"
     },
     {
       "tag": "Family house",
       "title": "Family house – Prague West",
       "desc": "Complete interior realization of a family house in a timeless natural style.",
-      "href": "/reference/rodinny-dum-praha-zapad",
-      "beforeImage": "/images/projects/sluzby.webp",
-      "afterImage": "/images/projects/showroom.webp"
+      "href": "/reference/rodinny-dum-praha-zapad"
     },
     {
       "tag": "Apartment 4+KK",
       "title": "Modern apartment in central Prague",
       "desc": "Layout design, turnkey renovation and complete interior furnishing with premium materials.",
-      "href": "/reference/moderni-byt-centrum-prahy",
-      "beforeImage": "/images/projects/sluzby.webp",
-      "afterImage": "/images/projects/showroom.webp"
+      "href": "/reference/moderni-byt-centrum-prahy"
     }
   ],
   "reference.ctaViewProject": "View project",
@@ -122,12 +107,30 @@
     "Realization 4"
   ],
   "project.request.projectTypes": [
-    { "value": "rekonstrukce-bytu", "label": "Apartment renovation" },
-    { "value": "rekonstrukce-domu", "label": "House renovation" },
-    { "value": "kuchyne-na-miru", "label": "Custom kitchen" },
-    { "value": "kompletni-interier", "label": "Full interior" },
-    { "value": "navrh-interieru", "label": "Interior design" },
-    { "value": "developersky-projekt", "label": "Developer project" }
+    {
+      "value": "rekonstrukce-bytu",
+      "label": "Apartment renovation"
+    },
+    {
+      "value": "rekonstrukce-domu",
+      "label": "House renovation"
+    },
+    {
+      "value": "kuchyne-na-miru",
+      "label": "Custom kitchen"
+    },
+    {
+      "value": "kompletni-interier",
+      "label": "Full interior"
+    },
+    {
+      "value": "navrh-interieru",
+      "label": "Interior design"
+    },
+    {
+      "value": "developersky-projekt",
+      "label": "Developer project"
+    }
   ],
   "project.request.budgets": [
     "up to 1M CZK",
@@ -183,48 +186,52 @@
       "project": "Custom kitchen, Prague 2"
     }
   ],
-
   "about.showroom.label": "About the showroom",
   "about.showroom.title": "Everything you need to decide in one place",
   "about.showroom.paragraph1": "Our showroom in Prague's Smíchov district was created as a space where inspiration meets reality. We're not just sample rooms - we're a place where you can sit down, discuss your project, and leave with a concrete idea of how your new home can look.",
-  "about.showroom.paragraph2": "We exhibit real materials, surfaces, and furniture that we use in our projects. No catalogs, no surprises - what you see is what you get.",
+  "about.showroom.paragraph2": "We exhibit real materials, surfaces, and furniture that we use in our projects.",
   "showroom.map": "View on map",
   "showroom.visit": "Schedule a visit",
   "showroom.location.label": "Where to find us",
   "showroom.opening.label": "Opening hours",
   "showroom.hours": [
-    { "day": "Mon–Fri", "time": "10:00–18:00" },
-    { "day": "Sat, Sun", "time": "Closed" }
+    {
+      "day": "Mon–Fri",
+      "time": "10:00–18:00"
+    },
+    {
+      "day": "Sat, Sun",
+      "time": "Closed"
+    }
   ],
   "showroom.section.highlights": "What you can find here",
   "showroom.highlights": [
     {
-      "title": "Material and surface samples",
-      "desc": "See real textures, colors and finishes that we use in our projects."
+      "title": "Materials and finishes",
+      "desc": "See samples of materials, finishes, and surface treatments in their real form."
     },
     {
       "title": "Project showcases",
       "desc": "Explore completed projects and learn how we work with space and design."
     },
     {
-      "title": "Designer consultation",
-      "desc": "Book a meeting with our designer and discuss your project in person."
+      "title": "Personal approach",
+      "desc": "Together we will choose materials, colors, and solutions that suit your space and lifestyle."
     },
     {
-      "title": "Inspiration for your new home",
-      "desc": "Discover ideas and solutions you can use in your own project."
+      "title": "Inspiration for your home",
+      "desc": "Discover ideas and solutions that combine aesthetics, functionality, and timeless design."
     }
   ],
   "showroom.gallery.label": "Take a look inside",
   "showroom.inspiration.title": "Come get inspired",
   "showroom.pageTitle": "Showroom | Smíchov Living - Complete renovation and interior design",
   "showroom.hero.label": "Showroom",
-  "showroom.hero.title": "Visit our showroom in Smíchov",
-  "showroom.hero.subtitle": "Come see our realizations and get inspired for your own project. We look forward to your visit.",
+  "showroom.hero.title": "Inspiration starts in our showroom",
+  "showroom.hero.subtitle": "Visit us in Prague's Smíchov district and explore materials, samples, and project showcases. Together with our designers, we will find a solution for your new home.",
   "showroom.gallery.alt.main": "Showroom Smíchov Living",
   "showroom.gallery.alt.kitchen": "Kitchen showcase",
   "showroom.gallery.alt.materials": "Material samples",
-
   "services.title": "Complete renovation and interior design",
   "services.subtitle": "We offer comprehensive renovation and interior design services.",
   "services.hero.label": "Our services",
@@ -266,10 +273,8 @@
         "Layouts and floor plans",
         "3D visualizations",
         "Material and surface selection",
-        "Custom technical solution",
-        "Work schedule"
-      ],
-      "image": "/images/projects/homepage.webp"
+        "Custom technical solution"
+      ]
     },
     {
       "number": "02",
@@ -281,34 +286,31 @@
         "Water, heating, ventilation",
         "Cladding, tiles, flooring",
         "Painting and final finishes"
-      ],
-      "image": "/images/projects/kontakt.webp"
+      ]
     },
     {
       "number": "03",
       "title": "Custom furniture",
-      "desc": "We design and manufacture built-in furniture precisely for your space. From kitchens and wardrobes to shelves and TV walls - every piece is created to maximize available space and match the overall interior.",
+      "desc": "We design and manufacture custom furniture that combines functionality, quality materials and timeless design. Every piece is created with regard to your space, needs and lifestyle.",
       "items": [
         "Custom kitchens",
         "Wardrobes and built-in closets",
         "Bathroom furniture",
         "Living room walls and shelving",
-        "Installation and service"
-      ],
-      "image": "/images/projects/reference.webp"
+        "Complete installation and service"
+      ]
     },
     {
       "number": "04",
       "title": "Showroom",
-      "desc": "Visit our showroom in Smíchov where you can see materials, samples and project examples in person. Our designers are available for a non-binding consultation on site.",
+      "desc": "Visit our showroom in Prague's Smíchov district and explore materials, samples, and project showcases. Our designers will be happy to advise you and design the interior together with you according to your exact preferences.",
       "items": [
         "Material and surface samples",
-        "Kitchen and furniture displays",
-        "Consultation with a designer",
+        "Custom kitchen and furniture showcases",
+        "Consultation with an interior designer",
         "Inspiration for your project",
-        "Mon–Fri 10:00–18:00"
-      ],
-      "image": "/images/projects/sluzby.webp"
+        "Mon–Fri | 10:00–18:00"
+      ]
     }
   ],
   "steps.label": "How collaboration works",
@@ -345,11 +347,9 @@
       "desc": "We hand over the completed interior ready for moving in."
     }
   ],
-
   "project.ask.title": "Let's create your new home together",
   "project.ask.subtitle": "Every project begins with a personal consultation. We get to know your ideas, space, and budget and design the best path to realization.",
   "project.ask.cta": "Let's go",
-
   "section.label.realizations": "Our projects",
   "section.label.howitworks": "How collaboration works",
   "section.label.whychoose": "Why clients choose Smíchov Living",

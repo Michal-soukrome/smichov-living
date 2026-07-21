@@ -4,10 +4,11 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Testimonials from "../../components/Testimonials.astro";
 import ProjectList from "../../components/ProjectList.astro";
-import heroBg from "../../assets/images/backgrounds/reference.webp";
+import heroBg from "../../assets/images/backgrounds/reference.png";
 import Banner from "../../components/Banner.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import { supportedLocales, t, tArray } from "../../i18n/utils";
+import { projectImages } from "../../data/projectImages";
 
 const { lang = "cs" } = Astro.props;
 const locale = supportedLocales.includes(lang) ? lang : "cs";
@@ -26,8 +27,12 @@ const projects = tArray<{
   title: string;
   desc: string;
   href: string;
-  image: string;
 }>(locale, "reference.projects");
+
+const projectsWithImages = projects.map((project) => ({
+  ...project,
+  ...(projectImages[project.href] ?? {}),
+}));
 ---
 
 <BaseLayout preloadImage={optimizedHero.src} title={pageTitle} lang={locale}>
@@ -44,7 +49,7 @@ const projects = tArray<{
       <SectionLabel label={t(locale, "section.label.realizations")} />
     </div>
 
-    <ProjectList projects={projects} lang={locale} />
+    <ProjectList projects={projectsWithImages} lang={locale} />
   </section>
 
   <div class="bg-[#f7f7f7] border-y border-stone-100">

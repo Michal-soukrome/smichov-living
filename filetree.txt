@@ -26,12 +26,12 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       └── sl-logo.webp
 │   ├── images/
 │   │   ├── projects/
-│   │   │   ├── homepage.webp
+│   │   │   ├── homepage.png
 │   │   │   ├── kontakt.webp
 │   │   │   ├── poptat-projekt.webp
 │   │   │   ├── reference.webp
 │   │   │   ├── showroom.webp
-│   │   │   └── sluzby.webp
+│   │   │   └── sluzby.png
 │   │   └── team/
 │   │       ├── romana.webp
 │   │       └── sandra.webp
@@ -50,7 +50,7 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   │       ├── poptat-projekt.webp
 │   │   │       ├── reference.webp
 │   │   │       ├── showroom.webp
-│   │   │       └── sluzby.webp
+│   │   │       └── sluzby.png
 │   │   └── isoFlags/
 │   ├── components/
 │   │   ├── ArrowedUnderline.astro

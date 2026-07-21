@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-// generate-tree.js
+#!/usr/bin/env tsx
 
 import fs from "fs";
 import path from "path";
@@ -9,7 +7,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ignorePatterns = [
+const ignorePatterns: string[] = [
   "node_modules",
   ".next",
   ".git",
@@ -23,11 +21,16 @@ const ignorePatterns = [
   ".turbo",
 ];
 
-function shouldIgnore(name) {
+function shouldIgnore(name: string): boolean {
   return ignorePatterns.some((pattern) => name.includes(pattern));
 }
 
-function generateTree(dir, prefix = "", maxDepth = 10, currentDepth = 0) {
+function generateTree(
+  dir: string,
+  prefix = "",
+  maxDepth = 10,
+  currentDepth = 0,
+): string {
   if (currentDepth >= maxDepth) return "";
 
   let result = "";
@@ -59,16 +62,13 @@ function generateTree(dir, prefix = "", maxDepth = 10, currentDepth = 0) {
   return result;
 }
 
-function main() {
+function main(): void {
   const rootDir = process.cwd();
   const tree = generateTree(rootDir);
-
   const output = `${rootDir}\n${tree}`;
 
-  // Write to filetree.txt
   fs.writeFileSync("filetree.txt", output);
   console.log("File tree generated in filetree.txt");
 }
 
-// Run main if this file is executed directly
 main();

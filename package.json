@@ -10,15 +10,17 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "tree": "node scripts/generate-tree.js"
+    "tree": "tsx scripts/generate-tree.ts"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
     "prettier": "^3.8.4",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "tsx": "^4.23.1"
   }
 }

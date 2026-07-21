@@ -14,44 +14,61 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 ├── package.json
 ├── public/
 │   ├── assets/
-│   │   ├── favicon/
-│   │   │   ├── android-chrome-192x192.png
-│   │   │   ├── android-chrome-512x512.png
-│   │   │   ├── apple-touch-icon.png
-│   │   │   ├── favicon-16x16.png
-│   │   │   ├── favicon-32x32.png
-│   │   │   ├── favicon.ico
-│   │   │   └── site.webmanifest
-│   │   └── logo/
-│   │       └── sl-logo.webp
-│   ├── images/
-│   │   ├── projects/
-│   │   │   ├── homepage.png
-│   │   │   ├── kontakt.webp
-│   │   │   ├── poptat-projekt.webp
-│   │   │   ├── reference.webp
-│   │   │   ├── showroom.webp
-│   │   │   └── sluzby.png
-│   │   └── team/
-│   │       ├── romana.webp
-│   │       └── sandra.webp
+│   │   └── favicon/
+│   │       ├── android-chrome-192x192.png
+│   │       ├── android-chrome-512x512.png
+│   │       ├── apple-touch-icon.png
+│   │       ├── favicon-16x16.png
+│   │       ├── favicon-32x32.png
+│   │       ├── favicon.ico
+│   │       └── site.webmanifest
 │   ├── llms.txt
-│   ├── robots.txt
-│   └── sitemap.xml
+│   └── robots.txt
 ├── README.md
 ├── scripts/
-│   └── generate-tree.js
+│   └── generate-tree.ts
 ├── src/
 │   ├── assets/
-│   │   ├── images/
-│   │   │   └── backgrounds/
-│   │   │       ├── homepage.png
-│   │   │       ├── kontakt.webp
-│   │   │       ├── poptat-projekt.webp
-│   │   │       ├── reference.webp
-│   │   │       ├── showroom.webp
-│   │   │       └── sluzby.png
-│   │   └── isoFlags/
+│   │   └── images/
+│   │       ├── backgrounds/
+│   │       │   ├── homepage.png
+│   │       │   ├── kontakt.png
+│   │       │   ├── poptat-projekt.png
+│   │       │   ├── reference.png
+│   │       │   ├── showroom.png
+│   │       │   └── sluzby.png
+│   │       ├── heros (1).webp
+│   │       ├── heros (2).webp
+│   │       ├── heros (3).webp
+│   │       ├── heros (4).webp
+│   │       ├── heros (5).webp
+│   │       ├── logo/
+│   │       │   └── sl-logo.webp
+│   │       ├── projects/
+│   │       │   ├── homepage.png
+│   │       │   ├── kontakt.png
+│   │       │   ├── poptat-projekt.png
+│   │       │   ├── reference.png
+│   │       │   ├── showroom.png
+│   │       │   └── sluzby.png
+│   │       ├── projects (1).webp
+│   │       ├── projects (2).webp
+│   │       ├── projects (3).webp
+│   │       ├── projects (4).webp
+│   │       ├── projects (5).webp
+│   │       ├── services/
+│   │       │   ├── 1.webp
+│   │       │   ├── 2.png
+│   │       │   ├── 3.png
+│   │       │   └── 4.png
+│   │       ├── showroom/
+│   │       │   ├── 1.png
+│   │       │   ├── 2.png
+│   │       │   ├── 3.png
+│   │       │   └── 4.png
+│   │       └── team/
+│   │           ├── romana.webp
+│   │           └── sandra.webp
 │   ├── components/
 │   │   ├── ArrowedUnderline.astro
 │   │   ├── Banner.astro
@@ -67,7 +84,9 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── Team.astro
 │   │   └── Testimonials.astro
 │   ├── data/
-│   │   └── contactData.js
+│   │   ├── contactData.ts
+│   │   ├── projectImages.ts
+│   │   └── serviceImages.ts
 │   ├── i18n/
 │   │   ├── cs.json
 │   │   ├── en.json
@@ -78,9 +97,9 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── gdpr.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
+│   │   ├── ochrana-osobnich-udaju.astro
 │   │   ├── op.astro
 │   │   ├── poptat-projekt.astro
-│   │   ├── privacy-policy.astro
 │   │   ├── reference.astro
 │   │   ├── showroom.astro
 │   │   ├── sluzby.astro
@@ -106,5 +125,5 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       └── ShowroomPage.astro
 │   └── styles/
 │       └── global.css
-├── tailwind.config.js
+├── tailwind.config.ts
 └── tsconfig.json

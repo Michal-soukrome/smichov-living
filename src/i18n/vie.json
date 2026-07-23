@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
   "home.hero.title": "Cải tạo không lo lắng. Kết quả mang lại giá trị.",
-  "home.hero.subtitle": "Hãy đến showroom của chúng tôi tại quận Smíchov, Praha. Tại đây, các cải tạo có suy nghĩ, thiết kế, vật liệu chất lượng và thực hiện chính xác được kết hợp từ một đối tác duy nhất.",
+  "home.hero.subtitle": "Hãy đến showroom của chúng tôi tại quận Smíchov, Praha. Nơi gặp gỡ của thiết kế, vật liệu chất lượng và tay nghề chính xác. Mọi thứ từ thiết kế đến thực hiện dưới một mái nhà.",
   "home.hero.ctaPrimary": "Yêu cầu dự án",
   "home.hero.ctaSecondary": "Thông tin thêm",
   "nav.home": "Trang chủ",
@@ -88,9 +88,9 @@
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {
-      "tag": "Căn hộ 4+KK",
-      "title": "Căn hộ hiện đại ở trung tâm Praha",
-      "desc": "Thiết kế mặt bằng, cải tạo chìa khóa trao tay và trang bị nội thất hoàn chỉnh với vật liệu cao cấp.",
+      "tag": "Căn hộ 2+KK",
+      "title": "Biến đổi căn hộ thành phố",
+      "desc": "Từ một không gian trống, một tổng thể hài hòa được tạo ra, được thiết kế đến từng chi tiết cuối cùng.",
       "href": "/reference/moderni-byt-centrum-prahy"
     }
   ],

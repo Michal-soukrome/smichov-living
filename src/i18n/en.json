@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Complete Renovation and Interior Design",
   "home.hero.title": "Renovation without worry. A result that adds value.",
-  "home.hero.subtitle": "Visit our showroom in Prague's Smíchov district. Here, thoughtful renovations, design, quality materials, and precise execution come together from a single partner.",
+  "home.hero.subtitle": "Visit us in our showroom in Prague's Smíchov district. A place where design, quality materials, and precise craftsmanship meet. Everything from design to realization under one roof.",
   "home.hero.ctaPrimary": "Request a project",
   "home.hero.ctaSecondary": "More information",
   "nav.home": "Home",
@@ -90,9 +90,9 @@
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {
-      "tag": "Apartment 4+KK",
-      "title": "Modern apartment in central Prague",
-      "desc": "Layout design, turnkey renovation and complete interior furnishing with premium materials.",
+      "tag": "Apartment 2+KK",
+      "title": "Transformation of a city apartment",
+      "desc": "An empty space was transformed into a harmonious whole designed down to the last detail.",
       "href": "/reference/moderni-byt-centrum-prahy"
     }
   ],

@@ -1,7 +1,7 @@
 {
   "home.title": "Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "home.hero.title": "Rekonstrukce bez starostí. Výsledek, který má hodnotu.",
-  "home.hero.subtitle": "Navštivte nás v pražském showroomu na Smíchově. Tady vznikají promyšlené rekonstrukce, návrh, kvalitní materiály a precizní realizace od jednoho partnera.",
+  "home.hero.subtitle": "Navštivte nás v showroomu na pražském Smíchově. Místo, kde se potkává design, kvalitní materiály a precizní řemeslné zpracování. Vše od návrhu až po realizaci pod jednou střechou.",
   "home.hero.ctaPrimary": "Poptat projekt",
   "home.hero.ctaSecondary": "Více informací",
   "nav.home": "Domů",
@@ -90,9 +90,9 @@
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {
-      "tag": "Byt 4+KK",
-      "title": "Moderní byt v centru Prahy",
-      "desc": "Návrh dispozice, realizace na klíč a kompletní vybavení interiéru prémiovými materiály.",
+      "tag": "Byt 2+KK",
+      "title": "Proměna městského bytu",
+      "desc": "Z prázdného prostoru vznikl harmonický celek navržený do posledního detailu. ",
       "href": "/reference/moderni-byt-centrum-prahy"
     }
   ],

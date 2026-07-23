@@ -39,7 +39,12 @@ const localizedNav = nav.map((item) => ({
       class="flex items-center gap-2 group shrink-0"
     >
       <div class="flex items-center gap-1">
-        <Image src={logo} alt="Smíchov Living logo" class="w-7 h-7" />
+        <Image
+          src={logo}
+          alt="Smíchov Living logo"
+          class="w-7 h-7"
+          loading="eager"
+        />
         <div class="flex gap-1 leading-none">
           <span
             class="block font-display text-sm md:text-base font-medium tracking-widest uppercase text-dark"

@@ -12,7 +12,7 @@
   "header.cta": "Yêu cầu dự án",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "Bảo lưu mọi quyền.",
-  "banner.title": "Bạn có ý tưởng cho nội thất mới?",
+  "banner.title": "Bạn có ý tưởng cho ngôi nhà mới của mình?",
   "banner.subtitle": "Chúng tôi sẵn sàng thảo luận các phương án hợp tác.",
   "banner.primary": "yêu cầu dự án",
   "banner.secondary": "liên hệ với chúng tôi",
@@ -73,18 +73,18 @@
   "reference.pageTitle": "Tham khảo | Smíchov Living - Cải tạo toàn diện và thiết kế nội thất",
   "reference.label": "Tham khảo",
   "reference.title": "Khách hàng đánh giá gì về dự án của chúng tôi",
-  "reference.subtitle": "Đọc những gì khách hàng nói về chúng tôi và trải nghiệm của họ với dịch vụ của chúng tôi. Sự hài lòng của bạn là ưu tiên của chúng tôi.",
+  "reference.subtitle": "Đằng sau mỗi dự án là một thiết kế tỉ mỉ, chú ý đến chi tiết và cách tiếp cận cá nhân. Hãy đọc cách khách hàng đánh giá công việc của chúng tôi.",
   "reference.projects": [
     {
       "tag": "Căn hộ 3+KK",
-      "title": "Căn hộ ở Smíchov",
+      "title": "Cải tạo toàn diện căn hộ ở Smíchov",
       "desc": "Cải tạo toàn bộ căn hộ bao gồm thiết kế nội thất và sản xuất đồ nội thất đặt làm.",
       "href": "/reference/byt-na-smichove"
     },
     {
-      "tag": "Nhà gia đình",
-      "title": "Nhà gia đình – Praha Tây",
-      "desc": "Thực hiện toàn bộ nội thất nhà gia đình theo phong cách tự nhiên vượt thời gian.",
+      "tag": "Dự án dân cư",
+      "title": "Nội thất theo yêu cầu - Praha 12",
+      "desc": "Thiết kế và thực hiện nội thất toàn diện với sự nhấn mạnh vào thiết kế vượt thời gian, vật liệu chất lượng và tay nghề chính xác.",
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {

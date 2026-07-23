@@ -12,7 +12,7 @@
   "header.cta": "Poptat projekt",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "Všechna práva vyhrazena.",
-  "banner.title": "Máte představu o svém novém interiéru?",
+  "banner.title": "Máte představu o svém novém domově?",
   "banner.subtitle": "Rádi s vámi probereme možnosti spolupráce.",
   "banner.primary": "poptejte projekt",
   "banner.secondary": "ozvěte se nám",
@@ -72,21 +72,21 @@
   "contact.pageTitle": "Kontakt | Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "reference.pageTitle": "Reference | Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "reference.label": "Reference",
-  "reference.title": "Co na našich projektech oceňují naši klienti",
-  "reference.subtitle": "Přečtěte si, co o nás říkají naši klienti a jaké zkušenosti mají s našimi službami. Vaše spokojenost je pro nás prioritou.",
+  "reference.title": "Co na našich projektech oceňují klienti",
+  "reference.subtitle": "Za každou realizací stojí promyšlený návrh, důraz na detail a individuální přístup. Přečtěte si, jak naši práci hodnotí klienti.",
   "reference.before": "Před",
   "reference.after": "Po",
   "reference.projects": [
     {
       "tag": "Byt 3+KK",
-      "title": "Byt na Smíchově",
+      "title": "Kompletní rekonstrukce bytu u Mánesa",
       "desc": "Kompletní rekonstrukce bytu včetně návrhu interiéru a výroby nábytku na míru.",
       "href": "/reference/byt-na-smichove"
     },
     {
-      "tag": "Rodinný dům",
-      "title": "Rodinný dům – Praha západ",
-      "desc": "Kompletní realizace interiéru rodinného domu v nadčasovém přírodním stylu.",
+      "tag": "Rezidenční projekt",
+      "title": "Interiér na míru - Praha 12",
+      "desc": "Komplexní návrh a realizace interiéru s důrazem na nadčasový design, kvalitní materiály a precizní zpracování.",
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {

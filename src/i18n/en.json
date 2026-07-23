@@ -12,7 +12,7 @@
   "header.cta": "Request a project",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "All rights reserved.",
-  "banner.title": "Do you have an idea for your new interior?",
+  "banner.title": "Do you have an idea for your new home?",
   "banner.subtitle": "We would be happy to discuss your collaboration options.",
   "banner.primary": "request project",
   "banner.secondary": "contact us",
@@ -73,20 +73,20 @@
   "reference.pageTitle": "Reference | Smíchov Living - Complete renovation and interior design",
   "reference.label": "Reference",
   "reference.title": "What our clients appreciate about our projects",
-  "reference.subtitle": "Read what our clients say about us and their experience with our services. Your satisfaction is our priority.",
+  "reference.subtitle": "Behind every realization is a thoughtful design, attention to detail, and an individual approach. Read how our clients evaluate our work.",
   "reference.before": "Before",
   "reference.after": "After",
   "reference.projects": [
     {
       "tag": "Apartment 3+KK",
-      "title": "Apartment in Smíchov",
+      "title": "Complete apartment renovation in Smíchov",
       "desc": "Complete apartment renovation including interior design and custom furniture production.",
       "href": "/reference/byt-na-smichove"
     },
     {
-      "tag": "Family house",
-      "title": "Family house – Prague West",
-      "desc": "Complete interior realization of a family house in a timeless natural style.",
+      "tag": "Residential project",
+      "title": "Custom interior - Prague 12",
+      "desc": "Comprehensive interior design and realization with emphasis on timeless design, quality materials, and precise workmanship.",
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {

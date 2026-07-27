@@ -326,14 +326,21 @@ const _submitText = submitText || t(lang, "contact.form.submit");
           return;
         }
 
-        // try {
-        //   const res = await fetch("/api/poptavka", { method: "POST", body: new FormData(form) });
-        //   if (res.ok) { successMsg?.classList.remove("hidden"); form.reset(); }
-        //   else { errorMsg?.classList.remove("hidden"); }
-        // } catch { errorMsg?.classList.remove("hidden"); }
+        try {
+          const res = await fetch("/api/kontakt", {
+            method: "POST",
+            body: new FormData(form),
+          });
 
-        successMsg?.classList.remove("hidden");
-        form.reset();
+          if (res.ok) {
+            successMsg?.classList.remove("hidden");
+            form.reset();
+          } else {
+            errorMsg?.classList.remove("hidden");
+          }
+        } catch {
+          errorMsg?.classList.remove("hidden");
+        }
       });
     });
 </script>

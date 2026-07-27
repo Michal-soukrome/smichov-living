@@ -22,6 +22,7 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       ├── favicon-32x32.png
 │   │       ├── favicon.ico
 │   │       └── site.webmanifest
+│   ├── favicon.ico
 │   ├── llms.txt
 │   └── robots.txt
 ├── README.md
@@ -37,6 +38,10 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       │   ├── reference.png
 │   │       │   ├── showroom.png
 │   │       │   └── sluzby.png
+│   │       ├── contact/
+│   │       │   ├── hero.png
+│   │       │   ├── romana.jpg
+│   │       │   └── sandra.jpg
 │   │       ├── heros (1).webp
 │   │       ├── heros (2).webp
 │   │       ├── heros (3).webp
@@ -56,11 +61,27 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       ├── projects (3).webp
 │   │       ├── projects (4).webp
 │   │       ├── projects (5).webp
+│   │       ├── reference/
+│   │       │   ├── 1-after.png
+│   │       │   ├── 1-before.jpg
+│   │       │   ├── 2-after.png
+│   │       │   ├── 2-before.png
+│   │       │   ├── 3-after.png
+│   │       │   ├── 3-before.jpg
+│   │       │   └── hero.png
 │   │       ├── services/
 │   │       │   ├── 1.webp
 │   │       │   ├── 2.png
 │   │       │   ├── 3.png
-│   │       │   └── 4.png
+│   │       │   ├── 4.png
+│   │       │   ├── Fotka č.1.PNG
+│   │       │   ├── Fotka č.2.jpg
+│   │       │   ├── Fotka č.3.PNG
+│   │       │   ├── Fotka č.4.PNG
+│   │       │   ├── Fotka č.5.PNG
+│   │       │   ├── Fotka č.6.jpg
+│   │       │   ├── Fotka č.7.PNG
+│   │       │   └── sluzby.jpg
 │   │       ├── showroom/
 │   │       │   ├── 1.png
 │   │       │   ├── 2.png

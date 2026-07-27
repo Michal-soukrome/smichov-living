@@ -160,12 +160,10 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         class="font-body text-xs font-medium text-stone-700"
         for={`${id}-description`}
       >
-        <span class="text-red-500">*</span>
         {t(lang, "contact.form.description")}
       </label>
       <textarea
         name="popis"
-        required
         rows="4"
         placeholder={t(lang, "contact.form.descriptionPlaceholder")}
         class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors resize-none placeholder:text-stone-400"

@@ -139,28 +139,30 @@
   "project.request.steps": [
     {
       "number": "1",
-      "title": "Tư vấn ban đầu",
-      "desc": "Chúng tôi thảo luận về ý tưởng, tài liệu và phạm vi dự án tại showroom hoặc trực tuyến."
+      "title": "Tư vấn và đo đạc",
+      "desc": "Trong buổi gặp đầu tiên, chúng tôi sẽ thảo luận về yêu cầu của bạn, khả năng không gian và kỳ vọng về nội thất mới."
     },
     {
       "number": "2",
       "title": "Thiết kế giải pháp",
-      "desc": "Chúng tôi chuẩn bị khái niệm nội thất, ngân sách dự kiến và lịch trình."
+      "desc": "Chúng tôi sẽ chuẩn bị đề xuất thiết kế nội thất, ngân sách dự kiến và tiến độ thực hiện."
     },
     {
       "number": "3",
-      "title": "Thực hiện chìa khóa trao tay",
-      "desc": "Chúng tôi đảm bảo mọi thứ từ xây dựng đến hoàn thiện nội thất."
+      "title": "Thực hiện trọn gói",
+      "desc": "Chúng tôi sẽ đảm bảo toàn bộ quá trình thực hiện, từ các sửa đổi xây dựng đến hoàn thiện nội thất."
     }
   ],
+
   "project.request.reasons": [
-    "Thực hiện trọn gói dưới một đầu mối",
+    "Một đối tác cho toàn bộ dự án",
     "Thiết kế nội thất và trực quan hóa",
     "Nhà bếp và nội thất HANÁK",
     "Đội thi công đã được kiểm chứng",
     "Ngân sách minh bạch",
-    "Tiếp cận cá nhân cho mỗi dự án"
+    "Tiếp cận cá nhân cho mỗi khách hàng"
   ],
+
   "project.request.formTitle": "Biểu mẫu yêu cầu",
   "project.request.describeProject": "Mô tả dự án của bạn",
   "project.request.requiredLabel": "*BẮT BUỘC",
@@ -348,7 +350,7 @@
   "reference.before": "Trước",
   "reference.after": "Sau",
   "project.ask.title": "Hãy cùng tạo ngôi nhà mới của bạn",
-  "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi hiểu ý tưởng, không gian và ngân sách của bạn để thiết kế con đường tốt nhất cho việc thực hiện.",
+  "project.ask.subtitle": "Mỗi dự án bắt đầu bằng buổi tư vấn cá nhân. Chúng tôi sẽ cùng nhau xem xét các yêu cầu, khả năng không gian và ngân sách của bạn, và đề xuất giải pháp phù hợp với nhu cầu của bạn.",
   "project.ask.cta": "Bắt đầu nào",
   "section.label.realizations": "Dự án của chúng tôi",
   "section.label.howitworks": "Quy trình hợp tác",

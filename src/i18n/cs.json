@@ -100,7 +100,7 @@
   "project.ask.pageTitle": "Poptat projekt | Smíchov Living - Kompletní rekonstrukce a design interiérů",
   "project.ask.label": "POPTAT PROJEKT",
   "project.ask.title": "Pojďme společně vytvořit Váš nový domov",
-  "project.ask.subtitle": "Každý projekt začíná osobní konzultací. Poznáme Vaše představy, možnosti prostoru i rozpočet a navrhneme nejlepší cestu k realizaci.",
+  "project.ask.subtitle": "Každý projekt začíná osobní konzultací. Společně projdeme Vaše požadavky, možnosti prostoru i rozpočet a navrhneme řešení, které bude odpovídat Vašim potřebám.",
   "project.ask.cta": "Pojďme na to",
   "project.request.realizationsLabel": "Za námi stojí skutečné realizace",
   "project.request.realizationsAlts": [
@@ -145,26 +145,26 @@
     {
       "number": "1",
       "title": "Úvodní konzultace",
-      "desc": "V showroomu nebo online si projdeme Vaše představy, podklady a rozsah projektu."
+      "desc": "Na první schůzce projdeme Vaše požadavky, možnosti prostoru a očekávání od nového interiéru."
     },
     {
       "number": "2",
       "title": "Návrh řešení",
-      "desc": "Připravíme koncept interiéru, orientační rozpočet a harmonogram."
+      "desc": "Připravíme návrh interiéru, orientační rozpočet a časový harmonogram realizace."
     },
     {
       "number": "3",
       "title": "Realizace na klíč",
-      "desc": "Zajistíme vše od stavebních prací až po finální zařízení interiéru."
+      "desc": "Zajistíme celý průběh realizace. Od stavebních úprav až po kompletní dokončení interiéru."
     }
   ],
   "project.request.reasons": [
-    "Kompletní realizace pod jedním vedením",
+    "Jeden partner pro celý projekt",
     "Návrh interiéru i vizualizace",
     "Kuchyně a nábytek HANÁK",
     "Prověřené realizační týmy",
     "Transparentní rozpočty",
-    "Osobní přístup ke každému projektu"
+    "Individuální přístup ke každému klientovi"
   ],
   "project.request.formTitle": "Poptávkový formulář",
   "project.request.describeProject": "Popište svůj projekt",

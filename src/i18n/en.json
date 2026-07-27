@@ -141,28 +141,30 @@
   "project.request.steps": [
     {
       "number": "1",
-      "title": "Intro consultation",
-      "desc": "We learn about your ideas, documents and scope of the project in the showroom or online."
+      "title": "Consultation and measurement",
+      "desc": "In the first meeting, we will discuss your requirements, space possibilities, and expectations for the new interior."
     },
     {
       "number": "2",
       "title": "Solution design",
-      "desc": "We prepare a concept for the interior, an indicative budget and a schedule."
+      "desc": "We will prepare an interior design proposal, an indicative budget, and a project timeline."
     },
     {
       "number": "3",
-      "title": "Turnkey realization",
-      "desc": "We handle everything from construction work to the final interior setup."
+      "title": "Turnkey implementation",
+      "desc": "We will ensure the entire implementation process, from construction modifications to the complete finishing of the interior."
     }
   ],
+
   "project.request.reasons": [
-    "Complete delivery under one roof",
+    "One partner for the entire project",
     "Interior design and visualization",
     "HANÁK kitchens and furniture",
     "Proven realization teams",
     "Transparent budgets",
-    "Personal approach to every project"
+    "Individual approach to each client"
   ],
+
   "project.request.formTitle": "Request form",
   "project.request.describeProject": "Describe your project",
   "project.request.requiredLabel": "*REQUIRED",
@@ -348,7 +350,7 @@
     }
   ],
   "project.ask.title": "Let's create your new home together",
-  "project.ask.subtitle": "Every project begins with a personal consultation. We get to know your ideas, space, and budget and design the best path to realization.",
+  "project.ask.subtitle": "Every project begins with a personal consultation. Together we will go through your requirements, space possibilities, and budget, and propose a solution that meets your needs.",
   "project.ask.cta": "Let's go",
   "section.label.realizations": "Our projects",
   "section.label.howitworks": "How collaboration works",

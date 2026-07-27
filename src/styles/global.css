@@ -73,8 +73,8 @@
 .hero-overlay {
   background: linear-gradient(
     to right,
-    rgba(26, 22, 18, 1) 40%,
-    rgba(26, 22, 18, 0.1) 60%
+    rgba(26, 22, 18, 0.6) 40%,
+    rgba(26, 22, 18, 0) 60%
   );
 }
 @media (max-width: 768px) {

@@ -1,0 +1,183 @@
+---
+import { getImage, Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import heroBg from "../../assets/images/showroom/1.png";
+import showroom2 from "../../assets/images/showroom/2.png";
+import showroom3 from "../../assets/images/showroom/3.png";
+import showroom4 from "../../assets/images/showroom/4.png";
+import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
+import MapIframe from "../../components/MapIframe.astro";
+import { t, tArray } from "../../i18n/utils";
+
+const { lang = "cs" } = Astro.props;
+const locale = lang;
+const optimizedHero = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 80,
+  width: 1920,
+});
+const pageTitle = t(lang, "showroom.pageTitle");
+const heroLabel = t(lang, "showroom.hero.label");
+const heroTitle = t(lang, "showroom.hero.title");
+const heroSubtitle = t(lang, "showroom.hero.subtitle");
+const aboutLabel = t(lang, "about.showroom.label");
+const aboutTitle = t(lang, "about.showroom.title");
+const aboutParagraph1 = t(lang, "about.showroom.paragraph1");
+const aboutParagraph2 = t(lang, "about.showroom.paragraph2");
+const locationLabel = t(lang, "showroom.location.label");
+const openingLabel = t(lang, "showroom.opening.label");
+const highlightsLabel = t(lang, "showroom.section.highlights");
+const galleryLabel = t(lang, "showroom.gallery.label");
+const inspirationTitle = t(lang, "showroom.inspiration.title");
+const hours = tArray<{ day: string; time: string }>(lang, "showroom.hours");
+const defaultShowroomHours = [
+  {
+    day: "Po–Pá",
+    time: "10:00–18:00",
+  },
+  {
+    day: "So, Ne",
+    time: "Zavřeno",
+  },
+];
+const showroomHours = hours.length > 0 ? hours : defaultShowroomHours;
+const highlights = tArray<{ title: string; desc: string }>(
+  lang,
+  "showroom.highlights",
+);
+const mapText = t(lang, "showroom.map");
+const visitText = t(lang, "showroom.visit");
+const altMain = t(lang, "showroom.gallery.alt.main");
+const altKitchen = t(lang, "showroom.gallery.alt.kitchen");
+const altMaterials = t(lang, "showroom.gallery.alt.materials");
+---
+
+<BaseLayout preloadImage={optimizedHero.src} title={pageTitle} lang={locale}>
+  <Hero
+    label={heroLabel}
+    title={heroTitle}
+    subtitle={heroSubtitle}
+    image={optimizedHero.src}
+    lang={locale}
+  />
+
+  <!-- Intro + info -->
+  <section
+    class="max-w-7xl mx-auto px-6 py-10 md:py-20 grid md:grid-cols-2 gap-16 items-start"
+  >
+    <div>
+      <SectionLabel label={aboutLabel} />
+      <h2
+        class="font-display text-3xl md:text-4xl font-medium text-stone-900 leading-snug mb-6"
+      >
+        {aboutTitle}
+      </h2>
+      <p class="font-body text-sm text-stone-500 leading-relaxed mb-4">
+        {aboutParagraph1}
+      </p>
+      <p class="font-body text-sm text-stone-500 leading-relaxed">
+        {aboutParagraph2}
+      </p>
+    </div>
+
+    <!-- Adresa + hodiny -->
+    <div class="flex flex-col gap-10">
+      <div>
+        <p class="text-xs tracking-widest text-stone-500 uppercase mb-4">
+          {locationLabel}
+        </p>
+        <div class="font-body text-sm text-stone-800 leading-relaxed mb-4">
+          <p class="font-semibold">Smíchov Living s.r.o.</p>
+          Kováků 456/28
+          <br />
+          150 00, Praha 5 - Smíchov, Česko
+        </div>
+        <ArrowedUnderline
+          text={mapText}
+          href="https://maps.app.goo.gl/MZssd1sTeguTo3heA"
+          target="_blank"
+        />
+      </div>
+
+      <div>
+        <p class="text-xs tracking-widest text-stone-500 uppercase mb-4">
+          {openingLabel}
+        </p>
+        <div class="flex flex-col divide-y divide-stone-100 mb-4">
+          {
+            showroomHours.map((h) => (
+              <div class="flex justify-between py-2">
+                <span class="font-body text-sm text-stone-800">{h.day}</span>
+                <span class="font-body text-sm text-stone-800">{h.time}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <ArrowedUnderline text={visitText} href="/kontakt" lang={lang} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Co u nás najdete -->
+  <section class="border-t border-stone-200 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+      <SectionLabel label={highlightsLabel} />
+
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 border-l border-t border-stone-200"
+      >
+        {
+          highlights.map((h) => (
+            <div class="border-r border-b border-stone-200 p-4 md:p-8 flex flex-col gap-4">
+              <h3 class="font-body font-semibold text-stone-900 text-sm">
+                {h.title}
+              </h3>
+              <span class="block h-px w-8 bg-accent" />
+              <p class="font-body text-sm text-stone-500 leading-relaxed">
+                {h.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotogalerie -->
+  <section class="max-w-7xl mx-auto px-6 py-10 md:py-20">
+    <SectionLabel label={galleryLabel} />
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="col-span-2 md:col-span-2 row-span-2 overflow-hidden">
+        <Image
+          src={showroom2}
+          alt={altMain}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+      <div class="overflow-hidden">
+        <Image
+          src={showroom3}
+          alt={altKitchen}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+      <div class="overflow-hidden">
+        <Image
+          src={showroom4}
+          alt={altMaterials}
+          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mapa -->
+  <section>
+    <MapIframe />
+  </section>
+</BaseLayout>

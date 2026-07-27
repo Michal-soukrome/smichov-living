@@ -1,25 +1,32 @@
 ---
+import { Image } from "astro:assets";
+import { t } from "../i18n/utils";
+import romanaImage from "../assets/images/contact/romana.jpg";
+import sandraImage from "../assets/images/contact/sandra.jpg";
+
 const team = [
   {
     name: "Romana Pešlová",
-    role: "Projektant",
+    roleKey: "contact.team.roles.designer",
     phone: "+420 731 833 112",
     email: "peslova@smichovliving.cz",
-    image: "/images/team/romana.webp",
+    image: romanaImage,
   },
   {
     name: "Sandra Ryvola",
-    role: "Klientská péče",
+    roleKey: "contact.team.roles.customerCare",
     phone: "+420 731 454 150",
     email: "sandra@smichovliving.cz",
-    image: "/images/team/sandra.webp",
+    image: sandraImage,
   },
 ];
+
+const { lang = "cs" } = Astro.props;
 ---
 
 <section class="py-24 px-6 max-w-7xl mx-auto">
   <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-    S kým budete váš projekt řešit
+    {t(lang, "contact.team.label")}
   </p>
   <span class="block h-px w-10 bg-accent mb-8"></span>
 
@@ -27,7 +34,7 @@ const team = [
     {
       team.map((person) => (
         <div class="flex flex-col md:flex-row gap-6 grow items-start">
-          <img
+          <Image
             src={person.image}
             alt={person.name}
             class="w-44 h-52 object-cover object-top shrink-0"
@@ -38,7 +45,7 @@ const team = [
                 {person.name}
               </h3>
               <p class="text-xs tracking-widest text-accent uppercase mt-1">
-                {person.role}
+                {t(lang, person.roleKey)}
               </p>
             </div>
             <a

@@ -4,10 +4,10 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
-const { title = "Smíchov Living" } = Astro.props;
+const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
 ---
 
-<html lang="cs" transition:animate="fade" class="scroll-smooth">
+<html lang={lang} transition:animate="fade" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,17 +30,28 @@ const { title = "Smíchov Living" } = Astro.props;
     />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
     <title>{title}</title>
+    {
+      preloadImage && (
+        <link
+          rel="preload"
+          as="image"
+          href={preloadImage}
+          fetchpriority="high"
+        />
+      )
+    }
+    <slot name="head" />
     <ClientRouter />
   </head>
   <body
     class="min-h-screen flex flex-col bg-white text-slate-900 scroll-smooth font-body"
   >
-    <Header transition:persist />
+    <Header lang={lang} transition:persist />
 
     <main class="flex-1 font-body">
       <slot />
     </main>
 
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

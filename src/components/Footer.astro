@@ -1,20 +1,36 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo/sl-logo.webp";
+import { supportedLocales, t, withLocale } from "../i18n/utils";
+
+const { lang = "cs" } = Astro.props;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
+
 const nav = [
-  { name: "Domů", href: "/" },
-  { name: "Služby", href: "/sluzby" },
-  { name: "Showroom", href: "/showroom" },
-  { name: "Reference", href: "/reference" },
-  { name: "Kontakt", href: "/kontakt" },
+  { key: "nav.home", href: "/" },
+  { key: "nav.services", href: "/sluzby" },
+  { key: "nav.showroom", href: "/showroom" },
+  { key: "nav.reference", href: "/reference" },
+  { key: "nav.contact", href: "/kontakt" },
 ];
+
+const localizedNav = nav.map((item) => ({
+  ...item,
+  href: withLocale(item.href, locale),
+  name: t(locale, item.key),
+}));
 ---
 
 <footer class="bg-white border-t border-gray-200 pt-12 pb-6">
   <div class="w-full px-10 md:px-20 grid md:grid-cols-4 gap-10 mb-10">
     <!-- Logo + claim -->
     <div class="md:col-span-2">
-      <a href="/" class="flex items-center gap-2 group shrink-0">
+      <a
+        href={withLocale("/", locale)}
+        class="flex items-center gap-2 group shrink-0"
+      >
         <div class="flex items-center gap-1">
-          <img src="/assets/logo/sl-logo.webp" class="w-7 h-7" />
+          <Image src={logo} alt="Smíchov Living logo" class="w-7 h-7" />
 
           <div class="flex gap-1 leading-none">
             <span
@@ -34,13 +50,18 @@ const nav = [
       </a>
 
       <p class="text-xs text-gray-600 leading-relaxed mt-3">
-        Rekonstrukce a realizace interiérů na klíč. Od návrhu po předání
-        hotového domova.
+        {t(locale, "footer.description")}
       </p>
 
       <div class="flex gap-3 mt-4 text-gray-600">
         <!-- Instagram -->
-        <a href="#" class="hover:text-black transition-colors">
+        <a
+          href="https://www.instagram.com/smichov_living/"
+          class="hover:text-black transition-colors"
+          target="_blank"
+          aria-label="Instagram"
+          title="Instagram"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -58,7 +79,13 @@ const nav = [
         </a>
 
         <!-- Facebook -->
-        <a href="#" class="hover:text-black transition-colors">
+        <a
+          href="https://www.facebook.com/profile.php?id=61586096327444"
+          class="hover:text-black transition-colors"
+          target="_blank"
+          aria-label="Facebook"
+          title="Facebook"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -79,7 +106,7 @@ const nav = [
     <!-- Kontakt -->
     <div>
       <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-        Kontakt
+        {t(locale, "footer.contactHeader")}
       </p>
       <a
         href="tel:+420737737733"
@@ -96,32 +123,32 @@ const nav = [
       </a>
 
       <p class="text-xs text-gray-700 leading-relaxed mt-2">
-        Smíchov Living s.r.o.<br />
-        Kováků 456/28<br />
-        Praha 5, 150 00
+        Kováků 456/28
+        <br />
+        150 00, Praha 5 - Smíchov, Česko
       </p>
     </div>
 
     <!-- Právní -->
     <div>
       <p class="text-xs tracking-widest text-stone-500 uppercase mb-3">
-        Důležité
+        {t(locale, "footer.legalHeader")}
       </p>
       <ul class="flex flex-col gap-1">
         <li>
           <a
-            href="#"
+            href={withLocale("/ochrana-osobnich-udaju", locale)}
             class="text-xs text-gray-700 hover:text-black transition-colors hover:underline"
           >
-            Ochrana osobních údajů
+            {t(locale, "footer.privacy")}
           </a>
         </li>
         <li>
           <a
-            href="#"
+            href={withLocale("/gdpr", locale)}
             class="text-xs text-gray-700 hover:text-black transition-colors hover:underline"
           >
-            Cookies
+            {t(locale, "footer.gdpr")}
           </a>
         </li>
       </ul>
@@ -133,8 +160,8 @@ const nav = [
     <div
       class="w-full px-10 md:px-20 flex flex-wrap sm:flex-nowrap justify-center md:justify-between gap-3 items-center"
     >
-      <p class="text-xs text-gray-500">© Smíchov Living s.r.o. 2026</p>
-      <p class="text-xs text-gray-500">Všechna práva vyhrazena.</p>
+      <p class="text-xs text-gray-500">{t(locale, "footer.copy")}</p>
+      <p class="text-xs text-gray-500">{t(locale, "footer.rights")}</p>
     </div>
   </div>
 </footer>

@@ -1,4 +1,4 @@
-/Users/michaljirak/GitHub repos/smichov-living
+C:\Users\michal.jirak\Documents\GitHub\smichov-living
 ├── .astro/
 │   ├── collections/
 │   ├── content.d.ts
@@ -8,49 +8,88 @@
 ├── .vscode/
 │   ├── extensions.json
 │   └── launch.json
-├── README.md
 ├── astro.config.mjs
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
 ├── public/
 │   ├── assets/
-│   │   ├── favicon/
-│   │   │   ├── android-chrome-192x192.png
-│   │   │   ├── android-chrome-512x512.png
-│   │   │   ├── apple-touch-icon.png
-│   │   │   ├── favicon-16x16.png
-│   │   │   ├── favicon-32x32.png
-│   │   │   ├── favicon.ico
-│   │   │   └── site.webmanifest
-│   │   └── logo/
-│   │       └── sl-logo.webp
-│   ├── images/
-│   │   ├── projects/
-│   │   │   ├── homepage.webp
-│   │   │   ├── kontakt.webp
-│   │   │   ├── poptat-projekt.webp
-│   │   │   ├── reference.webp
-│   │   │   ├── showroom.webp
-│   │   │   └── sluzby.webp
-│   │   └── team/
-│   │       ├── romana.webp
-│   │       └── sandra.webp
+│   │   └── favicon/
+│   │       ├── android-chrome-192x192.png
+│   │       ├── android-chrome-512x512.png
+│   │       ├── apple-touch-icon.png
+│   │       ├── favicon-16x16.png
+│   │       ├── favicon-32x32.png
+│   │       ├── favicon.ico
+│   │       └── site.webmanifest
+│   ├── favicon.ico
 │   ├── llms.txt
-│   ├── robots.txt
-│   └── sitemap.xml
+│   └── robots.txt
+├── README.md
 ├── scripts/
-│   └── generate-tree.js
+│   └── generate-tree.ts
 ├── src/
 │   ├── assets/
 │   │   └── images/
-│   │       └── backgrounds/
-│   │           ├── homepage.webp
-│   │           ├── kontakt.webp
-│   │           ├── poptat-projekt.webp
-│   │           ├── reference.webp
-│   │           ├── showroom.webp
-│   │           └── sluzby.webp
+│   │       ├── backgrounds/
+│   │       │   ├── homepage.png
+│   │       │   ├── kontakt.png
+│   │       │   ├── poptat-projekt.png
+│   │       │   ├── reference.png
+│   │       │   ├── showroom.png
+│   │       │   └── sluzby.png
+│   │       ├── contact/
+│   │       │   ├── hero.png
+│   │       │   ├── romana.jpg
+│   │       │   └── sandra.jpg
+│   │       ├── heros (1).webp
+│   │       ├── heros (2).webp
+│   │       ├── heros (3).webp
+│   │       ├── heros (4).webp
+│   │       ├── heros (5).webp
+│   │       ├── logo/
+│   │       │   └── sl-logo.webp
+│   │       ├── projects/
+│   │       │   ├── homepage.png
+│   │       │   ├── kontakt.png
+│   │       │   ├── poptat-projekt.png
+│   │       │   ├── reference.png
+│   │       │   ├── showroom.png
+│   │       │   └── sluzby.png
+│   │       ├── projects (1).webp
+│   │       ├── projects (2).webp
+│   │       ├── projects (3).webp
+│   │       ├── projects (4).webp
+│   │       ├── projects (5).webp
+│   │       ├── reference/
+│   │       │   ├── 1-after.png
+│   │       │   ├── 1-before.jpg
+│   │       │   ├── 2-after.png
+│   │       │   ├── 2-before.png
+│   │       │   ├── 3-after.png
+│   │       │   ├── 3-before.jpg
+│   │       │   └── hero.png
+│   │       ├── services/
+│   │       │   ├── 1.webp
+│   │       │   ├── 2.png
+│   │       │   ├── 3.png
+│   │       │   ├── 4.png
+│   │       │   ├── Fotka č.1.PNG
+│   │       │   ├── Fotka č.2.jpg
+│   │       │   ├── Fotka č.3.PNG
+│   │       │   ├── Fotka č.4.PNG
+│   │       │   ├── Fotka č.5.PNG
+│   │       │   ├── Fotka č.6.jpg
+│   │       │   ├── Fotka č.7.PNG
+│   │       │   └── sluzby.jpg
+│   │       ├── showroom/
+│   │       │   ├── 1.png
+│   │       │   ├── 2.png
+│   │       │   ├── 3.png
+│   │       │   └── 4.png
+│   │       └── team/
+│   │           ├── romana.webp
+│   │           └── sandra.webp
 │   ├── components/
 │   │   ├── ArrowedUnderline.astro
 │   │   ├── Banner.astro
@@ -66,17 +105,46 @@
 │   │   ├── Team.astro
 │   │   └── Testimonials.astro
 │   ├── data/
-│   │   ├── contactData.js
-│   │   ├── projects.js
-│   │   └── services.js
+│   │   ├── contactData.ts
+│   │   ├── projectImages.ts
+│   │   └── serviceImages.ts
+│   ├── i18n/
+│   │   ├── cs.json
+│   │   ├── en.json
+│   │   ├── ru.json
+│   │   ├── utils.ts
+│   │   └── vie.json
 │   ├── pages/
+│   │   ├── gdpr.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
+│   │   ├── ochrana-osobnich-udaju.astro
+│   │   ├── op.astro
 │   │   ├── poptat-projekt.astro
 │   │   ├── reference.astro
 │   │   ├── showroom.astro
-│   │   └── sluzby.astro
+│   │   ├── sluzby.astro
+│   │   ├── [lang]/
+│   │   │   ├── gdpr.astro
+│   │   │   ├── index.astro
+│   │   │   ├── kontakt.astro
+│   │   │   ├── op.astro
+│   │   │   ├── poptat-projekt.astro
+│   │   │   ├── privacy-policy.astro
+│   │   │   ├── reference.astro
+│   │   │   ├── showroom.astro
+│   │   │   └── sluzby.astro
+│   │   └── _pages/
+│   │       ├── ContactPage.astro
+│   │       ├── GdprPage.astro
+│   │       ├── Home.astro
+│   │       ├── OpPage.astro
+│   │       ├── PrivacyPage.astro
+│   │       ├── ProjectRequestPage.astro
+│   │       ├── ReferencePage.astro
+│   │       ├── ServicesPage.astro
+│   │       └── ShowroomPage.astro
 │   └── styles/
 │       └── global.css
-├── tailwind.config.js
+├── tailwind.config.ts
 └── tsconfig.json

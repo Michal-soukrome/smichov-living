@@ -1,4 +1,4 @@
-# Smíchov Living — AI crawler rules
+# Smíchov Living - AI crawler rules
 # Kompletní rekonstrukce a design interiérů na Smíchově
 # Obsah tohoto webu je určen pro informování zákazníků, nikoliv pro trénování AI modelů.
 
@@ -22,7 +22,7 @@ Allow: /
 # Nabízíme kompletní rekonstrukce bytů, domů a komerčních prostor.
 # Od návrhu interiéru, přes stavební práce, až po finální realizaci.
 
-# Showroom Smíchov — osobní konzultace, materiály, ukázky realizací.
+# Showroom Smíchov - osobní konzultace, materiály, ukázky realizací.
 # Kontakt: možnost nezávazné poptávky projektu.
 
 # Služby:

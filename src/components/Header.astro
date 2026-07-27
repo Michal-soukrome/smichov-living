@@ -1,22 +1,50 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo/sl-logo.webp";
+import { supportedLocales, withLocale, t } from "../i18n/utils";
+
 const nav = [
-  { name: "Domů", href: "/" },
-  { name: "Služby", href: "/sluzby" },
-  { name: "Showroom", href: "/showroom" },
-  { name: "Reference", href: "/reference" },
-  { name: "Kontakt", href: "/kontakt" },
+  { key: "nav.home", href: "/" },
+  { key: "nav.services", href: "/sluzby" },
+  { key: "nav.showroom", href: "/showroom" },
+  { key: "nav.reference", href: "/reference" },
+  { key: "nav.contact", href: "/kontakt" },
 ];
+
+const locales = [
+  { code: "cs", label: "Česky", flag: "cz" },
+  { code: "en", label: "English", flag: "gb" },
+  { code: "ru", label: "Русский", flag: "ru" },
+  { code: "vie", label: "Tiếng Việt", flag: "vn" },
+];
+
+const { lang = "cs" } = Astro.props;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
+
+const localizedNav = nav.map((item) => ({
+  ...item,
+  href: withLocale(item.href, locale),
+  basePath: item.href,
+  label: t(locale, item.key),
+}));
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white">
   <div
-    class="w-full px-4 sm:px-6 md:px-12 lg:px-20 h-16 md:h-20 flex items-center justify-between shadow"
+    class="w-full px-4 sm:px-6 md:px-12 xl:px-20 h-16 md:h-20 flex items-center justify-between shadow"
   >
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-2 group shrink-0">
+    <a
+      href={withLocale("/", locale)}
+      class="flex items-center gap-2 group shrink-0"
+    >
       <div class="flex items-center gap-1">
-        <img src="/assets/logo/sl-logo.webp" class="w-7 h-7" />
-
+        <Image
+          src={logo}
+          alt="Smíchov Living logo"
+          class="w-7 h-7"
+          loading="eager"
+        />
         <div class="flex gap-1 leading-none">
           <span
             class="block font-display text-sm md:text-base font-medium tracking-widest uppercase text-dark"
@@ -35,149 +63,379 @@ const nav = [
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden lg:flex items-center gap-6 lg:gap-8">
+    <nav class="hidden xl:flex items-center gap-6 xl:gap-8">
       {
-        nav.map((item) => (
+        localizedNav.map((item) => (
           <a
             href={item.href}
             data-navlink
-            class="font-body text-sm lg:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
+            data-path={item.basePath}
+            class="font-body text-sm xl:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
           >
-            {item.name}
+            {item.label}
           </a>
         ))
       }
     </nav>
 
-    <!-- CTA -->
-    <a href="/poptat-projekt" class="hidden lg:block shrink-0">
-      <button class="btn-primary">Poptat projekt</button>
-    </a>
-
-    <!-- Hamburger -->
-    <button
-      id="mobile-btn"
-      class="lg:hidden p-2 -mr-2"
-      aria-label="Menu"
-      type="button"
-    >
-      <svg
-        id="icon-open"
-        width="22"
-        height="18"
-        viewBox="0 0 20 16"
-        fill="none"
+    <!-- Right side: CTA (md+) / lang switcher (always) / hamburger (<xl) -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      <!-- CTA - jen od md výš, na malém mobilu zůstává jen v mobile-menu -->
+      <a
+        href={withLocale("/poptat-projekt", locale)}
+        data-cta
+        data-path="/poptat-projekt"
+        class="hidden md:block shrink-0"
       >
-        <line x1="0" y1="1" x2="20" y2="1" stroke="#1a1612" stroke-width="1.5"
-        ></line>
-        <line x1="0" y1="8" x2="20" y2="8" stroke="#1a1612" stroke-width="1.5"
-        ></line>
-        <line x1="0" y1="15" x2="20" y2="15" stroke="#1a1612" stroke-width="1.5"
-        ></line>
-      </svg>
-      <svg
-        id="icon-close"
-        width="18"
-        height="18"
-        viewBox="0 0 16 16"
-        fill="none"
-        style="display:none"
-      >
-        <line x1="1" y1="1" x2="15" y2="15" stroke="#1a1612" stroke-width="1.5"
-        ></line>
-        <line x1="15" y1="1" x2="1" y2="15" stroke="#1a1612" stroke-width="1.5"
-        ></line>
-      </svg>
-    </button>
-  </div>
+        <button class="btn-primary">{t(locale, "header.cta")}</button>
+      </a>
 
-  <!-- Mobile menu -->
-  <div
-    id="mobile-menu"
-    style="display:none"
-    class="lg:hidden px-6 py-6 flex-col gap-3 shadow"
-  >
-    {
-      nav.map((item) => (
-        <a href={item.href} data-navlink class="text-dark text-base py-2 block">
-          {item.name}
-        </a>
-      ))
-    }
-    <a
-      href="/poptat-projekt"
-      class="btn-primary w-full mt-4 text-center text-base"
+      <!-- Lang switcher - viditelný na všech breakpointech -->
+      <div class="relative">
+        <button
+          id="lang-switcher-btn"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="inline-flex items-center justify-center gap-1 cursor-pointer rounded-full border border-stone-200 bg-white h-9 w-16 px-2 text-xs uppercase text-stone-500 hover:border-stone-300 hover:text-stone-900 transition"
+        >
+          <span id="lang-switcher-current" class="w-6 text-center"
+            >{locale.toUpperCase()}</span
+          >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="h-3 w-3 shrink-0"
+          >
+            <path
+              d="M5 7.5l5 5 5-5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+
+        <div
+          id="lang-switcher-menu"
+          class="absolute right-0 top-full z-50 mt-2 w-44 max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-lg hidden"
+        >
+          {
+            locales.map((loc) => (
+              <a
+                href="#"
+                data-lang={loc.code}
+                class="flex items-center gap-2 px-4 py-3 text-sm text-stone-700 hover:bg-stone-100 transition-colors"
+              >
+                <img
+                  src={`https://flagcdn.com/${loc.flag}.svg`}
+                  class="w-5 h-3.5 object-cover rounded-sm shadow-sm"
+                  alt={`Vlajka ${loc.label}`}
+                  loading="lazy"
+                />
+
+                <span>{loc.label}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Hamburger -->
+      <!-- Hamburger -->
+      <button
+        id="mobile-btn"
+        class="xl:hidden flex items-center justify-center w-9 h-9 shrink-0 cursor-pointer"
+        aria-label="Menu"
+        type="button"
+      >
+        <svg
+          id="icon-open"
+          width="20"
+          height="16"
+          viewBox="0 0 20 16"
+          fill="none"
+        >
+          <line x1="0" y1="1" x2="20" y2="1" stroke="#1a1612" stroke-width="1.5"
+          ></line>
+          <line x1="0" y1="8" x2="20" y2="8" stroke="#1a1612" stroke-width="1.5"
+          ></line>
+          <line
+            x1="0"
+            y1="15"
+            x2="20"
+            y2="15"
+            stroke="#1a1612"
+            stroke-width="1.5"></line>
+        </svg>
+        <svg
+          id="icon-close"
+          width="20"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          style="display:none"
+        >
+          <line
+            x1="1"
+            y1="1"
+            x2="15"
+            y2="15"
+            stroke="#1a1612"
+            stroke-width="1.5"></line>
+          <line
+            x1="15"
+            y1="1"
+            x2="1"
+            y2="15"
+            stroke="#1a1612"
+            stroke-width="1.5"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Overlay za mobile menu -->
+    <div
+      id="mobile-menu-overlay"
+      class="xl:hidden fixed inset-x-0 bottom-0 top-16 md:top-20 z-30 bg-black/20 opacity-0 pointer-events-none transition-opacity duration-200"
     >
-      Poptat projekt
-    </a>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      style="display:none"
+      class="xl:hidden absolute top-full left-0 w-full bg-white px-6 py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40"
+    >
+      {
+        localizedNav.map((item) => (
+          <a
+            href={item.href}
+            data-navlink
+            data-path={item.basePath}
+            class="text-dark text-base py-2 block hover:underline "
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href={withLocale("/poptat-projekt", locale)}
+        data-cta
+        data-path="/poptat-projekt"
+        class="btn-primary w-full mt-4 text-center
+  text-base"
+      >
+        {t(locale, "header.cta")}
+      </a>
+
+      <script>
+        const LOCALES = ["cs", "en", "ru", "vie"];
+        const STORAGE_KEY = "site-language";
+
+        function getLocaleFromPath(path: string): string {
+          const first = path.split("/").filter(Boolean)[0];
+          return LOCALES.includes(first) ? first : "cs";
+        }
+
+        function getStoredLocale(): string | null {
+          try {
+            const stored = window.localStorage.getItem(STORAGE_KEY);
+            return LOCALES.includes(stored ?? "") ? stored : null;
+          } catch {
+            return null;
+          }
+        }
+
+        function setStoredLocale(locale: string) {
+          if (!LOCALES.includes(locale)) return;
+          try {
+            window.localStorage.setItem(STORAGE_KEY, locale);
+          } catch {
+            // ignore storage failures
+          }
+        }
+
+        function withLocale(path: string, locale: string): string {
+          if (!path) return "/";
+          const segments = path.split("/").filter(Boolean);
+          if (LOCALES.includes(segments[0])) segments.shift();
+          if (locale === "cs") {
+            return segments.length === 0 ? "/" : `/${segments.join("/")}`;
+          }
+          return segments.length === 0
+            ? `/${locale}/`
+            : `/${locale}/${segments.join("/")}`;
+        }
+
+        function replaceWithStoredLocale(): boolean {
+          const stored = getStoredLocale();
+          const current = getLocaleFromPath(window.location.pathname);
+          if (!stored || stored === current) return false;
+          if (current === "cs") {
+            window.location.replace(
+              withLocale(window.location.pathname, stored),
+            );
+            return true;
+          }
+          return false;
+        }
+
+        function closeMenu() {
+          const menu = document.getElementById("mobile-menu") as HTMLElement;
+          const overlay = document.getElementById(
+            "mobile-menu-overlay",
+          ) as HTMLElement;
+          const iconOpen = document.getElementById("icon-open") as HTMLElement;
+          const iconClose = document.getElementById(
+            "icon-close",
+          ) as HTMLElement;
+          if (!menu) return;
+          menu.style.display = "none";
+          iconOpen.style.display = "block";
+          iconClose.style.display = "none";
+          overlay?.classList.add("opacity-0", "pointer-events-none");
+          overlay?.classList.remove("opacity-100");
+          document.body.style.overflow = "";
+        }
+
+        function openMenu() {
+          const menu = document.getElementById("mobile-menu") as HTMLElement;
+          const overlay = document.getElementById(
+            "mobile-menu-overlay",
+          ) as HTMLElement;
+          const iconOpen = document.getElementById("icon-open") as HTMLElement;
+          const iconClose = document.getElementById(
+            "icon-close",
+          ) as HTMLElement;
+          if (!menu) return;
+          menu.style.display = "flex";
+          iconOpen.style.display = "none";
+          iconClose.style.display = "block";
+          overlay?.classList.remove("opacity-0", "pointer-events-none");
+          overlay?.classList.add("opacity-100");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLangMenu() {
+          const menu = document.getElementById("lang-switcher-menu");
+          const button = document.getElementById("lang-switcher-btn");
+          menu?.classList.add("hidden");
+          button?.setAttribute("aria-expanded", "false");
+        }
+
+        function updateActiveLinks() {
+          const path = window.location.pathname;
+          document
+            .querySelectorAll<HTMLAnchorElement>("[data-navlink]")
+            .forEach((a) => {
+              const isActive = a.getAttribute("href") === path;
+              a.classList.toggle("text-accent-hover", isActive);
+              a.classList.toggle("underline", isActive);
+              a.classList.toggle("underline-offset-4", isActive);
+              a.classList.toggle("decoration-accent-hover", isActive);
+              a.classList.toggle("text-gray-700", !isActive);
+            });
+        }
+
+        function updateNavHrefs() {
+          const current = getLocaleFromPath(window.location.pathname);
+
+          // Nav links
+          document
+            .querySelectorAll<HTMLAnchorElement>("[data-navlink]")
+            .forEach((a) => {
+              const path = a.dataset.path ?? "/";
+              a.href = withLocale(path, current);
+            });
+
+          // CTA links
+          document
+            .querySelectorAll<HTMLAnchorElement>("[data-cta]")
+            .forEach((a) => {
+              const path = a.dataset.path ?? "/poptat-projekt";
+              a.href = withLocale(path, current);
+            });
+        }
+
+        function updateLangLinks() {
+          const current = getLocaleFromPath(window.location.pathname);
+          const currentLabel = document.getElementById("lang-switcher-current");
+          if (currentLabel) currentLabel.textContent = current.toUpperCase();
+
+          document
+            .querySelectorAll<HTMLAnchorElement>("[data-lang]")
+            .forEach((a) => {
+              const lang = a.getAttribute("data-lang") ?? "cs";
+              a.href = withLocale(window.location.pathname, lang);
+              a.classList.toggle("font-semibold", lang === current);
+              a.classList.toggle("text-stone-900", lang === current);
+            });
+        }
+
+        function handleLangSelection(lang: string) {
+          setStoredLocale(lang);
+          window.location.href = withLocale(window.location.pathname, lang);
+        }
+
+        document.addEventListener("click", (e) => {
+          const target = e.target as Element;
+
+          // Klik na overlay zavře menu
+          if (target.closest("#mobile-menu-overlay")) {
+            closeMenu();
+            return;
+          }
+
+          if (target.closest("#mobile-btn")) {
+            const menu = document.getElementById("mobile-menu") as HTMLElement;
+            menu?.style.display === "flex" ? closeMenu() : openMenu();
+            return;
+          }
+          if (target.closest("#mobile-menu")) {
+            closeMenu();
+            return;
+          }
+
+          const dropdown = document.getElementById("lang-switcher-menu");
+          if (!dropdown) return;
+
+          if (target.closest("#lang-switcher-btn")) {
+            const isOpen = !dropdown.classList.contains("hidden");
+            dropdown.classList.toggle("hidden", isOpen);
+            document
+              .getElementById("lang-switcher-btn")
+              ?.setAttribute("aria-expanded", String(!isOpen));
+            return;
+          }
+
+          const langItem = target.closest("[data-lang]");
+          if (langItem) {
+            e.preventDefault();
+            const selectedLang = langItem.getAttribute("data-lang");
+            if (selectedLang) {
+              handleLangSelection(selectedLang);
+            }
+            return;
+          }
+
+          if (!target.closest("#lang-switcher-menu")) {
+            closeLangMenu();
+          }
+        });
+
+        function init() {
+          if (replaceWithStoredLocale()) return;
+          closeMenu();
+          updateNavHrefs();
+          updateActiveLinks();
+          updateLangLinks();
+        }
+
+        document.addEventListener("astro:page-load", init);
+        init();
+      </script>
+    </div>
   </div>
 </header>
-
-<script>
-  function closeMenu() {
-    const menu = document.getElementById("mobile-menu") as HTMLElement;
-    const iconOpen = document.getElementById("icon-open") as HTMLElement;
-    const iconClose = document.getElementById("icon-close") as HTMLElement;
-    if (!menu) return;
-    menu.style.display = "none";
-    iconOpen.style.display = "block";
-    iconClose.style.display = "none";
-  }
-
-  function openMenu() {
-    const menu = document.getElementById("mobile-menu") as HTMLElement;
-    const iconOpen = document.getElementById("icon-open") as HTMLElement;
-    const iconClose = document.getElementById("icon-close") as HTMLElement;
-    if (!menu) return;
-    menu.style.display = "flex";
-    iconOpen.style.display = "none";
-    iconClose.style.display = "block";
-  }
-
-  function updateActiveLinks() {
-    const path = window.location.pathname;
-    document.querySelectorAll("[data-navlink]").forEach((link) => {
-      const a = link as HTMLAnchorElement;
-      if (a.getAttribute("href") === path) {
-        a.classList.add(
-          "text-accent-hover",
-          "underline",
-          "underline-offset-4",
-          "decoration-accent-hover",
-        );
-        a.classList.remove("text-gray-700");
-      } else {
-        a.classList.remove(
-          "text-accent-hover",
-          "underline",
-          "underline-offset-4",
-          "decoration-accent-hover",
-        );
-        a.classList.add("text-gray-700");
-      }
-    });
-  }
-
-  // Single persistent click listener — re-queries DOM every time
-  document.addEventListener("click", (e) => {
-    const target = e.target as Element;
-    if (target.closest("#mobile-btn")) {
-      const menu = document.getElementById("mobile-menu") as HTMLElement;
-      const isOpen = menu?.style.display === "flex";
-      isOpen ? closeMenu() : openMenu();
-      return;
-    }
-    if (target.closest("#mobile-menu")) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("astro:page-load", () => {
-    closeMenu();
-    updateActiveLinks();
-  });
-
-  // Init on first load
-  closeMenu();
-  updateActiveLinks();
-</script>

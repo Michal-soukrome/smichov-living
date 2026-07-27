@@ -1,10 +1,30 @@
+---
+import { t, withLocale } from "../i18n/utils";
+
+const {
+  lang = "cs",
+  class: className = "",
+  href = "/poptat-projekt",
+  text,
+  target = "_self",
+  id,
+} = Astro.props;
+
+const _text = text ?? t(lang, "link.requestProject");
+const isExternal =
+  /^(https?:)?\/\//i.test(href) ||
+  href.startsWith("mailto:") ||
+  href.startsWith("tel:");
+const localizedHref = isExternal ? href : withLocale(href, lang);
+---
+
 <a
-  href={Astro.props.href ?? "/poptat-projekt"}
-  class={`group inline-flex items-center gap-1.5 text-xs font-body text-stone-900 hover:text-accent transition-colors uppercase tracking-widest underline mt-1 w-fit ${Astro.props.class ?? ""}`}
-  target={Astro.props.target ?? "_self"}
-  id={Astro.props.id ?? undefined}
+  href={localizedHref}
+  class={`group inline-flex items-center gap-1.5 text-xs font-body text-stone-900 hover:text-accent transition-colors uppercase tracking-widest underline mt-1 w-fit ${className}`}
+  target={target}
+  id={id}
 >
-  {Astro.props.text ?? "Poptat projekt"}
+  {_text}
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

@@ -70,7 +70,7 @@ const localizedNav = nav.map((item) => ({
             href={item.href}
             data-navlink
             data-path={item.basePath}
-            class="font-body text-sm xl:text-base text-gray-700 hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
+            class="font-body text-sm xl:text-base hover:text-accent-hover transition-colors uppercase whitespace-nowrap"
           >
             {item.label}
           </a>
@@ -206,7 +206,7 @@ const localizedNav = nav.map((item) => ({
     <div
       id="mobile-menu"
       style="display:none"
-      class="xl:hidden absolute top-full left-0 w-full bg-white px-6 py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40"
+      class="xl:hidden absolute top-full left-0 w-full bg-white py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40"
     >
       {
         localizedNav.map((item) => (
@@ -214,21 +214,22 @@ const localizedNav = nav.map((item) => ({
             href={item.href}
             data-navlink
             data-path={item.basePath}
-            class="text-dark text-base py-2 block hover:underline "
+            class="px-4 sm:px-6 md:px-12 xl:px-20 text-base py-2 block hover:underline hover:bg-gray-50"
           >
             {item.label}
           </a>
         ))
       }
-      <a
-        href={withLocale("/poptat-projekt", locale)}
-        data-cta
-        data-path="/poptat-projekt"
-        class="btn-primary w-full mt-4 text-center
-  text-base"
-      >
-        {t(locale, "header.cta")}
-      </a>
+      <div class="px-4 sm:px-6 md:px-12 xl:px-20">
+        <a
+          href={withLocale("/poptat-projekt", locale)}
+          data-cta
+          data-path="/poptat-projekt"
+          class="btn-primary w-full mt-4 text-center text-base"
+        >
+          {t(locale, "header.cta")}
+        </a>
+      </div>
 
       <script>
         const LOCALES = ["cs", "en", "ru", "vie"];

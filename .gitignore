@@ -1,5 +1,6 @@
 # build output
 dist/
+.vercel*
 
 # generated sitemap
 public/sitemap.xml
@@ -29,3 +30,4 @@ pnpm-debug.log*
 # env vars
 *.env
 .env*
+

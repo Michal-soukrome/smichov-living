@@ -1,0 +1,149 @@
+---
+import { Image } from "astro:assets";
+
+interface CarouselItem {
+  src: any;
+  alt: string;
+  caption?: string;
+}
+
+interface OffsetCarouselProps {
+  id?: string;
+  items: CarouselItem[];
+  class?: string;
+}
+
+const {
+  id = "offset-carousel",
+  items,
+  class: className = "",
+} = Astro.props as OffsetCarouselProps;
+
+const overlayId = `${id}-lightbox`;
+const activeImageId = `${id}-active-image`;
+---
+
+<div class={`relative ${className}`} data-offset-carousel>
+  <div class="overflow-hidden">
+    <div
+      class="hide-scrollbar flex gap-5 overflow-x-auto snap-x snap-mandatory px-4 md:px-10 pb-4"
+      aria-label="Offset image carousel"
+    >
+      {
+        items.map((item, index) => (
+          <button
+            type="button"
+            class="snap-start shrink-0 w-64 md:w-72 overflow-hidden border border-stone-200 bg-stone-100 "
+            data-carousel-index={index}
+            aria-label={`Open image ${item.alt}`}
+          >
+            <div class="relative overflow-hidden h-52 md:h-56">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <div
+    id={overlayId}
+    class="hidden fixed inset-0 h-dvh w-dvw z-50 items-center justify-center bg-black/60 backdrop-blur-md p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image lightbox"
+    tabindex="-1"
+    data-lightbox-overlay
+  >
+    <button
+      type="button"
+      class="absolute top-6 right-6 z-50 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition"
+      data-lightbox-close
+      aria-label="Close image lightbox"
+    >
+      ✕
+    </button>
+
+    <div class="relative max-w-[95vw] max-h-[95vh]">
+      <Image
+        id={activeImageId}
+        src={items[0].src}
+        alt={items[0].alt}
+        class="max-h-[95vh] max-w-[95vw] object-contain"
+      />
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  const initOffsetCarousels = () => {
+    document.querySelectorAll("[data-offset-carousel]").forEach((root) => {
+      const buttons = Array.from(
+        root.querySelectorAll("[data-carousel-index]"),
+      );
+      const overlay = root.querySelector("[data-lightbox-overlay]");
+      const closeButton = root.querySelector("[data-lightbox-close]");
+      const activeImage = root.querySelector("img[id$='-active-image']");
+
+      if (!overlay || !closeButton || !activeImage) return;
+
+      const items = buttons.map((button) => {
+        const img = button.querySelector("img");
+        return {
+          src: img?.getAttribute("src") ?? "",
+          alt: img?.getAttribute("alt") ?? "",
+        };
+      });
+
+      const openLightbox = (item) => {
+        activeImage.src = item.src;
+        activeImage.alt = item.alt;
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        document.body.classList.add("overflow-hidden");
+        overlay.focus();
+      };
+
+      const closeLightbox = () => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("flex");
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          const item = items[index];
+          openLightbox(item);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          closeLightbox();
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        document
+          .querySelectorAll("[data-lightbox-overlay].flex")
+          .forEach((overlay) => {
+            overlay.classList.add("hidden");
+            overlay.classList.remove("flex");
+          });
+      }
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initOffsetCarousels);
+  } else {
+    initOffsetCarousels();
+  }
+</script>

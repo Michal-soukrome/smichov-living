@@ -53,5 +53,28 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
     </main>
 
     <Footer lang={lang} />
+    <script type="module">
+      if (typeof window !== "undefined" && "IntersectionObserver" in window) {
+        const sections = document.querySelectorAll("main section");
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("reveal-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -15% 0px",
+          },
+        );
+
+        sections.forEach((section) => {
+          section.classList.add("reveal");
+          observer.observe(section);
+        });
+      }
+    </script>
   </body>
 </html>

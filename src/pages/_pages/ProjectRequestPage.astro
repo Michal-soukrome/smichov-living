@@ -147,22 +147,24 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
             <span class="block h-px w-10 bg-accent mb-8"></span>
           </div>
 
-          <div class="bg-[#f7f7f7] border border-stone-200 p-3 md:p-8">
-            <h3 class="text-xl font-medium text-stone-900 mb-8">
-              {t(locale, "project.request.formTitle")}
-            </h3>
+          <div class="">
+            <div class="bg-[#f7f7f7] border border-stone-200 p-3 md:p-8">
+              <h3 class="text-xl font-medium text-stone-900 mb-8">
+                {t(locale, "project.request.formTitle")}
+              </h3>
 
-            <ContactForm
-              id="poptavka-form"
-              lang={locale}
-              showProjectType={true}
-              showBudget={true}
-              showCity={true}
-              showUpload={true}
-              projectTypes={localizedProjectTypes}
-              budgets={localizedBudgets}
-              submitText={t(locale, "contact.form.submit")}
-            />
+              <ContactForm
+                id="poptavka-form"
+                lang={locale}
+                showProjectType={true}
+                showBudget={false}
+                showCity={true}
+                showUpload={false}
+                projectTypes={localizedProjectTypes}
+                budgets={localizedBudgets}
+                submitText={t(locale, "contact.form.submit")}
+              />
+            </div>
 
             <div class="block lg:hidden mt-16">
               <SectionLabel label={t(locale, "section.label.howitworks")} />
@@ -190,34 +192,70 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
           </div>
         </div>
       </div>
-      <section class="scroll-mt-24 py-10 md:py-20">
-        <div>
-          <SectionLabel label={realizationsLabel} />
-        </div>
-        <div>
-          <div class="grid md:grid-cols-4 gap-5" id="project-request-grid">
-            <div>
+    </section>
+    <section class="scroll-mt-24 py-10 md:py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <SectionLabel label={realizationsLabel} />
+      </div>
+      <div>
+        <div class="relative">
+          <div
+            id="img-carousel"
+            class="flex gap-5 overflow-x-auto snap-x snap-mandatory pl-4 md:pl-10 pb-4"
+          >
+            <div class="snap-start shrink-0 w-64">
               <Image
                 src={realizace1}
                 alt={realizationAlts[0] ?? "Realizace 1"}
                 class="w-full h-48 object-cover"
               />
             </div>
-            <div>
+
+            <div class="snap-start shrink-0 w-64">
               <Image
                 src={realizace2}
                 alt={realizationAlts[1] ?? "Realizace 2"}
                 class="w-full h-48 object-cover"
               />
             </div>
-            <div>
+
+            <div class="snap-start shrink-0 w-64">
               <Image
                 src={realizace3}
                 alt={realizationAlts[2] ?? "Realizace 3"}
                 class="w-full h-48 object-cover"
               />
             </div>
-            <div>
+
+            <div class="snap-start shrink-0 w-64">
+              <Image
+                src={realizace4}
+                alt={realizationAlts[3] ?? "Realizace 4"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="snap-start shrink-0 w-64">
+              <Image
+                src={realizace4}
+                alt={realizationAlts[3] ?? "Realizace 4"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="snap-start shrink-0 w-64">
+              <Image
+                src={realizace4}
+                alt={realizationAlts[3] ?? "Realizace 4"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="snap-start shrink-0 w-64">
+              <Image
+                src={realizace4}
+                alt={realizationAlts[3] ?? "Realizace 4"}
+                class="w-full h-48 object-cover"
+              />
+            </div>
+            <div class="snap-start shrink-0 w-64">
               <Image
                 src={realizace4}
                 alt={realizationAlts[3] ?? "Realizace 4"}
@@ -225,6 +263,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
               />
             </div>
           </div>
+
           <ArrowedUnderline
             href="/reference"
             lang={lang}
@@ -232,7 +271,7 @@ const showAllProjectsText = t(locale, "link.showAllRealizations");
             class="mx-auto text-center mt-8 w-full justify-center"
           />
         </div>
-      </section>
+      </div>
     </section>
   </section>
 </BaseLayout>

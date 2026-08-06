@@ -31,6 +31,7 @@
   "contact.form.upload.note": "PDF, JPG, PNG up to 20 MB",
   "contact.form.gdpr": "I agree to the processing of personal data for the purpose of handling the inquiry.",
   "contact.form.submit": "Send",
+  "contact.form.sending": "Sending…",
   "contact.form.success": "Thank you! We will contact you as soon as possible.",
   "contact.form.error": "Something went wrong. Please try again.",
   "contact.form.title": "Contact us",

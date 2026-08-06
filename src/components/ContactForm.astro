@@ -37,6 +37,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 <div class={className} data-form-id={id}>
   <form id={id} class="flex flex-col gap-5" novalidate>
     <input type="hidden" name="typ_projektu" data-role="project-type-input" />
+    <input type="hidden" name="form_id" value={id} />
 
     {
       showProjectType && projectTypes.length > 0 && (
@@ -111,15 +112,42 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
       />
     </div>
+
     {
-      /* 
+      showUpload && (
+        <div class="flex flex-col gap-1.5">
+          <label
+            class="font-body text-xs font-medium text-stone-700"
+            for={`${id}-upload`}
+          >
+            {t(lang, "contact.form.upload.label")}
+          </label>
+          <input
+            id={`${id}-upload`}
+            type="file"
+            name="upload"
+            data-role="file-input"
+            class="border border-stone-300 bg-white px-3 py-2.5 text-sm font-body text-stone-900 outline-none focus:border-accent transition-colors"
+          />
+          <p data-role="file-names" class="hidden text-sm text-stone-500" />
+          <p class="text-xs text-stone-400">
+            {t(lang, "contact.form.upload.note")}
+          </p>
+        </div>
+      )
+    }
+
     {
       showCity && (
         <div class="flex flex-col gap-1.5">
-          <label class="font-body text-xs font-medium text-stone-700" >
+          <label
+            class="font-body text-xs font-medium text-stone-700"
+            for={`${id}-city`}
+          >
             <span class="text-red-500">*</span> {t(lang, "contact.form.city")}
           </label>
           <input
+            id={`${id}-city`}
             type="text"
             name="mesto"
             required
@@ -128,7 +156,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
         </div>
       )
     }
-      
+
     {
       showBudget && budgets.length > 0 && (
         <div class="flex flex-col gap-2">
@@ -151,8 +179,6 @@ const _submitText = submitText || t(lang, "contact.form.submit");
           <input type="hidden" name="rozpocet" data-role="budget-input" />
         </div>
       )
-    }
-      */
     }
 
     <div class="flex flex-col gap-1.5">

@@ -20,12 +20,25 @@ export const POST: APIRoute = async ({ request }) => {
   const telefon = data.get("telefon")?.toString();
   const email = data.get("email")?.toString();
   const popis = data.get("popis")?.toString();
+  const formId = data.get("form_id")?.toString() ?? "contact-form";
+  const mesto = data.get("mesto")?.toString();
+  const rozpocet = data.get("rozpocet")?.toString();
+  const upload = data.get("upload");
+  const attachmentName =
+    upload instanceof File && upload.name ? upload.name : undefined;
 
   if (!jmeno || !telefon || !email) {
     return new Response(JSON.stringify({ error: "Missing required fields" }), {
       status: 400,
     });
   }
+
+  const formTitles: Record<string, string> = {
+    "contact-page-form": "Kontakt",
+    "poptavka-form": "Poptat projekt",
+  };
+  const pageTitle = formTitles[formId] ?? "Kontakt";
+  const subject = `Zpráva z webového formuláře smichovliving.cz - ${pageTitle} - ${jmeno}`;
 
   const resendResponse = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -37,13 +50,16 @@ export const POST: APIRoute = async ({ request }) => {
       from: RESEND_FROM_EMAIL,
       to: RESEND_TO_EMAIL,
       reply_to: email,
-      subject: `Nová poptávka – ${jmeno}`,
+      subject,
       html: `
         <h2>Nová poptávka z webu</h2>
-
+        <p><strong>Form ID:</strong> ${formId}</p>
         <p><strong>Jméno:</strong> ${jmeno}</p>
         <p><strong>Telefon:</strong> ${telefon}</p>
         <p><strong>Email:</strong> ${email}</p>
+        ${mesto ? `<p><strong>Město:</strong> ${mesto}</p>` : ""}
+        ${rozpocet ? `<p><strong>Rozpočet:</strong> ${rozpocet}</p>` : ""}
+        ${attachmentName ? `<p><strong>Příloha:</strong> ${attachmentName}</p>` : ""}
         <p><strong>Zpráva:</strong></p>
         <p>${popis ?? ""}</p>
       `,

@@ -22,11 +22,7 @@ const activeImageId = `${id}-active-image`;
 const captionId = `${id}-caption`;
 ---
 
-<div
-  class={`relative h-full hover:opacity-90 ${className}`}
-  id={id}
-  data-lightbox-root
->
+<div class={`relative h-full ${className}`} id={id} data-lightbox-root>
   <slot />
 
   <div

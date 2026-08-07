@@ -53,21 +53,19 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
     </main>
 
     <Footer lang={lang} />
-    <script type="module">
-      if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-        const sections = document.querySelectorAll("main section");
+    <script>
+      function initReveal() {
+        if (!("IntersectionObserver" in window)) return;
+        const sections = document.querySelectorAll("main section:not(.reveal)");
         const observer = new IntersectionObserver(
-          (entries, observer) => {
+          (entries, obs) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
               entry.target.classList.add("reveal-visible");
-              observer.unobserve(entry.target);
+              obs.unobserve(entry.target);
             });
           },
-          {
-            threshold: 0.12,
-            rootMargin: "0px 0px -15% 0px",
-          },
+          { threshold: 0.12, rootMargin: "0px 0px -15% 0px" },
         );
 
         sections.forEach((section) => {
@@ -75,6 +73,8 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
           observer.observe(section);
         });
       }
+
+      document.addEventListener("astro:page-load", initReveal);
     </script>
   </body>
 </html>

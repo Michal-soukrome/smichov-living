@@ -59,6 +59,9 @@ const carouselItems = [
   { src: realizace1, alt: realizationAlts[0] ?? "Realizace 1" },
   { src: realizace2, alt: realizationAlts[1] ?? "Realizace 2" },
   { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
+  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
+  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
+  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
   { src: realizace4, alt: realizationAlts[3] ?? "Realizace 4" },
 ];
 ---
@@ -206,11 +209,7 @@ const carouselItems = [
       </div>
       <div>
         <div class="relative">
-          <OffsetCarousel
-            id="project-request-carousel"
-            class="px-4 md:px-10 pb-4"
-            items={carouselItems}
-          />
+          <OffsetCarousel id="project-request-carousel" items={carouselItems} />
 
           <ArrowedUnderline
             href="/reference"

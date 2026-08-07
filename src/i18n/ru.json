@@ -33,6 +33,7 @@
   "contact.form.gdpr": "Я согласен на обработку персональных данных для обработки запроса.",
   "contact.form.submit": "Отправить",
   "contact.form.sending": "Отправка…",
+  "contact.form.successTitle": "Форма успешно отправлена",
   "contact.form.success": "Спасибо! Мы свяжемся с вами как можно скорее.",
   "contact.form.error": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
   "contact.form.title": "Свяжитесь с нами",

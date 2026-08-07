@@ -9,4 +9,4 @@
 - proklik na google recenze (zatim neexistuji), podobne jako na dirtybug
 ✓ pridat lehke animace napric webem
 ✓ na realizaci zkusit offset carousel namisto 4 fotek vedle sebe
-- na homepage pridat fotky/carousel ze stranky s realizacemi z poptat projekt
+✓ na homepage pridat fotky/carousel ze stranky s realizacemi z poptat projekt

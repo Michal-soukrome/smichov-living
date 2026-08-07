@@ -1,0 +1,181 @@
+---
+interface LightboxItem {
+  src: any;
+  alt: string;
+  caption?: string;
+}
+
+interface LightboxProps {
+  id?: string;
+  items: LightboxItem[];
+  class?: string;
+}
+
+const {
+  id = "lightbox",
+  items,
+  class: className = "",
+} = Astro.props as LightboxProps;
+
+const overlayId = `${id}-overlay`;
+const activeImageId = `${id}-active-image`;
+const captionId = `${id}-caption`;
+---
+
+<div
+  class={`relative h-full hover:opacity-90 ${className}`}
+  id={id}
+  data-lightbox-root
+>
+  <slot />
+
+  <div
+    id={overlayId}
+    class="hidden fixed inset-0 z-50 items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image lightbox"
+    aria-hidden="true"
+    tabindex="-1"
+    data-lightbox-overlay
+  >
+    <button
+      type="button"
+      class="absolute top-6 right-6 z-50 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition cursor-pointer"
+      data-lightbox-close
+      aria-label="Close image lightbox"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <div class="relative max-w-[95vw] max-h-[95vh]">
+      <img
+        id={activeImageId}
+        src=""
+        alt=""
+        class="max-h-[95vh] max-w-[95vw] object-contain"
+        data-lightbox-image
+      />
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  const initLightboxes = () => {
+    document.querySelectorAll("[data-lightbox-root]").forEach((root) => {
+      const overlay = root.querySelector("[data-lightbox-overlay]");
+      if (!overlay) return;
+
+      // Portal the overlay to <body> so `position: fixed` is relative
+      // to the viewport, not to any transformed ancestor (e.g. scroll-reveal
+      // sections using `transform`, which creates a new containing block).
+      if (overlay.parentElement !== document.body) {
+        document.body.appendChild(overlay);
+      }
+
+      const triggers = Array.from(
+        root.querySelectorAll("[data-lightbox-trigger]"),
+      );
+      const closeButton = overlay.querySelector("[data-lightbox-close]");
+      const activeImage = overlay.querySelector("[data-lightbox-image]");
+      const caption = overlay.querySelector("[data-lightbox-caption-display]");
+
+      if (!closeButton || !activeImage) return;
+
+      // Avoid double-binding listeners on the overlay if initLightboxes
+      // runs again (e.g. astro:page-load firing after DOMContentLoaded).
+      if (overlay.dataset.lightboxBound === "true") return;
+      overlay.dataset.lightboxBound = "true";
+
+      let lastTrigger = null;
+
+      const openLightbox = (item, trigger) => {
+        lastTrigger = trigger ?? null;
+
+        activeImage.src = item.src;
+        activeImage.alt = item.alt;
+
+        if (caption) {
+          if (item.caption) {
+            caption.textContent = item.caption;
+            caption.classList.remove("hidden");
+          } else {
+            caption.textContent = "";
+            caption.classList.add("hidden");
+          }
+        }
+
+        overlay.classList.remove("hidden");
+        overlay.classList.add("flex");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("overflow-hidden");
+        overlay.focus();
+      };
+
+      const closeLightbox = () => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("flex");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("overflow-hidden");
+        activeImage.src = "";
+        lastTrigger?.focus();
+      };
+
+      triggers.forEach((trigger) => {
+        const buttonImg = trigger.querySelector("img");
+        const src = buttonImg?.getAttribute("src");
+        const alt = buttonImg?.getAttribute("alt") ?? "";
+        const captionText = trigger.dataset.lightboxCaption ?? "";
+
+        if (!src) return;
+
+        trigger.addEventListener("click", () => {
+          openLightbox({ src, alt, caption: captionText }, trigger);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+          closeLightbox();
+        }
+      });
+    });
+  };
+
+  const closeAnyOpenLightboxes = () => {
+    document
+      .querySelectorAll("[data-lightbox-overlay].flex")
+      .forEach((overlay) => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("flex");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("overflow-hidden");
+      });
+  };
+
+  if (document.readyState !== "loading") {
+    initLightboxes();
+  } else {
+    document.addEventListener("DOMContentLoaded", initLightboxes);
+  }
+
+  document.addEventListener("astro:page-load", initLightboxes);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAnyOpenLightboxes();
+    }
+  });
+</script>

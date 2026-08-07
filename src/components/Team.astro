@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { t } from "../i18n/utils";
+import Lightbox from "./Lightbox.astro";
 import romanaImage from "../assets/images/contact/romana.jpg";
 import sandraImage from "../assets/images/contact/sandra.jpg";
 
@@ -34,11 +35,21 @@ const { lang = "cs" } = Astro.props;
     {
       team.map((person) => (
         <div class="flex flex-col md:flex-row gap-6 grow items-start">
-          <Image
-            src={person.image}
-            alt={person.name}
-            class="w-44 h-52 object-cover object-top shrink-0"
-          />
+          <Lightbox
+            id={`team-${person.name.replace(/\s/g, "-").toLowerCase()}`}
+            items={[{ src: person.image, alt: person.name }]}
+          >
+            <button
+              data-lightbox-trigger
+              data-lightbox-caption={t(lang, person.roleKey)}
+            >
+              <Image
+                src={person.image}
+                alt={person.name}
+                class="w-44 h-52 object-cover object-top shrink-0 cursor-pointer"
+              />
+            </button>
+          </Lightbox>
           <div class="flex flex-col justify-center gap-3 py-2">
             <div>
               <h3 class="font-display text-2xl font-medium text-stone-900">

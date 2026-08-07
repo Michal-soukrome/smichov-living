@@ -10,6 +10,7 @@ import showroom4 from "../../assets/images/showroom/4.png";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import MapIframe from "../../components/MapIframe.astro";
 import { t, tArray } from "../../i18n/utils";
+import Lightbox from "../../components/Lightbox.astro";
 
 const { lang = "cs" } = Astro.props;
 const locale = lang;
@@ -53,6 +54,22 @@ const visitText = t(lang, "showroom.visit");
 const altMain = t(lang, "showroom.gallery.alt.main");
 const altKitchen = t(lang, "showroom.gallery.alt.kitchen");
 const altMaterials = t(lang, "showroom.gallery.alt.materials");
+
+const galleryItems = [
+  {
+    src: showroom2,
+    alt: altMain,
+    span: "col-span-2 md:col-span-2 row-span-2",
+  },
+  {
+    src: showroom3,
+    alt: altKitchen,
+  },
+  {
+    src: showroom4,
+    alt: altMaterials,
+  },
+];
 ---
 
 <BaseLayout preloadImage={optimizedHero.src} title={pageTitle} lang={locale}>
@@ -151,29 +168,28 @@ const altMaterials = t(lang, "showroom.gallery.alt.materials");
   <section class="max-w-7xl mx-auto px-6 py-10 md:py-20">
     <SectionLabel label={galleryLabel} />
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="col-span-2 md:col-span-2 row-span-2 overflow-hidden">
-        <Image
-          src={showroom2}
-          alt={altMain}
-          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-        />
+    <Lightbox
+      items={galleryItems.map((item) => ({ src: item.src, alt: item.alt }))}
+    >
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        {
+          galleryItems.map((item) => (
+            <button
+              data-lightbox-trigger
+              data-lightbox-caption={inspirationTitle}
+              aria-label={`Open image ${item.alt}`}
+              class={`overflow-hidden ${item.span ?? ""}`}
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+              />
+            </button>
+          ))
+        }
       </div>
-      <div class="overflow-hidden">
-        <Image
-          src={showroom3}
-          alt={altKitchen}
-          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-        />
-      </div>
-      <div class="overflow-hidden">
-        <Image
-          src={showroom4}
-          alt={altMaterials}
-          class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-        />
-      </div>
-    </div>
+    </Lightbox>
   </section>
 
   <!-- Mapa -->

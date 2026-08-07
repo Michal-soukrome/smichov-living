@@ -13,6 +13,10 @@
   --color-light: #f4f0e8;
 }
 
+button[data-lightbox-trigger] {
+  @apply cursor-pointer h-full;
+}
+
 /* ---------------------- */
 /* BUTTONY */
 /* ---------------------- */

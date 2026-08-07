@@ -34,8 +34,8 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const formTitles: Record<string, string> = {
-    "contact-page-form": "Kontakt",
-    "poptavka-form": "Poptat projekt",
+    "contactForm-kontakt": "Kontakt",
+    "contactForm-poptat-projekt": "Poptat projekt",
   };
   const pageTitle = formTitles[formId] ?? "Kontakt";
   const subject = `Zpráva z webového formuláře smichovliving.cz - ${pageTitle} - ${jmeno}`;

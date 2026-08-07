@@ -55,4 +55,18 @@ const contactData = {
   projectTypes,
 };
 
+export const projectTypeLabels: Record<string, string> = {
+  "rekonstrukce-bytu": "Rekonstrukce bytu",
+  "rekonstrukce-domu": "Rekonstrukce domu",
+  "kuchyne-na-miru": "Kuchyně na míru",
+  "kompletni-interier": "Kompletní interiér",
+  "navrh-interieru": "Návrh interiéru",
+  "developersky-projekt": "Developerský projekt",
+};
+
+export function getProjectTypeLabel(value: string | null | undefined) {
+  if (!value) return "Neurčený typ projektu";
+  return projectTypeLabels[value] ?? value;
+}
+
 export default contactData;

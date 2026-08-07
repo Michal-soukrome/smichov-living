@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import { getProjectTypeLabel } from "../../data/contactData.ts";
 
 const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
 const RESEND_FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL;
@@ -21,6 +22,8 @@ export const POST: APIRoute = async ({ request }) => {
   const email = data.get("email")?.toString();
   const popis = data.get("popis")?.toString();
   const formId = data.get("form_id")?.toString() ?? "contact-form";
+  const projectType = data.get("typ_projektu")?.toString();
+  const projectTypeLabel = getProjectTypeLabel(projectType);
   const mesto = data.get("mesto")?.toString();
   const rozpocet = data.get("rozpocet")?.toString();
   const upload = data.get("upload");
@@ -53,7 +56,9 @@ export const POST: APIRoute = async ({ request }) => {
       subject,
       html: `
         <h2>Nová poptávka z webu</h2>
+        <p><strong>Form title:</strong> ${pageTitle}</p>
         <p><strong>Form ID:</strong> ${formId}</p>
+        <p><strong>Typ projektu:</strong> ${projectTypeLabel}</p>
         <p><strong>Jméno:</strong> ${jmeno}</p>
         <p><strong>Telefon:</strong> ${telefon}</p>
         <p><strong>Email:</strong> ${email}</p>

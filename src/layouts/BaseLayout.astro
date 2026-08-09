@@ -7,65 +7,56 @@ import "../styles/global.css";
 const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
 ---
 
-<html lang={lang} transition:animate="fade" class="scroll-smooth">
+<html lang={lang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
     <title>{title}</title>
-    {
-      preloadImage && (
-        <link
-          rel="preload"
-          as="image"
-          href={preloadImage}
-          fetchpriority="high"
-        />
-      )
-    }
-    <slot name="head" />
     <ClientRouter />
+
+    <script>
+      document.addEventListener("astro:before-preparation", (event) => {
+        const originalLoader = event.loader;
+
+        event.loader = async () => {
+          document.documentElement.classList.add("is-navigating");
+
+          await originalLoader();
+
+          document.documentElement.classList.remove("is-navigating");
+        };
+      });
+    </script>
   </head>
-  <body
-    class="min-h-screen flex flex-col bg-white text-slate-900 scroll-smooth font-body"
-  >
-    <Header lang={lang} transition:persist />
+
+  <body>
+    <Header />
 
     <main class="flex-1 font-body">
       <slot />
     </main>
 
     <Footer lang={lang} />
+
     <script>
       function initReveal() {
         if (!("IntersectionObserver" in window)) return;
-        const sections = document.querySelectorAll("main section:not(.reveal)");
+
+        const sections = document.querySelectorAll(
+          "main section:not(.reveal)",
+        );
+
         const observer = new IntersectionObserver(
           (entries, obs) => {
             entries.forEach((entry) => {
               if (!entry.isIntersecting) return;
+
               entry.target.classList.add("reveal-visible");
               obs.unobserve(entry.target);
             });
           },
-          { threshold: 0.12, rootMargin: "0px 0px -15% 0px" },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -15% 0px",
+          },
         );
 
         sections.forEach((section) => {

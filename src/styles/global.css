@@ -171,3 +171,29 @@ button[data-lightbox-trigger] {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+
+html.is-navigating::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: currentColor;
+  z-index: 9999;
+  transform-origin: left;
+  animation: page-loader 0.8s ease-in-out infinite;
+}
+
+@keyframes page-loader {
+  0% {
+    transform: scaleX(0);
+  }
+
+  50% {
+    transform: scaleX(0.65);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}

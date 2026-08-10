@@ -14,10 +14,11 @@ const locale = supportedLocales.includes(lang) ? lang : "cs";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
+    <ClientRouter />
   </head>
 
   <body>
-    <Header />
+    <Header lang={lang} />
 
     <main class="flex-1 font-body">
       <slot />

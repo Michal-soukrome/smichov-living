@@ -11,7 +11,7 @@
   "nav.contact": "Kontakt",
   "header.cta": "Poptat projekt",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
-  "footer.rights": "Všechna práva vyhrazena.",
+  "footer.rights": "Všechna práva vyhrazena",
   "banner.title": "Máte představu o svém novém domově?",
   "banner.subtitle": "Rádi s vámi probereme možnosti spolupráce.",
   "banner.primary": "poptejte projekt",
@@ -75,6 +75,197 @@
     "Údaje uchováváme po dobu nutnou k vyřízení požadavku a k plnění právních povinností.",
     "Máte právo na přístup k vašim údajům, jejich opravu a výmaz.",
     "Ukládání osobních údajů a jejich zpracování probíhá v souladu s obecnými nařízeními o ochraně osobních údajů (GDPR)."
+  ],
+  "gdpr.sections": [
+    {
+      "heading": "1. Správce osobních údajů",
+      "paragraphs": [
+        "Správcem osobních údajů je společnost Smíchov Living s.r.o. (dále jen ‚Správce‘). Správce odpovídá za zpracování osobních údajů v souladu s Nařízením Evropského parlamentu a Rady (EU) 2016/679 o ochraně fyzických osob v souvislosti se zpracováním osobních údajů (GDPR) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.",
+        "Sídlo: Kováků 456/28, Smíchov, 150 00 Praha 5, Česko",
+        "E-mail: info@smichovliving.cz",
+        "Telefon: +420 737 737 733"
+      ]
+    },
+    {
+      "heading": "2. Jaké osobní údaje zpracováváme",
+      "description": "V souvislosti s provozem webových stránek a vyřizováním vašich poptávek můžeme zpracovávat zejména tyto osobní údaje:",
+      "list": [
+        "jméno a příjmení",
+        "e-mailová adresa",
+        "telefonní číslo",
+        "informace uvedené v textu poptávky nebo jiné komunikaci",
+        "IP adresa a technické údaje o zařízení a prohlížeči",
+        "údaje související s používáním webových stránek a cookies"
+      ],
+      "paragraphs": [
+        "Rozsah zpracovávaných údajů závisí na tom, jakým způsobem nás kontaktujete a jaké informace nám dobrovolně poskytnete."
+      ]
+    },
+    {
+      "heading": "3. Účel a právní základ zpracování",
+      "rows": [
+        { "columns": ["Účel zpracování", "Právní základ"] },
+        {
+          "columns": [
+            "Vyřízení poptávky a komunikace se zájemcem",
+            "Opatření před uzavřením smlouvy na žádost subjektu údajů – čl. 6 odst. 1 písm. b) GDPR"
+          ]
+        },
+        {
+          "columns": [
+            "Plnění smluvních a zákonných povinností",
+            "Plnění smlouvy nebo právní povinnosti – čl. 6 odst. 1 písm. b) nebo c) GDPR"
+          ]
+        },
+        {
+          "columns": [
+            "Ochrana právních nároků a bezpečnost",
+            "Oprávněný zájem – čl. 6 odst. 1 písm. f) GDPR"
+          ]
+        },
+        {
+          "columns": [
+            "Provoz, zabezpečení a zlepšování webových stránek",
+            "Oprávněný zájem nebo souhlas podle konkrétního účelu – čl. 6 odst. 1 písm. a) nebo f) GDPR"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Doba zpracování osobních údajů",
+      "paragraphs": [
+        "Osobní údaje zpracováváme pouze po dobu nezbytnou k naplnění účelu, pro který byly získány, případně po dobu stanovenou právními předpisy.",
+        "Údaje poskytnuté za účelem vyřízení poptávky uchováváme po dobu nezbytnou pro vyřízení poptávky a související komunikaci. Pokud na poptávku naváže smluvní vztah, jsou údaje dále uchovávány po dobu trvání smluvního vztahu a následně po dobu vyžadovanou příslušnými právními předpisy.",
+        "Osobní údaje související s případnými právními nároky mohou být uchovávány po dobu trvání příslušných promlčecích lhůt.",
+        "Po uplynutí příslušné doby jsou osobní údaje vymazány nebo anonymizovány, pokud jejich další uchování není vyžadováno právními předpisy."
+      ]
+    },
+    {
+      "heading": "5. Příjemci osobních údajů",
+      "paragraphs": [
+        "Vaše osobní údaje můžeme v nezbytném rozsahu zpřístupnit třetím stranám, které pro nás zajišťují služby související s provozem webových stránek, elektronickou komunikací a vyřizováním vašich požadavků."
+      ],
+      "list": [
+        "poskytovatelé webhostingu a IT služeb",
+        "poskytovatelé služeb elektronické pošty a komunikace",
+        "poskytovatelé technických a analytických služeb, pokud jsou na webu využívány",
+        "účetní, daňoví nebo právní poradci, pokud je to nezbytné",
+        "státní orgány, pokud nám takovou povinnost ukládají právní předpisy"
+      ]
+    },
+    {
+      "heading": "6. Předávání osobních údajů do třetích zemí",
+      "paragraphs": [
+        "Pokud při využívání služeb našich poskytovatelů dochází k předávání osobních údajů mimo Evropský hospodářský prostor, činíme tak pouze za podmínek stanovených GDPR a s využitím odpovídajících záruk pro ochranu osobních údajů, například rozhodnutí o odpovídající ochraně nebo standardních smluvních doložek schválených Evropskou komisí."
+      ]
+    },
+    {
+      "heading": "7. Vaše práva",
+      "description": "V souvislosti se zpracováním vašich osobních údajů máte zejména následující práva:",
+      "subsections": [
+        {
+          "heading": "7.1 Právo na přístup",
+          "paragraphs": [
+            "Máte právo získat potvrzení, zda vaše osobní údaje zpracováváme, a pokud ano, máte právo získat k těmto údajům přístup."
+          ]
+        },
+        {
+          "heading": "7.2 Právo na opravu",
+          "paragraphs": [
+            "Máte právo požadovat opravu nepřesných osobních údajů a doplnění neúplných údajů."
+          ]
+        },
+        {
+          "heading": "7.3 Právo na výmaz",
+          "paragraphs": [
+            "Za podmínek stanovených GDPR máte právo požadovat výmaz svých osobních údajů."
+          ]
+        },
+        {
+          "heading": "7.4 Právo na omezení zpracování",
+          "paragraphs": [
+            "Za podmínek stanovených GDPR máte právo požadovat omezení zpracování svých osobních údajů."
+          ]
+        },
+        {
+          "heading": "7.5 Právo na přenositelnost",
+          "paragraphs": [
+            "Za podmínek stanovených GDPR máte právo získat osobní údaje, které jste nám poskytli, ve strukturovaném, běžně používaném a strojově čitelném formátu."
+          ]
+        },
+        {
+          "heading": "7.6 Právo vznést námitku",
+          "paragraphs": [
+            "Máte právo vznést námitku proti zpracování osobních údajů založenému na oprávněném zájmu, případně proti zpracování pro účely přímého marketingu."
+          ]
+        },
+        {
+          "heading": "7.7 Právo odvolat souhlas",
+          "paragraphs": [
+            "Pokud je zpracování vašich osobních údajů založeno na souhlasu, máte právo tento souhlas kdykoli odvolat. Odvoláním souhlasu není dotčena zákonnost zpracování založeného na souhlasu před jeho odvoláním."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "8. Jak uplatnit svá práva",
+      "paragraphs": [
+        "Svá práva nebo dotazy týkající se ochrany osobních údajů můžete uplatnit zasláním žádosti na e-mailovou adresu info@smichovliving.cz nebo písemně na adresu sídla Správce.",
+        "Na vaši žádost odpovíme bez zbytečného odkladu, nejpozději do jednoho měsíce od jejího obdržení. V odůvodněných případech může být tato lhůta prodloužena v souladu s GDPR."
+      ]
+    },
+    {
+      "heading": "9. Právo podat stížnost",
+      "paragraphs": [
+        "Pokud se domníváte, že zpracováním vašich osobních údajů dochází k porušení právních předpisů, máte právo podat stížnost u dozorového úřadu."
+      ],
+      "list": [
+        "Úřad pro ochranu osobních údajů",
+        "Pplk. Sochora 27, 170 00 Praha 7",
+        "E-mail: posta@uoou.cz",
+        "Web: www.uoou.cz"
+      ]
+    },
+    {
+      "heading": "10. Zabezpečení osobních údajů",
+      "paragraphs": [
+        "Přijímáme vhodná technická a organizační opatření k zabezpečení osobních údajů a k jejich ochraně před neoprávněným nebo nahodilým přístupem, změnou, zničením, ztrátou nebo jiným zneužitím.",
+        "Mezi tato opatření patří zejména zabezpečení přenosu dat, omezení přístupu k osobním údajům pouze na oprávněné osoby a průběžné aktualizování používaných technických a bezpečnostních opatření."
+      ]
+    },
+    {
+      "heading": "11. Cookies",
+      "paragraphs": [
+        "Webové stránky používají soubory cookies a obdobné technologie. Cookies jsou malé textové soubory, které se ukládají do vašeho zařízení při návštěvě webových stránek.",
+        "Cookies mohou být využívány pro zajištění základního fungování webových stránek, zapamatování vašich preferencí a případně pro měření návštěvnosti a zlepšování webových stránek.",
+        "Nezbytné cookies mohou být používány bez vašeho souhlasu, pokud jsou nezbytné pro poskytování služby, kterou jste výslovně požadovali. U ostatních typů cookies je jejich použití závislé na vašem souhlasu, pokud jej právní předpisy vyžadují."
+      ]
+    },
+    {
+      "heading": "12. Automatizované rozhodování a profilování",
+      "paragraphs": [
+        "Vaše osobní údaje nejsou předmětem automatizovaného rozhodování ani profilování, které by pro vás mělo právní účinky nebo vás obdobným způsobem významně ovlivňovalo."
+      ]
+    },
+    {
+      "heading": "13. Kontaktní údaje",
+      "paragraphs": [
+        "Máte-li jakékoli dotazy, připomínky nebo požadavky týkající se ochrany osobních údajů, můžete nás kontaktovat:"
+      ],
+      "list": [
+        "Smíchov Living s.r.o.",
+        "Kováků 456/28, 150 00 Praha 5, Česko",
+        "E-mail: info@smichovliving.cz",
+        "Telefon: +420 737 737 733"
+      ]
+    },
+    {
+      "heading": "14. Závěrečná ustanovení",
+      "paragraphs": [
+        "Tyto zásady ochrany osobních údajů mohou být průběžně aktualizovány, zejména v souvislosti se změnami používaných služeb, způsobu zpracování osobních údajů nebo platných právních předpisů.",
+        "Aktuální verze těchto zásad je vždy dostupná na webových stránkách Smíchov Living."
+      ]
+    }
   ],
   "link.showAllRealizations": "Zobrazit všechny realizace",
   "contact.pageTitle": "Kontakt | Smíchov Living - Kompletní rekonstrukce a design interiérů",

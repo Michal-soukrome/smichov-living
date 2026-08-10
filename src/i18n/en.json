@@ -52,6 +52,7 @@
   "footer.cookies": "Cookies",
   "cookieBanner.title": "We use cookies",
   "cookieBanner.description": "We use cookies only for basic site functionality and visit analytics.",
+  "cookieBanner.descriptionExtra": "For more information about the cookies used and the processing of personal data, see here:",
   "cookieBanner.accept": "Accept all",
   "cookieBanner.reject": "Reject",
   "cookieBanner.settings": "Cookie settings",
@@ -102,6 +103,19 @@
       ],
       "paragraphs": [
         "The scope of processed data depends on how you contact us and what information you voluntarily provide."
+      ],
+      "subsections": [
+        {
+          "heading": "Cookies and tracking",
+          "paragraphs": [
+            "We use Google Analytics 4 through Google Tag Manager to understand how visitors use our site."
+          ],
+          "list": [
+            "_ga – anonymous user identifier, retention about 2 years",
+            "_ga_xxx – session and event measurement, retention about 2 months",
+            "Cookies are set only after consent is given."
+          ]
+        }
       ]
     },
     {

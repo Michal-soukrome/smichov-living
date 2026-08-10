@@ -53,6 +53,7 @@
   "footer.cookies": "Cookies",
   "cookieBanner.title": "Používáme cookies",
   "cookieBanner.description": "Cookies používáme pouze pro základní funkčnost webu a pro analytiku návštěvnosti.",
+  "cookieBanner.descriptionExtra": "Více informací o použitých cookies a zpracování osobních údajů naleznete zde:",
   "cookieBanner.accept": "Přijmout všechny",
   "cookieBanner.reject": "Odmítnout",
   "cookieBanner.settings": "Nastavení cookies",
@@ -103,6 +104,19 @@
       ],
       "paragraphs": [
         "Rozsah zpracovávaných údajů závisí na tom, jakým způsobem nás kontaktujete a jaké informace nám dobrovolně poskytnete."
+      ],
+      "subsections": [
+        {
+          "heading": "Cookies a sledování",
+          "paragraphs": [
+            "Pro analytiku návštěvnosti používáme Google Analytics 4 prostřednictvím Google Tag Manageru."
+          ],
+          "list": [
+            "_ga – anonymní identifikátor uživatele, doba uložení cca 2 roky",
+            "_ga_xxx – měření relací a událostí, doba uložení cca 2 měsíce",
+            "Cookies jsou ukládány jen po udělení souhlasu."
+          ]
+        }
       ]
     },
     {

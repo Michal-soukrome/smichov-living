@@ -4,7 +4,7 @@
 ✓ mozna se bude upravovat noona na potvrzeni rezervace, mozna prijde novy iframe
 ✓ opravit na "kovaku" i v iframe mape nejen v kontaktnich adresach
 ✓ upravit fotku at je sandra na prostredku
-- zrevidovat gdpr/obchodni podminky ze stavajiciho hanaka a predat do smichovlivingu
+✓ zrevidovat gdpr/obchodni podminky ze stavajiciho hanaka a predat do smichovlivingu
 ✓ ochranu osobnich udaju nahradit cookies daty
 ✓ proklik na google recenze (zatim neexistuji), podobne jako na dirtybug
 ✓ pridat lehke animace napric webem

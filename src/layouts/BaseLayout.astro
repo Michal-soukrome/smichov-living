@@ -26,34 +26,38 @@ const locale = supportedLocales.includes(lang) ? lang : "cs";
 
     <div
       id="cookie-consent-banner"
-      class="w-fit fixed inset-x-0 md:inset-x-4 bottom-6 z-50 hidden bg-stone-50 border border-stone-200 p-4 shadow-xl md:inset-x-10"
+      class="w-fit max-w-4/12 fixed inset-x-0 bottom-6 z-50 hidden bg-stone-50 border border-stone-200 p-4 shadow-xl md:inset-x-10"
       role="dialog"
       aria-live="polite"
       aria-label={t(locale, "cookieBanner.title")}
     >
       <div class="flex flex-col gap-4 md:justify-between">
         <div>
-          <p class="text-xs tracking-widest text-stone-500 uppercase mb-1">
+          <p class="text-base tracking-widest text-stone-500 uppercase mb-1">
             {t(locale, "cookieBanner.title")}
           </p>
-          <p
-            class="text-xs text-gray-700 leading-relaxed hover:underline transition-colors"
-          >
+          <p class="text-sm text-gray-700 leading-relaxed">
             {t(locale, "cookieBanner.description")}
+            {t(locale, "cookieBanner.descriptionExtra")}
+            <a href="/gdpr" class="underline hover:text-gray-900"> GDPR </a>
           </p>
-        </div>
 
-        <div class="flex flex-wrap gap-2 items-center">
-          <button
-            type="button"
-            id="cookie-consent-reject"
-            class="btn-secondary"
-          >
-            {t(locale, "cookieBanner.reject")}
-          </button>
-          <button type="button" id="cookie-consent-accept" class="btn-primary">
-            {t(locale, "cookieBanner.accept")}
-          </button>
+          <div class="mt-4 flex flex-wrap gap-2 items-center">
+            <button
+              type="button"
+              id="cookie-consent-reject"
+              class="btn-secondary"
+            >
+              {t(locale, "cookieBanner.reject")}
+            </button>
+            <button
+              type="button"
+              id="cookie-consent-accept"
+              class="btn-primary"
+            >
+              {t(locale, "cookieBanner.accept")}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -118,8 +122,11 @@ const locale = supportedLocales.includes(lang) ? lang : "cs";
 
         if (consent === "accepted") {
           loadGTM();
-        } else {
           hideBanner();
+        } else if (consent === "rejected") {
+          hideBanner();
+        } else {
+          showBanner();
         }
 
         // Avoid adding duplicate listeners after Astro navigation

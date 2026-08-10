@@ -52,6 +52,7 @@
   "footer.cookies": "Cookies",
   "cookieBanner.title": "Chúng tôi sử dụng cookies",
   "cookieBanner.description": "Chúng tôi chỉ sử dụng cookie cho chức năng cơ bản của trang và phân tích lượt truy cập.",
+  "cookieBanner.descriptionExtra": "Để biết thêm thông tin về các cookie được sử dụng và việc xử lý dữ liệu cá nhân, vui lòng xem tại đây:",
   "cookieBanner.accept": "Chấp nhận tất cả",
   "cookieBanner.reject": "Từ chối",
   "cookieBanner.settings": "Cài đặt cookie",
@@ -102,6 +103,19 @@
       ],
       "paragraphs": [
         "Phạm vi dữ liệu được xử lý phụ thuộc vào cách bạn liên hệ với chúng tôi và những thông tin bạn cung cấp tự nguyện."
+      ],
+      "subsections": [
+        {
+          "heading": "Cookie và theo dõi",
+          "paragraphs": [
+            "Chúng tôi sử dụng Google Analytics 4 qua Google Tag Manager để hiểu cách khách truy cập sử dụng trang web."
+          ],
+          "list": [
+            "_ga – định danh người dùng ẩn danh, thời gian lưu trữ khoảng 2 năm",
+            "_ga_xxx – đo lường phiên và sự kiện, thời gian lưu trữ khoảng 2 tháng",
+            "Cookie chỉ được lưu sau khi đồng ý."
+          ]
+        }
       ]
     },
     {

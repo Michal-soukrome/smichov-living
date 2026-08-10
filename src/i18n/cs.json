@@ -44,6 +44,7 @@
   "contact.form.gdprLink": "zpracováním osobních údajů",
   "contact.form.gdprSuffix": " za účelem zpracování poptávky.",
   "contact.form.required": "*",
+  "contact.form.budgetLabel": "Předpokládaný rozpočet",
   "footer.description": "Rekonstrukce a realizace interiérů na klíč. Od návrhu až po předání hotového domova.",
   "footer.contactHeader": "Kontakt",
   "footer.legalHeader": "Důležité",
@@ -178,7 +179,7 @@
   "project.request.requiredLabel": "*POVINNÉ",
   "project.request.requiredAlts": ["Realizace 3", "Realizace 4"],
   "testimonials.label": "Co o nás říkají naši klienti",
-  "contact.form.budgetLabel": "Předpokládaný rozpočet",
+  "testimonials.googleReviews": "Zobrazit recenze na Google",
   "testimonials.entries": [
     {
       "quote": "Smíchov Living proměnil náš byt k nepoznání. Od prvního setkání až po předání jsme měli vše pod kontrolou a výsledek předčil naše očekávání.",

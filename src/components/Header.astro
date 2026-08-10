@@ -36,6 +36,7 @@ const localizedNav = nav.map((item) => ({
     <!-- Logo -->
     <a
       href={withLocale("/", locale)}
+      aria-label={t(locale, "nav.home")}
       class="flex items-center gap-2 group shrink-0"
     >
       <div class="flex items-center gap-1">
@@ -63,7 +64,10 @@ const localizedNav = nav.map((item) => ({
     </a>
 
     <!-- Desktop nav -->
-    <nav class="hidden xl:flex items-center gap-6 xl:gap-8">
+    <nav
+      aria-label="Primary navigation"
+      class="hidden xl:flex items-center gap-6 xl:gap-8"
+    >
       {
         localizedNav.map((item) => (
           <a
@@ -85,9 +89,10 @@ const localizedNav = nav.map((item) => ({
         href={withLocale("/poptat-projekt", locale)}
         data-cta
         data-path="/poptat-projekt"
-        class="hidden md:block shrink-0"
+        aria-label={t(locale, "header.cta")}
+        class="btn-primary hidden md:inline-flex shrink-0"
       >
-        <button class="btn-primary">{t(locale, "header.cta")}</button>
+        {t(locale, "header.cta")}
       </a>
 
       <!-- Lang switcher - viditelný na všech breakpointech -->
@@ -97,6 +102,8 @@ const localizedNav = nav.map((item) => ({
           type="button"
           aria-haspopup="true"
           aria-expanded="false"
+          aria-controls="lang-switcher-menu"
+          aria-label="Language selector"
           class="inline-flex items-center justify-center gap-1 cursor-pointer rounded-full border border-stone-200 bg-white h-9 w-16 px-2 text-xs uppercase text-stone-500 hover:border-stone-300 hover:text-stone-900 transition"
         >
           <span id="lang-switcher-current" class="w-6 text-center"
@@ -119,6 +126,8 @@ const localizedNav = nav.map((item) => ({
 
         <div
           id="lang-switcher-menu"
+          role="menu"
+          aria-label="Language menu"
           class="absolute right-0 top-full z-50 mt-2 w-44 max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-stone-200 bg-white text-left shadow-lg hidden"
         >
           {
@@ -126,6 +135,8 @@ const localizedNav = nav.map((item) => ({
               <a
                 href="#"
                 data-lang={loc.code}
+                role="menuitem"
+                aria-label={`Switch site language to ${loc.label}`}
                 class="flex items-center gap-2 px-4 py-3 text-sm text-stone-700 hover:bg-stone-100 transition-colors"
               >
                 <img
@@ -147,7 +158,9 @@ const localizedNav = nav.map((item) => ({
       <button
         id="mobile-btn"
         class="xl:hidden flex items-center justify-center w-9 h-9 shrink-0 cursor-pointer"
-        aria-label="Menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
         type="button"
       >
         <svg
@@ -156,6 +169,7 @@ const localizedNav = nav.map((item) => ({
           height="16"
           viewBox="0 0 20 16"
           fill="none"
+          aria-hidden="true"
         >
           <line x1="0" y1="1" x2="20" y2="1" stroke="#1a1612" stroke-width="1.5"
           ></line>
@@ -176,6 +190,7 @@ const localizedNav = nav.map((item) => ({
           viewBox="0 0 16 16"
           fill="none"
           style="display:none"
+          aria-hidden="true"
         >
           <line
             x1="1"
@@ -205,6 +220,8 @@ const localizedNav = nav.map((item) => ({
     <!-- Mobile menu -->
     <div
       id="mobile-menu"
+      role="menu"
+      aria-label="Mobile navigation"
       class="xl:hidden absolute top-full left-0 w-full bg-white py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40 transition-all duration-300 ease-out opacity-0 pointer-events-none -translate-y-4"
     >
       {
@@ -213,7 +230,7 @@ const localizedNav = nav.map((item) => ({
             href={item.href}
             data-navlink
             data-path={item.basePath}
-            class="px-4 sm:px-6 md:px-12 xl:px-20 text-base py-2 block hover:underline hover:bg-gray-50"
+            class="px-4 sm:px-6 md:px-12 xl:px-20 text-base py-3 block hover:underline hover:bg-gray-50 uppercase"
           >
             {item.label}
           </a>
@@ -287,17 +304,25 @@ const localizedNav = nav.map((item) => ({
           const overlay = document.getElementById(
             "mobile-menu-overlay",
           ) as HTMLElement;
+          const toggleButton = document.getElementById(
+            "mobile-btn",
+          ) as HTMLButtonElement;
           const iconOpen = document.getElementById("icon-open") as HTMLElement;
           const iconClose = document.getElementById(
             "icon-close",
           ) as HTMLElement;
           if (!menu) return;
-          menu.classList.add("opacity-0", "pointer-events-none", "-translate-y-4");
+          menu.classList.add(
+            "opacity-0",
+            "pointer-events-none",
+            "-translate-y-4",
+          );
           menu.classList.remove("opacity-100", "translate-y-0");
           iconOpen.style.display = "block";
           iconClose.style.display = "none";
           overlay?.classList.add("opacity-0", "pointer-events-none");
           overlay?.classList.remove("opacity-100");
+          if (toggleButton) toggleButton.setAttribute("aria-expanded", "false");
           document.body.style.overflow = "";
         }
 
@@ -306,17 +331,25 @@ const localizedNav = nav.map((item) => ({
           const overlay = document.getElementById(
             "mobile-menu-overlay",
           ) as HTMLElement;
+          const toggleButton = document.getElementById(
+            "mobile-btn",
+          ) as HTMLButtonElement;
           const iconOpen = document.getElementById("icon-open") as HTMLElement;
           const iconClose = document.getElementById(
             "icon-close",
           ) as HTMLElement;
           if (!menu) return;
-          menu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-4");
+          menu.classList.remove(
+            "opacity-0",
+            "pointer-events-none",
+            "-translate-y-4",
+          );
           menu.classList.add("opacity-100", "translate-y-0");
           iconOpen.style.display = "none";
           iconClose.style.display = "block";
           overlay?.classList.remove("opacity-0", "pointer-events-none");
           overlay?.classList.add("opacity-100");
+          if (toggleButton) toggleButton.setAttribute("aria-expanded", "true");
           document.body.style.overflow = "hidden";
         }
 
@@ -338,6 +371,11 @@ const localizedNav = nav.map((item) => ({
               a.classList.toggle("underline-offset-4", isActive);
               a.classList.toggle("decoration-accent-hover", isActive);
               a.classList.toggle("text-gray-700", !isActive);
+              if (isActive) {
+                a.setAttribute("aria-current", "page");
+              } else {
+                a.removeAttribute("aria-current");
+              }
             });
         }
 

@@ -5,8 +5,8 @@
 ✓ opravit na "kovaku" i v iframe mape nejen v kontaktnich adresach
 ✓ upravit fotku at je sandra na prostredku
 - zrevidovat gdpr/obchodni podminky ze stavajiciho hanaka a predat do smichovlivingu
-- ochranu osobnich udaju nahradit cookies daty (pravdepodobne z nejakeho pluginu)
-- proklik na google recenze (zatim neexistuji), podobne jako na dirtybug
+✓ ochranu osobnich udaju nahradit cookies daty
+✓ proklik na google recenze (zatim neexistuji), podobne jako na dirtybug
 ✓ pridat lehke animace napric webem
 ✓ na realizaci zkusit offset carousel namisto 4 fotek vedle sebe
 ✓ na homepage pridat fotky/carousel ze stranky s realizacemi z poptat projekt

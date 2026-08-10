@@ -176,6 +176,8 @@
   "project.request.requiredLabel": "*ОБЯЗАТЕЛЬНО",
   "project.request.requiredAlts": ["Реализация 3", "Реализация 4"],
   "testimonials.label": "Что говорят наши клиенты",
+  "testimonials.googleReviews": "Посмотреть отзывы на Google",
+
   "testimonials.entries": [
     {
       "quote": "Smíchov Living преобразил нашу квартиру до неузнаваемости. От первой встречи до сдачи всё было под контролем, и результат превзошёл наши ожидания.",

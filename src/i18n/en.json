@@ -178,6 +178,7 @@
   "project.request.requiredAlts": ["Realization 3", "Realization 4"],
   "testimonials.label": "What our clients say",
   "contact.form.budgetLabel": "Estimated budget",
+  "testimonials.googleReviews": "View reviews on Google",
   "testimonials.entries": [
     {
       "quote": "Smíchov Living transformed our apartment beyond recognition. From the first meeting to handover, everything was under control and the result exceeded our expectations.",

@@ -51,6 +51,7 @@ const heroCta = t(locale, "hero.contact.cta");
           </div>
           <ArrowedUnderline
             text={t(locale, "contact.map")}
+            lang={lang}
             href="https://maps.app.goo.gl/duuKG59qmvCD76wKA"
             target="_blank"
           />
@@ -93,6 +94,7 @@ const heroCta = t(locale, "hero.contact.cta");
           </div>
           <ArrowedUnderline
             text={t(locale, "contact.visit")}
+            lang={lang}
             href="/kontakt#kontaktni-formular"
           />
         </div>
@@ -158,7 +160,7 @@ const heroCta = t(locale, "hero.contact.cta");
   <Team lang={locale} />
 
   <section
-    class="scroll-mt-24 py-20 px-6 bg-[#f7f7f7] border-t border-stone-200"
+    class="scroll-mt-24 py-20 px-6 bg-stone-50 border-t border-stone-200"
     id="kontaktni-formular"
   >
     <div class="max-w-7xl mx-auto grid sm:grid-cols-2 gap-5 md:gap-20">

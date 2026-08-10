@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../**/*.{astro,html,js,ts}"; /* adjust path to your src root */
+@source "../**/*.{astro,html,js,ts}";
 
 @theme {
   --font-display: "Cormorant Garamond", serif;
@@ -11,7 +11,6 @@
   --color-accent-hover: #8c6b35;
   --color-dark: #1a1612;
   --color-light: #f4f0e8;
-  --background-light: #f7f7f7;
 }
 
 button[data-lightbox-trigger] {
@@ -23,52 +22,24 @@ button[data-lightbox-trigger] {
 /* ---------------------- */
 
 .btn-primary {
-  @apply uppercase text-sm justify-center flex items-center gap-2;
-  background: var(--color-primary);
-  cursor: pointer;
-  color: var(--color-light);
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--color-primary);
-  transition:
-    background 0.25s,
-    color 0.25s;
-}
-
-.btn-primary:hover {
-  background: var(--color-accent-hover);
+  @apply uppercase text-xs md:text-sm flex items-center justify-center gap-2 cursor-pointer
+         px-[1.4rem] py-[0.6rem] border transition-colors
+         bg-[var(--color-primary)] text-[var(--color-light)] border-[var(--color-primary)]
+         hover:bg-[var(--color-accent-hover)];
 }
 
 .btn-secondary {
-  @apply uppercase text-sm justify-center flex items-center gap-2;
-  background: var(--color-secondary);
-  cursor: pointer;
-  color: var(--color-light);
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--color-accent);
-  transition:
-    background 0.25s,
-    color 0.25s;
-}
-
-.btn-secondary:hover {
-  background: var(--color-accent-hover);
+  @apply uppercase text-xs md:text-sm flex items-center justify-center gap-2 cursor-pointer
+         px-[1.4rem] py-[0.6rem] border transition-colors
+         bg-[var(--color-secondary)] text-[var(--color-light)] border-[var(--color-accent)]
+         hover:bg-[var(--color-accent-hover)];
 }
 
 .btn-outline {
-  @apply uppercase text-sm justify-center flex items-center gap-2;
-  background: transparent;
-  cursor: pointer;
-  color: var(--color-secondary);
-  padding: 0.6rem 1.4rem;
-  border: 1px solid var(--color-accent);
-  transition:
-    background 0.25s,
-    color 0.25s;
-}
-
-.btn-outline:hover {
-  background: var(--color-accent);
-  color: var(--color-light);
+  @apply uppercase text-xs md:text-sm flex items-center justify-center gap-2 cursor-pointer
+         px-[1.4rem] py-[0.6rem] border transition-colors
+         bg-transparent text-[var(--color-secondary)] border-[var(--color-accent)]
+         hover:bg-[var(--color-accent)] hover:text-[var(--color-light)];
 }
 
 /* ---------------------- */

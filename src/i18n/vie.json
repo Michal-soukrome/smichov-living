@@ -175,6 +175,8 @@
   "project.request.requiredLabel": "*BẮT BUỘC",
   "project.request.requiredAlts": ["Dự án 3", "Dự án 4"],
   "testimonials.label": "Khách hàng nói gì",
+  "testimonials.googleReviews": "Xem đánh giá trên Google",
+
   "testimonials.entries": [
     {
       "quote": "Smíchov Living đã biến căn hộ của chúng tôi đến mức không thể nhận ra. Từ cuộc gặp đầu tiên đến bàn giao, mọi thứ được kiểm soát và kết quả vượt quá mong đợi.",

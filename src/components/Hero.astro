@@ -9,6 +9,7 @@ interface HeroProps {
   title?: string;
   subtitle?: string;
   image: ImageMetadata | string;
+  placeholder?: ImageMetadata | string;
   ctaText?: string;
   cta2Text?: string;
   ctaHref?: string;
@@ -24,6 +25,7 @@ const {
   title = "",
   subtitle = "",
   image,
+  placeholder,
   ctaText = "",
   ctaHref = "",
   cta2Text = "",
@@ -53,16 +55,18 @@ const optimizedImage =
     : null;
 const imageUrl =
   optimizedImage?.src ?? (typeof image === "string" ? image : image.src);
+const placeholderUrl =
+  placeholder &&
+  (typeof placeholder !== "string" ? placeholder.src : placeholder);
+const backgroundStyle = placeholderUrl
+  ? `background-image: url("${imageUrl}"), url("${placeholderUrl}"); background-size: cover; background-position: center;`
+  : `background-image: url("${imageUrl}"); background-size: cover; background-position: center;`;
 const localizedCtaHref = localizeHref(ctaHref, lang);
 const localizedCta2Href = localizeHref(cta2Href, lang);
 ---
 
 <section class={`mt-16 md:mt-0 relative ${height}`}>
-  <div
-    class="absolute inset-0"
-    style={`background-image: url("${imageUrl}"); background-size: cover; background-position: center;`}
-  >
-  </div>
+  <div class="absolute inset-0" style={backgroundStyle}></div>
 
   <div class="hero-overlay absolute inset-0"></div>
 

@@ -22,6 +22,12 @@ const optimizedHero = await getImage({
   quality: 80,
   width: 1920,
 });
+const heroPlaceholder = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 20,
+  width: 40,
+});
 const pageTitle = t(locale, "project.ask.pageTitle");
 const heroLabel = t(locale, "project.ask.label");
 const heroTitle = t(locale, "project.ask.title");
@@ -72,6 +78,7 @@ const carouselItems = [
     title={heroTitle}
     subtitle={heroSubtitle}
     image={optimizedHero.src}
+    placeholder={heroPlaceholder.src}
     ctaText={heroCta}
     ctaHref="#poptavkovy-formular-sekce"
     lang={locale}

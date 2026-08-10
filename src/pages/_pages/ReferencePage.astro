@@ -20,6 +20,12 @@ const optimizedHero = await getImage({
   quality: 80,
   width: 1920,
 });
+const heroPlaceholder = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 20,
+  width: 40,
+});
 
 const pageTitle = t(locale, "reference.pageTitle");
 const heroLabel = t(locale, "reference.label");
@@ -45,6 +51,7 @@ const projectsWithImages = projects.map((project) => ({
     title={heroTitle}
     subtitle={heroSubtitle}
     image={optimizedHero.src}
+    placeholder={heroPlaceholder.src}
     lang={locale}
   />
 

@@ -17,6 +17,12 @@ const optimizedHero = await getImage({
   quality: 80,
   width: 1920,
 });
+const heroPlaceholder = await getImage({
+  src: heroBg,
+  format: "webp",
+  quality: 20,
+  width: 40,
+});
 const title = t(lang, "services.title");
 const subtitle = t(lang, "services.subtitle");
 const heroLabel = t(lang, "services.hero.label");
@@ -41,6 +47,7 @@ const servicesWithImages = services.map((service) => ({
     title={title}
     subtitle={subtitle}
     image={optimizedHero.src}
+    placeholder={heroPlaceholder.src}
     ctaText={ctaPrimary}
     ctaHref="/poptat-projekt"
     cta2Text={ctaSecondary}

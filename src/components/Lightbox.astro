@@ -56,6 +56,44 @@ const captionId = `${id}-caption`;
       </svg>
     </button>
 
+    <button
+      type="button"
+      class="absolute left-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition cursor-pointer"
+      data-lightbox-prev
+      aria-label="Previous image"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="w-6 h-6"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"
+        ></path>
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      class="absolute right-4 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition cursor-pointer"
+      data-lightbox-next
+      aria-label="Next image"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="w-6 h-6"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"
+        ></path>
+      </svg>
+    </button>
+
     <div class="relative max-w-[95vw] max-h-[95vh]">
       <img
         id={activeImageId}
@@ -64,6 +102,11 @@ const captionId = `${id}-caption`;
         class="max-h-[90vh] max-w-[90vw] object-contain"
         data-lightbox-image
       />
+      <div
+        class="absolute bottom-4 left-1/2 max-w-[90vw] -translate-x-1/2 rounded-md bg-black/70 px-3 py-2 text-center text-sm text-white hidden"
+        data-lightbox-caption-display
+      >
+      </div>
     </div>
   </div>
 </div>
@@ -81,14 +124,28 @@ const captionId = `${id}-caption`;
         document.body.appendChild(overlay);
       }
 
-      const triggers = Array.from(
+      const triggerElements = Array.from(
         root.querySelectorAll("[data-lightbox-trigger]"),
       );
+      const triggers = triggerElements
+        .map((trigger) => {
+          const buttonImg = trigger.querySelector("img");
+          const src = buttonImg?.getAttribute("src");
+          const alt = buttonImg?.getAttribute("alt") ?? "";
+          const captionText = trigger.dataset.lightboxCaption ?? "";
+
+          if (!src) return null;
+          return { trigger, src, alt, caption: captionText };
+        })
+        .filter(Boolean);
+
       const closeButton = overlay.querySelector("[data-lightbox-close]");
+      const prevButton = overlay.querySelector("[data-lightbox-prev]");
+      const nextButton = overlay.querySelector("[data-lightbox-next]");
       const activeImage = overlay.querySelector("[data-lightbox-image]");
       const caption = overlay.querySelector("[data-lightbox-caption-display]");
 
-      if (!closeButton || !activeImage) return;
+      if (!closeButton || !activeImage || triggers.length === 0) return;
 
       // Avoid double-binding listeners on the overlay if initLightboxes
       // runs again (e.g. astro:page-load firing after DOMContentLoaded).
@@ -96,10 +153,13 @@ const captionId = `${id}-caption`;
       overlay.dataset.lightboxBound = "true";
 
       let lastTrigger = null;
+      let currentIndex = 0;
 
-      const openLightbox = (item, trigger) => {
-        lastTrigger = trigger ?? null;
+      const showItem = (index) => {
+        const item = triggers[index];
+        if (!item) return;
 
+        currentIndex = index;
         activeImage.src = item.src;
         activeImage.alt = item.alt;
 
@@ -112,6 +172,11 @@ const captionId = `${id}-caption`;
             caption.classList.add("hidden");
           }
         }
+      };
+
+      const openLightbox = (index, trigger) => {
+        lastTrigger = trigger ?? null;
+        showItem(index);
 
         overlay.classList.remove("hidden");
         overlay.classList.add("flex");
@@ -129,23 +194,50 @@ const captionId = `${id}-caption`;
         lastTrigger?.focus();
       };
 
-      triggers.forEach((trigger) => {
-        const buttonImg = trigger.querySelector("img");
-        const src = buttonImg?.getAttribute("src");
-        const alt = buttonImg?.getAttribute("alt") ?? "";
-        const captionText = trigger.dataset.lightboxCaption ?? "";
+      const navigateLightbox = (direction) => {
+        if (triggers.length < 2) return;
 
-        if (!src) return;
+        const nextIndex =
+          (currentIndex + direction + triggers.length) % triggers.length;
+        showItem(nextIndex);
+      };
 
-        trigger.addEventListener("click", () => {
-          openLightbox({ src, alt, caption: captionText }, trigger);
+      triggers.forEach((item, index) => {
+        item.trigger.addEventListener("click", () => {
+          openLightbox(index, item.trigger);
         });
       });
+
+      if (prevButton) {
+        prevButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          navigateLightbox(-1);
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          navigateLightbox(1);
+        });
+      }
 
       closeButton.addEventListener("click", closeLightbox);
       overlay.addEventListener("click", (event) => {
         if (event.target === overlay) {
           closeLightbox();
+        }
+      });
+
+      overlay.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          navigateLightbox(-1);
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          navigateLightbox(1);
         }
       });
     });

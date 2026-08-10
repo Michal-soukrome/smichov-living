@@ -19,7 +19,7 @@
   "link.requestProject": "Yêu cầu dự án",
   "hero.contact.label": "LIÊN HỆ",
   "hero.contact.title": "Đây là nơi dự án chung của chúng ta bắt đầu",
-  "hero.contact.subtitle": "Mỗi nội thất được tạo ra dựa trên cuộc gặp gỡ cá nhân. Chúng tôi sẽ hướng dẫn bạn qua toàn bộ quá trình – từ buổi tư vấn đầu tiên đến khi hoàn thành.",
+  "hero.contact.subtitle": "Mỗi nội thất được tạo ra dựa trên cuộc gặp gỡ cá nhân. Chúng tôi sẽ hướng dẫn bạn qua toàn bộ quá trình - từ buổi tư vấn đầu tiên đến khi hoàn thành.",
   "hero.contact.cta": "Viết cho chúng tôi",
   "contact.form.name": "Họ và tên",
   "contact.form.phone": "Điện thoại",
@@ -134,8 +134,8 @@
   ],
   "project.request.budgets": [
     "dưới 1 triệu CZK",
-    "1–3 triệu CZK",
-    "3–5 triệu CZK",
+    "1-3 triệu CZK",
+    "3-5 triệu CZK",
     "trên 5 triệu CZK"
   ],
   "project.request.steps": [
@@ -197,8 +197,8 @@
   "showroom.opening.label": "Giờ mở cửa",
   "showroom.hours": [
     {
-      "day": "Thứ Hai–Thứ Sáu",
-      "time": "10:00–18:00"
+      "day": "Thứ Hai-Thứ Sáu",
+      "time": "10:00-18:00"
     },
     {
       "day": "Thứ Bảy, Chủ Nhật",
@@ -311,7 +311,7 @@
         "Trưng bày nhà bếp và nội thất theo yêu cầu",
         "Tư vấn với nhà thiết kế nội thất",
         "Cảm hứng cho dự án của bạn",
-        "Thứ Hai–Thứ Sáu | 10:00–18:00"
+        "Thứ Hai-Thứ Sáu | 10:00-18:00"
       ]
     }
   ],

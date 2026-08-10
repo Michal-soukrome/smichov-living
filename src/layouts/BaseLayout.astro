@@ -9,6 +9,8 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
 
 <html lang={lang}>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <ClientRouter />
 
@@ -40,9 +42,7 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
       function initReveal() {
         if (!("IntersectionObserver" in window)) return;
 
-        const sections = document.querySelectorAll(
-          "main section:not(.reveal)",
-        );
+        const sections = document.querySelectorAll("main section:not(.reveal)");
 
         const observer = new IntersectionObserver(
           (entries, obs) => {

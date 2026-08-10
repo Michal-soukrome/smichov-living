@@ -49,21 +49,21 @@ const afterText = t(lang, "reference.after") ?? "Po";
                     items={[
                       {
                         src: resolveProjectImage(p.beforeImage)!,
-                        alt: `${p.title} – ${beforeText}`,
+                        alt: `${p.title} - ${beforeText}`,
                       },
                       {
                         src: resolveProjectImage(p.afterImage)!,
-                        alt: `${p.title} – ${afterText}`,
+                        alt: `${p.title} - ${afterText}`,
                       },
                     ]}
                   >
                     <button
                       data-lightbox-trigger
-                      data-lightbox-caption={`${p.title} – ${beforeText}`}
+                      data-lightbox-caption={`${p.title} - ${beforeText}`}
                     >
                       <Image
                         src={resolveProjectImage(p.beforeImage)!}
-                        alt={`${p.title} – ${beforeText}`}
+                        alt={`${p.title} - ${beforeText}`}
                         inferSize={false}
                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
@@ -80,21 +80,21 @@ const afterText = t(lang, "reference.after") ?? "Po";
                     items={[
                       {
                         src: resolveProjectImage(p.beforeImage)!,
-                        alt: `${p.title} – ${beforeText}`,
+                        alt: `${p.title} - ${beforeText}`,
                       },
                       {
                         src: resolveProjectImage(p.afterImage)!,
-                        alt: `${p.title} – ${afterText}`,
+                        alt: `${p.title} - ${afterText}`,
                       },
                     ]}
                   >
                     <button
                       data-lightbox-trigger
-                      data-lightbox-caption={`${p.title} – ${afterText}`}
+                      data-lightbox-caption={`${p.title} - ${afterText}`}
                     >
                       <Image
                         src={resolveProjectImage(p.afterImage)!}
-                        alt={`${p.title} – ${afterText}`}
+                        alt={`${p.title} - ${afterText}`}
                         inferSize={false}
                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />

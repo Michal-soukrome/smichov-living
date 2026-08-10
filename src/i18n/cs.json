@@ -19,7 +19,7 @@
   "link.requestProject": "Poptat projekt",
   "hero.contact.label": "KONTAKT",
   "hero.contact.title": "Tady začíná náš společný projekt",
-  "hero.contact.subtitle": "Každý interiér vzniká na základě osobního setkání. Rádi Vás provedeme celým procesem – od první konzultace až po finální realizaci.",
+  "hero.contact.subtitle": "Každý interiér vzniká na základě osobního setkání. Rádi Vás provedeme celým procesem - od první konzultace až po finální realizaci.",
   "hero.contact.cta": "Napište nám",
   "contact.form.name": "Jméno a příjmení",
   "contact.form.phone": "Telefon",
@@ -139,8 +139,8 @@
   ],
   "project.request.budgets": [
     "do 1 mil. Kč",
-    "1–3 mil. Kč",
-    "3–5 mil. Kč",
+    "1-3 mil. Kč",
+    "3-5 mil. Kč",
     "5+ mil. Kč"
   ],
   "project.request.steps": [
@@ -201,8 +201,8 @@
   "showroom.opening.label": "Otevírací doba",
   "showroom.hours": [
     {
-      "day": "Po–Pá",
-      "time": "10:00–18:00"
+      "day": "Po-Pá",
+      "time": "10:00-18:00"
     },
     {
       "day": "So, Ne",

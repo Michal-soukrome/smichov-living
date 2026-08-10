@@ -11,17 +11,21 @@ import { supportedLocales, t, tArray } from "../../i18n/utils";
 import { projectImages } from "../../data/projectImages";
 
 const { lang = "cs" } = Astro.props;
+
 const locale = supportedLocales.includes(lang) ? lang : "cs";
+
 const optimizedHero = await getImage({
   src: heroBg,
   format: "webp",
   quality: 80,
   width: 1920,
 });
+
 const pageTitle = t(locale, "reference.pageTitle");
 const heroLabel = t(locale, "reference.label");
 const heroTitle = t(locale, "reference.title");
 const heroSubtitle = t(locale, "reference.subtitle");
+
 const projects = tArray<{
   tag: string;
   title: string;
@@ -31,7 +35,7 @@ const projects = tArray<{
 
 const projectsWithImages = projects.map((project) => ({
   ...project,
-  ...(projectImages[project.href] ?? {}),
+  ...projectImages[project.href],
 }));
 ---
 

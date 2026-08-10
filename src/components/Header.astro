@@ -205,8 +205,7 @@ const localizedNav = nav.map((item) => ({
     <!-- Mobile menu -->
     <div
       id="mobile-menu"
-      style="display:none"
-      class="xl:hidden absolute top-full left-0 w-full bg-white py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40"
+      class="xl:hidden absolute top-full left-0 w-full bg-white py-6 flex-col gap-3 shadow-lg border-t border-stone-100 z-40 transition-all duration-300 ease-out opacity-0 pointer-events-none -translate-y-4"
     >
       {
         localizedNav.map((item) => (
@@ -293,7 +292,8 @@ const localizedNav = nav.map((item) => ({
             "icon-close",
           ) as HTMLElement;
           if (!menu) return;
-          menu.style.display = "none";
+          menu.classList.add("opacity-0", "pointer-events-none", "-translate-y-4");
+          menu.classList.remove("opacity-100", "translate-y-0");
           iconOpen.style.display = "block";
           iconClose.style.display = "none";
           overlay?.classList.add("opacity-0", "pointer-events-none");
@@ -311,7 +311,8 @@ const localizedNav = nav.map((item) => ({
             "icon-close",
           ) as HTMLElement;
           if (!menu) return;
-          menu.style.display = "flex";
+          menu.classList.remove("opacity-0", "pointer-events-none", "-translate-y-4");
+          menu.classList.add("opacity-100", "translate-y-0");
           iconOpen.style.display = "none";
           iconClose.style.display = "block";
           overlay?.classList.remove("opacity-0", "pointer-events-none");
@@ -391,7 +392,8 @@ const localizedNav = nav.map((item) => ({
 
           if (target.closest("#mobile-btn")) {
             const menu = document.getElementById("mobile-menu") as HTMLElement;
-            menu?.style.display === "flex" ? closeMenu() : openMenu();
+            const isOpen = menu?.classList.contains("opacity-100");
+            isOpen ? closeMenu() : openMenu();
             return;
           }
           if (target.closest("#mobile-menu")) {

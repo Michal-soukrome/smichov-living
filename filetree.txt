@@ -4,11 +4,13 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   ├── content.d.ts
 │   ├── settings.json
 │   └── types.d.ts
+├── .env
 ├── .prettierrc
 ├── .vscode/
 │   ├── extensions.json
 │   └── launch.json
 ├── astro.config.mjs
+├── call.txt
 ├── filetree.txt
 ├── package-lock.json
 ├── package.json
@@ -31,22 +33,18 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 ├── src/
 │   ├── assets/
 │   │   └── images/
-│   │       ├── backgrounds/
-│   │       │   ├── homepage.png
-│   │       │   ├── kontakt.png
-│   │       │   ├── poptat-projekt.png
-│   │       │   ├── reference.png
-│   │       │   ├── showroom.png
-│   │       │   └── sluzby.png
 │   │       ├── contact/
 │   │       │   ├── hero.png
 │   │       │   ├── romana.jpg
 │   │       │   └── sandra.jpg
-│   │       ├── heros (1).webp
-│   │       ├── heros (2).webp
-│   │       ├── heros (3).webp
-│   │       ├── heros (4).webp
-│   │       ├── heros (5).webp
+│   │       ├── homepage/
+│   │       │   └── hero.png
+│   │       ├── inquiry/
+│   │       │   ├── 2.png
+│   │       │   ├── 3.png
+│   │       │   ├── 4.png
+│   │       │   ├── 5.jpg
+│   │       │   └── hero.png
 │   │       ├── logo/
 │   │       │   └── sl-logo.webp
 │   │       ├── projects/
@@ -56,11 +54,6 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       │   ├── reference.png
 │   │       │   ├── showroom.png
 │   │       │   └── sluzby.png
-│   │       ├── projects (1).webp
-│   │       ├── projects (2).webp
-│   │       ├── projects (3).webp
-│   │       ├── projects (4).webp
-│   │       ├── projects (5).webp
 │   │       ├── reference/
 │   │       │   ├── 1-after.png
 │   │       │   ├── 1-before.jpg
@@ -74,22 +67,12 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │       │   ├── 2.png
 │   │       │   ├── 3.png
 │   │       │   ├── 4.png
-│   │       │   ├── Fotka č.1.PNG
-│   │       │   ├── Fotka č.2.jpg
-│   │       │   ├── Fotka č.3.PNG
-│   │       │   ├── Fotka č.4.PNG
-│   │       │   ├── Fotka č.5.PNG
-│   │       │   ├── Fotka č.6.jpg
-│   │       │   ├── Fotka č.7.PNG
-│   │       │   └── sluzby.jpg
-│   │       ├── showroom/
-│   │       │   ├── 1.png
-│   │       │   ├── 2.png
-│   │       │   ├── 3.png
-│   │       │   └── 4.png
-│   │       └── team/
-│   │           ├── romana.webp
-│   │           └── sandra.webp
+│   │       │   └── hero.jpg
+│   │       └── showroom/
+│   │           ├── 2.png
+│   │           ├── 3.png
+│   │           ├── 4.png
+│   │           └── hero.png
 │   ├── components/
 │   │   ├── ArrowedUnderline.astro
 │   │   ├── Banner.astro
@@ -97,7 +80,9 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
 │   │   ├── Hero.astro
+│   │   ├── Lightbox.astro
 │   │   ├── MapIframe.astro
+│   │   ├── OffsetCarousel.astro
 │   │   ├── ProjectList.astro
 │   │   ├── SectionLabel.astro
 │   │   ├── Services.astro
@@ -107,6 +92,7 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   ├── data/
 │   │   ├── contactData.ts
 │   │   ├── projectImages.ts
+│   │   ├── projectPreviewImages.ts
 │   │   └── serviceImages.ts
 │   ├── i18n/
 │   │   ├── cs.json
@@ -115,6 +101,9 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   │   ├── utils.ts
 │   │   └── vie.json
 │   ├── pages/
+│   │   ├── 404.astro
+│   │   ├── api/
+│   │   │   └── kontakt.ts
 │   │   ├── gdpr.astro
 │   │   ├── index.astro
 │   │   ├── kontakt.astro
@@ -147,4 +136,5 @@ C:\Users\michal.jirak\Documents\GitHub\smichov-living
 │   └── styles/
 │       └── global.css
 ├── tailwind.config.ts
+├── tmp_gdpr.html
 └── tsconfig.json

@@ -69,6 +69,10 @@
   "gdpr.label": "GDPR",
   "gdpr.title": "Xử lý dữ liệu cá nhân",
   "gdpr.subtitle": "Thông tin về cơ sở pháp lý, mục đích và phạm vi xử lý dữ liệu cá nhân.",
+  "404.title": "Không tìm thấy trang",
+  "404.description": "Chúng tôi đang chuyển hướng bạn đến trang chủ có ngôn ngữ phù hợp.",
+  "404.fallback": "Nếu việc chuyển hướng không tự động, vui lòng nhấp vào liên kết này:",
+  "404.home": "Trang chủ",
   "gdpr.paragraphs": [
     "Chúng tôi xử lý dữ liệu cá nhân dựa trên sự đồng ý của bạn và để xử lý yêu cầu của bạn.",
     "Dữ liệu được giữ lại chỉ trong thời gian cần thiết để hoàn thành yêu cầu và tuân thủ nghĩa vụ pháp lý.",

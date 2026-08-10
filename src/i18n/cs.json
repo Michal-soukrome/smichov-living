@@ -70,6 +70,10 @@
   "gdpr.label": "GDPR",
   "gdpr.title": "Zpracování osobních údajů",
   "gdpr.subtitle": "Informace o právním základu, účelu a rozsahu zpracování osobních údajů.",
+  "404.title": "Stránka nebyla nalezena",
+  "404.description": "Přesměrováváme vás na nejbližší lokalizovanou domovskou stránku.",
+  "404.fallback": "Pokud přesměrování neproběhne automaticky, klikněte na tento odkaz:",
+  "404.home": "Domů",
   "gdpr.paragraphs": [
     "Zpracováváme osobní údaje na základě vašeho souhlasu a za účelem vyřízení poptávky.",
     "Údaje uchováváme po dobu nutnou k vyřízení požadavku a k plnění právních povinností.",

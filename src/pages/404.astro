@@ -1,0 +1,61 @@
+---
+import { supportedLocales, t } from "../i18n/utils";
+
+const url = new URL(Astro.request.url);
+const pathname = url.pathname;
+const segments = pathname.split("/").filter(Boolean);
+const lang = supportedLocales.includes(segments[0]) ? segments[0] : "cs";
+const homeUrl = lang === "cs" ? "/" : `/${lang}/`;
+
+const title = t(lang, "404.title");
+const description = t(lang, "404.description");
+const fallback = t(lang, "404.fallback");
+const homeLabel = t(lang, "404.home");
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body
+    class="min-h-screen bg-white text-stone-900 flex items-center justify-center px-6"
+  >
+    <div class="max-w-xl text-center">
+      <h1 class="text-3xl font-display font-semibold mb-4">
+        {title}
+      </h1>
+      <p class="text-base text-stone-600 mb-6">
+        {description}
+      </p>
+      <p class="text-sm text-stone-500">
+        {fallback}
+      </p>
+      <p class="mt-4">
+        <a
+          id="localized-home-link"
+          href={homeUrl}
+          class="text-accent-hover underline"
+        >
+          {homeLabel}
+        </a>
+      </p>
+    </div>
+
+    <script is:inline>
+      const LOCALES = ["cs", "en", "ru", "vie"];
+      const pathname = window.location.pathname;
+      const segments = pathname.split("/").filter(Boolean);
+      const locale = LOCALES.includes(segments[0]) ? segments[0] : "cs";
+      const homeUrl = locale === "cs" ? "/" : `/${locale}/`;
+
+      const link = document.getElementById("localized-home-link");
+      if (link) {
+        link.href = homeUrl;
+      }
+
+      window.location.replace(homeUrl);
+    </script>
+  </body>
+</html>

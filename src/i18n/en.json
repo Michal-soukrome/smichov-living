@@ -69,6 +69,10 @@
   "gdpr.label": "GDPR",
   "gdpr.title": "Processing of personal data",
   "gdpr.subtitle": "Information about the legal basis, purpose and scope of personal data processing.",
+  "404.title": "Page not found",
+  "404.description": "We are redirecting you to the nearest localized homepage.",
+  "404.fallback": "If the redirect does not happen automatically, please click this link:",
+  "404.home": "Home",
   "gdpr.paragraphs": [
     "We process personal data based on your consent and for the purpose of handling your inquiry.",
     "Data is retained only as long as necessary to fulfill the request and legal obligations.",

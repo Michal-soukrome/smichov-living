@@ -2,31 +2,18 @@
 import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { supportedLocales, t } from "../i18n/utils";
 import "../styles/global.css";
 
-const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
+const { title = "Smíchov Living", lang = "cs" } = Astro.props;
+const locale = supportedLocales.includes(lang) ? lang : "cs";
 ---
 
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
-    <ClientRouter />
-
-    <script>
-      document.addEventListener("astro:before-preparation", (event) => {
-        const originalLoader = event.loader;
-
-        event.loader = async () => {
-          document.documentElement.classList.add("is-navigating");
-
-          await originalLoader();
-
-          document.documentElement.classList.remove("is-navigating");
-        };
-      });
-    </script>
   </head>
 
   <body>
@@ -36,8 +23,135 @@ const { title = "Smíchov Living", lang = "cs", preloadImage } = Astro.props;
       <slot />
     </main>
 
+    <div
+      id="cookie-consent-banner"
+      class="fixed inset-x-4 bottom-4 z-50 hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-lg shadow-black/5 md:inset-x-10 md:bottom-6 md:p-6"
+      role="dialog"
+      aria-live="polite"
+      aria-label={t(locale, "cookieBanner.title")}
+    >
+      <div
+        class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+      >
+        <div>
+          <p class="text-sm font-semibold text-gray-900">
+            {t(locale, "cookieBanner.title")}
+          </p>
+          <p class="mt-2 text-xs leading-relaxed text-gray-600">
+            {t(locale, "cookieBanner.description")}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2 justify-end">
+          <button
+            type="button"
+            id="cookie-consent-reject"
+            class="rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-gray-700 transition hover:border-gray-400 hover:text-black"
+          >
+            {t(locale, "cookieBanner.reject")}
+          </button>
+          <button
+            type="button"
+            id="cookie-consent-accept"
+            class="rounded-full bg-black px-4 py-2 text-xs font-medium text-white transition hover:bg-gray-900"
+          >
+            {t(locale, "cookieBanner.accept")}
+          </button>
+        </div>
+      </div>
+    </div>
+
     <Footer lang={lang} />
 
+    <!-- Cookie consent + GTM -->
+    <script is:inline>
+      const CONSENT_KEY = "smichov-cookie-consent";
+      const GTM_ID = "GTM-NBW6XB49";
+
+      function loadGTM() {
+        if (window.__gtmLoaded) return;
+
+        window.__gtmLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+
+        window.dataLayer.push({
+          "gtm.start": Date.now(),
+          event: "gtm.js",
+        });
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`;
+
+        document.head.appendChild(script);
+      }
+
+      function initCookieConsent() {
+        const banner = document.getElementById("cookie-consent-banner");
+        const acceptBtn = document.getElementById("cookie-consent-accept");
+        const rejectBtn = document.getElementById("cookie-consent-reject");
+        const settingsBtn = document.getElementById("cookie-consent-settings");
+
+        if (!banner || !acceptBtn || !rejectBtn) return;
+
+        const getConsent = () => {
+          try {
+            return localStorage.getItem(CONSENT_KEY);
+          } catch {
+            return null;
+          }
+        };
+
+        const setConsent = (value) => {
+          try {
+            localStorage.setItem(CONSENT_KEY, value);
+          } catch (error) {
+            console.warn("Could not save cookie consent", error);
+          }
+        };
+
+        const showBanner = () => {
+          banner.classList.remove("hidden");
+        };
+
+        const hideBanner = () => {
+          banner.classList.add("hidden");
+        };
+        const consent = getConsent();
+
+        if (consent === "accepted") {
+          loadGTM();
+        } else {
+          hideBanner();
+        }
+
+        // Avoid adding duplicate listeners after Astro navigation
+        if (banner.dataset.initialized === "true") return;
+        banner.dataset.initialized = "true";
+
+        acceptBtn.addEventListener("click", () => {
+          setConsent("accepted");
+          window.location.reload();
+        });
+
+        rejectBtn.addEventListener("click", () => {
+          setConsent("rejected");
+          window.location.reload();
+        });
+
+        settingsBtn?.addEventListener("click", () => {
+          showBanner();
+        });
+      }
+
+      // Initial page load
+      initCookieConsent();
+
+      // Astro client-side navigation
+      document.addEventListener("astro:page-load", initCookieConsent);
+    </script>
+
+    <!-- Scroll reveal -->
     <script>
       function initReveal() {
         if (!("IntersectionObserver" in window)) return;

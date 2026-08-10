@@ -1,7 +1,7 @@
 ✓ sjednotit predmety z resend formulare na neco jako "odpoved z weboveho formulare"
-- plus udelat dekovnou hlasku
+✓ plus udelat dekovnou hlasku
 - oslovit nejakyho grafika na tvorbu loga
-- mozna se bude upravovat noona na potvrzeni rezervace, mozna prijde novy iframe
+✓ mozna se bude upravovat noona na potvrzeni rezervace, mozna prijde novy iframe
 ✓ opravit na "kovaku" i v iframe mape nejen v kontaktnich adresach
 ✓ upravit fotku at je sandra na prostredku
 - zrevidovat gdpr/obchodni podminky ze stavajiciho hanaka a predat do smichovlivingu

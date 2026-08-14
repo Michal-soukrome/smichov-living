@@ -37,27 +37,29 @@ const afterText = t(lang, "reference.after") ?? "Po";
 
 <div class="flex flex-col divide-y divide-stone-200">
   {
-    projects.map((p) => (
+    projects.map((p, index) => (
       <div class="grid md:grid-cols-[3fr_2fr] gap-0 group">
         <div class="overflow-hidden">
           {p.beforeImage && p.afterImage ? (
-            <div class="grid grid-cols-2 h-72 md:min-h-80 md:h-full">
-              <div class="relative overflow-hidden">
-                {resolveProjectImage(p.beforeImage) ? (
-                  <Lightbox
-                    id={`project-${p.title.replace(/\s/g, "-").toLowerCase()}`}
-                    items={[
-                      {
-                        src: resolveProjectImage(p.beforeImage)!,
-                        alt: `${p.title} - ${beforeText}`,
-                      },
-                      {
-                        src: resolveProjectImage(p.afterImage)!,
-                        alt: `${p.title} - ${afterText}`,
-                      },
-                    ]}
-                  >
+            resolveProjectImage(p.beforeImage) &&
+            resolveProjectImage(p.afterImage) ? (
+              <Lightbox
+                id={`project-${p.title.replace(/\s/g, "-").toLowerCase()}-${index}`}
+                items={[
+                  {
+                    src: resolveProjectImage(p.beforeImage)!,
+                    alt: `${p.title} - ${beforeText}`,
+                  },
+                  {
+                    src: resolveProjectImage(p.afterImage)!,
+                    alt: `${p.title} - ${afterText}`,
+                  },
+                ]}
+              >
+                <div class="grid grid-cols-2 h-72 md:min-h-80 md:h-full">
+                  <div class="relative overflow-hidden">
                     <button
+                      type="button"
                       data-lightbox-trigger
                       data-lightbox-caption={`${p.title} - ${beforeText}`}
                     >
@@ -68,27 +70,13 @@ const afterText = t(lang, "reference.after") ?? "Po";
                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     </button>
-                  </Lightbox>
-                ) : null}
-                <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-stone-900/70 px-2 py-1">
-                  {beforeText}
-                </span>
-              </div>
-              <div class="relative overflow-hidden border-l border-white/20">
-                {resolveProjectImage(p.afterImage) ? (
-                  <Lightbox
-                    items={[
-                      {
-                        src: resolveProjectImage(p.beforeImage)!,
-                        alt: `${p.title} - ${beforeText}`,
-                      },
-                      {
-                        src: resolveProjectImage(p.afterImage)!,
-                        alt: `${p.title} - ${afterText}`,
-                      },
-                    ]}
-                  >
+                    <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-stone-900/70 px-2 py-1">
+                      {beforeText}
+                    </span>
+                  </div>
+                  <div class="relative overflow-hidden border-l border-white/20">
                     <button
+                      type="button"
                       data-lightbox-trigger
                       data-lightbox-caption={`${p.title} - ${afterText}`}
                     >
@@ -99,13 +87,13 @@ const afterText = t(lang, "reference.after") ?? "Po";
                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     </button>
-                  </Lightbox>
-                ) : null}
-                <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-accent/80 px-2 py-1">
-                  {afterText}
-                </span>
-              </div>
-            </div>
+                    <span class="absolute bottom-3 left-3 text-[10px] tracking-widest uppercase text-white bg-accent/80 px-2 py-1">
+                      {afterText}
+                    </span>
+                  </div>
+                </div>
+              </Lightbox>
+            ) : null
           ) : p.image && resolveProjectImage(p.image) ? (
             <Image
               src={resolveProjectImage(p.image)!}

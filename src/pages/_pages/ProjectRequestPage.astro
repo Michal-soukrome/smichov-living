@@ -1,18 +1,32 @@
 ---
+// Astro imports
 import { getImage } from "astro:assets";
+
+// base layout + its components
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import heroBg from "../../assets/images/inquiry/hero.png";
-import realizace1 from "../../assets/images/inquiry/2.png";
-import realizace2 from "../../assets/images/inquiry/3.png";
-import realizace3 from "../../assets/images/inquiry/4.png";
-import realizace4 from "../../assets/images/inquiry/5.jpg";
 import SectionLabel from "../../components/SectionLabel.astro";
 import ArrowedUnderline from "../../components/ArrowedUnderline.astro";
 import ContactForm from "../../components/ContactForm.astro";
 import OffsetCarousel from "../../components/OffsetCarousel.astro";
+
+// data + its types
 import contactData from "../../data/contactData.ts";
+
+// localization utils
 import { supportedLocales, t, tArray } from "../../i18n/utils";
+
+// carousel images
+import projectReqCarouselImg1 from "../../assets/images/carousel/0.jpeg";
+import projectReqCarouselImg2 from "../../assets/images/carousel/1.png";
+import projectReqCarouselImg3 from "../../assets/images/carousel/2.png";
+import projectReqCarouselImg4 from "../../assets/images/carousel/3.png";
+import projectReqCarouselImg5 from "../../assets/images/carousel/4.png";
+import projectReqCarouselImg6 from "../../assets/images/carousel/5.png";
+import projectReqCarouselImg7 from "../../assets/images/carousel/6.png";
+import projectReqCarouselImg8 from "../../assets/images/carousel/7.png";
+import projectReqCarouselImg9 from "../../assets/images/carousel/8.png";
 
 const { lang = "cs" } = Astro.props;
 const locale = supportedLocales.includes(lang) ? lang : "cs";
@@ -62,13 +76,15 @@ const stepsToRender = localizedSteps;
 const reasonsToRender = localizedReasons;
 const showAllProjectsText = t(locale, "link.showAllRealizations");
 const carouselItems = [
-  { src: realizace1, alt: realizationAlts[0] ?? "Realizace 1" },
-  { src: realizace2, alt: realizationAlts[1] ?? "Realizace 2" },
-  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
-  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
-  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
-  { src: realizace3, alt: realizationAlts[2] ?? "Realizace 3" },
-  { src: realizace4, alt: realizationAlts[3] ?? "Realizace 4" },
+  { src: projectReqCarouselImg1, alt: realizationAlts[0] ?? "Realizace 1" },
+  { src: projectReqCarouselImg2, alt: realizationAlts[1] ?? "Realizace 2" },
+  { src: projectReqCarouselImg3, alt: realizationAlts[2] ?? "Realizace 3" },
+  { src: projectReqCarouselImg4, alt: realizationAlts[3] ?? "Realizace 4" },
+  { src: projectReqCarouselImg5, alt: realizationAlts[4] ?? "Realizace 5" },
+  { src: projectReqCarouselImg6, alt: realizationAlts[5] ?? "Realizace 6" },
+  { src: projectReqCarouselImg7, alt: realizationAlts[6] ?? "Realizace 7" },
+  { src: projectReqCarouselImg8, alt: realizationAlts[7] ?? "Realizace 8" },
+  { src: projectReqCarouselImg9, alt: realizationAlts[8] ?? "Realizace 9" },
 ];
 ---
 

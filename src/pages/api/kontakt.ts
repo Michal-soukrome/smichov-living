@@ -4,6 +4,7 @@ import { getProjectTypeLabel } from "../../data/contactData.ts";
 const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
 const RESEND_FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL;
 const RESEND_TO_EMAIL = import.meta.env.RESEND_TO_EMAIL;
+const RESEND_BCC_EMAIL = import.meta.env.RESEND_BCC_EMAIL;
 
 export const POST: APIRoute = async ({ request }) => {
   if (!RESEND_API_KEY || !RESEND_FROM_EMAIL || !RESEND_TO_EMAIL) {
@@ -52,6 +53,7 @@ export const POST: APIRoute = async ({ request }) => {
     body: JSON.stringify({
       from: RESEND_FROM_EMAIL,
       to: RESEND_TO_EMAIL,
+      ...(RESEND_BCC_EMAIL ? { bcc: RESEND_BCC_EMAIL } : {}),
       reply_to: email,
       subject,
       html: `

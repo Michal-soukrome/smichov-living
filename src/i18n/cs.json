@@ -12,8 +12,9 @@
   "header.cta": "Poptat projekt",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "Všechna práva vyhrazena",
+  "footer.country": "Česko",
   "banner.title": "Máte představu o svém novém domově?",
-  "banner.subtitle": "Rádi s vámi probereme možnosti spolupráce.",
+  "banner.subtitle": "Rádi s Vámi probereme možnosti spolupráce.",
   "banner.primary": "poptejte projekt",
   "banner.secondary": "ozvěte se nám",
   "link.requestProject": "Poptat projekt",
@@ -51,8 +52,8 @@
   "footer.privacy": "Ochrana osobních údajů",
   "footer.gdpr": "GDPR",
   "footer.cookies": "Cookies",
-  "cookieBanner.title": "Používáme cookies",
-  "cookieBanner.description": "Cookies používáme pouze pro základní funkčnost webu a pro analytiku návštěvnosti.",
+  "cookieBanner.title": "PoužíVáme cookies",
+  "cookieBanner.description": "Cookies použíVáme pouze pro základní funkčnost webu a pro analytiku návštěvnosti.",
   "cookieBanner.descriptionExtra": "Více informací o použitých cookies a zpracování osobních údajů naleznete zde:",
   "cookieBanner.accept": "Přijmout všechny",
   "cookieBanner.reject": "Odmítnout",
@@ -60,25 +61,25 @@
   "privacy.pageTitle": "Ochrana osobních údajů | Smíchov Living",
   "privacy.label": "Ochrana osobních údajů",
   "privacy.title": "Naše zásady ochrany osobních údajů",
-  "privacy.subtitle": "Zde zjistíte, jak zpracováváme osobní informace, které nám poskytnete.",
+  "privacy.subtitle": "Zde zjistíte, jak zpracováVáme osobní informace, které nám poskytnete.",
   "privacy.paragraphs": [
     "Shromažďujeme pouze údaje potřebné k vyřízení vaší poptávky a kontaktování vás.",
     "Vaše údaje jsou u nás bezpečně uloženy a nikdy je nesdílíme s neoprávněnými třetími stranami.",
-    "Kdykoli nás můžete požádat o výmaz nebo opravu vašich osobních údajů.",
-    "Používáme cookies jen pro základní funkčnost stránek a analytiku návštěvnosti."
+    "Kdykoli nás můžete požádat o výmaz nebo opravu Vašich osobních údajů.",
+    "PoužíVáme cookies jen pro základní funkčnost stránek a analytiku návštěvnosti."
   ],
   "gdpr.pageTitle": "GDPR | Smíchov Living",
   "gdpr.label": "GDPR",
   "gdpr.title": "Zpracování osobních údajů",
   "gdpr.subtitle": "Informace o právním základu, účelu a rozsahu zpracování osobních údajů.",
   "404.title": "Stránka nebyla nalezena",
-  "404.description": "Přesměrováváme vás na nejbližší lokalizovanou domovskou stránku.",
+  "404.description": "PřesměrováVáme vás na nejbližší lokalizovanou domovskou stránku.",
   "404.fallback": "Pokud přesměrování neproběhne automaticky, klikněte na tento odkaz:",
   "404.home": "Domů",
   "gdpr.paragraphs": [
-    "Zpracováváme osobní údaje na základě vašeho souhlasu a za účelem vyřízení poptávky.",
-    "Údaje uchováváme po dobu nutnou k vyřízení požadavku a k plnění právních povinností.",
-    "Máte právo na přístup k vašim údajům, jejich opravu a výmaz.",
+    "ZpracováVáme osobní údaje na základě Vašeho souhlasu a za účelem vyřízení poptávky.",
+    "Údaje uchováVáme po dobu nutnou k vyřízení požadavku a k plnění právních povinností.",
+    "Máte právo na přístup k Vašim údajům, jejich opravu a výmaz.",
     "Ukládání osobních údajů a jejich zpracování probíhá v souladu s obecnými nařízeními o ochraně osobních údajů (GDPR)."
   ],
   "gdpr.sections": [
@@ -92,8 +93,8 @@
       ]
     },
     {
-      "heading": "2. Jaké osobní údaje zpracováváme",
-      "description": "V souvislosti s provozem webových stránek a vyřizováním vašich poptávek můžeme zpracovávat zejména tyto osobní údaje:",
+      "heading": "2. Jaké osobní údaje zpracováVáme",
+      "description": "V souvislosti s provozem webových stránek a vyřizováním Vašich poptávek můžeme zpracovávat zejména tyto osobní údaje:",
       "list": [
         "jméno a příjmení",
         "e-mailová adresa",
@@ -109,7 +110,7 @@
         {
           "heading": "Cookies a sledování",
           "paragraphs": [
-            "Pro analytiku návštěvnosti používáme Google Analytics 4 prostřednictvím Google Tag Manageru."
+            "Pro analytiku návštěvnosti použíVáme Google Analytics 4 prostřednictvím Google Tag Manageru."
           ],
           "list": [
             "_ga – anonymní identifikátor uživatele, doba uložení cca 2 roky",
@@ -152,8 +153,8 @@
     {
       "heading": "4. Doba zpracování osobních údajů",
       "paragraphs": [
-        "Osobní údaje zpracováváme pouze po dobu nezbytnou k naplnění účelu, pro který byly získány, případně po dobu stanovenou právními předpisy.",
-        "Údaje poskytnuté za účelem vyřízení poptávky uchováváme po dobu nezbytnou pro vyřízení poptávky a související komunikaci. Pokud na poptávku naváže smluvní vztah, jsou údaje dále uchovávány po dobu trvání smluvního vztahu a následně po dobu vyžadovanou příslušnými právními předpisy.",
+        "Osobní údaje zpracováVáme pouze po dobu nezbytnou k naplnění účelu, pro který byly získány, případně po dobu stanovenou právními předpisy.",
+        "Údaje poskytnuté za účelem vyřízení poptávky uchováVáme po dobu nezbytnou pro vyřízení poptávky a související komunikaci. Pokud na poptávku naváže smluvní vztah, jsou údaje dále uchovávány po dobu trvání smluvního vztahu a následně po dobu vyžadovanou příslušnými právními předpisy.",
         "Osobní údaje související s případnými právními nároky mohou být uchovávány po dobu trvání příslušných promlčecích lhůt.",
         "Po uplynutí příslušné doby jsou osobní údaje vymazány nebo anonymizovány, pokud jejich další uchování není vyžadováno právními předpisy."
       ]
@@ -161,7 +162,7 @@
     {
       "heading": "5. Příjemci osobních údajů",
       "paragraphs": [
-        "Vaše osobní údaje můžeme v nezbytném rozsahu zpřístupnit třetím stranám, které pro nás zajišťují služby související s provozem webových stránek, elektronickou komunikací a vyřizováním vašich požadavků."
+        "Vaše osobní údaje můžeme v nezbytném rozsahu zpřístupnit třetím stranám, které pro nás zajišťují služby související s provozem webových stránek, elektronickou komunikací a vyřizováním Vašich požadavků."
       ],
       "list": [
         "poskytovatelé webhostingu a IT služeb",
@@ -179,12 +180,12 @@
     },
     {
       "heading": "7. Vaše práva",
-      "description": "V souvislosti se zpracováním vašich osobních údajů máte zejména následující práva:",
+      "description": "V souvislosti se zpracováním Vašich osobních údajů máte zejména následující práva:",
       "subsections": [
         {
           "heading": "7.1 Právo na přístup",
           "paragraphs": [
-            "Máte právo získat potvrzení, zda vaše osobní údaje zpracováváme, a pokud ano, máte právo získat k těmto údajům přístup."
+            "Máte právo získat potvrzení, zda Vaše osobní údaje zpracováVáme, a pokud ano, máte právo získat k těmto údajům přístup."
           ]
         },
         {
@@ -220,7 +221,7 @@
         {
           "heading": "7.7 Právo odvolat souhlas",
           "paragraphs": [
-            "Pokud je zpracování vašich osobních údajů založeno na souhlasu, máte právo tento souhlas kdykoli odvolat. Odvoláním souhlasu není dotčena zákonnost zpracování založeného na souhlasu před jeho odvoláním."
+            "Pokud je zpracování Vašich osobních údajů založeno na souhlasu, máte právo tento souhlas kdykoli odvolat. Odvoláním souhlasu není dotčena zákonnost zpracování založeného na souhlasu před jeho odvoláním."
           ]
         }
       ]
@@ -229,13 +230,13 @@
       "heading": "8. Jak uplatnit svá práva",
       "paragraphs": [
         "Svá práva nebo dotazy týkající se ochrany osobních údajů můžete uplatnit zasláním žádosti na e-mailovou adresu info@smichovliving.cz nebo písemně na adresu sídla Správce.",
-        "Na vaši žádost odpovíme bez zbytečného odkladu, nejpozději do jednoho měsíce od jejího obdržení. V odůvodněných případech může být tato lhůta prodloužena v souladu s GDPR."
+        "Na Vaši žádost odpovíme bez zbytečného odkladu, nejpozději do jednoho měsíce od jejího obdržení. V odůvodněných případech může být tato lhůta prodloužena v souladu s GDPR."
       ]
     },
     {
       "heading": "9. Právo podat stížnost",
       "paragraphs": [
-        "Pokud se domníváte, že zpracováním vašich osobních údajů dochází k porušení právních předpisů, máte právo podat stížnost u dozorového úřadu."
+        "Pokud se domníváte, že zpracováním Vašich osobních údajů dochází k porušení právních předpisů, máte právo podat stížnost u dozorového úřadu."
       ],
       "list": [
         "Úřad pro ochranu osobních údajů",
@@ -254,9 +255,9 @@
     {
       "heading": "11. Cookies",
       "paragraphs": [
-        "Webové stránky používají soubory cookies a obdobné technologie. Cookies jsou malé textové soubory, které se ukládají do vašeho zařízení při návštěvě webových stránek.",
-        "Cookies mohou být využívány pro zajištění základního fungování webových stránek, zapamatování vašich preferencí a případně pro měření návštěvnosti a zlepšování webových stránek.",
-        "Nezbytné cookies mohou být používány bez vašeho souhlasu, pokud jsou nezbytné pro poskytování služby, kterou jste výslovně požadovali. U ostatních typů cookies je jejich použití závislé na vašem souhlasu, pokud jej právní předpisy vyžadují."
+        "Webové stránky používají soubory cookies a obdobné technologie. Cookies jsou malé textové soubory, které se ukládají do Vašeho zařízení při návštěvě webových stránek.",
+        "Cookies mohou být využívány pro zajištění základního fungování webových stránek, zapamatování Vašich preferencí a případně pro měření návštěvnosti a zlepšování webových stránek.",
+        "Nezbytné cookies mohou být používány bez Vašeho souhlasu, pokud jsou nezbytné pro poskytování služby, kterou jste výslovně požadovali. U ostatních typů cookies je jejich použití závislé na Vašem souhlasu, pokud jej právní předpisy vyžadují."
       ]
     },
     {
@@ -408,8 +409,8 @@
   ],
   "about.showroom.label": "O showroomu",
   "about.showroom.title": "Vytvořte si jasnou představu o svém budoucím interiéru",
-  "about.showroom.paragraph1": "Náš showroom na pražském Smíchově vznikl jako prostor, kde se setkávají inspirace s realitou. Nejsme jen vzorkovny - jsme místo, kde si můžete v klidu sednout, probrat svůj projekt a odnést si konkrétní představu o tom, jak může váš nový domov vypadat.",
-  "about.showroom.paragraph2": "Vystavujeme skutečné materiály, povrchy a nábytek, který používáme v našich realizacích.",
+  "about.showroom.paragraph1": "Náš showroom na pražském Smíchově vznikl jako prostor, kde se setkávají inspirace s realitou. Nejsme jen vzorkovny - jsme místo, kde si můžete v klidu sednout, probrat svůj projekt a odnést si konkrétní představu o tom, jak může Váš nový domov vypadat.",
+  "about.showroom.paragraph2": "Vystavujeme skutečné materiály, povrchy a nábytek, který použíVáme v našich realizacích.",
   "showroom.map": "Zobrazit na mapě",
   "showroom.visit": "Domluvit návštěvu",
   "showroom.location.label": "Kde nás najdete",
@@ -436,7 +437,7 @@
     },
     {
       "title": "Individuální přístup",
-      "desc": "Společně vybereme materiály, barvy i řešení, která budou odpovídat vašemu prostoru i životnímu stylu."
+      "desc": "Společně vybereme materiály, barvy i řešení, která budou odpovídat Vašemu prostoru i životnímu stylu."
     },
     {
       "title": "Inspirace pro Váš domov",
@@ -488,7 +489,7 @@
     {
       "number": "01",
       "title": "Návrh interiéru",
-      "desc": "Každý projekt je výsledkem pečlivé spolupráce s klientem. Nasloucháme Vašim představám, respektujeme charakter prostoru a navrhujeme řešení, která dávají smysl po estetické i praktické stránce. Naším cílem je vytvořit interiér, který bude působit přirozeně, funkčně a obstojí i s odstupem času.",
+      "desc": "Každý projekt je výsledkem pečlivé spolupráce s klientem. Nasloucháme Vašim předstaVám, respektujeme charakter prostoru a navrhujeme řešení, která dávají smysl po estetické i praktické stránce. Naším cílem je vytvořit interiér, který bude působit přirozeně, funkčně a obstojí i s odstupem času.",
       "items": [
         "Půdorysy a dispozice",
         "3D vizualizace",
@@ -534,12 +535,12 @@
     }
   ],
   "steps.label": "Jak probíhá spolupráce",
-  "steps.title": "6 kroků k vašemu novému domovu",
+  "steps.title": "6 kroků k Vašemu novému domovu",
   "steps": [
     {
       "number": "1",
       "title": "Konzultace a zaměření",
-      "desc": "Poznáme vaše potřeby, prostor i rozpočet."
+      "desc": "Poznáme Vaše potřeby, prostor i rozpočet."
     },
     {
       "number": "2",
@@ -573,10 +574,11 @@
   "section.label.writeus": "napište nám",
   "contact.address.label": "Adresa",
   "contact.opening.label": "Otevírací doba",
+  "contact.opening.hours": "Po - Pá: 10:00 - 18:00",
   "contact.map": "Zobrazit na mapě",
   "contact.visit": "Domluvit návštěvu",
   "contact.followUs.label": "Sledujte nás",
-  "contact.team.label": "S kým budete váš projekt řešit",
+  "contact.team.label": "S kým budete Váš projekt řešit",
   "contact.team.roles.designer": "Projektant",
   "contact.team.roles.customerCare": "Klientská péče",
   "section.label.noona": "rezervujte si schůzku přes aplikaci Noona"

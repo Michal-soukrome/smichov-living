@@ -1,7 +1,7 @@
 {
-  "home.title": "Smíchov Living - Complete Renovation and Interior Design",
-  "home.hero.title": "Renovation without worry. A result that adds value.",
-  "home.hero.subtitle": "Visit us in our showroom in Prague's Smíchov district. A place where design, quality materials, and precise craftsmanship meet. Everything from design to realization under one roof.",
+  "home.title": "Smíchov Living - Complete renovations and interior design",
+  "home.hero.title": "Beautiful interiors. Thoughtfully designed.",
+  "home.hero.subtitle": "Visit our showroom in Prague’s Smíchov district, where thoughtful design, quality materials and expert craftsmanship come together. From the initial concept to the finished interior, we take care of everything under the roof. ",
   "home.hero.ctaPrimary": "Request a project",
   "home.hero.ctaSecondary": "More information",
   "nav.home": "Home",
@@ -12,14 +12,15 @@
   "header.cta": "Request a project",
   "footer.copy": "© Smíchov Living s.r.o. 2026",
   "footer.rights": "All rights reserved",
+  "footer.country": "Czech Republic",
   "banner.title": "Do you have an idea for your new home?",
-  "banner.subtitle": "We would be happy to discuss your collaboration options.",
-  "banner.primary": "request project",
+  "banner.subtitle": "We would be happy to discuss your ideas with you.",
+  "banner.primary": "Request a project",
   "banner.secondary": "contact us",
   "link.requestProject": "Request a project",
   "hero.contact.label": "CONTACT",
-  "hero.contact.title": "This is where our joint project begins",
-  "hero.contact.subtitle": "Every interior is created based on a personal meeting. We will be happy to guide you through the entire process - from the first consultation to the final realization.",
+  "hero.contact.title": "This is where we begin your project together.",
+  "hero.contact.subtitle": "Every interior begins with a personal consultation. We will be happy to guide you through the entire process – from the first meeting to final completion.",
   "hero.contact.cta": "Write to us",
   "contact.form.name": "Full name",
   "contact.form.phone": "Phone",
@@ -44,7 +45,7 @@
   "contact.form.gdprLink": "processing of personal data",
   "contact.form.gdprSuffix": " for the purpose of handling the inquiry.",
   "contact.form.required": "*",
-  "footer.description": "Turnkey renovation and interior realization. From concept to handover of your finished home.",
+  "footer.description": "Complete renovations and bespoke interiors, from the initial concept to the finished home.",
   "footer.contactHeader": "Contact",
   "footer.legalHeader": "Important",
   "footer.privacy": "Privacy policy",
@@ -285,11 +286,11 @@
     }
   ],
   "link.showAllRealizations": "View all realizations",
-  "contact.pageTitle": "Contact | Smíchov Living - Complete renovation and interior design",
-  "reference.pageTitle": "Reference | Smíchov Living - Complete renovation and interior design",
+  "contact.pageTitle": "Contact | Smíchov Living - Complete renovations and interior design",
+  "reference.pageTitle": "Reference | Smíchov Living - Complete renovations and interior design",
   "reference.label": "Reference",
   "reference.title": "What our clients appreciate about our projects",
-  "reference.subtitle": "Behind every realization is a thoughtful design, attention to detail, and an individual approach. Read how our clients evaluate our work.",
+  "reference.subtitle": "Behind every project is thoughtful design, attention to detail, and an individual approach. Read what our clients say about our work.",
   "reference.before": "Before",
   "reference.after": "After",
   "reference.projects": [
@@ -302,7 +303,7 @@
     {
       "tag": "Residential project",
       "title": "Custom interior - Prague 12",
-      "desc": "Comprehensive interior design and realization with emphasis on timeless design, quality materials, and precise workmanship.",
+      "desc": "Interior design from concept to completion, with a focus on timeless design, quality materials and meticulous craftmanship.",
       "href": "/reference/rodinny-dum-praha-zapad"
     },
     {
@@ -313,7 +314,7 @@
     }
   ],
   "reference.ctaViewProject": "View project",
-  "project.ask.pageTitle": "Request a project | Smíchov Living - Complete renovation and interior design",
+  "project.ask.pageTitle": "Request a project | Smíchov Living - Complete renovations and interior design",
   "project.ask.label": "REQUEST A PROJECT",
   "project.request.realizationsLabel": "Our projects",
   "project.request.realizationsAlts": [
@@ -367,7 +368,7 @@
     },
     {
       "number": "3",
-      "title": "Turnkey implementation",
+      "title": "Turnkey renovation",
       "desc": "We will ensure the entire implementation process, from construction modifications to the complete finishing of the interior."
     }
   ],
@@ -376,7 +377,7 @@
     "One partner for the entire project",
     "Interior design and visualization",
     "HANÁK kitchens and furniture",
-    "Proven realization teams",
+    "Experienced installation teams",
     "Transparent budgets",
     "Individual approach to each client"
   ],
@@ -407,7 +408,7 @@
   ],
   "about.showroom.label": "About the showroom",
   "about.showroom.title": "Everything you need to decide in one place",
-  "about.showroom.paragraph1": "Our showroom in Prague's Smíchov district was created as a space where inspiration meets reality. We're not just sample rooms - we're a place where you can sit down, discuss your project, and leave with a concrete idea of how your new home can look.",
+  "about.showroom.paragraph1": "Our showroom in Prague's Smíchov district was created as a space where inspiration meets reality. We're not just a showroom – we're a place where you can sit down, discuss your project, and leave with a concrete idea of how your new home can look.",
   "about.showroom.paragraph2": "We exhibit real materials, surfaces, and furniture that we use in our projects.",
   "showroom.map": "View on map",
   "showroom.visit": "Schedule a visit",
@@ -444,14 +445,14 @@
   ],
   "showroom.gallery.label": "Take a look inside",
   "showroom.inspiration.title": "Come get inspired",
-  "showroom.pageTitle": "Showroom | Smíchov Living - Complete renovation and interior design",
+  "showroom.pageTitle": "Showroom | Smíchov Living - Complete renovations and interior design",
   "showroom.hero.label": "Showroom",
   "showroom.hero.title": "Inspiration starts in our showroom",
   "showroom.hero.subtitle": "Visit us in Prague's Smíchov district and explore materials, samples, and project showcases. Together with our designers, we will find a solution for your new home.",
   "showroom.gallery.alt.main": "Showroom Smíchov Living",
   "showroom.gallery.alt.kitchen": "Kitchen showcase",
   "showroom.gallery.alt.materials": "Material samples",
-  "services.title": "Complete renovation and interior design",
+  "services.title": "Complete renovations and interior design",
   "services.subtitle": "We offer comprehensive renovation and interior design services.",
   "services.hero.label": "Our services",
   "services.hero.ctaPrimary": "Request a project",
@@ -492,13 +493,13 @@
         "Layouts and floor plans",
         "3D visualizations",
         "Material and surface selection",
-        "Custom technical solution"
+        "Custom technical solutions"
       ]
     },
     {
       "number": "02",
       "title": "Turnkey renovation",
-      "desc": "We coordinate all trades from demolition to final cleaning. We work with trusted professionals and supervise quality at every stage. You do not need to worry about anything.",
+      "desc": "We coordinate all trades from demolition to final cleaning. We work with trusted professionals and supervise quality at every stage, so you can leave everything to us.",
       "items": [
         "Construction and demolition work",
         "Electrical installation and wiring",
@@ -532,7 +533,7 @@
       ]
     }
   ],
-  "steps.label": "How collaboration works",
+  "steps.label": "Our approach",
   "steps.title": "6 steps to your new home",
   "steps": [
     {
@@ -567,14 +568,15 @@
     }
   ],
   "project.ask.title": "Let's create your new home together",
-  "project.ask.subtitle": "Every project begins with a personal consultation. Together we will go through your requirements, space possibilities, and budget, and propose a solution that meets your needs.",
-  "project.ask.cta": "Let's go",
+  "project.ask.subtitle": "Every project begins with a personal consultation. Together, we will discuss your requirements, the potential of your space and your budget, and propose a solution tailored to your needs.",
+  "project.ask.cta": "Get started",
   "section.label.realizations": "Our projects",
-  "section.label.howitworks": "How collaboration works",
+  "section.label.howitworks": "Our approach",
   "section.label.whychoose": "Why clients choose Smíchov Living",
   "section.label.writeus": "write to us",
   "contact.address.label": "Address",
   "contact.opening.label": "Opening hours",
+  "contact.opening.hours": "Mon - Fri: 10:00 - 18:00",
   "contact.map": "View on map",
   "contact.visit": "Schedule a visit",
   "contact.followUs.label": "Follow us",

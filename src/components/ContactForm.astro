@@ -32,10 +32,16 @@ const {
 
 const _title = title || t(lang, "contact.form.title");
 const _submitText = submitText || t(lang, "contact.form.submit");
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 ---
 
 <div class={className} data-form-id={id}>
-  <form id={id} class="flex flex-col gap-5" novalidate>
+  <form
+    id={id}
+    class="flex flex-col gap-5"
+    data-recaptcha-site-key={recaptchaSiteKey}
+    novalidate
+  >
     <input type="hidden" name="typ_projektu" data-role="project-type-input" />
     <input type="hidden" name="form_id" value={id} />
 
@@ -222,6 +228,24 @@ const _submitText = submitText || t(lang, "contact.form.submit");
       </label>
     </div>
 
+    <p class="text-[10px] leading-relaxed text-stone-400">
+      {t(lang, "contact.form.recaptchaPrefix")}
+      <a
+        href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-stone-600"
+      >{t(lang, "contact.form.recaptchaPrivacy")}</a>
+      {t(lang, "contact.form.recaptchaAnd")}
+      <a
+        href="https://policies.google.com/terms"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-stone-600"
+      >{t(lang, "contact.form.recaptchaTerms")}</a>
+      {t(lang, "contact.form.recaptchaSuffix")}
+    </p>
+
     <button
       type="submit"
       class="btn-primary mt-2"
@@ -277,6 +301,51 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 </div>
 
 <script>
+  declare global {
+    interface Window {
+      grecaptcha?: {
+        ready: (callback: () => void) => void;
+        execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      };
+    }
+  }
+
+  let recaptchaScriptPromise: Promise<void> | undefined;
+
+  function loadRecaptcha(siteKey: string) {
+    if (window.grecaptcha) return Promise.resolve();
+    if (recaptchaScriptPromise) return recaptchaScriptPromise;
+
+    recaptchaScriptPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error("reCAPTCHA failed to load"));
+      document.head.appendChild(script);
+    });
+
+    return recaptchaScriptPromise;
+  }
+
+  async function getRecaptchaToken(siteKey: string) {
+    await loadRecaptcha(siteKey);
+
+    return new Promise<string>((resolve, reject) => {
+      if (!window.grecaptcha) {
+        reject(new Error("reCAPTCHA is unavailable"));
+        return;
+      }
+
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          ?.execute(siteKey, { action: "contact_submit" })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
+  }
+
   // Každý wrapper má data-form-id - inicializujeme každý formulář zvlášť.
   // Wrapped in a named function + astro:page-load listener because inline
   // module scripts do NOT re-run after a ClientRouter view-transition
@@ -294,6 +363,7 @@ const _submitText = submitText || t(lang, "contact.form.submit");
 
         const formId = wrapper.dataset.formId!;
         const form = wrapper.querySelector<HTMLFormElement>("form");
+        const recaptchaSiteKey = form?.dataset.recaptchaSiteKey;
         const projectTypeInput = wrapper.querySelector<HTMLInputElement>(
           '[data-role="project-type-input"]',
         );
@@ -437,9 +507,17 @@ const _submitText = submitText || t(lang, "contact.form.submit");
           errorMsg?.classList.add("hidden");
 
           try {
+            if (!recaptchaSiteKey) throw new Error("reCAPTCHA site key missing");
+
+            const formData = new FormData(form);
+            formData.append(
+              "recaptcha_token",
+              await getRecaptchaToken(recaptchaSiteKey),
+            );
+
             const res = await fetch("/api/kontakt", {
               method: "POST",
-              body: new FormData(form),
+              body: formData,
             });
 
             if (res.ok) {

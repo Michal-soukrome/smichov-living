@@ -5,9 +5,15 @@ const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
 const RESEND_FROM_EMAIL = import.meta.env.RESEND_FROM_EMAIL;
 const RESEND_TO_EMAIL = import.meta.env.RESEND_TO_EMAIL;
 const RESEND_BCC_EMAIL = import.meta.env.RESEND_BCC_EMAIL;
+const RECAPTCHA_SECRET_KEY = import.meta.env.RECAPTCHA_SECRET_KEY;
 
 export const POST: APIRoute = async ({ request }) => {
-  if (!RESEND_API_KEY || !RESEND_FROM_EMAIL || !RESEND_TO_EMAIL) {
+  if (
+    !RESEND_API_KEY ||
+    !RESEND_FROM_EMAIL ||
+    !RESEND_TO_EMAIL ||
+    !RECAPTCHA_SECRET_KEY
+  ) {
     return new Response(
       JSON.stringify({ error: "Email configuration missing" }),
       {
@@ -17,6 +23,41 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const data = await request.formData();
+  const recaptchaToken = data.get("recaptcha_token")?.toString();
+
+  if (!recaptchaToken) {
+    return new Response(JSON.stringify({ error: "reCAPTCHA required" }), {
+      status: 400,
+    });
+  }
+
+  const recaptchaResponse = await fetch(
+    "https://www.google.com/recaptcha/api/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: RECAPTCHA_SECRET_KEY,
+        response: recaptchaToken,
+      }),
+    },
+  );
+  const recaptchaResult = (await recaptchaResponse.json()) as {
+    success?: boolean;
+    score?: number;
+    action?: string;
+  };
+
+  if (
+    !recaptchaResponse.ok ||
+    !recaptchaResult.success ||
+    (recaptchaResult.score ?? 0) < 0.5 ||
+    recaptchaResult.action !== "contact_submit"
+  ) {
+    return new Response(JSON.stringify({ error: "reCAPTCHA failed" }), {
+      status: 400,
+    });
+  }
 
   const jmeno = data.get("jmeno")?.toString();
   const telefon = data.get("telefon")?.toString();

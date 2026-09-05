@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @source "../**/*.{astro,html,js,ts}";
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @theme {
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Jost", sans-serif;
